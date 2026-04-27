@@ -1,0 +1,151 @@
+"use client";
+import React, { useState, useEffect } from 'react';
+import { FIELDS } from '../../utils/taxonomy';
+
+export default function EditProjectModal({ isOpen, onClose, onUpdateProject, project }) {
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [status, setStatus] = useState('');
+  const [field, setField] = useState('');
+  const [github, setGithub] = useState('');
+  const [image, setImage] = useState(''); // New state for image
+
+  // Sync state when modal opens with existing project data
+  useEffect(() => {
+    if (project && isOpen) {
+      setName(project.title || '');
+      setDescription(project.description || '');
+      setStatus(project.projectStatus || 'DRAFT');
+      setField(project.field || '');
+      setGithub(project.repoUrl || '');
+      setImage(project.coverImageUrl || '');
+    }
+  }, [project, isOpen]);
+
+  // Handle image selection and conversion to Base64
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result); // This saves the image string to state
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onUpdateProject({
+      ...project,
+      title: name,
+      description,
+      projectStatus: status,
+      field,
+      repoUrl: github,
+      coverImageUrl: image 
+    });
+    onClose();
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-[var(--primary)]/25 backdrop-blur-md">
+      <div className="bg-white w-full max-w-lg rounded-[2.5rem] shadow-2xl overflow-hidden border border-gray-100 animate-in fade-in zoom-in duration-200">
+        <div className="p-10 space-y-6">
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="text-sm font-black text-[#08075C] uppercase tracking-widest">Update Configuration</h3>
+              <p className="text-[10px] text-gray-400 font-medium italic">Modifying {project.title || project.name}</p>
+            </div>
+            <button onClick={onClose} className="text-gray-300 hover:text-red-500 transition-colors">
+              <i className="fa-solid fa-xmark text-lg"></i>
+            </button>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Image Upload Section - Keeping UI minimal */}
+            <div className="flex items-center gap-4 p-3 bg-gray-50 rounded-2xl border border-gray-100">
+              <div className="w-12 h-12 rounded-lg bg-gray-200 overflow-hidden flex-shrink-0 border border-gray-200">
+                {image ? (
+                  <img src={image} alt="Preview" className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-gray-400">
+                    <i className="fa-solid fa-image text-xs"></i>
+                  </div>
+                )}
+              </div>
+              <div className="flex-1">
+                <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest mb-1">Visual Asset</label>
+                <label className="text-[10px] font-bold text-[var(--primary)] cursor-pointer hover:underline">
+                  Change Image
+                  <input type="file" accept="image/*" onChange={handleImageChange} className="hidden" />
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Project Name</label>
+              <input 
+                value={name} onChange={(e) => setName(e.target.value)}
+                className="w-full bg-gray-50 border border-gray-100 rounded-xl py-3 px-4 text-xs font-bold text-[var(--text)] outline-none focus:ring-2 focus:ring-[var(--primary)]/20"
+              />
+            </div>
+            
+            <div>
+              <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Value Proposition</label>
+              <textarea 
+                value={description} onChange={(e) => setDescription(e.target.value)}
+                className="w-full bg-gray-50 border border-gray-100 rounded-xl py-3 px-4 text-xs font-medium text-[var(--text)] outline-none h-24 resize-none leading-relaxed"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Current Phase</label>
+                <select 
+                  value={status} onChange={(e) => setStatus(e.target.value)}
+                  className="w-full bg-gray-50 border border-gray-100 rounded-xl py-3 px-4 text-xs font-bold text-[var(--text)] outline-none cursor-pointer"
+                >
+                  <option value="DRAFT">Draft</option>
+                  <option value="ONGOING">Ongoing</option>
+                  <option value="COMPLETED">Completed</option>
+                  <option value="FAILED">Failed</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-[9px] font-black text-gray-400 uppercase tracking-widest mb-2 ml-1">Field</label>
+                <select 
+                  value={field} onChange={(e) => setField(e.target.value)}
+                  className="w-full bg-gray-50 border border-gray-100 rounded-xl py-3 px-4 text-xs font-bold text-[var(--text)] outline-none cursor-pointer"
+                >
+                  <option value="" disabled>Select Sector...</option>
+                  {FIELDS.map(f => <option key={f} value={f}>{f}</option>)}
+                </select>
+              </div>
+            </div>
+
+            {status !== 'Idea' && (
+              <div>
+                <label className="block text-[9px] font-black text-[var(--primary)] uppercase tracking-widest mb-2 ml-1">GitHub Repository</label>
+                <input 
+                  value={github} onChange={(e) => setGithub(e.target.value)}
+                  className="w-full bg-[var(--primary)]/5 border border-[var(--primary)]/20 rounded-xl py-3 px-4 text-xs font-medium text-[var(--text)] outline-none"
+                  placeholder="https://github.com/..."
+                />
+              </div>
+            )}
+
+            <button 
+              type="submit"
+              className="w-full bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl transition-all mt-4"
+            >
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
