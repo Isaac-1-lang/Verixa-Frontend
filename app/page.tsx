@@ -8,57 +8,57 @@ import {
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 
 const NAV_LINKS = [
-  { label: 'Features', href: '#featuresssss' },
+  { label: 'Features', href: '#features' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'About', href: '#about' },
 ];
 
 const FIELDS = [
-  { name: 'Agriculture', color: '#4CAF50' },
-  { name: 'Healthcare', color: '#FF5C8D' },
-  { name: 'AI', color: '#6C63FF' },
-  { name: 'Education', color: '#FFA726' },
-  { name: 'Cybersecurity', color: '#EF5350' },
-  { name: 'Finance', color: '#AB47BC' },
-  { name: 'Energy', color: '#FFD54F' },
-  { name: 'Smart Cities', color: '#5C6BC0' },
-  { name: 'Tourism', color: '#29B6F6' },
-  { name: 'Sustainability', color: '#66BB6A' },
+  { name: 'Software Testing', color: '#4CAF50' },
+  { name: 'Quality Assurance', color: '#FF5C8D' },
+  { name: 'DevOps', color: '#6C63FF' },
+  { name: 'Enterprise Apps', color: '#FFA726' },
+  { name: 'Mobile Apps', color: '#EF5350' },
+  { name: 'Web Applications', color: '#AB47BC' },
+  { name: 'Cloud Services', color: '#FFD54F' },
+  { name: 'API Testing', color: '#5C6BC0' },
+  { name: 'Performance Testing', color: '#29B6F6' },
+  { name: 'Security Testing', color: '#66BB6A' },
 ];
 
 const FEATURES = [
-  { icon: <Layers size={24} />, title: 'Project Portfolio', desc: 'Showcase your work with rich project pages featuring tech stacks, field tags, SDG alignment, and media galleries.' },
-  { icon: <Users size={24} />, title: 'Collaboration Hub', desc: 'Find teammates by skills and interests. Tag collaborators, share repositories, and build together across disciplines.' },
-  { icon: <TrendingUp size={24} />, title: 'Discovery Feed', desc: 'A social-style feed that surfaces trending projects in your field. Like, bookmark, and follow creators you admire.' },
-  { icon: <Shield size={24} />, title: 'SDG & NST2 Alignment', desc: 'Map your projects to UN Sustainable Development Goals and Rwanda\'s NST2 strategy to demonstrate real-world impact.' },
-  { icon: <BarChart3 size={24} />, title: 'Analytics Dashboard', desc: 'Track views, engagement, and field rankings. Understand how your projects perform across the platform.' },
-  { icon: <BookOpen size={24} />, title: 'Multi-Field Taxonomy', desc: '14 fields, 13 main tech domains, and 150+ sub-tags. Precisely categorize and discover projects across any discipline.' },
+  { icon: <Layers size={24} />, title: 'Test Case Management', desc: 'Create, organize, and manage comprehensive test cases with detailed steps, expected results, and traceability to requirements.' },
+  { icon: <Users size={24} />, title: 'Execution Tracking', desc: 'Execute tests, record results, and track progress in real-time. Assign executions to team members and monitor completion status.' },
+  { icon: <TrendingUp size={24} />, title: 'Defect Management', desc: 'Log defects with severity levels, attach evidence, and track resolution. Link defects to test executions for full traceability.' },
+  { icon: <Shield size={24} />, title: 'Quality Sign-Off', desc: 'Formal approval workflow for test runs. Managers can review results and sign-off when quality gates are met.' },
+  { icon: <BarChart3 size={24} />, title: 'Analytics Dashboard', desc: 'Track test coverage, pass/fail rates, defect trends, and project health. Visual insights for stakeholder reporting.' },
+  { icon: <BookOpen size={24} />, title: 'Attachment & Evidence', desc: 'Upload screenshots, logs, and documents as test evidence. Maintain complete audit trail for compliance and reviews.' },
 ];
 
 const STEPS = [
-  { number: '01', title: 'Create Your Profile', desc: 'Sign up, set your field of interest, and configure your developer profile with skills and social links.' },
-  { number: '02', title: 'Submit Your Project', desc: 'Add your project with a rich description, tech stack tags, SDG goals, cover images, and repository links.' },
-  { number: '03', title: 'Get Discovered', desc: 'Your project appears in the discovery feed. Peers can like, comment, and bookmark. Enterprises can reach out.' },
+  { number: '01', title: 'Create Test Plan', desc: 'Define your project, create requirements, and organize test cases with detailed steps and expected outcomes.' },
+  { number: '02', title: 'Execute & Track', desc: 'Run tests, record results, log defects, and attach evidence. Track progress across your entire test suite in real-time.' },
+  { number: '03', title: 'Review & Sign-Off', desc: 'Managers review test results, approve quality gates, and formally sign-off when ready for production release.' },
 ];
 
 const PRICING = [
-  { name: 'Student', price: 'Free', period: 'forever', desc: 'Perfect for individual students and learners.', features: ['Up to 5 projects', 'Basic analytics', 'Public profile', 'SDG tagging', 'Community feed access'], cta: 'Get Started Free', highlighted: false },
-  { name: 'Pro', price: '$4', period: '/month', desc: 'For serious builders who want full visibility.', features: ['Unlimited projects', 'Advanced analytics', 'Priority in feed', 'Custom profile banner', 'Media gallery uploads', 'Enterprise visibility'], cta: 'Start Pro Trial', highlighted: true },
-  { name: 'University', price: 'Custom', period: '', desc: 'For institutions managing cohorts of students.', features: ['Unlimited students', 'Admin dashboard', 'Cohort analytics', 'Custom branding', 'API access', 'Dedicated support'], cta: 'Contact Sales', highlighted: false },
+  { name: 'Starter', price: 'Free', period: 'forever', desc: 'Perfect for small teams and pilot projects.', features: ['Up to 3 projects', 'Up to 50 test cases', 'Basic reporting', 'Email support', 'Community access'], cta: 'Get Started Free', highlighted: false },
+  { name: 'Professional', price: '$99', period: '/month', desc: 'For growing QA teams managing multiple projects.', features: ['Unlimited projects', 'Unlimited test cases', 'Advanced analytics', 'Defect tracking', 'Team collaboration', 'Priority support'], cta: 'Start Free Trial', highlighted: true },
+  { name: 'Enterprise', price: 'Custom', period: '', desc: 'For large organizations with complex requirements.', features: ['Custom deployment', 'SSO & LDAP', 'Advanced security', 'API access', 'Custom integrations', 'Dedicated support'], cta: 'Contact Sales', highlighted: false },
 ];
 
 const STATS = [
-  { value: '10+', label: 'Projects Submitted' },
-  { value: '14', label: 'Innovation Fields' },
-  { value: '150+', label: 'Technology Tags' },
-  { value: '17', label: 'SDG Goals Covered' },
+  { value: '10K+', label: 'Test Cases Executed' },
+  { value: '500+', label: 'Active Projects' },
+  { value: '99.9%', label: 'Platform Uptime' },
+  { value: '24/7', label: 'Support Available' },
 ];
 
 // Typing Effect
 const TypingText = () => {
   const [displayText, setDisplayText] = useState('');
-  const fullText = "Come to Life";
+  const fullText = "Quality Assured";
   
   useEffect(() => {
     let i = 0;
@@ -148,6 +148,11 @@ export default function LandingPage() {
   const pY3 = useSpring(pY3Raw, smoothConfig);
   const priceYArr = [pY1, pY2, pY3];
   
+  // Navbar scroll animation
+  const navbarScale = useTransform(scrollY, [0, 100], [1, 0.95]);
+  const navbarY = useTransform(scrollY, [0, 100], [24, 12]);
+  const navbarOpacity = useTransform(scrollY, [0, 50], [0.8, 1]);
+  
   // About Parallax
   const { scrollYProgress: aProg } = useScroll({ target: aboutRef, offset: ["start end", "end start"] });
   const aYTextRaw = useTransform(aProg, [0, 1], [80, -80]);
@@ -196,11 +201,20 @@ export default function LandingPage() {
         </div>
       </motion.div>
 
-      {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-b border-zinc-100">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      {/* NAVBAR - Floating */}
+      <motion.nav 
+        className="fixed left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl"
+        style={{ 
+          top: navbarY,
+          scale: navbarScale
+        }}
+      >
+        <motion.div 
+          className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-lg shadow-zinc-900/5 border border-zinc-200/50 px-6 h-16 flex items-center justify-between"
+          style={{ opacity: navbarOpacity }}
+        >
           <Link href="/" className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">
-            BrainBridge
+            Verixa
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -221,10 +235,15 @@ export default function LandingPage() {
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-zinc-700">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+        </motion.div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-zinc-100 bg-white px-6 py-6 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden absolute top-full left-0 right-0 mt-2 border border-zinc-200/50 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl px-6 py-6 space-y-4"
+          >
             {NAV_LINKS.map(link => (
               <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-3 text-lg text-zinc-600 hover:text-zinc-900">
                 {link.label}
@@ -232,12 +251,12 @@ export default function LandingPage() {
             ))}
             <Link href="/auth/login" className="block py-3 text-lg">Log In</Link>
             <Link href="/auth/signup" className="btn-primary block text-center py-3.5 rounded-2xl">Sign Up Free</Link>
-          </div>
+          </motion.div>
         )}
-      </nav>
+      </motion.nav>
 
       {/* HERO - Cinematic Staged Reveal + Scroll Parallax */}
-      <section className="relative min-h-[100dvh] flex items-center pt-16 overflow-hidden">
+      <section className="relative min-h-[100dvh] flex items-center pt-24 overflow-hidden">
         <motion.div 
           className="absolute inset-0 bg-[var(--primary)] opacity-[0.045]"
           style={{ y: bgY }}
@@ -256,7 +275,7 @@ export default function LandingPage() {
                 transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                 className="text-6xl sm:text-7xl lg:text-[5.1rem] font-extrabold leading-[1.01] tracking-[-2.5px] mb-8"
               >
-                Where Developer Projects{' '}
+                Software Testing Made{' '}
                 <TypingText />
               </motion.h1>
 
@@ -267,7 +286,7 @@ export default function LandingPage() {
                 transition={{ delay: 0.55, duration: 1 }}
                 className="text-xl text-zinc-600 leading-relaxed mb-10 max-w-lg"
               >
-                BrainBridge is the platform where students showcase innovation, connect across disciplines, and get discovered by the people who matter.
+                Verixa is the comprehensive UAT management platform where QA teams execute tests, track defects, and get formal sign-off—all in one place.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -299,9 +318,9 @@ export default function LandingPage() {
                 transition={{ delay: 1.15 }}
                 className="flex items-center gap-8 text-sm text-zinc-500"
               >
-                <span className="flex items-center gap-2"><Check className="text-emerald-500" size={18} /> Free to start</span>
-                <span className="flex items-center gap-2"><Check className="text-emerald-500" size={18} /> No credit card</span>
-                <span className="flex items-center gap-2"><Check className="text-emerald-500" size={18} /> 14 fields</span>
+                <span className="flex items-center gap-2"><Check className="text-emerald-500" size={18} /> Free trial</span>
+                <span className="flex items-center gap-2"><Check className="text-emerald-500" size={18} /> No setup required</span>
+                <span className="flex items-center gap-2"><Check className="text-emerald-500" size={18} /> Enterprise ready</span>
               </motion.div>
             </motion.div>
 
@@ -321,20 +340,20 @@ export default function LandingPage() {
                   <div className="w-3 h-3 rounded-full bg-red-500" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500" />
                   <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                  <span className="text-xs text-zinc-500 ml-3 font-medium">BrainBridge Dashboard</span>
+                  <span className="text-xs text-zinc-500 ml-3 font-medium">Verixa Dashboard</span>
                 </div>
                 
                 <div className="bg-zinc-50 rounded-2xl p-6 space-y-6 border border-zinc-100">
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="text-xs text-zinc-500">Welcome back</p>
-                      <p className="text-2xl font-bold tracking-tight">Gold I. 👋</p>
+                      <p className="text-2xl font-bold tracking-tight">QA Team 👋</p>
                     </div>
-                    <div className="w-12 h-12 rounded-2xl bg-[var(--primary)] flex items-center justify-center text-white font-bold text-xl">GI</div>
+                    <div className="w-12 h-12 rounded-2xl bg-[var(--primary)] flex items-center justify-center text-white font-bold text-xl">QA</div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-4">
-                    {[{ l: 'Projects', v: '8' }, { l: 'Views', v: '2.4k' }, { l: 'Rank', v: '#12' }].map(s => (
+                    {[{ l: 'Test Cases', v: '245' }, { l: 'Executed', v: '198' }, { l: 'Pass Rate', v: '94%' }].map(s => (
                       <motion.div 
                         key={s.l} 
                         whileHover={{ y: -8, scale: 1.03 }}
@@ -347,8 +366,8 @@ export default function LandingPage() {
                   </div>
 
                   {[
-                    { title: 'Wastenet', field: 'Clean cities', color: '#4CAF50' },
-                    { title: 'GreenIQ', field: 'Clean cities', color: '#FF5C8D' },
+                    { title: 'Mobile App v2.0', field: 'In Progress', color: '#4CAF50' },
+                    { title: 'Payment Gateway', field: 'Ready for Sign-Off', color: '#FF5C8D' },
                   ].map((p, i) => (
                     <motion.div 
                       key={i}
@@ -377,7 +396,7 @@ export default function LandingPage() {
       {/* FIELD BADGES MARQUEE */}
       <section className="py-10 border-y border-zinc-100 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-6">Projects Across Every Sector</p>
+          <p className="text-center text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-6">Testing Across Every Platform</p>
           <div className="flex gap-4 animate-marquee whitespace-nowrap">
             {[...FIELDS, ...FIELDS].map((f, i) => (
               <span 
@@ -423,8 +442,8 @@ export default function LandingPage() {
             className="text-center max-w-2xl mx-auto mb-20"
           >
             <p className="text-sm font-semibold text-[var(--primary)] uppercase tracking-wider mb-3">PLATFORM FEATURES</p>
-            <h2 className="text-5xl font-extrabold tracking-tight">Everything you need to showcase your work</h2>
-            <p className="mt-4 text-zinc-600 text-lg">Built specifically for university students and academic innovators.</p>
+            <h2 className="text-5xl font-extrabold tracking-tight">Complete UAT management toolkit</h2>
+            <p className="mt-4 text-zinc-600 text-lg">Everything your QA team needs to execute, track, and sign-off on quality.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -470,8 +489,8 @@ export default function LandingPage() {
             className="text-center max-w-2xl mx-auto mb-20"
           >
             <p className="text-sm font-semibold text-[var(--primary)] uppercase tracking-wider mb-3">HOW IT WORKS</p>
-            <h2 className="text-5xl font-extrabold tracking-tight">From idea to visibility in minutes</h2>
-            <p className="mt-4 text-zinc-600 text-lg">Three steps to becoming part of the innovation community.</p>
+            <h2 className="text-5xl font-extrabold tracking-tight">From test plan to production in days</h2>
+            <p className="mt-4 text-zinc-600 text-lg">Streamlined workflow for comprehensive UAT execution.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -507,8 +526,8 @@ export default function LandingPage() {
             className="text-center max-w-2xl mx-auto mb-20"
           >
             <p className="text-sm font-semibold text-[var(--primary)] uppercase tracking-wider mb-3">PRICING</p>
-            <h2 className="text-5xl font-extrabold tracking-tight">Plans for every stage</h2>
-            <p className="mt-4 text-zinc-600 text-lg">Start free. Scale when you're ready.</p>
+            <h2 className="text-5xl font-extrabold tracking-tight">Plans for every team size</h2>
+            <p className="mt-4 text-zinc-600 text-lg">Start free. Scale as your testing needs grow.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -570,17 +589,17 @@ export default function LandingPage() {
             viewport={{ once: true, margin: "-50px" }}
             className="flex-1"
           >
-            <p className="text-sm font-semibold text-[var(--primary)] uppercase tracking-wider mb-3">ABOUT BRAINBRIDGE</p>
-            <h2 className="text-5xl font-extrabold tracking-tight mb-8">Bridging academia and industry</h2>
+            <p className="text-sm font-semibold text-[var(--primary)] uppercase tracking-wider mb-3">ABOUT VERIXA</p>
+            <h2 className="text-5xl font-extrabold tracking-tight mb-8">Quality assurance, simplified</h2>
             
             <div className="space-y-6 text-zinc-600 leading-relaxed text-[17px]">
-              <p>BrainBridge was born from a simple observation: brilliant student projects often die in classroom folders, unseen by the world. We built a platform that gives every student — regardless of their university or field — a professional space to showcase their innovation, connect with peers, and attract real-world opportunities.</p>
-              <p>Our taxonomy covers 14 sectors from Agriculture to Smart Cities, aligns with the UN's 17 SDGs and Rwanda's NST2 strategy, and supports 150+ technology sub-tags. Whether you're building an IoT sensor for farms or an AI model for healthcare, BrainBridge is where your work gets the visibility it deserves.</p>
+              <p>Verixa was built to solve a critical problem: QA teams spend too much time managing spreadsheets, emails, and scattered tools instead of focusing on quality. We created a unified platform where test planning, execution, defect tracking, and sign-off happen seamlessly in one place.</p>
+              <p>Whether you're testing enterprise applications, mobile apps, APIs, or cloud services, Verixa provides the structure, visibility, and accountability your team needs. From small startups to Fortune 500 companies, teams trust Verixa to ensure their software meets quality standards before reaching production.</p>
             </div>
 
             <div className="mt-10">
               <Link href="/auth/signup" className="btn-primary inline-flex items-center gap-3 text-base font-semibold px-8 py-4 rounded-2xl">
-                Join the Community <ArrowRight size={18} />
+                Start Your Free Trial <ArrowRight size={18} />
               </Link>
             </div>
           </motion.div>
@@ -595,10 +614,10 @@ export default function LandingPage() {
           >
             <div className="grid grid-cols-2 gap-6">
               {[
-                { icon: <Globe size={32} />, label: 'Global Reach', sub: 'Open to all universities' },
-                { icon: <Users size={32} />, label: 'Community First', sub: 'Built by students, for students' },
-                { icon: <Zap size={32} />, label: 'Real Impact', sub: 'SDG + NST2 aligned' },
-                { icon: <Shield size={32} />, label: 'Trusted', sub: 'Secure and transparent' },
+                { icon: <Globe size={32} />, label: 'Global Scale', sub: 'Used by teams worldwide' },
+                { icon: <Users size={32} />, label: 'Team Focused', sub: 'Built for QA collaboration' },
+                { icon: <Zap size={32} />, label: 'Fast Execution', sub: 'Streamlined workflows' },
+                { icon: <Shield size={32} />, label: 'Trusted', sub: 'Enterprise-grade security' },
               ].map((item, i) => (
                 <motion.div 
                   key={i} 
@@ -626,12 +645,12 @@ export default function LandingPage() {
         >
           <div className="absolute inset-0 bg-[var(--primary)] opacity-10" />
           
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 relative z-10">Ready to showcase your projects?</h2>
-          <p className="text-zinc-300 text-lg mb-10 max-w-md mx-auto relative z-10">Join thousands of students already building their portfolio on BrainBridge. It's free to start.</p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 relative z-10">Ready to streamline your UAT process?</h2>
+          <p className="text-zinc-300 text-lg mb-10 max-w-md mx-auto relative z-10">Join QA teams worldwide using Verixa to execute tests faster and ensure quality. Start your free trial today.</p>
           
           <motion.div whileHover={{ scale: 1.08 }}>
             <Link href="/auth/signup" className="btn-primary inline-flex items-center gap-3 text-lg font-semibold px-12 py-5 rounded-2xl relative z-10">
-              Create Your Free Account <ArrowRight size={20} />
+              Start Free Trial <ArrowRight size={20} />
             </Link>
           </motion.div>
         </motion.div>
@@ -642,14 +661,14 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
             <div className="col-span-2 md:col-span-1">
-              <p className="text-2xl font-extrabold text-[var(--primary)] mb-4">BrainBridge</p>
-              <p className="text-sm text-zinc-500 leading-relaxed">Where developer projects come to life. Built for innovators, by innovators.</p>
+              <p className="text-2xl font-extrabold text-[var(--primary)] mb-4">Verixa</p>
+              <p className="text-sm text-zinc-500 leading-relaxed">Comprehensive UAT management platform. Verify acceptance with confidence.</p>
             </div>
             
             {[
-              { title: 'Product', links: ['Features', 'Pricing', 'Explore Projects', 'Discovery Feed'] },
+              { title: 'Product', links: ['Features', 'Pricing', 'How It Works', 'Documentation'] },
               { title: 'Company', links: ['About', 'Blog', 'Careers', 'Contact'] },
-              { title: 'Legal', links: ['Privacy Policy', 'Terms of Service', 'Cookie Policy'] },
+              { title: 'Legal', links: ['Privacy Policy', 'Terms of Service', 'Security'] },
             ].map((col, idx) => (
               <div key={idx}>
                 <p className="text-xs font-semibold uppercase tracking-widest mb-5 text-zinc-400">{col.title}</p>
@@ -663,7 +682,7 @@ export default function LandingPage() {
           </div>
 
           <div className="border-t border-zinc-100 pt-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-zinc-500">
-            <p>© {new Date().getFullYear()} BrainBridge. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Verixa. All rights reserved.</p>
             <div className="flex items-center gap-6">
               {['github', 'linkedin', 'x-twitter'].map(icon => (
                 <a key={icon} href="#" className="hover:text-zinc-900 transition-colors">

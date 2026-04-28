@@ -1,8 +1,8 @@
 (globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
-"[project]/brainbridge/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * @license React
  * react-jsx-dev-runtime.development.js
@@ -189,7 +189,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     function isValidElement(object) {
         return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
     }
-    var React = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+    var React = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
         return null;
     };
     React = {
@@ -215,21 +215,21 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     };
 }();
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
-    module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)");
+    module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)");
 }
 }),
-"[project]/brainbridge/node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * @license React
  * use-sync-external-store-with-selector.development.js
@@ -244,7 +244,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
         return x === y && (0 !== x || 1 / x === 1 / y) || x !== x && y !== y;
     }
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-    var React = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore = React.useSyncExternalStore, useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue;
+    var React = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore = React.useSyncExternalStore, useRef = React.useRef, useEffect = React.useEffect, useMemo = React.useMemo, useDebugValue = React.useDebugValue;
     exports.useSyncExternalStoreWithSelector = function(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
         var instRef = useRef(null);
         if (null === instRef.current) {
@@ -301,18 +301,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
 }();
 }),
-"[project]/brainbridge/node_modules/use-sync-external-store/with-selector.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/use-sync-external-store/with-selector.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
-    module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.development.js [app-client] (ecmascript)");
+    module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.development.js [app-client] (ecmascript)");
 }
 }),
-"[project]/brainbridge/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -339,14 +339,14 @@ __turbopack_context__.s([
     "useStore",
     ()=>useStore
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // src/utils/react.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 // src/hooks/useSelector.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$use$2d$sync$2d$external$2d$store$2f$with$2d$selector$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/use-sync-external-store/with-selector.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$use$2d$sync$2d$external$2d$store$2f$with$2d$selector$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/use-sync-external-store/with-selector.js [app-client] (ecmascript)");
 ;
 // src/utils/react-is.ts
-var IS_REACT_19 = /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["version"].startsWith("19");
+var IS_REACT_19 = /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["version"].startsWith("19");
 var REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for(IS_REACT_19 ? "react.transitional.element" : "react.element");
 var REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal");
 var REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment");
@@ -731,7 +731,7 @@ var canUseDOM = ()=>!!(typeof window !== "undefined" && typeof window.document !
 var isDOM = /* @__PURE__ */ canUseDOM();
 var isRunningInReactNative = ()=>typeof navigator !== "undefined" && navigator.product === "ReactNative";
 var isReactNative = /* @__PURE__ */ isRunningInReactNative();
-var getUseIsomorphicLayoutEffect = ()=>isDOM || isReactNative ? __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLayoutEffect"] : __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"];
+var getUseIsomorphicLayoutEffect = ()=>isDOM || isReactNative ? __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLayoutEffect"] : __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"];
 var useIsomorphicLayoutEffect = /* @__PURE__ */ getUseIsomorphicLayoutEffect();
 // src/utils/shallowEqual.ts
 function is(x, y) {
@@ -840,15 +840,15 @@ function hoistNonReactStatics(targetComponent, sourceComponent) {
 var ContextKey = /* @__PURE__ */ Symbol.for(`react-redux-context`);
 var gT = typeof globalThis !== "undefined" ? globalThis : /* fall back to a per-module scope (pre-8.1 behaviour) if `globalThis` is not available */ {};
 function getContext() {
-    if (!__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"]) return {};
+    if (!__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"]) return {};
     const contextMap = gT[ContextKey] ??= /* @__PURE__ */ new Map();
-    let realContext = contextMap.get(__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"]);
+    let realContext = contextMap.get(__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"]);
     if (!realContext) {
-        realContext = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"](null);
+        realContext = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"](null);
         if ("TURBOPACK compile-time truthy", 1) {
             realContext.displayName = "ReactRedux";
         }
-        contextMap.set(__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"], realContext);
+        contextMap.set(__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"], realContext);
     }
     return realContext;
 }
@@ -963,7 +963,7 @@ context = ReactReduxContext } = {}) {
             areMergedPropsEqual
         };
         function ConnectFunction(props) {
-            const [propsContext, reactReduxForwardedRef, wrapperProps] = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const [propsContext, reactReduxForwardedRef, wrapperProps] = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo": ()=>{
                     const { reactReduxForwardedRef: reactReduxForwardedRef2, ...wrapperProps2 } = props;
                     return [
@@ -975,13 +975,13 @@ context = ReactReduxContext } = {}) {
             }["connect.wrapWithConnect.ConnectFunction.useMemo"], [
                 props
             ]);
-            const ContextToUse = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const ContextToUse = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo[ContextToUse]": ()=>{
                     let ResultContext = Context;
                     if (propsContext?.Consumer) {
                         if ("TURBOPACK compile-time truthy", 1) {
                             const isValid = /* @__PURE__ */ isContextConsumer(// @ts-ignore
-                            /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](propsContext.Consumer, null));
+                            /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](propsContext.Consumer, null));
                             if (!isValid) {
                                 throw new Error("You must pass a valid React context consumer as `props.context`");
                             }
@@ -994,7 +994,7 @@ context = ReactReduxContext } = {}) {
                 propsContext,
                 Context
             ]);
-            const contextValue = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"](ContextToUse);
+            const contextValue = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"](ContextToUse);
             const didStoreComeFromProps = Boolean(props.store) && Boolean(props.store.getState) && Boolean(props.store.dispatch);
             const didStoreComeFromContext = Boolean(contextValue) && Boolean(contextValue.store);
             if (("TURBOPACK compile-time value", "development") !== "production" && !didStoreComeFromProps && !didStoreComeFromContext) {
@@ -1002,14 +1002,14 @@ context = ReactReduxContext } = {}) {
             }
             const store = didStoreComeFromProps ? props.store : contextValue.store;
             const getServerState = didStoreComeFromContext ? contextValue.getServerState : store.getState;
-            const childPropsSelector = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const childPropsSelector = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo[childPropsSelector]": ()=>{
                     return finalPropsSelectorFactory(store.dispatch, selectorFactoryOptions);
                 }
             }["connect.wrapWithConnect.ConnectFunction.useMemo[childPropsSelector]"], [
                 store
             ]);
-            const [subscription, notifyNestedSubs] = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const [subscription, notifyNestedSubs] = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo": ()=>{
                     if (!shouldHandleStateChanges) return NO_SUBSCRIPTION_ARRAY;
                     const subscription2 = createSubscription(store, didStoreComeFromProps ? void 0 : contextValue.subscription);
@@ -1024,7 +1024,7 @@ context = ReactReduxContext } = {}) {
                 didStoreComeFromProps,
                 contextValue
             ]);
-            const overriddenContextValue = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const overriddenContextValue = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo[overriddenContextValue]": ()=>{
                     if (didStoreComeFromProps) {
                         return contextValue;
@@ -1039,12 +1039,12 @@ context = ReactReduxContext } = {}) {
                 contextValue,
                 subscription
             ]);
-            const lastChildProps = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](void 0);
-            const lastWrapperProps = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](wrapperProps);
-            const childPropsFromStoreUpdate = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](void 0);
-            const renderIsScheduled = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](false);
-            const isMounted = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](false);
-            const latestSubscriptionCallbackError = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](void 0);
+            const lastChildProps = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](void 0);
+            const lastWrapperProps = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](wrapperProps);
+            const childPropsFromStoreUpdate = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](void 0);
+            const renderIsScheduled = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](false);
+            const isMounted = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](false);
+            const latestSubscriptionCallbackError = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](void 0);
             useIsomorphicLayoutEffect({
                 "connect.wrapWithConnect.ConnectFunction.useIsomorphicLayoutEffect": ()=>{
                     isMounted.current = true;
@@ -1055,7 +1055,7 @@ context = ReactReduxContext } = {}) {
                     })["connect.wrapWithConnect.ConnectFunction.useIsomorphicLayoutEffect"];
                 }
             }["connect.wrapWithConnect.ConnectFunction.useIsomorphicLayoutEffect"], []);
-            const actualChildPropsSelector = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const actualChildPropsSelector = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo[actualChildPropsSelector]": ()=>{
                     const selector = {
                         "connect.wrapWithConnect.ConnectFunction.useMemo[actualChildPropsSelector].selector": ()=>{
@@ -1071,7 +1071,7 @@ context = ReactReduxContext } = {}) {
                 store,
                 wrapperProps
             ]);
-            const subscribeForReact = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const subscribeForReact = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo[subscribeForReact]": ()=>{
                     const subscribe = {
                         "connect.wrapWithConnect.ConnectFunction.useMemo[subscribeForReact].subscribe": (reactListener)=>{
@@ -1099,7 +1099,7 @@ context = ReactReduxContext } = {}) {
             ]);
             let actualChildProps;
             try {
-                actualChildProps = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSyncExternalStore"](// TODO We're passing through a big wrapper that does a bunch of extra side effects besides subscribing
+                actualChildProps = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSyncExternalStore"](// TODO We're passing through a big wrapper that does a bunch of extra side effects besides subscribing
                 subscribeForReact, // TODO This is incredibly hacky. We've already processed the store update and calculated new child props,
                 // TODO and we're just passing that through so it triggers a re-render for us rather than relying on `uSES`.
                 actualChildPropsSelector, getServerState ? ({
@@ -1123,10 +1123,10 @@ ${latestSubscriptionCallbackError.current.stack}
                     lastChildProps.current = actualChildProps;
                 }
             }["connect.wrapWithConnect.ConnectFunction.useIsomorphicLayoutEffect"]);
-            const renderedWrappedComponent = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const renderedWrappedComponent = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo[renderedWrappedComponent]": ()=>{
                     return(// @ts-ignore
-                    /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](WrappedComponent, {
+                    /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](WrappedComponent, {
                         ...actualChildProps,
                         ref: reactReduxForwardedRef
                     }));
@@ -1136,10 +1136,10 @@ ${latestSubscriptionCallbackError.current.stack}
                 WrappedComponent,
                 actualChildProps
             ]);
-            const renderedChild = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+            const renderedChild = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
                 "connect.wrapWithConnect.ConnectFunction.useMemo[renderedChild]": ()=>{
                     if (shouldHandleStateChanges) {
-                        return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](ContextToUse.Provider, {
+                        return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](ContextToUse.Provider, {
                             value: overriddenContextValue
                         }, renderedWrappedComponent);
                     }
@@ -1152,13 +1152,13 @@ ${latestSubscriptionCallbackError.current.stack}
             ]);
             return renderedChild;
         }
-        const _Connect = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["memo"](ConnectFunction);
+        const _Connect = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["memo"](ConnectFunction);
         const Connect = _Connect;
         Connect.WrappedComponent = WrappedComponent;
         Connect.displayName = ConnectFunction.displayName = displayName;
         if (forwardRef) {
-            const _forwarded = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"](function forwardConnectRef(props, ref) {
-                return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Connect, {
+            const _forwarded = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"](function forwardConnectRef(props, ref) {
+                return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Connect, {
                     ...props,
                     reactReduxForwardedRef: ref
                 });
@@ -1176,7 +1176,7 @@ var connect_default = connect;
 // src/components/Provider.tsx
 function Provider(providerProps) {
     const { children, context, serverState, store } = providerProps;
-    const contextValue = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+    const contextValue = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
         "Provider.useMemo[contextValue]": ()=>{
             const subscription = createSubscription(store);
             const baseContextValue = {
@@ -1200,7 +1200,7 @@ function Provider(providerProps) {
         store,
         serverState
     ]);
-    const previousState = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
+    const previousState = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"]({
         "Provider.useMemo[previousState]": ()=>store.getState()
     }["Provider.useMemo[previousState]"], [
         store
@@ -1225,7 +1225,7 @@ function Provider(providerProps) {
         previousState
     ]);
     const Context = context || ReactReduxContext;
-    return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Context.Provider, {
+    return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Context.Provider, {
         value: contextValue
     }, children);
 }
@@ -1233,7 +1233,7 @@ var Provider_default = Provider;
 // src/hooks/useReduxContext.ts
 function createReduxContextHook(context = ReactReduxContext) {
     return function useReduxContext2() {
-        const contextValue = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"](context);
+        const contextValue = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"](context);
         if (("TURBOPACK compile-time value", "development") !== "production" && !contextValue) {
             throw new Error("could not find react-redux context value; please ensure the component is wrapped in a <Provider>");
         }
@@ -1289,8 +1289,8 @@ function createSelectorHook(context = ReactReduxContext) {
         }
         const reduxContext = useReduxContext2();
         const { store, subscription, getServerState } = reduxContext;
-        const firstRun = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](true);
-        const wrappedSelector = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"]({
+        const firstRun = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"](true);
+        const wrappedSelector = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"]({
             [selector.name] (state) {
                 const selected = selector(state);
                 if ("TURBOPACK compile-time truthy", 1) {
@@ -1340,8 +1340,8 @@ function createSelectorHook(context = ReactReduxContext) {
         }[selector.name], [
             selector
         ]);
-        const selectedState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$use$2d$sync$2d$external$2d$store$2f$with$2d$selector$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSyncExternalStoreWithSelector"])(subscription.addNestedSub, store.getState, getServerState || store.getState, wrappedSelector, equalityFn);
-        __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"](selectedState);
+        const selectedState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$use$2d$sync$2d$external$2d$store$2f$with$2d$selector$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSyncExternalStoreWithSelector"])(subscription.addNestedSub, store.getState, getServerState || store.getState, wrappedSelector, equalityFn);
+        __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"](selectedState);
         return selectedState;
     };
     Object.assign(useSelector2, {
@@ -1355,7 +1355,7 @@ var batch = defaultNoopBatch;
 ;
  //# sourceMappingURL=react-redux.mjs.map
 }),
-"[project]/brainbridge/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -1402,7 +1402,7 @@ __turbopack_context__.s([
     "setUseStrictShallowCopy",
     ()=>setUseStrictShallowCopy
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // src/utils/env.ts
 var NOTHING = Symbol.for("immer-nothing");
 var DRAFTABLE = Symbol.for("immer-draftable");
@@ -2966,7 +2966,7 @@ var castImmutable = (value)=>value;
 ;
  //# sourceMappingURL=immer.mjs.map
 }),
-"[project]/brainbridge/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -2987,7 +2987,7 @@ __turbopack_context__.s([
     "weakMapMemoize",
     ()=>weakMapMemoize
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // src/devModeChecks/identityFunctionCheck.ts
 var runIdentityFunctionCheck = (resultFunc, inputSelectorsResults, outputSelectorResult)=>{
     if (inputSelectorsResults.length === 1 && inputSelectorsResults[0] === outputSelectorResult) {
@@ -3676,7 +3676,7 @@ var createStructuredSelector = Object.assign((inputSelectorsObject, selectorCrea
 ;
  //# sourceMappingURL=reselect.mjs.map
 }),
-"[project]/brainbridge/node_modules/redux/dist/redux.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/redux/dist/redux.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -3699,7 +3699,7 @@ __turbopack_context__.s([
     "legacy_createStore",
     ()=>legacy_createStore
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // src/utils/formatProdErrorMessage.ts
 function formatProdErrorMessage(code) {
     return `Minified Redux error #${code}; visit https://redux.js.org/Errors?code=${code} for the full message or use the non-minified dev environment for full errors. `;
@@ -4068,7 +4068,7 @@ function isAction(action) {
 ;
  //# sourceMappingURL=redux.mjs.map
 }),
-"[project]/brainbridge/node_modules/redux-thunk/dist/redux-thunk.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/redux-thunk/dist/redux-thunk.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -4091,7 +4091,7 @@ var thunk = createThunkMiddleware();
 var withExtraArgument = createThunkMiddleware;
 ;
 }),
-"[project]/brainbridge/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
 "use strict";
 
 // src/index.ts
@@ -4179,14 +4179,14 @@ __turbopack_context__.s([
     "unwrapResult",
     ()=>unwrapResult
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)");
 // src/index.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)");
 // src/reduxImports.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/redux/dist/redux.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/redux/dist/redux.mjs [app-client] (ecmascript)");
 // src/getDefaultMiddleware.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2d$thunk$2f$dist$2f$redux$2d$thunk$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/redux-thunk/dist/redux-thunk.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2d$thunk$2f$dist$2f$redux$2d$thunk$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/redux-thunk/dist/redux-thunk.mjs [app-client] (ecmascript)");
 ;
 ;
 ;
@@ -4194,10 +4194,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
 ;
 // src/createDraftSafeSelector.ts
 var createDraftSafeSelectorCreator = (...args)=>{
-    const createSelector2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createSelectorCreator"])(...args);
+    const createSelector2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createSelectorCreator"])(...args);
     const createDraftSafeSelector2 = Object.assign((...args2)=>{
         const selector = createSelector2(...args2);
-        const wrappedSelector = (value, ...rest)=>selector((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(value) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["current"])(value) : value, ...rest);
+        const wrappedSelector = (value, ...rest)=>selector((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(value) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["current"])(value) : value, ...rest);
         Object.assign(wrappedSelector, selector);
         return wrappedSelector;
     }, {
@@ -4205,13 +4205,13 @@ var createDraftSafeSelectorCreator = (...args)=>{
     });
     return createDraftSafeSelector2;
 };
-var createDraftSafeSelector = /* @__PURE__ */ createDraftSafeSelectorCreator(__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["weakMapMemoize"]);
+var createDraftSafeSelector = /* @__PURE__ */ createDraftSafeSelectorCreator(__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["weakMapMemoize"]);
 ;
 // src/devtoolsExtension.ts
 var composeWithDevTools = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : function() {
     if (arguments.length === 0) return void 0;
-    if (typeof arguments[0] === "object") return __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"];
-    return __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"].apply(null, arguments);
+    if (typeof arguments[0] === "object") return __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"];
+    return __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"].apply(null, arguments);
 };
 var devToolsEnhancer = typeof window !== "undefined" && window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__ : function() {
     return function(noop3) {
@@ -4249,7 +4249,7 @@ function createAction(type, prepareAction) {
     }
     actionCreator.toString = ()=>`${type}`;
     actionCreator.type = type;
-    actionCreator.match = (action)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action) && action.type === type;
+    actionCreator.match = (action)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action) && action.type === type;
     return actionCreator;
 }
 function isActionCreator(action) {
@@ -4257,7 +4257,7 @@ function isActionCreator(action) {
     hasMatchFunction(action);
 }
 function isFSA(action) {
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action) && Object.keys(action).every(isValidKey);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action) && Object.keys(action).every(isValidKey);
 }
 function isValidKey(key) {
     return [
@@ -4326,7 +4326,7 @@ var Tuple = class _Tuple extends Array {
     }
 };
 function freezeDraftable(val) {
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraftable"])(val) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"])(val, ()=>{}) : val;
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraftable"])(val) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"])(val, ()=>{}) : val;
 }
 function getOrInsertComputed(map, key, compute) {
     if (map.has(key)) return map.get(key);
@@ -4471,7 +4471,7 @@ function createImmutableStateInvariantMiddleware(options = {}) {
 // src/serializableStateInvariantMiddleware.ts
 function isPlain(val) {
     const type = typeof val;
-    return val == null || type === "string" || type === "boolean" || type === "number" || Array.isArray(val) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(val);
+    return val == null || type === "string" || type === "boolean" || type === "number" || Array.isArray(val) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(val);
 }
 function findNonSerializableValue(value, path = "", isSerializable = isPlain, getEntries, ignoredPaths = [], cache) {
     let foundNestedSerializable;
@@ -4534,7 +4534,7 @@ function createSerializableStateInvariantMiddleware(options = {}) {
         ], ignoredPaths = [], warnAfter = 32, ignoreState = false, ignoreActions = false, disableCache = false } = options;
         const cache = !disableCache && WeakSet ? /* @__PURE__ */ new WeakSet() : void 0;
         return (storeAPI)=>(next)=>(action)=>{
-                    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action)) {
+                    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action)) {
                         return next(action);
                     }
                     const result = next(action);
@@ -4574,9 +4574,9 @@ var buildGetDefaultMiddleware = ()=>function getDefaultMiddleware(options) {
         let middlewareArray = new Tuple();
         if (thunk) {
             if (isBoolean(thunk)) {
-                middlewareArray.push(__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2d$thunk$2f$dist$2f$redux$2d$thunk$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["thunk"]);
+                middlewareArray.push(__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2d$thunk$2f$dist$2f$redux$2d$thunk$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["thunk"]);
             } else {
-                middlewareArray.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2d$thunk$2f$dist$2f$redux$2d$thunk$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["withExtraArgument"])(thunk.extraArgument));
+                middlewareArray.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2d$thunk$2f$dist$2f$redux$2d$thunk$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["withExtraArgument"])(thunk.extraArgument));
             }
         }
         if ("TURBOPACK compile-time truthy", 1) {
@@ -4681,8 +4681,8 @@ function configureStore(options) {
     let rootReducer;
     if (typeof reducer === "function") {
         rootReducer = reducer;
-    } else if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(reducer)) {
-        rootReducer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combineReducers"])(reducer);
+    } else if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(reducer)) {
+        rootReducer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combineReducers"])(reducer);
     } else {
         throw new Error(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : "`reducer` is a required argument, and must be a function or an object of functions that can be passed to combineReducers");
     }
@@ -4710,7 +4710,7 @@ function configureStore(options) {
             middlewareReferences.add(middleware2);
         });
     }
-    let finalCompose = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"];
+    let finalCompose = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"];
     if (devTools) {
         finalCompose = composeWithDevTools({
             // Enable capture of stack traces for dispatched Redux actions
@@ -4718,7 +4718,7 @@ function configureStore(options) {
             ...typeof devTools === "object" && devTools
         });
     }
-    const middlewareEnhancer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["applyMiddleware"])(...finalMiddleware);
+    const middlewareEnhancer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["applyMiddleware"])(...finalMiddleware);
     const getDefaultEnhancers = buildGetDefaultEnhancers(middlewareEnhancer);
     if (("TURBOPACK compile-time value", "development") !== "production" && enhancers && typeof enhancers !== "function") {
         throw new Error(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : "`enhancers` field must be a callback");
@@ -4734,7 +4734,7 @@ function configureStore(options) {
         console.error("middlewares were provided, but middleware enhancer was not included in final enhancers - make sure to call `getDefaultEnhancers`");
     }
     const composedEnhancer = finalCompose(...storeEnhancers);
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createStore"])(rootReducer, preloadedState, composedEnhancer);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createStore"])(rootReducer, preloadedState, composedEnhancer);
 }
 // src/mapBuilders.ts
 function executeReducerBuilderCallback(builderCallback) {
@@ -4835,14 +4835,14 @@ function createReducer(initialState, mapOrBuilderCallback) {
         }
         return caseReducers.reduce((previousState, caseReducer)=>{
             if (caseReducer) {
-                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(previousState)) {
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(previousState)) {
                     const draft = previousState;
                     const result = caseReducer(draft, action);
                     if (result === void 0) {
                         return previousState;
                     }
                     return result;
-                } else if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraftable"])(previousState)) {
+                } else if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraftable"])(previousState)) {
                     const result = caseReducer(previousState, action);
                     if (result === void 0) {
                         if (previousState === null) {
@@ -4852,7 +4852,7 @@ function createReducer(initialState, mapOrBuilderCallback) {
                     }
                     return result;
                 } else {
-                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"])(previousState, (draft)=>{
+                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"])(previousState, (draft)=>{
                         return caseReducer(draft, action);
                     });
                 }
@@ -5182,7 +5182,7 @@ function buildCreateSlice({ creators } = {}) {
         if (!name) {
             throw new Error(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : "`name` is a required option for createSlice");
         }
-        if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
+        if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
             if (options.initialState === void 0) {
                 console.error("You must provide an `initialState` value that is not `undefined`. You may have misspelled `initialState`");
             }
@@ -5472,7 +5472,7 @@ function createSelectorsFactory() {
     };
 }
 // src/entities/state_adapter.ts
-var isDraftTyped = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"];
+var isDraftTyped = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"];
 function createSingleArgumentStateOperator(mutator) {
     const operator = createStateOperator((_, state)=>mutator(state));
     return function operation(state) {
@@ -5495,7 +5495,7 @@ function createStateOperator(mutator) {
             runMutator(state);
             return state;
         }
-        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"])(state, runMutator);
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"])(state, runMutator);
     };
 }
 // src/entities/utils.ts
@@ -5513,7 +5513,7 @@ function ensureEntitiesArray(entities) {
     return entities;
 }
 function getCurrent(value) {
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(value) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["current"])(value) : value;
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(value) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["current"])(value) : value;
 }
 function splitAddedUpdatedEntities(newEntities, selectId, state) {
     newEntities = ensureEntitiesArray(newEntities);
@@ -6182,7 +6182,7 @@ var createListenerMiddleware = (middlewareOptions = {})=>{
     };
     const clearListenerMiddleware = createClearListenerMiddleware(listenerMap, executingListeners);
     const middleware = (api)=>(next)=>(action)=>{
-                if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action)) {
+                if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action)) {
                     return next(action);
                 }
                 if (addListener.match(action)) {
@@ -6262,7 +6262,7 @@ var createDynamicMiddleware = ()=>{
     });
     const getFinalMiddleware = (api)=>{
         const appliedMiddleware = Array.from(middlewareMap.values()).map((entry)=>getOrInsertComputed(entry.applied, api, entry.middleware));
-        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"])(...appliedMiddleware);
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["compose"])(...appliedMiddleware);
     };
     const isWithMiddleware = isAllOf(withMiddleware, matchInstance(instanceId));
     const middleware = (api)=>(next)=>(action)=>{
@@ -6322,7 +6322,7 @@ var emptyObject = {};
 var noopReducer = (state = emptyObject)=>state;
 function combineSlices(...slices) {
     const reducerMap = Object.fromEntries(getReducers(slices));
-    const getReducer = ()=>Object.keys(reducerMap).length ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combineReducers"])(reducerMap) : noopReducer;
+    const getReducer = ()=>Object.keys(reducerMap).length ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combineReducers"])(reducerMap) : noopReducer;
     let reducer = getReducer();
     function combinedReducer(state, action) {
         return reducer(state, action);
@@ -6333,7 +6333,7 @@ function combineSlices(...slices) {
         const { reducerPath, reducer: reducerToInject } = slice;
         const currentReducer = reducerMap[reducerPath];
         if (!config.overrideExisting && currentReducer && currentReducer !== reducerToInject) {
-            if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
+            if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
                 console.error(`called \`inject\` to override already-existing reducer ${reducerPath} without specifying \`overrideExisting: true\``);
             }
             return combinedReducer;
@@ -6364,16 +6364,16 @@ function formatProdErrorMessage(code) {
 ;
  //# sourceMappingURL=redux-toolkit.modern.mjs.map
 }),
-"[project]/brainbridge/node_modules/immer/dist/immer.mjs [app-client] (ecmascript) <export produce as createNextState>", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/immer/dist/immer.mjs [app-client] (ecmascript) <export produce as createNextState>", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
     "createNextState",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"]
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produce"]
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)");
 }),
-"[project]/brainbridge/node_modules/@standard-schema/utils/dist/index.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/@standard-schema/utils/dist/index.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -6419,7 +6419,7 @@ var SchemaError = class extends Error {
 };
 ;
 }),
-"[project]/brainbridge/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -6452,16 +6452,16 @@ __turbopack_context__.s([
     "skipToken",
     ()=>skipToken
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // src/query/core/rtkImports.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-client] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/redux/dist/redux.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/immer/dist/immer.mjs [app-client] (ecmascript) <export produce as createNextState>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Verixa/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/redux/dist/redux.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__ = __turbopack_context__.i("[project]/Verixa/node_modules/immer/dist/immer.mjs [app-client] (ecmascript) <export produce as createNextState>");
 // src/query/utils/immerImports.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/immer/dist/immer.mjs [app-client] (ecmascript)");
 // src/query/standardSchema.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$standard$2d$schema$2f$utils$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/@standard-schema/utils/dist/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$standard$2d$schema$2f$utils$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/@standard-schema/utils/dist/index.js [app-client] (ecmascript)");
 // src/query/core/apiState.ts
 var QueryStatus = /* @__PURE__ */ ((QueryStatus7)=>{
     QueryStatus7["uninitialized"] = "uninitialized";
@@ -6485,7 +6485,7 @@ function getRequestStatusFlags(status) {
 }
 ;
 // src/query/utils/copyWithStructuralSharing.ts
-var isPlainObject2 = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"];
+var isPlainObject2 = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"];
 function copyWithStructuralSharing(oldObj, newObj) {
     if (oldObj === newObj || !(isPlainObject2(oldObj) && isPlainObject2(newObj) || Array.isArray(oldObj) && Array.isArray(newObj))) {
         return newObj;
@@ -6586,7 +6586,7 @@ var defaultFetchFn = (...args)=>fetch(...args);
 var defaultValidateStatus = (response)=>response.status >= 200 && response.status <= 299;
 var defaultIsJsonContentType = (headers)=>/*applicat*/ /ion\/(vnd\.api\+)?json/.test(headers.get("content-type") || "");
 function stripUndefined(obj) {
-    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(obj)) {
+    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(obj)) {
         return obj;
     }
     const copy = {
@@ -6597,7 +6597,7 @@ function stripUndefined(obj) {
     }
     return copy;
 }
-var isJsonifiable = (body)=>typeof body === "object" && ((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(body) || Array.isArray(body) || typeof body.toJSON === "function");
+var isJsonifiable = (body)=>typeof body === "object" && ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(body) || Array.isArray(body) || typeof body.toJSON === "function");
 function fetchBaseQuery({ baseUrl, prepareHeaders = (x)=>x, fetchFn = defaultFetchFn, paramsSerializer, isJsonContentType = defaultIsJsonContentType, jsonContentType = "application/json", jsonReplacer, timeout: defaultTimeout, responseHandler: globalResponseHandler, validateStatus: globalValidateStatus, ...baseFetchOptions } = {}) {
     if (typeof fetch === "undefined" && fetchFn === defaultFetchFn) {
         console.warn("Warning: `fetch` is not available. Please supply a custom `fetchFn` property to use `fetchBaseQuery` on SSR environments.");
@@ -6827,10 +6827,10 @@ var OFFLINE = "offline";
 var FOCUS = "focus";
 var FOCUSED = "focused";
 var VISIBILITYCHANGE = "visibilitychange";
-var onFocus = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}${FOCUSED}`);
-var onFocusLost = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}un${FOCUSED}`);
-var onOnline = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}${ONLINE}`);
-var onOffline = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}${OFFLINE}`);
+var onFocus = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}${FOCUSED}`);
+var onFocusLost = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}un${FOCUSED}`);
+var onOnline = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}${ONLINE}`);
+var onOffline = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${INTERNAL_PREFIX}${OFFLINE}`);
 var actions = {
     onFocus,
     onFocusLost,
@@ -7126,7 +7126,7 @@ You must add the middleware for RTK-Query to function correctly!`);
     }
 }
 ;
-var NamedSchemaError = class extends __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$standard$2d$schema$2f$utils$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SchemaError"] {
+var NamedSchemaError = class extends __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$standard$2d$schema$2f$utils$2f$dist$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SchemaError"] {
     constructor(issues, value, schemaName, _bqMeta){
         super(issues);
         this.value = value;
@@ -7149,7 +7149,7 @@ function defaultTransformResponse(baseQueryReturnValue) {
 var addShouldAutoBatch = (arg = {})=>{
     return {
         ...arg,
-        [__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["SHOULD_AUTOBATCH"]]: true
+        [__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["SHOULD_AUTOBATCH"]]: true
     };
 };
 function buildThunks({ reducerPath, baseQuery, context: { endpointDefinitions }, serializeQueryArgs, api, assertTagType, selectors, onSchemaFailure, catchSchemaFailure: globalCatchSchemaFailure, skipSchemaValidation: globalSkipSchemaValidation }) {
@@ -7205,8 +7205,8 @@ function buildThunks({ reducerPath, baseQuery, context: { endpointDefinitions },
             }
             let newValue;
             if ("data" in currentState) {
-                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraftable"])(currentState.data)) {
-                    const [value, patches, inversePatches] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produceWithPatches"])(currentState.data, updateRecipe);
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraftable"])(currentState.data)) {
+                    const [value, patches, inversePatches] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produceWithPatches"])(currentState.data, updateRecipe);
                     ret.patches.push(...patches);
                     ret.inversePatches.push(...inversePatches);
                     newValue = value;
@@ -7296,7 +7296,7 @@ function buildThunks({ reducerPath, baseQuery, context: { endpointDefinitions },
                 } else {
                     result = await endpointDefinition.queryFn(finalQueryArg, baseQueryApi, extraOptions, (arg2)=>baseQuery(arg2, baseQueryApi, extraOptions));
                 }
-                if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
+                if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
                     const what = endpointDefinition.query ? "`baseQuery`" : "`queryFn`";
                     let err;
                     if (!result) {
@@ -7427,7 +7427,7 @@ function buildThunks({ reducerPath, baseQuery, context: { endpointDefinitions },
             } catch (e) {
                 caughtError = e;
             }
-            if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") !== "production") {
+            if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") !== "production") {
                 console.error(`An unhandled error occurred processing a request for the endpoint "${arg.endpointName}".
 In the case of an unhandled error, no tags will be "provided" or "invalidated".`, caughtError);
             } else {
@@ -7447,7 +7447,7 @@ In the case of an unhandled error, no tags will be "provided" or "invalidated".`
         return false;
     }
     const createQueryThunk = ()=>{
-        const generatedQueryThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])(`${reducerPath}/executeQuery`, executeEndpoint, {
+        const generatedQueryThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])(`${reducerPath}/executeQuery`, executeEndpoint, {
             getPendingMeta ({ arg }) {
                 const endpointDefinition = endpointDefinitions[arg.endpointName];
                 return addShouldAutoBatch({
@@ -7493,7 +7493,7 @@ In the case of an unhandled error, no tags will be "provided" or "invalidated".`
     };
     const queryThunk = createQueryThunk();
     const infiniteQueryThunk = createQueryThunk();
-    const mutationThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])(`${reducerPath}/executeMutation`, executeEndpoint, {
+    const mutationThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])(`${reducerPath}/executeMutation`, executeEndpoint, {
         getPendingMeta () {
             return addShouldAutoBatch({
                 startedTimeStamp: Date.now()
@@ -7534,9 +7534,9 @@ In the case of an unhandled error, no tags will be "provided" or "invalidated".`
     }
     function buildMatchThunkActions(thunk, endpointName) {
         return {
-            matchPending: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAllOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isPending"])(thunk), matchesEndpoint(endpointName)),
-            matchFulfilled: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAllOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(thunk), matchesEndpoint(endpointName)),
-            matchRejected: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAllOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejected"])(thunk), matchesEndpoint(endpointName))
+            matchPending: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAllOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isPending"])(thunk), matchesEndpoint(endpointName)),
+            matchFulfilled: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAllOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(thunk), matchesEndpoint(endpointName)),
+            matchRejected: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAllOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejected"])(thunk), matchesEndpoint(endpointName))
         };
     }
     return {
@@ -7558,11 +7558,11 @@ function getPreviousPageParam(options, { pages, pageParams }, queryArg) {
     return options.getPreviousPageParam?.(pages[0], pages, pageParams[0], pageParams, queryArg);
 }
 function calculateProvidedByThunk(action, type, endpointDefinitions, assertTagType) {
-    return calculateProvidedBy(endpointDefinitions[action.meta.arg.endpointName][type], (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(action) ? action.payload : void 0, (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejectedWithValue"])(action) ? action.payload : void 0, action.meta.arg.originalArgs, "baseQueryMeta" in action.meta ? action.meta.baseQueryMeta : void 0, assertTagType);
+    return calculateProvidedBy(endpointDefinitions[action.meta.arg.endpointName][type], (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(action) ? action.payload : void 0, (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejectedWithValue"])(action) ? action.payload : void 0, action.meta.arg.originalArgs, "baseQueryMeta" in action.meta ? action.meta.baseQueryMeta : void 0, assertTagType);
 }
 // src/query/utils/getCurrent.ts
 function getCurrent(value) {
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(value) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["current"])(value) : value;
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(value) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["current"])(value) : value;
 }
 // src/query/core/buildSlice.ts
 function updateQuerySubstateIfExists(state, queryCacheKey, update) {
@@ -7582,7 +7582,7 @@ function updateMutationSubstateIfExists(state, id, update) {
 }
 var initialState = {};
 function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs, context: { endpointDefinitions: definitions, apiUid, extractRehydrationInfo, hasRehydrationInfo }, assertTagType, config }) {
-    const resetApiState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${reducerPath}/resetApiState`);
+    const resetApiState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${reducerPath}/resetApiState`);
     function writePendingCacheEntry(draft, arg, upserting, meta) {
         draft[arg.queryCacheKey] ??= {
             status: STATUS_UNINITIALIZED,
@@ -7612,7 +7612,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
             if (merge) {
                 if (substate.data !== void 0) {
                     const { fulfilledTimeStamp, arg, baseQueryMeta, requestId } = meta;
-                    let newData = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__["createNextState"])(substate.data, (draftSubstateData)=>{
+                    let newData = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__["createNextState"])(substate.data, (draftSubstateData)=>{
                         return merge(draftSubstateData, payload, {
                             arg: arg.originalArgs,
                             baseQueryMeta,
@@ -7625,13 +7625,13 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
                     substate.data = payload;
                 }
             } else {
-                substate.data = definitions[meta.arg.endpointName].structuralSharing ?? true ? copyWithStructuralSharing((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(substate.data) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["original"])(substate.data) : substate.data, payload) : payload;
+                substate.data = definitions[meta.arg.endpointName].structuralSharing ?? true ? copyWithStructuralSharing((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isDraft"])(substate.data) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["original"])(substate.data) : substate.data, payload) : payload;
             }
             delete substate.error;
             substate.fulfilledTimeStamp = meta.fulfilledTimeStamp;
         });
     }
-    const querySlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
+    const querySlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
         name: `${reducerPath}/queries`,
         initialState,
         reducers: {
@@ -7639,7 +7639,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
                 reducer (draft, { payload: { queryCacheKey } }) {
                     delete draft[queryCacheKey];
                 },
-                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
+                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
             },
             cacheEntriesUpserted: {
                 reducer (draft, action) {
@@ -7681,8 +7681,8 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
                     const result = {
                         payload: queryDescriptions,
                         meta: {
-                            [__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["SHOULD_AUTOBATCH"]]: true,
-                            requestId: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["nanoid"])(),
+                            [__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["SHOULD_AUTOBATCH"]]: true,
+                            requestId: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["nanoid"])(),
                             timestamp: Date.now()
                         }
                     };
@@ -7692,10 +7692,10 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
             queryResultPatched: {
                 reducer (draft, { payload: { queryCacheKey, patches } }) {
                     updateQuerySubstateIfExists(draft, queryCacheKey, (substate)=>{
-                        substate.data = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["applyPatches"])(substate.data, patches.concat());
+                        substate.data = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["applyPatches"])(substate.data, patches.concat());
                     });
                 },
-                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
+                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
             }
         },
         extraReducers (builder) {
@@ -7724,7 +7724,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
             });
         }
     });
-    const mutationSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
+    const mutationSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
         name: `${reducerPath}/mutations`,
         initialState,
         reducers: {
@@ -7735,7 +7735,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
                         delete draft[cacheKey];
                     }
                 },
-                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
+                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
             }
         },
         extraReducers (builder) {
@@ -7778,7 +7778,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
         tags: {},
         keys: {}
     };
-    const invalidationSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
+    const invalidationSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
         name: `${reducerPath}/invalidation`,
         initialState: initialInvalidationState,
         reducers: {
@@ -7796,7 +7796,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
                         draft.keys[queryCacheKey] = providedTags;
                     }
                 },
-                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
+                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
             }
         },
         extraReducers (builder) {
@@ -7816,7 +7816,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
                         }
                     }
                 }
-            }).addMatcher((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk), (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejectedWithValue"])(queryThunk)), (draft, action)=>{
+            }).addMatcher((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk), (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejectedWithValue"])(queryThunk)), (draft, action)=>{
                 writeProvidedTagsForQueries(draft, [
                     action
                 ]);
@@ -7859,7 +7859,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
         });
         invalidationSlice.caseReducers.updateProvidedBy(draft, invalidationSlice.actions.updateProvidedBy(providedByEntries));
     }
-    const subscriptionSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
+    const subscriptionSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
         name: `${reducerPath}/subscriptions`,
         initialState,
         reducers: {
@@ -7868,19 +7868,19 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
             internal_getRTKQSubscriptions () {}
         }
     });
-    const internalSubscriptionsSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
+    const internalSubscriptionsSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
         name: `${reducerPath}/internalSubscriptions`,
         initialState,
         reducers: {
             subscriptionsUpdated: {
                 reducer (state, action) {
-                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["applyPatches"])(state, action.payload);
+                    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["applyPatches"])(state, action.payload);
                 },
-                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
+                prepare: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["prepareAutoBatched"])()
             }
         }
     });
-    const configSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
+    const configSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
         name: `${reducerPath}/config`,
         initialState: {
             online: isOnline(),
@@ -7907,7 +7907,7 @@ function buildSlice({ reducerPath, queryThunk, mutationThunk, serializeQueryArgs
                 }));
         }
     });
-    const combinedReducer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combineReducers"])({
+    const combinedReducer = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["combineReducers"])({
         queries: querySlice.reducer,
         mutations: mutationSlice.reducer,
         provided: invalidationSlice.reducer,
@@ -7934,8 +7934,8 @@ var skipToken = /* @__PURE__ */ Symbol.for("RTKQ/skipToken");
 var initialSubState = {
     status: STATUS_UNINITIALIZED
 };
-var defaultQuerySubState = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__["createNextState"])(initialSubState, ()=>{});
-var defaultMutationSubState = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__["createNextState"])(initialSubState, ()=>{});
+var defaultQuerySubState = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__["createNextState"])(initialSubState, ()=>{});
+var defaultMutationSubState = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__produce__as__createNextState$3e$__["createNextState"])(initialSubState, ()=>{});
 function buildSelectors({ serializeQueryArgs, reducerPath, createSelector: createSelector2 }) {
     const selectSkippedQuery = (state)=>defaultQuerySubState;
     const selectSkippedMutation = (state)=>defaultMutationSubState;
@@ -8084,13 +8084,13 @@ var defaultSerializeQueryArgs = ({ endpointName, queryArgs })=>{
             value = typeof value === "bigint" ? {
                 $bigint: value.toString()
             } : value;
-            value = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(value) ? Object.keys(value).sort().reduce((acc, key2)=>{
+            value = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(value) ? Object.keys(value).sort().reduce((acc, key2)=>{
                 acc[key2] = value[key2];
                 return acc;
             }, {}) : value;
             return value;
         });
-        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(queryArgs)) {
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isPlainObject"])(queryArgs)) {
             cache?.set(queryArgs, stringified);
         }
         serialized = stringified;
@@ -8100,7 +8100,7 @@ var defaultSerializeQueryArgs = ({ endpointName, queryArgs })=>{
 ;
 function buildCreateApi(...modules) {
     return function baseCreateApi(options) {
-        const extractRehydrationInfo = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["weakMapMemoize"])((action)=>options.extractRehydrationInfo?.(action, {
+        const extractRehydrationInfo = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["weakMapMemoize"])((action)=>options.extractRehydrationInfo?.(action, {
                 reducerPath: options.reducerPath ?? "api"
             }));
         const optionsWithDefaults = {
@@ -8141,9 +8141,9 @@ function buildCreateApi(...modules) {
             batch (fn) {
                 fn();
             },
-            apiUid: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["nanoid"])(),
+            apiUid: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["nanoid"])(),
             extractRehydrationInfo,
-            hasRehydrationInfo: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["weakMapMemoize"])((action)=>extractRehydrationInfo(action) != null)
+            hasRehydrationInfo: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["weakMapMemoize"])((action)=>extractRehydrationInfo(action) != null)
         };
         const api = {
             injectEndpoints,
@@ -8188,12 +8188,12 @@ function buildCreateApi(...modules) {
                 if (inject.overrideExisting !== true && endpointName in context.endpointDefinitions) {
                     if (inject.overrideExisting === "throw") {
                         throw new Error(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : `called \`injectEndpoints\` to override already-existing endpointName ${endpointName} without specifying \`overrideExisting: true\``);
-                    } else if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
+                    } else if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
                         console.error(`called \`injectEndpoints\` to override already-existing endpointName ${endpointName} without specifying \`overrideExisting: true\``);
                     }
                     continue;
                 }
-                if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
+                if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
                     if (isInfiniteQueryDefinition(definition)) {
                         const { infiniteQueryOptions } = definition;
                         const { maxPages, getPreviousPageParam: getPreviousPageParam2 } = infiniteQueryOptions;
@@ -8327,7 +8327,7 @@ var buildBatchedActionsHandler = ({ api, queryThunk, internalState, mwApi })=>{
             if (!updateSyncTimer) {
                 updateSyncTimer = setTimeout(()=>{
                     const newSubscriptions = serializeSubscriptions(internalState.currentSubscriptions);
-                    const [, patches] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produceWithPatches"])(previousSubscriptions, ()=>newSubscriptions);
+                    const [, patches] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["produceWithPatches"])(previousSubscriptions, ()=>newSubscriptions);
                     mwApi2.next(api.internalActions.subscriptionsUpdated(patches));
                     previousSubscriptions = newSubscriptions;
                     updateSyncTimer = null;
@@ -8347,7 +8347,7 @@ var buildBatchedActionsHandler = ({ api, queryThunk, internalState, mwApi })=>{
 var THIRTY_TWO_BIT_MAX_TIMER_SECONDS = 2147483647 / 1e3 - 1;
 var buildCacheCollectionHandler = ({ reducerPath, api, queryThunk, context, internalState, selectors: { selectQueryEntry, selectConfig }, getRunningQueryThunk, mwApi })=>{
     const { removeQueryResult, unsubscribeQueryResult, cacheEntriesUpserted } = api.internalActions;
-    const canTriggerUnsubscribe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])(unsubscribeQueryResult.match, queryThunk.fulfilled, queryThunk.rejected, cacheEntriesUpserted.match);
+    const canTriggerUnsubscribe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])(unsubscribeQueryResult.match, queryThunk.fulfilled, queryThunk.rejected, cacheEntriesUpserted.match);
     function anySubscriptionsRemainingForKey(queryCacheKey) {
         const subscriptions = internalState.currentSubscriptions.get(queryCacheKey);
         if (!subscriptions) {
@@ -8431,9 +8431,9 @@ var buildCacheCollectionHandler = ({ reducerPath, api, queryThunk, context, inte
 // src/query/core/buildMiddleware/cacheLifecycle.ts
 var neverResolvedError = new Error("Promise never resolved before cacheEntryRemoved.");
 var buildCacheLifecycleHandler = ({ api, reducerPath, context, queryThunk, mutationThunk, internalState, selectors: { selectQueryEntry, selectApiState } })=>{
-    const isQueryThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAsyncThunkAction"])(queryThunk);
-    const isMutationThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAsyncThunkAction"])(mutationThunk);
-    const isFulfilledThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk, mutationThunk);
+    const isQueryThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAsyncThunkAction"])(queryThunk);
+    const isMutationThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAsyncThunkAction"])(mutationThunk);
+    const isFulfilledThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk, mutationThunk);
     const lifecycleMap = {};
     const { removeQueryResult, removeMutationResult, cacheEntriesUpserted } = api.internalActions;
     function resolveLifecycleEntry(cacheKey, data, meta) {
@@ -8548,7 +8548,7 @@ var buildDevCheckHandler = ({ api, context: { apiUid }, reducerPath })=>{
         if (api.util.resetApiState.match(action)) {
             mwApi.dispatch(api.internalActions.middlewareRegistered(apiUid));
         }
-        if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
+        if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
             if (api.internalActions.middlewareRegistered.match(action) && action.payload === apiUid && mwApi.getState()[reducerPath]?.config?.middlewareRegistered === "conflict") {
                 console.warn(`There is a mismatch between slice and middleware for the reducerPath "${reducerPath}".
 You can only have one api per reducer path, this will lead to crashes in various situations!${reducerPath === "api" ? `
@@ -8560,8 +8560,8 @@ If you have multiple apis, you *have* to specify the reducerPath option when usi
 // src/query/core/buildMiddleware/invalidationByTags.ts
 var buildInvalidationByTagsHandler = ({ reducerPath, context, context: { endpointDefinitions }, mutationThunk, queryThunk, api, assertTagType, refetchQuery, internalState })=>{
     const { removeQueryResult } = api.internalActions;
-    const isThunkActionWithTags = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(mutationThunk), (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejectedWithValue"])(mutationThunk));
-    const isQueryEnd = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk, mutationThunk), (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejected"])(queryThunk, mutationThunk));
+    const isThunkActionWithTags = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(mutationThunk), (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejectedWithValue"])(mutationThunk));
+    const isQueryEnd = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isAnyOf"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk, mutationThunk), (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejected"])(queryThunk, mutationThunk));
     let pendingTagInvalidations = [];
     let pendingRequestCount = 0;
     const handler = (action, mwApi)=>{
@@ -8728,9 +8728,9 @@ var buildPollingHandler = ({ reducerPath, queryThunk, api, refetchQuery, interna
 };
 // src/query/core/buildMiddleware/queryLifecycle.ts
 var buildQueryLifecycleHandler = ({ api, context, queryThunk, mutationThunk })=>{
-    const isPendingThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isPending"])(queryThunk, mutationThunk);
-    const isRejectedThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejected"])(queryThunk, mutationThunk);
-    const isFullfilledThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk, mutationThunk);
+    const isPendingThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isPending"])(queryThunk, mutationThunk);
+    const isRejectedThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isRejected"])(queryThunk, mutationThunk);
+    const isFullfilledThunk = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["isFulfilled"])(queryThunk, mutationThunk);
     const lifecycleMap = {};
     const handler = (action, mwApi)=>{
         if (isPendingThunk(action)) {
@@ -8819,7 +8819,7 @@ function buildMiddleware(input) {
     const { reducerPath, queryThunk, api, context, getInternalState } = input;
     const { apiUid } = context;
     const actions2 = {
-        invalidateTags: (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${reducerPath}/invalidateTags`)
+        invalidateTags: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAction"])(`${reducerPath}/invalidateTags`)
     };
     const isThisApiSliceAction = (action)=>action.type.startsWith(`${reducerPath}/`);
     const handlerBuilders = [
@@ -8845,7 +8845,7 @@ function buildMiddleware(input) {
         const windowEventsHandler = buildWindowEventHandler(builderArgs);
         return (next)=>{
             return (action)=>{
-                if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action)) {
+                if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$redux$2f$dist$2f$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isAction"])(action)) {
                     return next(action);
                 }
                 if (!initialized2) {
@@ -8891,13 +8891,13 @@ function buildMiddleware(input) {
 }
 // src/query/core/module.ts
 var coreModuleName = /* @__PURE__ */ Symbol();
-var coreModule = ({ createSelector: createSelector2 = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createSelector"] } = {})=>({
+var coreModule = ({ createSelector: createSelector2 = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createSelector"] } = {})=>({
         name: coreModuleName,
         init (api, { baseQuery, tagTypes, reducerPath, serializeQueryArgs, keepUnusedDataFor, refetchOnMountOrArgChange, refetchOnFocus, refetchOnReconnect, invalidationBehavior, onSchemaFailure, catchSchemaFailure, skipSchemaValidation }, context) {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["enablePatches"])();
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$immer$2f$dist$2f$immer$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["enablePatches"])();
             assertCast(serializeQueryArgs);
             const assertTagType = (tag)=>{
-                if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
+                if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && ("TURBOPACK compile-time value", "development") === "development") {
                     if (!tagTypes.includes(tag.type)) {
                         console.error(`Tag type '${tag.type}' was used, but not specified in \`tagTypes\`!`);
                     }
@@ -9040,7 +9040,7 @@ var createApi = /* @__PURE__ */ buildCreateApi(coreModule());
 ;
  //# sourceMappingURL=rtk-query.modern.mjs.map
 }),
-"[project]/brainbridge/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/@reduxjs/toolkit/dist/query/react/rtk-query-react.modern.mjs [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -9055,15 +9055,15 @@ __turbopack_context__.s([
     "reactHooksModuleName",
     ()=>reactHooksModuleName
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // src/query/react/rtkqImports.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/@reduxjs/toolkit/dist/query/rtk-query.modern.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/reselect/dist/reselect.mjs [app-client] (ecmascript)");
 // src/query/react/reactImports.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 // src/query/react/ApiProvider.tsx
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Verixa/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-client] (ecmascript) <locals>");
 ;
 ;
 ;
@@ -9104,13 +9104,13 @@ function safeAssign(target, ...args) {
 var UNINITIALIZED_VALUE = Symbol();
 // src/query/react/useSerializedStableValue.ts
 function useStableQueryArgs(queryArgs) {
-    const cache = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(queryArgs);
-    const copy = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
-        "useStableQueryArgs.useMemo[copy]": ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copyWithStructuralSharing"])(cache.current, queryArgs)
+    const cache = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(queryArgs);
+    const copy = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "useStableQueryArgs.useMemo[copy]": ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["copyWithStructuralSharing"])(cache.current, queryArgs)
     }["useStableQueryArgs.useMemo[copy]"], [
         queryArgs
     ]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useStableQueryArgs.useEffect": ()=>{
             if (cache.current !== copy) {
                 cache.current = copy;
@@ -9123,24 +9123,24 @@ function useStableQueryArgs(queryArgs) {
 }
 // src/query/react/useShallowStableValue.ts
 function useShallowStableValue(value) {
-    const cache = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(value);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+    const cache = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(value);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useShallowStableValue.useEffect": ()=>{
-            if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"])(cache.current, value)) {
+            if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"])(cache.current, value)) {
                 cache.current = value;
             }
         }
     }["useShallowStableValue.useEffect"], [
         value
     ]);
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"])(cache.current, value) ? cache.current : value;
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"])(cache.current, value) ? cache.current : value;
 }
 // src/query/react/buildHooks.ts
 var canUseDOM = ()=>!!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
 var isDOM = /* @__PURE__ */ canUseDOM();
 var isRunningInReactNative = ()=>typeof navigator !== "undefined" && navigator.product === "ReactNative";
 var isReactNative = /* @__PURE__ */ isRunningInReactNative();
-var getUseIsomorphicLayoutEffect = ()=>isDOM || isReactNative ? __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLayoutEffect"] : __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"];
+var getUseIsomorphicLayoutEffect = ()=>isDOM || isReactNative ? __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLayoutEffect"] : __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"];
 var useIsomorphicLayoutEffect = /* @__PURE__ */ getUseIsomorphicLayoutEffect();
 var noPendingQueryStateSelector = (selected)=>{
     if (selected.isUninitialized) {
@@ -9151,7 +9151,7 @@ var noPendingQueryStateSelector = (selected)=>{
             isLoading: selected.data !== void 0 ? false : true,
             // This is the one place where we still have to use `QueryStatus` as an enum,
             // since it's the only reference in the React package and not in the core.
-            status: __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["QueryStatus"].pending
+            status: __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["QueryStatus"].pending
         };
     }
     return selected;
@@ -9172,7 +9172,7 @@ var COMMON_HOOK_DEBUG_FIELDS = [
     "error"
 ];
 function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSelector, useStore }, unstable__sideEffectsInRender, createSelector }, serializeQueryArgs, context }) {
-    const usePossiblyImmediateEffect = unstable__sideEffectsInRender ? (cb)=>cb() : __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"];
+    const usePossiblyImmediateEffect = unstable__sideEffectsInRender ? (cb)=>cb() : __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"];
     const unsubscribePromiseRef = (ref)=>ref.current?.unsubscribe?.();
     const endpointDefinitions = context.endpointDefinitions;
     return {
@@ -9187,7 +9187,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
         if (lastResult?.endpointName && currentState.isUninitialized) {
             const { endpointName } = lastResult;
             const endpointDefinition = endpointDefinitions[endpointName];
-            if (queryArgs !== __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] && serializeQueryArgs({
+            if (queryArgs !== __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] && serializeQueryArgs({
                 queryArgs: lastResult.originalArgs,
                 endpointDefinition,
                 endpointName
@@ -9216,7 +9216,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
         if (lastResult?.endpointName && currentState.isUninitialized) {
             const { endpointName } = lastResult;
             const endpointDefinition = endpointDefinitions[endpointName];
-            if (queryArgs !== __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] && serializeQueryArgs({
+            if (queryArgs !== __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] && serializeQueryArgs({
                 queryArgs: lastResult.originalArgs,
                 endpointDefinition,
                 endpointName
@@ -9244,7 +9244,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
     function usePrefetch(endpointName, defaultOptions) {
         const dispatch = useDispatch();
         const stableDefaultOptions = useShallowStableValue(defaultOptions);
-        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
             "buildHooks.usePrefetch.useCallback": (arg, options)=>dispatch(api.util.prefetch(endpointName, arg, {
                     ...stableDefaultOptions,
                     ...options
@@ -9258,7 +9258,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
     function useQuerySubscriptionCommonImpl(endpointName, arg, { refetchOnReconnect, refetchOnFocus, refetchOnMountOrArgChange, skip = false, pollingInterval = 0, skipPollingIfUnfocused = false, ...rest } = {}) {
         const { initiate } = api.endpoints[endpointName];
         const dispatch = useDispatch();
-        const subscriptionSelectorsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
+        const subscriptionSelectorsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
         if (!subscriptionSelectorsRef.current) {
             const returnedValue = dispatch(api.internalActions.internal_getRTKQSubscriptions());
             if ("TURBOPACK compile-time truthy", 1) {
@@ -9269,7 +9269,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             }
             subscriptionSelectorsRef.current = returnedValue;
         }
-        const stableArg = useStableQueryArgs(skip ? __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] : arg);
+        const stableArg = useStableQueryArgs(skip ? __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] : arg);
         const stableSubscriptionOptions = useShallowStableValue({
             refetchOnReconnect,
             refetchOnFocus,
@@ -9280,7 +9280,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
         const stableInitialPageParam = useShallowStableValue(initialPageParam);
         const refetchCachedPages = rest.refetchCachedPages;
         const stableRefetchCachedPages = useShallowStableValue(refetchCachedPages);
-        const promiseRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
+        const promiseRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
         let { queryCacheKey, requestId } = promiseRef.current || {};
         let currentRenderHasSubscription = false;
         if (queryCacheKey && requestId) {
@@ -9301,7 +9301,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 const lastPromise = promiseRef.current;
                 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
                 ;
-                if (stableArg === __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"]) {
+                if (stableArg === __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"]) {
                     lastPromise?.unsubscribe();
                     promiseRef.current = void 0;
                     return;
@@ -9343,9 +9343,9 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
     function buildUseQueryState(endpointName, preSelector) {
         const useQueryState = (arg, { skip = false, selectFromResult } = {})=>{
             const { select } = api.endpoints[endpointName];
-            const stableArg = useStableQueryArgs(skip ? __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] : arg);
-            const lastValue = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
-            const selectDefaultResult = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            const stableArg = useStableQueryArgs(skip ? __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] : arg);
+            const lastValue = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
+            const selectDefaultResult = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildUseQueryState.useQueryState.useMemo[selectDefaultResult]": ()=>// Normally ts-ignores are bad and should be avoided, but we're
                     // already casting this selector to be `Selector<any>` anyway,
                     // so the inconsistencies don't matter here
@@ -9361,14 +9361,14 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                         }["buildHooks.buildUseQueryState.useQueryState.useMemo[selectDefaultResult]"]
                     ], preSelector, {
                         memoizeOptions: {
-                            resultEqualityCheck: __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"]
+                            resultEqualityCheck: __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"]
                         }
                     })
             }["buildHooks.buildUseQueryState.useQueryState.useMemo[selectDefaultResult]"], [
                 select,
                 stableArg
             ]);
-            const querySelector = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            const querySelector = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildUseQueryState.useQueryState.useMemo[querySelector]": ()=>selectFromResult ? createSelector([
                         selectDefaultResult
                     ], selectFromResult, {
@@ -9382,7 +9382,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             ]);
             const currentState = useSelector({
                 "buildHooks.buildUseQueryState.useQueryState.useSelector[currentState]": (state)=>querySelector(state, lastValue.current)
-            }["buildHooks.buildUseQueryState.useQueryState.useSelector[currentState]"], __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"]);
+            }["buildHooks.buildUseQueryState.useQueryState.useSelector[currentState]"], __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"]);
             const store = useStore();
             const newLastValue = selectDefaultResult(store.getState(), lastValue.current);
             useIsomorphicLayoutEffect({
@@ -9397,7 +9397,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
         return useQueryState;
     }
     function usePromiseRefUnsubscribeOnUnmount(promiseRef) {
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
             "buildHooks.usePromiseRefUnsubscribeOnUnmount.useEffect": ()=>{
                 return ({
                     "buildHooks.usePromiseRefUnsubscribeOnUnmount.useEffect": ()=>{
@@ -9418,7 +9418,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
         const useQuerySubscription = (arg, options = {})=>{
             const [promiseRef] = useQuerySubscriptionCommonImpl(endpointName, arg, options);
             usePromiseRefUnsubscribeOnUnmount(promiseRef);
-            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildQueryHooks.useQuerySubscription.useMemo": ()=>({
                         /**
          * A method to manually refetch data for the query
@@ -9433,8 +9433,8 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
         const useLazyQuerySubscription = ({ refetchOnReconnect, refetchOnFocus, pollingInterval = 0, skipPollingIfUnfocused = false } = {})=>{
             const { initiate } = api.endpoints[endpointName];
             const dispatch = useDispatch();
-            const [arg, setArg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(UNINITIALIZED_VALUE);
-            const promiseRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
+            const [arg, setArg] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(UNINITIALIZED_VALUE);
+            const promiseRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(void 0);
             const stableSubscriptionOptions = useShallowStableValue({
                 refetchOnReconnect,
                 refetchOnFocus,
@@ -9451,7 +9451,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             }["buildHooks.buildQueryHooks.useLazyQuerySubscription.usePossiblyImmediateEffect"], [
                 stableSubscriptionOptions
             ]);
-            const subscriptionOptionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(stableSubscriptionOptions);
+            const subscriptionOptionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(stableSubscriptionOptions);
             usePossiblyImmediateEffect({
                 "buildHooks.buildQueryHooks.useLazyQuerySubscription.usePossiblyImmediateEffect": ()=>{
                     subscriptionOptionsRef.current = stableSubscriptionOptions;
@@ -9459,7 +9459,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             }["buildHooks.buildQueryHooks.useLazyQuerySubscription.usePossiblyImmediateEffect"], [
                 stableSubscriptionOptions
             ]);
-            const trigger = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+            const trigger = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
                 "buildHooks.buildQueryHooks.useLazyQuerySubscription.useCallback[trigger]": function(arg2, preferCacheValue = false) {
                     let promise;
                     batch({
@@ -9478,7 +9478,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 dispatch,
                 initiate
             ]);
-            const reset = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+            const reset = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
                 "buildHooks.buildQueryHooks.useLazyQuerySubscription.useCallback[reset]": ()=>{
                     if (promiseRef.current?.queryCacheKey) {
                         dispatch(api.internalActions.removeQueryResult({
@@ -9489,7 +9489,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             }["buildHooks.buildQueryHooks.useLazyQuerySubscription.useCallback[reset]"], [
                 dispatch
             ]);
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
                 "buildHooks.buildQueryHooks.useLazyQuerySubscription.useEffect": ()=>{
                     return ({
                         "buildHooks.buildQueryHooks.useLazyQuerySubscription.useEffect": ()=>{
@@ -9498,7 +9498,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                     })["buildHooks.buildQueryHooks.useLazyQuerySubscription.useEffect"];
                 }
             }["buildHooks.buildQueryHooks.useLazyQuerySubscription.useEffect"], []);
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
                 "buildHooks.buildQueryHooks.useLazyQuerySubscription.useEffect": ()=>{
                     if (arg !== UNINITIALIZED_VALUE && !promiseRef.current) {
                         trigger(arg, true);
@@ -9508,7 +9508,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 arg,
                 trigger
             ]);
-            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildQueryHooks.useLazyQuerySubscription.useMemo": ()=>[
                         trigger,
                         arg,
@@ -9533,14 +9533,14 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                     ...options,
                     skip: arg === UNINITIALIZED_VALUE
                 });
-                const info = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+                const info = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                     "buildHooks.buildQueryHooks.useMemo[info]": ()=>({
                             lastArg: arg
                         })
                 }["buildHooks.buildQueryHooks.useMemo[info]"], [
                     arg
                 ]);
-                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                     "buildHooks.buildQueryHooks.useMemo": ()=>[
                             trigger,
                             {
@@ -9559,12 +9559,12 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             useQuery (arg, options) {
                 const querySubscriptionResults = useQuerySubscription(arg, options);
                 const queryStateResults = useQueryState(arg, {
-                    selectFromResult: arg === __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] || options?.skip ? void 0 : noPendingQueryStateSelector,
+                    selectFromResult: arg === __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] || options?.skip ? void 0 : noPendingQueryStateSelector,
                     ...options
                 });
                 const debugValue = pick(queryStateResults, ...COMMON_HOOK_DEBUG_FIELDS);
-                (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(debugValue);
-                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(debugValue);
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                     "buildHooks.buildQueryHooks.useMemo": ()=>({
                             ...queryStateResults,
                             ...querySubscriptionResults
@@ -9579,7 +9579,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
     function buildInfiniteQueryHooks(endpointName) {
         const useInfiniteQuerySubscription = (arg, options = {})=>{
             const [promiseRef, dispatch, initiate, stableSubscriptionOptions] = useQuerySubscriptionCommonImpl(endpointName, arg, options);
-            const subscriptionOptionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(stableSubscriptionOptions);
+            const subscriptionOptionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(stableSubscriptionOptions);
             usePossiblyImmediateEffect({
                 "buildHooks.buildInfiniteQueryHooks.useInfiniteQuerySubscription.usePossiblyImmediateEffect": ()=>{
                     subscriptionOptionsRef.current = stableSubscriptionOptions;
@@ -9589,7 +9589,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             ]);
             const hookRefetchCachedPages = options.refetchCachedPages;
             const stableHookRefetchCachedPages = useShallowStableValue(hookRefetchCachedPages);
-            const trigger = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+            const trigger = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
                 "buildHooks.buildInfiniteQueryHooks.useInfiniteQuerySubscription.useCallback[trigger]": function(arg2, direction) {
                     let promise;
                     batch({
@@ -9609,8 +9609,8 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 initiate
             ]);
             usePromiseRefUnsubscribeOnUnmount(promiseRef);
-            const stableArg = useStableQueryArgs(options.skip ? __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] : arg);
-            const refetch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+            const stableArg = useStableQueryArgs(options.skip ? __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] : arg);
+            const refetch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
                 "buildHooks.buildInfiniteQueryHooks.useInfiniteQuerySubscription.useCallback[refetch]": (options2)=>{
                     if (!promiseRef.current) throw new Error(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : "Cannot refetch a query that has not been started yet.");
                     const mergedOptions = {
@@ -9622,7 +9622,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 promiseRef,
                 stableHookRefetchCachedPages
             ]);
-            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildInfiniteQueryHooks.useInfiniteQuerySubscription.useMemo": ()=>{
                     const fetchNextPage = {
                         "buildHooks.buildInfiniteQueryHooks.useInfiniteQuerySubscription.useMemo.fetchNextPage": ()=>{
@@ -9656,12 +9656,12 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             useInfiniteQuery (arg, options) {
                 const { refetch, fetchNextPage, fetchPreviousPage } = useInfiniteQuerySubscription(arg, options);
                 const queryStateResults = useInfiniteQueryState(arg, {
-                    selectFromResult: arg === __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] || options?.skip ? void 0 : noPendingQueryStateSelector,
+                    selectFromResult: arg === __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["skipToken"] || options?.skip ? void 0 : noPendingQueryStateSelector,
                     ...options
                 });
                 const debugValue = pick(queryStateResults, ...COMMON_HOOK_DEBUG_FIELDS, "hasNextPage", "hasPreviousPage");
-                (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(debugValue);
-                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(debugValue);
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                     "buildHooks.buildInfiniteQueryHooks.useMemo": ()=>({
                             ...queryStateResults,
                             fetchNextPage,
@@ -9681,8 +9681,8 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
         return ({ selectFromResult, fixedCacheKey } = {})=>{
             const { select, initiate } = api.endpoints[name];
             const dispatch = useDispatch();
-            const [promise, setPromise] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])();
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+            const [promise, setPromise] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])();
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
                 "buildHooks.buildMutationHook.useEffect": ()=>({
                         "buildHooks.buildMutationHook.useEffect": ()=>{
                             if (!promise?.arg.fixedCacheKey) {
@@ -9693,7 +9693,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
             }["buildHooks.buildMutationHook.useEffect"], [
                 promise
             ]);
-            const triggerMutation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+            const triggerMutation = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
                 "buildHooks.buildMutationHook.useCallback[triggerMutation]": function(arg) {
                     const promise2 = dispatch(initiate(arg, {
                         fixedCacheKey
@@ -9707,7 +9707,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 fixedCacheKey
             ]);
             const { requestId } = promise || {};
-            const selectDefaultResult = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            const selectDefaultResult = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildMutationHook.useMemo[selectDefaultResult]": ()=>select({
                         fixedCacheKey,
                         requestId: promise?.requestId
@@ -9717,7 +9717,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 promise,
                 select
             ]);
-            const mutationSelector = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            const mutationSelector = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildMutationHook.useMemo[mutationSelector]": ()=>selectFromResult ? createSelector([
                         selectDefaultResult
                     ], selectFromResult) : selectDefaultResult
@@ -9725,9 +9725,9 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 selectFromResult,
                 selectDefaultResult
             ]);
-            const currentState = useSelector(mutationSelector, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"]);
+            const currentState = useSelector(mutationSelector, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["shallowEqual"]);
             const originalArgs = fixedCacheKey == null ? promise?.arg.originalArgs : void 0;
-            const reset = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+            const reset = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
                 "buildHooks.buildMutationHook.useCallback[reset]": ()=>{
                     batch({
                         "buildHooks.buildMutationHook.useCallback[reset]": ()=>{
@@ -9750,8 +9750,8 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 requestId
             ]);
             const debugValue = pick(currentState, ...COMMON_HOOK_DEBUG_FIELDS, "endpointName");
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(debugValue);
-            const finalState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDebugValue"])(debugValue);
+            const finalState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildMutationHook.useMemo[finalState]": ()=>({
                         ...currentState,
                         originalArgs,
@@ -9762,7 +9762,7 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
                 originalArgs,
                 reset
             ]);
-            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
                 "buildHooks.buildMutationHook.useMemo": ()=>[
                         triggerMutation,
                         finalState
@@ -9776,11 +9776,11 @@ function buildHooks({ api, moduleOptions: { batch, hooks: { useDispatch, useSele
 }
 // src/query/react/module.ts
 var reactHooksModuleName = /* @__PURE__ */ Symbol();
-var reactHooksModule = ({ batch = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["batch"], hooks = {
-    useDispatch: __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"],
-    useSelector: __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"],
-    useStore: __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
-}, createSelector = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createSelector"], unstable__sideEffectsInRender = false, ...rest } = {})=>{
+var reactHooksModule = ({ batch = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["batch"], hooks = {
+    useDispatch: __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"],
+    useSelector: __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"],
+    useStore: __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useStore"]
+}, createSelector = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$reselect$2f$dist$2f$reselect$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createSelector"], unstable__sideEffectsInRender = false, ...rest } = {})=>{
     if ("TURBOPACK compile-time truthy", 1) {
         const hookNames = [
             "useDispatch",
@@ -9863,13 +9863,13 @@ Hook ${hookName} was either not provided or not a function.`);
 ;
 ;
 function ApiProvider(props) {
-    const context = props.context || __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ReactReduxContext"];
-    const existingContext = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(context);
+    const context = props.context || __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ReactReduxContext"];
+    const existingContext = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(context);
     if (existingContext) {
         throw new Error(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : "Existing Redux context detected. If you already have a store set up, please use the traditional Redux setup.");
     }
-    const [store] = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"]({
-        "ApiProvider.useState": ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["configureStore"])({
+    const [store] = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"]({
+        "ApiProvider.useState": ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["configureStore"])({
                 reducer: {
                     [props.api.reducerPath]: props.api.reducer
                 },
@@ -9878,23 +9878,23 @@ function ApiProvider(props) {
                 }["ApiProvider.useState"]
             })
     }["ApiProvider.useState"]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "ApiProvider.useEffect": ()=>props.setupListeners === false ? void 0 : (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setupListeners"])(store.dispatch, props.setupListeners)
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ApiProvider.useEffect": ()=>props.setupListeners === false ? void 0 : (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setupListeners"])(store.dispatch, props.setupListeners)
     }["ApiProvider.useEffect"], [
         props.setupListeners,
         store.dispatch
     ]);
-    return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Provider"], {
+    return /* @__PURE__ */ __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Provider"], {
         store,
         context
     }, props.children);
 }
 // src/query/react/index.ts
-var createApi = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["buildCreateApi"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["coreModule"])(), reactHooksModule());
+var createApi = /* @__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["buildCreateApi"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$query$2f$rtk$2d$query$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["coreModule"])(), reactHooksModule());
 ;
  //# sourceMappingURL=rtk-query-react.modern.mjs.map
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser-crypto.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/browser-crypto.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 if (/*TURBOPACK member replacement*/ __turbopack_context__.g.crypto && /*TURBOPACK member replacement*/ __turbopack_context__.g.crypto.getRandomValues) {
@@ -9913,10 +9913,10 @@ if (/*TURBOPACK member replacement*/ __turbopack_context__.g.crypto && /*TURBOPA
     };
 }
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var crypto = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser-crypto.js [app-client] (ecmascript)");
+var crypto = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/browser-crypto.js [app-client] (ecmascript)");
 // This string has length 32, a power of 2, so the modulus doesn't introduce a
 // bias.
 var _randomStringChars = 'abcdefghijklmnopqrstuvwxyz012345';
@@ -9940,10 +9940,10 @@ module.exports = {
     }
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var random = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)");
+var random = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)");
 var onUnload = {}, afterUnload = false, isChromePackagedApp = /*TURBOPACK member replacement*/ __turbopack_context__.g.chrome && /*TURBOPACK member replacement*/ __turbopack_context__.g.chrome.app && /*TURBOPACK member replacement*/ __turbopack_context__.g.chrome.app.runtime;
 module.exports = {
     attachEvent: function(event, listener) {
@@ -10002,7 +10002,7 @@ if (!isChromePackagedApp) {
     module.exports.attachEvent('unload', unloadTriggered);
 }
 }),
-"[project]/brainbridge/node_modules/requires-port/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/requires-port/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -10034,7 +10034,7 @@ if (!isChromePackagedApp) {
     return port !== 0;
 };
 }),
-"[project]/brainbridge/node_modules/querystringify/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/querystringify/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 var has = Object.prototype.hasOwnProperty, undef;
@@ -10129,10 +10129,10 @@ var has = Object.prototype.hasOwnProperty, undef;
 exports.stringify = querystringify;
 exports.parse = querystring;
 }),
-"[project]/brainbridge/node_modules/url-parse/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/url-parse/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var required = __turbopack_context__.r("[project]/brainbridge/node_modules/requires-port/index.js [app-client] (ecmascript)"), qs = __turbopack_context__.r("[project]/brainbridge/node_modules/querystringify/index.js [app-client] (ecmascript)"), controlOrWhitespace = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/, CRHTLF = /[\n\r\t]/g, slashes = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//, port = /:\d+$/, protocolre = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i, windowsDriveLetter = /^[a-zA-Z]:/;
+var required = __turbopack_context__.r("[project]/Verixa/node_modules/requires-port/index.js [app-client] (ecmascript)"), qs = __turbopack_context__.r("[project]/Verixa/node_modules/querystringify/index.js [app-client] (ecmascript)"), controlOrWhitespace = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/, CRHTLF = /[\n\r\t]/g, slashes = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//, port = /:\d+$/, protocolre = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i, windowsDriveLetter = /^[a-zA-Z]:/;
 /**
  * Remove control characters and whitespace from the beginning of a string.
  *
@@ -10610,7 +10610,7 @@ Url.trimLeft = trimLeft;
 Url.qs = qs;
 module.exports = Url;
 }),
-"[project]/brainbridge/node_modules/ms/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/ms/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 /**
  * Helpers.
@@ -10753,7 +10753,7 @@ var y = d * 365.25;
     return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
 }
 }),
-"[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/common.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/common.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -10766,7 +10766,7 @@ var y = d * 365.25;
     createDebug.disable = disable;
     createDebug.enable = enable;
     createDebug.enabled = enabled;
-    createDebug.humanize = __turbopack_context__.r("[project]/brainbridge/node_modules/ms/index.js [app-client] (ecmascript)");
+    createDebug.humanize = __turbopack_context__.r("[project]/Verixa/node_modules/ms/index.js [app-client] (ecmascript)");
     Object.keys(env).forEach(function(key) {
         createDebug[key] = env[key];
     });
@@ -10946,10 +10946,10 @@ var y = d * 365.25;
 }
 module.exports = setup;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 function _typeof(obj) {
     if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -11142,8 +11142,8 @@ function useColors() {
     } catch (error) {} // Swallow
     // XXX (@Qix-) should we be logging these?
     // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
-    if (!r && typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== 'undefined' && 'env' in __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]) {
-        r = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.DEBUG;
+    if (!r && typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== 'undefined' && 'env' in __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"]) {
+        r = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.DEBUG;
     }
     return r;
 }
@@ -11165,7 +11165,7 @@ function useColors() {
     // XXX (@Qix-) should we be logging these?
     }
 }
-module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/common.js [app-client] (ecmascript)")(exports);
+module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/common.js [app-client] (ecmascript)")(exports);
 var formatters = module.exports.formatters;
 /**
  * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
@@ -11177,15 +11177,15 @@ var formatters = module.exports.formatters;
     }
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var URL = __turbopack_context__.r("[project]/brainbridge/node_modules/url-parse/index.js [app-client] (ecmascript)");
+var URL = __turbopack_context__.r("[project]/Verixa/node_modules/url-parse/index.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:utils:url');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:utils:url');
 }
 module.exports = {
     getOrigin: function(url) {
@@ -11222,7 +11222,7 @@ module.exports = {
     }
 };
 }),
-"[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 if (typeof Object.create === 'function') {
     // implementation from standard node.js 'util' module
@@ -11252,7 +11252,7 @@ if (typeof Object.create === 'function') {
     };
 }
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/event/eventtarget.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/event/eventtarget.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /* Simplified implementation of DOM2 EventTarget.
@@ -11314,10 +11314,10 @@ EventTarget.prototype.dispatchEvent = function() {
 };
 module.exports = EventTarget;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventTarget = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/eventtarget.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventTarget = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/eventtarget.js [app-client] (ecmascript)");
 function EventEmitter() {
     EventTarget.call(this);
 }
@@ -11360,7 +11360,7 @@ EventEmitter.prototype.on = EventEmitter.prototype.addListener = EventTarget.pro
 EventEmitter.prototype.removeListener = EventTarget.prototype.removeEventListener;
 module.exports.EventEmitter = EventEmitter;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/websocket.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/websocket.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 var Driver = /*TURBOPACK member replacement*/ __turbopack_context__.g.WebSocket || /*TURBOPACK member replacement*/ __turbopack_context__.g.MozWebSocket;
@@ -11372,15 +11372,15 @@ if (Driver) {
     module.exports = undefined;
 }
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/websocket.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/websocket.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var utils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, WebsocketDriver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/websocket.js [app-client] (ecmascript)");
+var utils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, WebsocketDriver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/websocket.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:websocket');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:websocket');
 }
 function WebSocketTransport(transUrl, ignore, options) {
     if (!WebSocketTransport.enabled()) {
@@ -11458,15 +11458,15 @@ WebSocketTransport.transportName = 'websocket';
 WebSocketTransport.roundTrips = 2;
 module.exports = WebSocketTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/buffered-sender.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/buffered-sender.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:buffered-sender');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:buffered-sender');
 }
 function BufferedSender(url, sender) {
     debug(url);
@@ -11538,15 +11538,15 @@ BufferedSender.prototype.close = function() {
 };
 module.exports = BufferedSender;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:polling');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:polling');
 }
 function Polling(Receiver, receiveUrl, AjaxObject) {
     debug(receiveUrl);
@@ -11588,15 +11588,15 @@ Polling.prototype.abort = function() {
 };
 module.exports = Polling;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/sender-receiver.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/sender-receiver.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), BufferedSender = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/buffered-sender.js [app-client] (ecmascript)"), Polling = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/polling.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), BufferedSender = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/buffered-sender.js [app-client] (ecmascript)"), Polling = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/polling.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:sender-receiver');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:sender-receiver');
 }
 function SenderReceiver(transUrl, urlSuffix, senderFunc, Receiver, AjaxObject) {
     var pollUrl = urlUtils.addPath(transUrl, urlSuffix);
@@ -11627,15 +11627,15 @@ SenderReceiver.prototype.close = function() {
 };
 module.exports = SenderReceiver;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), SenderReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/sender-receiver.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), SenderReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/sender-receiver.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:ajax-based');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:ajax-based');
 }
 function createAjaxSender(AjaxObject) {
     return function(url, payload, callback) {
@@ -11672,15 +11672,15 @@ function AjaxBasedTransport(transUrl, urlSuffix, Receiver, AjaxObject) {
 inherits(AjaxBasedTransport, SenderReceiver);
 module.exports = AjaxBasedTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:xhr');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:xhr');
 }
 function XhrReceiver(url, AjaxObject) {
     debug(url);
@@ -11734,15 +11734,15 @@ XhrReceiver.prototype.abort = function() {
 };
 module.exports = XhrReceiver;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), utils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), XHR = /*TURBOPACK member replacement*/ __turbopack_context__.g.XMLHttpRequest;
+var EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), utils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), XHR = /*TURBOPACK member replacement*/ __turbopack_context__.g.XMLHttpRequest;
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:browser:xhr');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:browser:xhr');
 }
 function AbstractXHRObject(method, url, payload, opts) {
     debug(method, url);
@@ -11905,10 +11905,10 @@ try {
 AbstractXHRObject.supportsCORS = cors;
 module.exports = AbstractXHRObject;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), XhrDriver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), XhrDriver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js [app-client] (ecmascript)");
 function XHRCorsObject(method, url, payload, opts) {
     XhrDriver.call(this, method, url, payload, opts);
 }
@@ -11916,10 +11916,10 @@ inherits(XHRCorsObject, XhrDriver);
 XHRCorsObject.enabled = XhrDriver.enabled && XhrDriver.supportsCORS;
 module.exports = XHRCorsObject;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), XhrDriver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), XhrDriver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/abstract-xhr.js [app-client] (ecmascript)");
 function XHRLocalObject(method, url, payload /*, opts */ ) {
     XhrDriver.call(this, method, url, payload, {
         noCredentials: true
@@ -11929,7 +11929,7 @@ inherits(XHRLocalObject, XhrDriver);
 XHRLocalObject.enabled = XhrDriver.enabled;
 module.exports = XHRLocalObject;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 module.exports = {
@@ -11952,10 +11952,10 @@ module.exports = {
     }
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/xhr-streaming.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/xhr-streaming.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XHRCorsObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), XHRLocalObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XHRCorsObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), XHRLocalObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)");
 function XhrStreamingTransport(transUrl) {
     if (!XHRLocalObject.enabled && !XHRCorsObject.enabled) {
         throw new Error('Transport created when disabled');
@@ -11982,15 +11982,15 @@ XhrStreamingTransport.roundTrips = 2; // preflight, ajax
 XhrStreamingTransport.needBody = !!/*TURBOPACK member replacement*/ __turbopack_context__.g.document;
 module.exports = XhrStreamingTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)");
+var EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:sender:xdr');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:sender:xdr');
 }
 // References:
 //   http://ajaxian.com/archives/100-line-ajax-wrapper
@@ -12071,10 +12071,10 @@ XDRObject.prototype.close = function() {
 XDRObject.enabled = !!(/*TURBOPACK member replacement*/ __turbopack_context__.g.XDomainRequest && browser.hasDomain());
 module.exports = XDRObject;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/xdr-streaming.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/xdr-streaming.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XDRObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XDRObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)");
 // According to:
 //   http://stackoverflow.com/questions/1641507/detect-browser-support-for-cross-domain-xmlhttprequests
 //   http://hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/
@@ -12095,19 +12095,19 @@ XdrStreamingTransport.transportName = 'xdr-streaming';
 XdrStreamingTransport.roundTrips = 2; // preflight, ajax
 module.exports = XdrStreamingTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/eventsource.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/eventsource.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 module.exports = /*TURBOPACK member replacement*/ __turbopack_context__.g.EventSource;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/eventsource.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/eventsource.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, EventSourceDriver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/eventsource.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, EventSourceDriver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/eventsource.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:eventsource');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:eventsource');
 }
 function EventSourceReceiver(url) {
     debug(url);
@@ -12155,10 +12155,10 @@ EventSourceReceiver.prototype._close = function(reason) {
 };
 module.exports = EventSourceReceiver;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/eventsource.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/eventsource.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), EventSourceReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/eventsource.js [app-client] (ecmascript)"), XHRCorsObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), EventSourceDriver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/browser/eventsource.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), EventSourceReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/eventsource.js [app-client] (ecmascript)"), XHRCorsObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), EventSourceDriver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/browser/eventsource.js [app-client] (ecmascript)");
 function EventSourceTransport(transUrl) {
     if (!EventSourceTransport.enabled()) {
         throw new Error('Transport created when disabled');
@@ -12173,19 +12173,19 @@ EventSourceTransport.transportName = 'eventsource';
 EventSourceTransport.roundTrips = 2;
 module.exports = EventSourceTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/version.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/version.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 module.exports = '1.6.1';
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var eventUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)");
+var eventUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:utils:iframe');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:utils:iframe');
 }
 module.exports = {
     WPrefix: '_jp',
@@ -12353,10 +12353,10 @@ if (/*TURBOPACK member replacement*/ __turbopack_context__.g.document) {
     module.exports.iframeEnabled = (typeof /*TURBOPACK member replacement*/ __turbopack_context__.g.postMessage === 'function' || typeof /*TURBOPACK member replacement*/ __turbopack_context__.g.postMessage === 'object') && !browser.isKonqueror();
 }
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/iframe.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/iframe.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 // Few cool transports do work only for same-origin. In order to make
 // them work cross-domain we shall use iframe, served from the
@@ -12365,10 +12365,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
 // from IE 8+, but of course, IE got some details wrong:
 //    http://msdn.microsoft.com/en-us/library/cc197015(v=VS.85).aspx
 //    http://stevesouders.com/misc/test-postmessage.php
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, version = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/version.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), iframeUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), random = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, version = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/version.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), iframeUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), random = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:transport:iframe');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:transport:iframe');
 }
 function IframeTransport(transport, transUrl, baseUrl) {
     if (!IframeTransport.enabled()) {
@@ -12472,7 +12472,7 @@ IframeTransport.transportName = 'iframe';
 IframeTransport.roundTrips = 2;
 module.exports = IframeTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 module.exports = {
@@ -12497,10 +12497,10 @@ module.exports = {
     }
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), IframeTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/iframe.js [app-client] (ecmascript)"), objectUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), IframeTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/iframe.js [app-client] (ecmascript)"), objectUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)");
 module.exports = function(transport) {
     function IframeWrapTransport(transUrl, baseUrl) {
         IframeTransport.call(this, transport.transportName, transUrl, baseUrl);
@@ -12521,15 +12521,15 @@ module.exports = function(transport) {
     return IframeWrapTransport;
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/htmlfile.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/htmlfile.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), iframeUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, random = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), iframeUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, random = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:htmlfile');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:htmlfile');
 }
 function HtmlfileReceiver(url) {
     debug(url);
@@ -12595,10 +12595,10 @@ if (axo in /*TURBOPACK member replacement*/ __turbopack_context__.g) {
 HtmlfileReceiver.enabled = HtmlfileReceiver.htmlfileEnabled || iframeUtils.iframeEnabled;
 module.exports = HtmlfileReceiver;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/htmlfile.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/htmlfile.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), HtmlfileReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/htmlfile.js [app-client] (ecmascript)"), XHRLocalObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), HtmlfileReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/htmlfile.js [app-client] (ecmascript)"), XHRLocalObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)");
 function HtmlFileTransport(transUrl) {
     if (!HtmlfileReceiver.enabled) {
         throw new Error('Transport created when disabled');
@@ -12613,10 +12613,10 @@ HtmlFileTransport.transportName = 'htmlfile';
 HtmlFileTransport.roundTrips = 2;
 module.exports = HtmlFileTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/xhr-polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/xhr-polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XHRCorsObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), XHRLocalObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XHRCorsObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), XHRLocalObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)");
 function XhrPollingTransport(transUrl) {
     if (!XHRLocalObject.enabled && !XHRCorsObject.enabled) {
         throw new Error('Transport created when disabled');
@@ -12637,10 +12637,10 @@ XhrPollingTransport.transportName = 'xhr-polling';
 XhrPollingTransport.roundTrips = 2; // preflight, ajax
 module.exports = XhrPollingTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/xdr-polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/xdr-polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XdrStreamingTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/xdr-streaming.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XDRObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), AjaxBasedTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/ajax-based.js [app-client] (ecmascript)"), XdrStreamingTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/xdr-streaming.js [app-client] (ecmascript)"), XhrReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/xhr.js [app-client] (ecmascript)"), XDRObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)");
 function XdrPollingTransport(transUrl) {
     if (!XDRObject.enabled) {
         throw new Error('Transport created when disabled');
@@ -12653,15 +12653,15 @@ XdrPollingTransport.transportName = 'xdr-polling';
 XdrPollingTransport.roundTrips = 2; // preflight, ajax
 module.exports = XdrPollingTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/jsonp.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/jsonp.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var utils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), random = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
+var utils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), random = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter;
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:jsonp');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:receiver:jsonp');
 }
 function JsonpReceiver(url) {
     debug(url);
@@ -12812,15 +12812,15 @@ JsonpReceiver.prototype._createScript = function(url) {
 };
 module.exports = JsonpReceiver;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/jsonp.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/jsonp.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var random = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)");
+var random = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:sender:jsonp');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:sender:jsonp');
 }
 var form, area;
 function createIframe(id) {
@@ -12903,7 +12903,7 @@ module.exports = function(url, payload, callback) {
     };
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/jsonp-polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/jsonp-polling.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 // The simplest and most robust transport, using the well-know cross
@@ -12913,7 +12913,7 @@ module.exports = function(url, payload, callback) {
 // Known limitations:
 //   o you will get a spinning cursor
 //   o for Konqueror a dumb timer is needed to detect errors
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), SenderReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/sender-receiver.js [app-client] (ecmascript)"), JsonpReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/receiver/jsonp.js [app-client] (ecmascript)"), jsonpSender = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/jsonp.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), SenderReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/sender-receiver.js [app-client] (ecmascript)"), JsonpReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/receiver/jsonp.js [app-client] (ecmascript)"), jsonpSender = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/jsonp.js [app-client] (ecmascript)");
 function JsonPTransport(transUrl) {
     if (!JsonPTransport.enabled()) {
         throw new Error('Transport created when disabled');
@@ -12929,27 +12929,27 @@ JsonPTransport.roundTrips = 1;
 JsonPTransport.needBody = true;
 module.exports = JsonPTransport;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport-list.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport-list.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 module.exports = [
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/websocket.js [app-client] (ecmascript)"),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/xhr-streaming.js [app-client] (ecmascript)"),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/xdr-streaming.js [app-client] (ecmascript)"),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/eventsource.js [app-client] (ecmascript)"),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)")(__turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/eventsource.js [app-client] (ecmascript)")),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/htmlfile.js [app-client] (ecmascript)"),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)")(__turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/htmlfile.js [app-client] (ecmascript)")),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/xhr-polling.js [app-client] (ecmascript)"),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/xdr-polling.js [app-client] (ecmascript)"),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)")(__turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/xhr-polling.js [app-client] (ecmascript)")),
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/jsonp-polling.js [app-client] (ecmascript)")
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/websocket.js [app-client] (ecmascript)"),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/xhr-streaming.js [app-client] (ecmascript)"),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/xdr-streaming.js [app-client] (ecmascript)"),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/eventsource.js [app-client] (ecmascript)"),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)")(__turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/eventsource.js [app-client] (ecmascript)")),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/htmlfile.js [app-client] (ecmascript)"),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)")(__turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/htmlfile.js [app-client] (ecmascript)")),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/xhr-polling.js [app-client] (ecmascript)"),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/xdr-polling.js [app-client] (ecmascript)"),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/lib/iframe-wrap.js [app-client] (ecmascript)")(__turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/xhr-polling.js [app-client] (ecmascript)")),
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/jsonp-polling.js [app-client] (ecmascript)")
 ];
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/facade.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/facade.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var iframeUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)");
+var iframeUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)");
 function FacadeJS(transport) {
     this._transport = transport;
     transport.on('message', this._transportMessage.bind(this));
@@ -12973,15 +12973,15 @@ FacadeJS.prototype._close = function() {
 };
 module.exports = FacadeJS;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/info-ajax.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/info-ajax.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), objectUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)");
+var EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), objectUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:info-ajax');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:info-ajax');
 }
 function InfoAjax(url, AjaxObject) {
     EventEmitter.call(this);
@@ -13014,10 +13014,10 @@ InfoAjax.prototype.close = function() {
 };
 module.exports = InfoAjax;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/info-iframe-receiver.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/info-iframe-receiver.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, XHRLocalObject = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), InfoAjax = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/info-ajax.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, XHRLocalObject = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), InfoAjax = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/info-ajax.js [app-client] (ecmascript)");
 function InfoReceiverIframe(transUrl) {
     var self = this;
     EventEmitter.call(this);
@@ -13041,7 +13041,7 @@ InfoReceiverIframe.prototype.close = function() {
 };
 module.exports = InfoReceiverIframe;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/location.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/location.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 module.exports = /*TURBOPACK member replacement*/ __turbopack_context__.g.location || {
@@ -13053,15 +13053,15 @@ module.exports = /*TURBOPACK member replacement*/ __turbopack_context__.g.locati
     hash: ''
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/iframe-bootstrap.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/iframe-bootstrap.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), FacadeJS = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/facade.js [app-client] (ecmascript)"), InfoIframeReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/info-iframe-receiver.js [app-client] (ecmascript)"), iframeUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), loc = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/location.js [app-client] (ecmascript)");
+var urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), FacadeJS = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/facade.js [app-client] (ecmascript)"), InfoIframeReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/info-iframe-receiver.js [app-client] (ecmascript)"), iframeUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/iframe.js [app-client] (ecmascript)"), loc = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/location.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:iframe-bootstrap');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:iframe-bootstrap');
 }
 module.exports = function(SockJS, availableTransports) {
     var transportMap = {};
@@ -13137,7 +13137,7 @@ module.exports = function(SockJS, availableTransports) {
     };
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/shims.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/shims.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /* eslint-disable */ /* jscs: disable */ // pulled specific shims from https://github.com/es-shims/es5-shim
@@ -13524,7 +13524,7 @@ defineProperties(StringPrototype, {
     }
 }, hasNegativeSubstrBug);
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/escape.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/escape.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 // Some extra characters that Chrome gets wrong, and substitutes with
@@ -13568,14 +13568,14 @@ module.exports = {
     }
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/transport.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/transport.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:utils:transport');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:utils:transport');
 }
 module.exports = function(availableTransports) {
     return {
@@ -13618,7 +13618,7 @@ module.exports = function(availableTransports) {
     };
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/utils/log.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/utils/log.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 var logObject = {};
@@ -13639,7 +13639,7 @@ var logObject = {};
 });
 module.exports = logObject;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 function Event(eventType) {
@@ -13659,10 +13659,10 @@ Event.AT_TARGET = 2;
 Event.BUBBLING_PHASE = 3;
 module.exports = Event;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/event/close.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/event/close.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), Event = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), Event = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)");
 function CloseEvent() {
     Event.call(this);
     this.initEvent('close', false, false);
@@ -13673,10 +13673,10 @@ function CloseEvent() {
 inherits(CloseEvent, Event);
 module.exports = CloseEvent;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/event/trans-message.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/event/trans-message.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), Event = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)");
+var inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), Event = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)");
 function TransportMessageEvent(data) {
     Event.call(this);
     this.initEvent('message', false, false);
@@ -13685,10 +13685,10 @@ function TransportMessageEvent(data) {
 inherits(TransportMessageEvent, Event);
 module.exports = TransportMessageEvent;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-fake.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-fake.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)");
+var EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)");
 function XHRFake() {
     var self = this;
     EventEmitter.call(this);
@@ -13703,15 +13703,15 @@ XHRFake.prototype.close = function() {
 XHRFake.timeout = 2000;
 module.exports = XHRFake;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/info-iframe.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/info-iframe.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), utils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), IframeTransport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/iframe.js [app-client] (ecmascript)"), InfoReceiverIframe = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/info-iframe-receiver.js [app-client] (ecmascript)");
+var EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), utils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), IframeTransport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/iframe.js [app-client] (ecmascript)"), InfoReceiverIframe = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/info-iframe-receiver.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:info-iframe');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:info-iframe');
 }
 function InfoIframe(baseUrl, url) {
     var self = this;
@@ -13759,15 +13759,15 @@ InfoIframe.prototype.close = function() {
 };
 module.exports = InfoIframe;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/info-receiver.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/info-receiver.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-var EventEmitter = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), XDR = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)"), XHRCors = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), XHRLocal = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), XHRFake = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport/sender/xhr-fake.js [app-client] (ecmascript)"), InfoIframe = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/info-iframe.js [app-client] (ecmascript)"), InfoAjax = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/info-ajax.js [app-client] (ecmascript)");
+var EventEmitter = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/emitter.js [app-client] (ecmascript)").EventEmitter, inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), XDR = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xdr.js [app-client] (ecmascript)"), XHRCors = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-cors.js [app-client] (ecmascript)"), XHRLocal = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-local.js [app-client] (ecmascript)"), XHRFake = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport/sender/xhr-fake.js [app-client] (ecmascript)"), InfoIframe = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/info-iframe.js [app-client] (ecmascript)"), InfoAjax = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/info-ajax.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:info-receiver');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:info-receiver');
 }
 function InfoReceiver(baseUrl, urlInfo) {
     debug(baseUrl);
@@ -13827,16 +13827,16 @@ InfoReceiver.prototype.close = function() {
 InfoReceiver.timeout = 8000;
 module.exports = InfoReceiver;
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/main.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/main.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
-__turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/shims.js [app-client] (ecmascript)");
-var URL = __turbopack_context__.r("[project]/brainbridge/node_modules/url-parse/index.js [app-client] (ecmascript)"), inherits = __turbopack_context__.r("[project]/brainbridge/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), random = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)"), escape = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/escape.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), transport = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/transport.js [app-client] (ecmascript)"), objectUtils = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)"), log = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/utils/log.js [app-client] (ecmascript)"), Event = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)"), EventTarget = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/eventtarget.js [app-client] (ecmascript)"), loc = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/location.js [app-client] (ecmascript)"), CloseEvent = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/close.js [app-client] (ecmascript)"), TransportMessageEvent = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/event/trans-message.js [app-client] (ecmascript)"), InfoReceiver = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/info-receiver.js [app-client] (ecmascript)");
+__turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/shims.js [app-client] (ecmascript)");
+var URL = __turbopack_context__.r("[project]/Verixa/node_modules/url-parse/index.js [app-client] (ecmascript)"), inherits = __turbopack_context__.r("[project]/Verixa/node_modules/inherits/inherits_browser.js [app-client] (ecmascript)"), random = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/random.js [app-client] (ecmascript)"), escape = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/escape.js [app-client] (ecmascript)"), urlUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/url.js [app-client] (ecmascript)"), eventUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/event.js [app-client] (ecmascript)"), transport = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/transport.js [app-client] (ecmascript)"), objectUtils = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/object.js [app-client] (ecmascript)"), browser = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/browser.js [app-client] (ecmascript)"), log = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/utils/log.js [app-client] (ecmascript)"), Event = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/event.js [app-client] (ecmascript)"), EventTarget = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/eventtarget.js [app-client] (ecmascript)"), loc = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/location.js [app-client] (ecmascript)"), CloseEvent = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/close.js [app-client] (ecmascript)"), TransportMessageEvent = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/event/trans-message.js [app-client] (ecmascript)"), InfoReceiver = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/info-receiver.js [app-client] (ecmascript)");
 var debug = function() {};
 if ("TURBOPACK compile-time truthy", 1) {
-    debug = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:main');
+    debug = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/node_modules/debug/src/browser.js [app-client] (ecmascript)")('sockjs-client:main');
 }
 var transports;
 // follow constructor steps defined at http://dev.w3.org/html5/websockets/#the-websocket-interface
@@ -13960,7 +13960,7 @@ SockJS.prototype.send = function(data) {
     }
     this._transport.send(escape.quote(data));
 };
-SockJS.version = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/version.js [app-client] (ecmascript)");
+SockJS.version = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/version.js [app-client] (ecmascript)");
 SockJS.CONNECTING = 0;
 SockJS.OPEN = 1;
 SockJS.CLOSING = 2;
@@ -14142,21 +14142,21 @@ SockJS.prototype.countRTO = function(rtt) {
 };
 module.exports = function(availableTransports) {
     transports = transport(availableTransports);
-    __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/iframe-bootstrap.js [app-client] (ecmascript)")(SockJS, availableTransports);
+    __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/iframe-bootstrap.js [app-client] (ecmascript)")(SockJS, availableTransports);
     return SockJS;
 };
 }),
-"[project]/brainbridge/node_modules/sockjs-client/lib/entry.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/sockjs-client/lib/entry.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var transportList = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/transport-list.js [app-client] (ecmascript)");
-module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/sockjs-client/lib/main.js [app-client] (ecmascript)")(transportList);
+var transportList = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/transport-list.js [app-client] (ecmascript)");
+module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/sockjs-client/lib/main.js [app-client] (ecmascript)")(transportList);
 // TODO can't get rid of this until all servers do
 if ('_sockjs_onload' in /*TURBOPACK member replacement*/ __turbopack_context__.g) {
     setTimeout(/*TURBOPACK member replacement*/ __turbopack_context__.g._sockjs_onload, 1);
 }
 }),
-"[project]/brainbridge/node_modules/@stomp/stompjs/bundles/stomp.umd.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/@stomp/stompjs/bundles/stomp.umd.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 (function(global, factory) {
     ("TURBOPACK compile-time truthy", 1) ? factory(exports) : "TURBOPACK unreachable";
@@ -16288,7 +16288,7 @@ if ('_sockjs_onload' in /*TURBOPACK member replacement*/ __turbopack_context__.g
     exports1.Versions = Versions;
 }); //# sourceMappingURL=stomp.umd.js.map
 }),
-"[project]/brainbridge/node_modules/goober/dist/goober.modern.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/goober/dist/goober.modern.js [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -16392,7 +16392,7 @@ function w(e, t) {
 }
 ;
 }),
-"[project]/brainbridge/node_modules/react-hot-toast/dist/index.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"[project]/Verixa/node_modules/react-hot-toast/dist/index.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
@@ -16419,8 +16419,8 @@ __turbopack_context__.s([
     "useToasterStore",
     ()=>V
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/brainbridge/node_modules/goober/dist/goober.modern.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Verixa/node_modules/goober/dist/goober.modern.js [app-client] (ecmascript)");
 "use client";
 var Z = (e)=>typeof e == "function", h = (e, t)=>Z(e) ? e(t) : e;
 var W = (()=>{
@@ -16516,8 +16516,8 @@ var H = (e, t)=>{
     loading: 1 / 0,
     custom: 4e3
 }, V = (e = {}, t = k)=>{
-    let [o, s] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(f[t] || j), a = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(f[t]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(()=>(a.current !== f[t] && s(f[t]), v.push([
+    let [o, s] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(f[t] || j), a = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(f[t]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(()=>(a.current !== f[t] && s(f[t]), v.push([
             t,
             s
         ]), ()=>{
@@ -16609,7 +16609,7 @@ n.promise = (e, t, o)=>{
 };
 ;
 var ce = 1e3, w = (e, t = "default")=>{
-    let { toasts: o, pausedAt: s } = V(e, t), a = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map).current, i = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])((c, m = ce)=>{
+    let { toasts: o, pausedAt: s } = V(e, t), a = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map).current, i = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])((c, m = ce)=>{
         if (a.has(c)) return;
         let p = setTimeout(()=>{
             a.delete(c), r({
@@ -16619,7 +16619,7 @@ var ce = 1e3, w = (e, t = "default")=>{
         }, m);
         a.set(c, p);
     }, []);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         if (s) return;
         let c = Date.now(), m = o.map((p)=>{
             if (p.duration === 1 / 0) return;
@@ -16638,16 +16638,16 @@ var ce = 1e3, w = (e, t = "default")=>{
         s,
         t
     ]);
-    let r = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])(S(t), [
+    let r = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])(S(t), [
         t
-    ]), l = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])(()=>{
+    ]), l = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])(()=>{
         r({
             type: 5,
             time: Date.now()
         });
     }, [
         r
-    ]), g = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])((c, m)=>{
+    ]), g = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])((c, m)=>{
         r({
             type: 1,
             toast: {
@@ -16657,7 +16657,7 @@ var ce = 1e3, w = (e, t = "default")=>{
         });
     }, [
         r
-    ]), T = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])(()=>{
+    ]), T = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])(()=>{
         s && r({
             type: 6,
             time: Date.now()
@@ -16665,7 +16665,7 @@ var ce = 1e3, w = (e, t = "default")=>{
     }, [
         s,
         r
-    ]), d = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])((c, m)=>{
+    ]), d = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])((c, m)=>{
         let { reverseOrder: p = !1, gutter: R = 8, defaultPosition: z } = m || {}, O = o.filter((u)=>(u.position || z) === (c.position || z) && u.height), K = O.findIndex((u)=>u.id === c.id), B = O.filter((u, I)=>I < K && u.visible).length;
         return O.filter((u)=>u.visible).slice(...p ? [
             B + 1
@@ -16676,7 +16676,7 @@ var ce = 1e3, w = (e, t = "default")=>{
     }, [
         o
     ]);
-    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         o.forEach((c)=>{
             if (c.dismissed) i(c.id, c.removeDelay);
             else {
@@ -16702,7 +16702,7 @@ var ce = 1e3, w = (e, t = "default")=>{
 ;
 ;
 ;
-var de = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+var de = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
 from {
   transform: scale(0) rotate(45deg);
 	opacity: 0;
@@ -16710,7 +16710,7 @@ from {
 to {
  transform: scale(1) rotate(45deg);
   opacity: 1;
-}`, me = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+}`, me = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
 from {
   transform: scale(0);
   opacity: 0;
@@ -16718,7 +16718,7 @@ from {
 to {
   transform: scale(1);
   opacity: 1;
-}`, le = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+}`, le = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
 from {
   transform: scale(0) rotate(90deg);
 	opacity: 0;
@@ -16726,7 +16726,7 @@ from {
 to {
   transform: scale(1) rotate(90deg);
 	opacity: 1;
-}`, C = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+}`, C = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   width: 20px;
   opacity: 0;
   height: 20px;
@@ -16761,14 +16761,14 @@ to {
   }
 `;
 ;
-var Te = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+var Te = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-`, F = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+`, F = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   width: 12px;
   height: 12px;
   box-sizing: border-box;
@@ -16779,7 +16779,7 @@ var Te = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_mod
   animation: ${Te} 1s linear infinite;
 `;
 ;
-var ge = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+var ge = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
 from {
   transform: scale(0) rotate(45deg);
 	opacity: 0;
@@ -16787,7 +16787,7 @@ from {
 to {
   transform: scale(1) rotate(45deg);
 	opacity: 1;
-}`, he = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+}`, he = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
 0% {
 	height: 0;
 	width: 0;
@@ -16801,7 +16801,7 @@ to {
 100% {
   opacity: 1;
   height: 10px;
-}`, L = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+}`, L = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   width: 20px;
   opacity: 0;
   height: 20px;
@@ -16829,16 +16829,16 @@ to {
     width: 6px;
   }
 `;
-var be = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+var be = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   position: absolute;
-`, Se = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+`, Se = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 20px;
   min-height: 20px;
-`, Ae = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
+`, Ae = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"]`
 from {
   transform: scale(0.6);
   opacity: 0.4;
@@ -16846,7 +16846,7 @@ from {
 to {
   transform: scale(1);
   opacity: 1;
-}`, Pe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+}`, Pe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   position: relative;
   transform: scale(0.6);
   opacity: 0.4;
@@ -16855,11 +16855,11 @@ to {
     forwards;
 `, $ = ({ toast: e })=>{
     let { icon: t, type: o, iconTheme: s } = e;
-    return t !== void 0 ? typeof t == "string" ? __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Pe, null, t) : t : o === "blank" ? null : __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Se, null, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](F, {
+    return t !== void 0 ? typeof t == "string" ? __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Pe, null, t) : t : o === "blank" ? null : __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Se, null, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](F, {
         ...s
-    }), o !== "loading" && __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](be, null, o === "error" ? __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](C, {
+    }), o !== "loading" && __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](be, null, o === "error" ? __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](C, {
         ...s
-    }) : __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](L, {
+    }) : __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](L, {
         ...s
     })));
 };
@@ -16869,7 +16869,7 @@ var Re = (e)=>`
 `, Ee = (e)=>`
 0% {transform: translate3d(0,0,-1px) scale(1); opacity:1;}
 100% {transform: translate3d(0,${e * -150}%,-1px) scale(.6); opacity:0;}
-`, ve = "0%{opacity:0;} 100%{opacity:1;}", De = "0%{opacity:1;} 100%{opacity:0;}", Oe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+`, ve = "0%{opacity:0;} 100%{opacity:1;}", De = "0%{opacity:1;} 100%{opacity:0;}", Oe = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   display: flex;
   align-items: center;
   background: #fff;
@@ -16881,7 +16881,7 @@ var Re = (e)=>`
   pointer-events: auto;
   padding: 8px 10px;
   border-radius: 8px;
-`, Ie = (0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
+`, Ie = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["styled"])("div")`
   display: flex;
   justify-content: center;
   margin: 4px 10px;
@@ -16897,17 +16897,17 @@ var Re = (e)=>`
         Ee(s)
     ];
     return {
-        animation: t ? `${(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"])(a)} 0.35s cubic-bezier(.21,1.02,.73,1) forwards` : `${(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"])(i)} 0.4s forwards cubic-bezier(.06,.71,.55,1)`
+        animation: t ? `${(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"])(a)} 0.35s cubic-bezier(.21,1.02,.73,1) forwards` : `${(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["keyframes"])(i)} 0.4s forwards cubic-bezier(.06,.71,.55,1)`
     };
-}, N = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["memo"](({ toast: e, position: t, style: o, children: s })=>{
+}, N = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["memo"](({ toast: e, position: t, style: o, children: s })=>{
     let a = e.height ? ke(e.position || t || "top-center", e.visible) : {
         opacity: 0
-    }, i = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]($, {
+    }, i = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]($, {
         toast: e
-    }), r = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Ie, {
+    }), r = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Ie, {
         ...e.ariaProps
     }, h(e.message, e));
-    return __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Oe, {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](Oe, {
         className: e.className,
         style: {
             ...a,
@@ -16917,13 +16917,13 @@ var Re = (e)=>`
     }, typeof s == "function" ? s({
         icon: i,
         message: r
-    }) : __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], null, i, r));
+    }) : __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], null, i, r));
 });
 ;
 ;
-(0, __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setup"])(__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setup"])(__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]);
 var we = ({ id: e, className: t, style: o, onHeightUpdate: s, children: a })=>{
-    let i = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"]({
+    let i = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"]({
         "we.useCallback[i]": (r)=>{
             if (r) {
                 let l = {
@@ -16943,7 +16943,7 @@ var we = ({ id: e, className: t, style: o, onHeightUpdate: s, children: a })=>{
         e,
         s
     ]);
-    return __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]("div", {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]("div", {
         ref: i,
         className: t,
         style: o
@@ -16968,14 +16968,14 @@ var we = ({ id: e, className: t, style: o, onHeightUpdate: s, children: a })=>{
         ...s,
         ...a
     };
-}, Ce = __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["css"]`
+}, Ce = __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$goober$2f$dist$2f$goober$2e$modern$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["css"]`
   z-index: 9999;
   > * {
     pointer-events: auto;
   }
 `, D = 16, Fe = ({ reverseOrder: e, position: t = "top-center", toastOptions: o, gutter: s, children: a, toasterId: i, containerStyle: r, containerClassName: l })=>{
     let { toasts: g, handlers: T } = w(o, i);
-    return __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]("div", {
+    return __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"]("div", {
         "data-rht-toaster": i || "",
         style: {
             position: "fixed",
@@ -16996,13 +16996,13 @@ var we = ({ id: e, className: t, style: o, onHeightUpdate: s, children: a })=>{
             gutter: s,
             defaultPosition: t
         }), p = Me(c, m);
-        return __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](we, {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](we, {
             id: d.id,
             key: d.id,
             onHeightUpdate: T.updateHeight,
             className: d.visible ? Ce : "",
             style: p
-        }, d.type === "custom" ? h(d.message, d) : a ? a(d) : __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](N, {
+        }, d.type === "custom" ? h(d.message, d) : a ? a(d) : __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"](N, {
             toast: d,
             position: c
         }));

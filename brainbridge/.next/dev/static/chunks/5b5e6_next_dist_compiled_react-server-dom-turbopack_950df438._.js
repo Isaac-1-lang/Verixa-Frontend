@@ -1,8 +1,8 @@
 (globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
-"[project]/brainbridge/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * @license React
  * react-server-dom-turbopack-client.browser.development.js
@@ -2646,7 +2646,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
         var streamState = createStreamState(response, debugValue), reader = stream.getReader();
         reader.read().then(progress).catch(error);
     }
-    var React = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), ReactDOM = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react-dom/index.js [app-client] (ecmascript)"), decoderOptions = {
+    var React = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), ReactDOM = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react-dom/index.js [app-client] (ecmascript)"), decoderOptions = {
         stream: !0
     }, bind = Function.prototype.bind, hasOwnProperty = Object.prototype.hasOwnProperty, instrumentedChunks = new WeakSet(), loadedChunks = new WeakSet(), chunkIOInfoCache = new Map(), ReactDOMSharedInternals = ReactDOM.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, ASYNC_ITERATOR = Symbol.asyncIterator, isArrayImpl = Array.isArray, getPrototypeOf = Object.getPrototypeOf, jsxPropsParents = new WeakMap(), jsxChildrenParents = new WeakMap(), CLIENT_REFERENCE_TAG = Symbol.for("react.client.reference"), ObjectPrototype = Object.prototype, knownServerReferences = new WeakMap(), fakeServerFunctionIdx = 0, v8FrameRegExp = /^ {3} at (?:(.+) \((.+):(\d+):(\d+)\)|(?:async )?(.+):(\d+):(\d+))$/, jscSpiderMonkeyFrameRegExp = /(?:(.*)@)?(.*):(\d+):(\d+)/, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), supportsUserTiming = "undefined" !== typeof console && "function" === typeof console.timeStamp && "undefined" !== typeof performance && "function" === typeof performance.measure, trackNames = "Primary Parallel Parallel\u200b Parallel\u200b\u200b Parallel\u200b\u200b\u200b Parallel\u200b\u200b\u200b\u200b Parallel\u200b\u200b\u200b\u200b\u200b Parallel\u200b\u200b\u200b\u200b\u200b\u200b Parallel\u200b\u200b\u200b\u200b\u200b\u200b\u200b Parallel\u200b\u200b\u200b\u200b\u200b\u200b\u200b\u200b".split(" "), prefix, suffix;
     new ("function" === typeof WeakMap ? WeakMap : Map)();
@@ -2821,21 +2821,21 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     };
 }();
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react-server-dom-turbopack/client.browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react-server-dom-turbopack/client.browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
-    module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)");
+    module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-turbopack-client.browser.development.js [app-client] (ecmascript)");
 }
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react-server-dom-turbopack/client.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react-server-dom-turbopack/client.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react-server-dom-turbopack/client.browser.js [app-client] (ecmascript)");
+module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react-server-dom-turbopack/client.browser.js [app-client] (ecmascript)");
 }),
 ]);
 

@@ -23,7 +23,7 @@ export default function NavigationShell({ children }) {
         <div className="p-7">
          <h1 className="text-3xl font-bold mb-6 bg-clip-text text-transparent w-fit"
               style={{ fontFamily: "'Playpen Sans', cursive", backgroundImage: "linear-gradient(90deg, #08075C, #3A38DE)" }}>
-              BrainBridge
+              Verixa
             </h1>
         </div>
 

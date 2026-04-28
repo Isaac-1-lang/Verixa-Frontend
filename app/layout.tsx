@@ -23,8 +23,8 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BrainBridge",
-  description: "A premium university project portfolio platform connecting developers, showcasing innovation, and bridging academia with industry.",
+  title: "Verixa - UAT Test Manager",
+  description: "Verixa: Verify Acceptance. Comprehensive UAT management platform for test case execution, defect tracking, and quality sign-off.",
 };
 
 export default function RootLayout({

@@ -30,7 +30,7 @@ export default function ProjectPage() {
   };
 
   const handleDelete = async () => {
-    if (window.confirm("DECOMMISSION PROJECT FROM BRAINBRIDGE?")) {
+    if (window.confirm("DECOMMISSION PROJECT FROM Verixa?")) {
       try {
         await removeProject(id).unwrap();
         router.push('/dashboard/projects');

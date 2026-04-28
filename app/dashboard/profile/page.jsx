@@ -21,14 +21,14 @@ export default function ProfilePage() {
   useEffect(() => {
     const userStr = localStorage.getItem('user');
     if (userStr) { try { setUser(JSON.parse(userStr)); } catch (e) {} }
-    const extraStr = localStorage.getItem('brainbridge_extra_profile');
+    const extraStr = localStorage.getItem('Verixa_extra_profile');
     if (extraStr) { try { setExtraProfile(JSON.parse(extraStr)); } catch (e) {} }
   }, []);
 
   const handleSave = () => {
     setIsSaving(true);
     setTimeout(() => {
-      localStorage.setItem('brainbridge_extra_profile', JSON.stringify(extraProfile));
+      localStorage.setItem('Verixa_extra_profile', JSON.stringify(extraProfile));
       setIsSaving(false);
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 3000);

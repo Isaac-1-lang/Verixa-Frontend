@@ -100,7 +100,7 @@ export default function ProfileSetupPage() {
 
       <div className="w-full max-w-[500px] bg-white rounded-3xl border border-[var(--border)] shadow-2xl shadow-gray-200/40 p-8 sm:p-12">
         <Link href="/" className="text-xl font-extrabold text-[var(--primary)] mb-8 block" style={{ fontFamily: 'var(--font-heading)' }}>
-          BrainBridge
+          Verixa
         </Link>
 
         <h2 className="text-3xl font-extrabold text-[var(--text)] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>

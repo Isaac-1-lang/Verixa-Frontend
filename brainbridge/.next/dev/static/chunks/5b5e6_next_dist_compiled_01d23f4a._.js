@@ -1,5 +1,5 @@
 (globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
-"[project]/brainbridge/node_modules/next/dist/compiled/process/browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/process/browser.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 (function() {
     var e = {
@@ -179,15 +179,15 @@
         }
         return i.exports;
     }
-    if (typeof __nccwpck_require__ !== "undefined") __nccwpck_require__.ab = ("TURBOPACK compile-time value", "/ROOT/brainbridge/node_modules/next/dist/compiled/process") + "/";
+    if (typeof __nccwpck_require__ !== "undefined") __nccwpck_require__.ab = ("TURBOPACK compile-time value", "/ROOT/Verixa/node_modules/next/dist/compiled/process") + "/";
     var r = __nccwpck_require__(229);
     module.exports = r;
 })();
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react-refresh/cjs/react-refresh-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react-refresh/cjs/react-refresh-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * @license React
  * react-refresh-runtime.development.js
@@ -729,18 +729,18 @@ if ("TURBOPACK compile-time truthy", 1) {
     })();
 }
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react-refresh/runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react-refresh/runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
-    module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react-refresh/cjs/react-refresh-runtime.development.js [app-client] (ecmascript)");
+    module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react-refresh/cjs/react-refresh-runtime.development.js [app-client] (ecmascript)");
 }
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/internal/helpers.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/internal/helpers.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -777,7 +777,7 @@ Object.defineProperty(exports, "__esModule", {
 // webpack 4 compatibility.
 //
 // https://github.com/facebook/metro/blob/d6b9685c730d0d63577db40f41369157f28dfa3a/packages/metro/src/lib/polyfills/require.js
-const runtime_1 = __importDefault(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react-refresh/runtime.js [app-client] (ecmascript)"));
+const runtime_1 = __importDefault(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react-refresh/runtime.js [app-client] (ecmascript)"));
 function isSafeExport(key) {
     return key === '__esModule' || key === '__N_SSG' || key === '__N_SSP' || // TODO: remove this key from page config instead of allow listing it
     key === 'config';
@@ -905,7 +905,7 @@ exports.default = {
     scheduleUpdate: scheduleUpdate
 }; //# sourceMappingURL=helpers.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 var __importDefault = /*TURBOPACK member replacement*/ __turbopack_context__.e && /*TURBOPACK member replacement*/ __turbopack_context__.e.__importDefault || function(mod) {
@@ -916,8 +916,8 @@ var __importDefault = /*TURBOPACK member replacement*/ __turbopack_context__.e &
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-const runtime_1 = __importDefault(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react-refresh/runtime.js [app-client] (ecmascript)"));
-const helpers_1 = __importDefault(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/internal/helpers.js [app-client] (ecmascript)"));
+const runtime_1 = __importDefault(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react-refresh/runtime.js [app-client] (ecmascript)"));
+const helpers_1 = __importDefault(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/@next/react-refresh-utils/dist/internal/helpers.js [app-client] (ecmascript)"));
 // Hook into ReactDOM initialization
 runtime_1.default.injectIntoGlobalHook(self);
 // Register global helpers
@@ -938,10 +938,10 @@ self.$RefreshInterceptModuleExecution$ = function(webpackModuleId) {
     };
 }; //# sourceMappingURL=runtime.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react/cjs/react.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react/cjs/react.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * @license React
  * react.development.js
@@ -1431,8 +1431,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
                 error: error
             });
             if (!window.dispatchEvent(event)) return;
-        } else if ("object" === typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] && "function" === typeof __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].emit) {
-            __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].emit("uncaughtException", error);
+        } else if ("object" === typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] && "function" === typeof __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].emit) {
+            __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].emit("uncaughtException", error);
             return;
         }
         console.error(error);
@@ -1763,21 +1763,21 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
 }();
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
-    module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/cjs/react.development.js [app-client] (ecmascript)");
+    module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/cjs/react.development.js [app-client] (ecmascript)");
 }
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react/cjs/react-jsx-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react/cjs/react-jsx-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -1964,7 +1964,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     function isValidElement(object) {
         return "object" === typeof object && null !== object && object.$$typeof === REACT_ELEMENT_TYPE;
     }
-    var React = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+    var React = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
         return null;
     };
     React = {
@@ -2000,18 +2000,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     };
 }();
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
-    module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/cjs/react-jsx-runtime.development.js [app-client] (ecmascript)");
+    module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/cjs/react-jsx-runtime.development.js [app-client] (ecmascript)");
 }
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/safe-stable-stringify/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/safe-stable-stringify/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 (function() {
     "use strict";
@@ -2605,15 +2605,15 @@ else {
         }
         return i.exports;
     }
-    if (typeof __nccwpck_require__ !== "undefined") __nccwpck_require__.ab = ("TURBOPACK compile-time value", "/ROOT/brainbridge/node_modules/next/dist/compiled/safe-stable-stringify") + "/";
+    if (typeof __nccwpck_require__ !== "undefined") __nccwpck_require__.ab = ("TURBOPACK compile-time value", "/ROOT/Verixa/node_modules/next/dist/compiled/safe-stable-stringify") + "/";
     var n = __nccwpck_require__(879);
     module.exports = n;
 })();
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * @license React
  * scheduler.development.js
@@ -2858,18 +2858,18 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
 }();
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/scheduler/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/scheduler/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use strict';
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 else {
-    module.exports = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js [app-client] (ecmascript)");
+    module.exports = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js [app-client] (ecmascript)");
 }
 }),
-"[project]/brainbridge/node_modules/next/dist/compiled/strip-ansi/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/compiled/strip-ansi/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 (()=>{
     "use strict";
@@ -2906,7 +2906,7 @@ else {
         }
         return a.exports;
     }
-    if (typeof __nccwpck_require__ !== "undefined") __nccwpck_require__.ab = ("TURBOPACK compile-time value", "/ROOT/brainbridge/node_modules/next/dist/compiled/strip-ansi") + "/";
+    if (typeof __nccwpck_require__ !== "undefined") __nccwpck_require__.ab = ("TURBOPACK compile-time value", "/ROOT/Verixa/node_modules/next/dist/compiled/strip-ansi") + "/";
     var _ = __nccwpck_require__(532);
     module.exports = _;
 })();

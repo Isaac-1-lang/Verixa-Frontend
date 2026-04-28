@@ -1,11 +1,11 @@
 (globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
-"[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 var _global_process, _global_process1;
-module.exports = ((_global_process = /*TURBOPACK member replacement*/ __turbopack_context__.g.process) == null ? void 0 : _global_process.env) && typeof ((_global_process1 = /*TURBOPACK member replacement*/ __turbopack_context__.g.process) == null ? void 0 : _global_process1.env) === 'object' ? /*TURBOPACK member replacement*/ __turbopack_context__.g.process : __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/process/browser.js [app-client] (ecmascript)"); //# sourceMappingURL=process.js.map
+module.exports = ((_global_process = /*TURBOPACK member replacement*/ __turbopack_context__.g.process) == null ? void 0 : _global_process.env) && typeof ((_global_process1 = /*TURBOPACK member replacement*/ __turbopack_context__.g.process) == null ? void 0 : _global_process1.env) === 'object' ? /*TURBOPACK member replacement*/ __turbopack_context__.g.process : __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/process/browser.js [app-client] (ecmascript)"); //# sourceMappingURL=process.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/build/polyfills/polyfill-module.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/build/polyfills/polyfill-module.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 
 "trimStart" in String.prototype || (String.prototype.trimStart = String.prototype.trimLeft), "trimEnd" in String.prototype || (String.prototype.trimEnd = String.prototype.trimRight), "description" in Symbol.prototype || Object.defineProperty(Symbol.prototype, "description", {
     configurable: !0,
@@ -47,7 +47,7 @@ module.exports = ((_global_process = /*TURBOPACK member replacement*/ __turbopac
     }
 });
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/invariant-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/invariant-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -66,7 +66,7 @@ class InvariantError extends Error {
     }
 } //# sourceMappingURL=invariant-error.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/is-plain-object.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/is-plain-object.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -109,7 +109,7 @@ function isPlainObject(value) {
    */ return prototype === null || prototype.hasOwnProperty('isPrototypeOf');
 } //# sourceMappingURL=is-plain-object.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 // This has to be a shared module which is shared between client component error boundary and dynamic component
@@ -147,7 +147,7 @@ function isBailoutToCSRError(err) {
     return err.digest === BAILOUT_TO_CSR;
 } //# sourceMappingURL=bailout-to-csr.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/error-source.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/error-source.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -184,10 +184,10 @@ function decorateServerError(error, type) {
     });
 } //# sourceMappingURL=error-source.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/head-manager-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -198,17 +198,17 @@ Object.defineProperty(exports, "HeadManagerContext", {
         return HeadManagerContext;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
 const HeadManagerContext = _react.default.createContext({});
 if ("TURBOPACK compile-time truthy", 1) {
     HeadManagerContext.displayName = 'HeadManagerContext';
 } //# sourceMappingURL=head-manager-context.shared-runtime.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use client';
 "use strict";
 Object.defineProperty(exports, "__esModule", {
@@ -248,8 +248,8 @@ _export(exports, {
         return createDevToolsInstrumentedPromise;
     }
 });
-const _react = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-const _readonlyurlsearchparams = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/readonly-url-search-params.js [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _readonlyurlsearchparams = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/readonly-url-search-params.js [app-client] (ecmascript)");
 const SearchParamsContext = (0, _react.createContext)(null);
 const PathnameContext = (0, _react.createContext)(null);
 const PathParamsContext = (0, _react.createContext)(null);
@@ -268,7 +268,7 @@ if ("TURBOPACK compile-time truthy", 1) {
     NavigationPromisesContext.displayName = 'NavigationPromisesContext';
 } //# sourceMappingURL=hooks-client-context.shared-runtime.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/html-bots.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/html-bots.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 // This regex contains the bots that we need to do a blocking render for and can't safely stream the response
@@ -286,7 +286,7 @@ Object.defineProperty(exports, "HTML_LIMITED_BOT_UA_RE", {
 });
 const HTML_LIMITED_BOT_UA_RE = /[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight/i; //# sourceMappingURL=html-bots.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/is-bot.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/is-bot.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -318,7 +318,7 @@ _export(exports, {
         return isBot;
     }
 });
-const _htmlbots = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/html-bots.js [app-client] (ecmascript)");
+const _htmlbots = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/html-bots.js [app-client] (ecmascript)");
 // Bot crawler that will spin up a headless browser and execute JS.
 // Only the main Googlebot search crawler executes JavaScript, not other Google crawlers.
 // x-ref: https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers
@@ -344,7 +344,7 @@ function getBotType(userAgent) {
     return undefined;
 } //# sourceMappingURL=is-bot.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/is-thenable.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/is-thenable.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -365,7 +365,7 @@ function isThenable(promise) {
     return promise !== null && typeof promise === 'object' && 'then' in promise && typeof promise.then === 'function';
 } //# sourceMappingURL=is-thenable.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -384,7 +384,7 @@ function ensureLeadingSlash(path) {
     return path.startsWith('/') ? path : `/${path}`;
 } //# sourceMappingURL=ensure-leading-slash.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/segment.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/segment.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -487,7 +487,7 @@ const PAGE_SEGMENT_KEY = '__PAGE__';
 const DEFAULT_SEGMENT_KEY = '__DEFAULT__';
 const NOT_FOUND_SEGMENT_KEY = '/_not-found'; //# sourceMappingURL=segment.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/app-paths.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/app-paths.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -511,8 +511,8 @@ _export(exports, {
         return normalizeRscURL;
     }
 });
-const _ensureleadingslash = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js [app-client] (ecmascript)");
-const _segment = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/segment.js [app-client] (ecmascript)");
+const _ensureleadingslash = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/page-path/ensure-leading-slash.js [app-client] (ecmascript)");
+const _segment = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/segment.js [app-client] (ecmascript)");
 function normalizeAppPath(route) {
     return (0, _ensureleadingslash.ensureLeadingSlash)(route.split('/').reduce((pathname, segment, index, segments)=>{
         // Empty segments are ignored.
@@ -538,7 +538,7 @@ function normalizeRscURL(url) {
     return url.replace(/\.rsc($|\?)/, '$1');
 } //# sourceMappingURL=app-paths.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/interception-routes.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/interception-routes.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -566,7 +566,7 @@ _export(exports, {
         return isInterceptionRouteAppPath;
     }
 });
-const _apppaths = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/app-paths.js [app-client] (ecmascript)");
+const _apppaths = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/app-paths.js [app-client] (ecmascript)");
 const INTERCEPTION_ROUTE_MARKERS = [
     '(..)(..)',
     '(.)',
@@ -647,7 +647,7 @@ function extractInterceptionRouteInformation(path) {
     };
 } //# sourceMappingURL=interception-routes.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/segment-cache/segment-value-encoding.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/segment-cache/segment-value-encoding.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -683,7 +683,7 @@ _export(exports, {
         return createSegmentRequestKeyPart;
     }
 });
-const _segment = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/segment.js [app-client] (ecmascript)");
+const _segment = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/segment.js [app-client] (ecmascript)");
 const ROOT_SEGMENT_REQUEST_KEY = '';
 const HEAD_REQUEST_KEY = '/_head';
 function createSegmentRequestKeyPart(segment) {
@@ -746,7 +746,7 @@ function convertSegmentPathToStaticExportFilename(segmentPath) {
     return `__next${segmentPath.replace(/\//g, '.')}.txt`;
 } //# sourceMappingURL=segment-value-encoding.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/hash.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/hash.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 // http://www.cse.yorku.ca/~oz/hash.html
@@ -789,7 +789,7 @@ function hexHash(str) {
     return djb2Hash(str).toString(36).slice(0, 5);
 } //# sourceMappingURL=hash.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/cache-busting-search-param.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/cache-busting-search-param.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -801,7 +801,7 @@ Object.defineProperty(exports, "computeCacheBustingSearchParam", {
         return computeCacheBustingSearchParam;
     }
 });
-const _hash = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/hash.js [app-client] (ecmascript)");
+const _hash = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/hash.js [app-client] (ecmascript)");
 function computeCacheBustingSearchParam(prefetchHeader, segmentPrefetchHeader, stateTreeHeader, nextUrlHeader) {
     if ((prefetchHeader === undefined || prefetchHeader === '0') && segmentPrefetchHeader === undefined && stateTreeHeader === undefined && nextUrlHeader === undefined) {
         return '';
@@ -814,10 +814,10 @@ function computeCacheBustingSearchParam(prefetchHeader, segmentPrefetchHeader, s
     ].join(','));
 } //# sourceMappingURL=cache-busting-search-param.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/deployment-id.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/deployment-id.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 // This could also be a variable instead of a function, but some unit tests want to change the ID at
 // runtime. Even though that would never happen in a real deployment.
 "use strict";
@@ -852,7 +852,7 @@ function getDeploymentIdQueryOrEmptyString() {
     return '';
 } //# sourceMappingURL=deployment-id.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/app-router-types.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/app-router-types.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -880,7 +880,7 @@ var HasLoadingBoundary = /*#__PURE__*/ function(HasLoadingBoundary) {
     return HasLoadingBoundary;
 }({}); //# sourceMappingURL=app-router-types.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/parse-path.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/parse-path.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -914,7 +914,7 @@ function parsePath(path) {
     };
 } //# sourceMappingURL=parse-path.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/add-path-prefix.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -926,7 +926,7 @@ Object.defineProperty(exports, "addPathPrefix", {
         return addPathPrefix;
     }
 });
-const _parsepath = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/parse-path.js [app-client] (ecmascript)");
+const _parsepath = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/parse-path.js [app-client] (ecmascript)");
 function addPathPrefix(path, prefix) {
     if (!path.startsWith('/') || !prefix) {
         return path;
@@ -935,7 +935,7 @@ function addPathPrefix(path, prefix) {
     return `${prefix}${pathname}${query}${hash}`;
 } //# sourceMappingURL=add-path-prefix.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/remove-trailing-slash.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/remove-trailing-slash.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 /**
@@ -957,7 +957,7 @@ function removeTrailingSlash(route) {
     return route.replace(/\/$/, '') || '/';
 } //# sourceMappingURL=remove-trailing-slash.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/promise-with-resolvers.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/promise-with-resolvers.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -984,7 +984,7 @@ function createPromiseWithResolvers() {
     };
 } //# sourceMappingURL=promise-with-resolvers.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/path-has-prefix.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/path-has-prefix.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -996,7 +996,7 @@ Object.defineProperty(exports, "pathHasPrefix", {
         return pathHasPrefix;
     }
 });
-const _parsepath = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/router/utils/parse-path.js [app-client] (ecmascript)");
+const _parsepath = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/router/utils/parse-path.js [app-client] (ecmascript)");
 function pathHasPrefix(path, prefix) {
     if (typeof path !== 'string') {
         return false;
@@ -1005,7 +1005,7 @@ function pathHasPrefix(path, prefix) {
     return pathname === prefix || pathname.startsWith(prefix + '/');
 } //# sourceMappingURL=path-has-prefix.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/server-reference-info.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/server-reference-info.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1058,7 +1058,7 @@ function omitUnusedArgs(args, info) {
     return filteredArgs;
 } //# sourceMappingURL=server-reference-info.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/action-revalidation-kind.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/action-revalidation-kind.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1090,10 +1090,10 @@ const ActionDidNotRevalidate = 0;
 const ActionDidRevalidateStaticAndDynamic = 1;
 const ActionDidRevalidateDynamicOnly = 2; //# sourceMappingURL=action-revalidation-kind.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use client';
 "use strict";
 Object.defineProperty(exports, "__esModule", {
@@ -1129,8 +1129,8 @@ _export(exports, {
         return TemplateContext;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
 const AppRouterContext = _react.default.createContext(null);
 const LayoutRouterContext = _react.default.createContext(null);
 const GlobalLayoutRouterContext = _react.default.createContext(null);
@@ -1143,7 +1143,7 @@ if ("TURBOPACK compile-time truthy", 1) {
 }
 const MissingSlotContext = _react.default.createContext(new Set()); //# sourceMappingURL=app-router-context.shared-runtime.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/server-inserted-html.shared-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1167,8 +1167,8 @@ _export(exports, {
         return useServerInsertedHTML;
     }
 });
-const _interop_require_wildcard = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _interop_require_wildcard = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
 const ServerInsertedHTMLContext = /*#__PURE__*/ _react.default.createContext(null);
 function useServerInsertedHTML(callback) {
     const addInsertedServerHTMLCallback = (0, _react.useContext)(ServerInsertedHTMLContext);
@@ -1178,10 +1178,10 @@ function useServerInsertedHTML(callback) {
     }
 } //# sourceMappingURL=server-inserted-html.shared-runtime.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -1203,10 +1203,10 @@ if ("TURBOPACK compile-time truthy", 1) {
     };
 } //# sourceMappingURL=warn-once.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/format-webpack-messages.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/format-webpack-messages.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
 MIT License
 
@@ -1239,8 +1239,8 @@ Object.defineProperty(exports, "default", {
         return formatWebpackMessages;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _stripansi = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/strip-ansi/index.js [app-client] (ecmascript)"));
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _stripansi = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/strip-ansi/index.js [app-client] (ecmascript)"));
 // This file is based on https://github.com/facebook/create-react-app/blob/7b1a32be6ec9f99a6c9a3c66813f3ac09c4736b9/packages/react-dev-utils/formatWebpackMessages.js
 // It's been edited to remove chalk and CRA-specific logic
 const friendlySyntaxErrorLabel = 'Syntax error:';
@@ -1261,7 +1261,7 @@ function formatMessage(message, verbose, importTraceNote) {
         }
         // TODO: Rspack currently doesn't populate moduleName correctly in some cases,
         // fall back to moduleIdentifier as a workaround
-        if (__TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_RSPACK && !message.moduleName && !message.file && message.moduleIdentifier) {
+        if (__TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_RSPACK && !message.moduleName && !message.file && message.moduleIdentifier) {
             const parts = message.moduleIdentifier.split('!');
             message.moduleName = parts[parts.length - 1];
         }
@@ -1370,7 +1370,7 @@ function formatWebpackMessages(json, verbose) {
     return result;
 } //# sourceMappingURL=format-webpack-messages.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/errors/constants.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/errors/constants.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1391,7 +1391,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=constants.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/shared/lib/normalized-asset-prefix.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/shared/lib/normalized-asset-prefix.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1420,10 +1420,10 @@ function normalizedAssetPrefix(assetPrefix) {
     return `/${escapedAssetPrefix}`;
 } //# sourceMappingURL=normalized-asset-prefix.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -1449,7 +1449,7 @@ _export(exports, {
         return getProperError;
     }
 });
-const _isplainobject = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/is-plain-object.js [app-client] (ecmascript)");
+const _isplainobject = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/is-plain-object.js [app-client] (ecmascript)");
 /**
  * This is a safe stringify function that handles circular references.
  * We're using a simpler version here to avoid introducing
@@ -1501,10 +1501,10 @@ function getProperError(err) {
     });
 } //# sourceMappingURL=is-error.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/lib/require-instrumentation-client.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/lib/require-instrumentation-client.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * This module imports the client instrumentation hook from the project root.
  *
@@ -1529,7 +1529,7 @@ if ("TURBOPACK compile-time truthy", 1) {
 ;
  //# sourceMappingURL=require-instrumentation-client.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/lib/framework/boundary-constants.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/lib/framework/boundary-constants.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1566,10 +1566,10 @@ const VIEWPORT_BOUNDARY_NAME = '__next_viewport_boundary__';
 const OUTLET_BOUNDARY_NAME = '__next_outlet_boundary__';
 const ROOT_LAYOUT_BOUNDARY_NAME = '__next_root_layout_boundary__'; //# sourceMappingURL=boundary-constants.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/lib/scheduler.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/lib/scheduler.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -1611,7 +1611,7 @@ const scheduleOnNextTick = (cb)=>{
         if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
         ;
         else {
-            __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].nextTick(cb);
+            __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].nextTick(cb);
         }
     });
 };
@@ -1633,7 +1633,7 @@ function waitAtLeastOneReactRenderTask() {
     }
 } //# sourceMappingURL=scheduler.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1665,7 +1665,7 @@ _export(exports, {
         return ViewportBoundary;
     }
 });
-const _boundaryconstants = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/lib/framework/boundary-constants.js [app-client] (ecmascript)");
+const _boundaryconstants = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/lib/framework/boundary-constants.js [app-client] (ecmascript)");
 // We use a namespace object to allow us to recover the name of the function
 // at runtime even when production bundling/minification is used.
 const NameSpace = {
@@ -1691,7 +1691,7 @@ NameSpace[_boundaryconstants.OUTLET_BOUNDARY_NAME.slice(0)];
 const RootLayoutBoundary = // so it retains the name inferred from the namespace object
 NameSpace[_boundaryconstants.ROOT_LAYOUT_BOUNDARY_NAME.slice(0)]; //# sourceMappingURL=boundary-components.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/lib/constants.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/lib/constants.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2097,7 +2097,7 @@ const WEBPACK_RESOURCE_QUERIES = {
     metadataImageMeta: '__next_metadata_image_meta__'
 }; //# sourceMappingURL=constants.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2133,9 +2133,9 @@ _export(exports, {
         return setOwnerStackIfAvailable;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
-const _iserror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)"));
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _iserror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)"));
 const ownerStacks = new WeakMap();
 function getOwnerStack(error) {
     return ownerStacks.get(error);
@@ -2169,7 +2169,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=stitched-error.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/shared/console-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/shared/console-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 // To distinguish from React error.digest, we use a different symbol here to determine if the error is from console.error or unhandled promise rejection.
@@ -2218,10 +2218,10 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=console-error.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/terminal-logging-config.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/terminal-logging-config.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -2263,7 +2263,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=terminal-logging-config.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/shared/forward-logs-shared.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/shared/forward-logs-shared.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2321,7 +2321,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=forward-logs-shared.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/forward-logs-utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/forward-logs-utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2349,9 +2349,9 @@ _export(exports, {
         return safeStringifyWithDepth;
     }
 });
-const _safestablestringify = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/safe-stable-stringify/index.js [app-client] (ecmascript)");
-const _terminalloggingconfig = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/terminal-logging-config.js [app-client] (ecmascript)");
-const _forwardlogsshared = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/shared/forward-logs-shared.js [app-client] (ecmascript)");
+const _safestablestringify = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/safe-stable-stringify/index.js [app-client] (ecmascript)");
+const _terminalloggingconfig = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/terminal-logging-config.js [app-client] (ecmascript)");
+const _forwardlogsshared = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/shared/forward-logs-shared.js [app-client] (ecmascript)");
 const terminalLoggingConfig = (0, _terminalloggingconfig.getTerminalLoggingConfig)();
 const PROMISE_MARKER = 'Promise {}';
 const UNAVAILABLE_MARKER = '[Unable to view]';
@@ -2418,10 +2418,10 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=forward-logs-utils.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -2456,11 +2456,11 @@ _export(exports, {
         return logUnhandledRejection;
     }
 });
-const _stitchederror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)");
-const _errorsource = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/error-source.js [app-client] (ecmascript)");
-const _terminalloggingconfig = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/terminal-logging-config.js [app-client] (ecmascript)");
-const _forwardlogsshared = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/shared/forward-logs-shared.js [app-client] (ecmascript)");
-const _forwardlogsutils = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/forward-logs-utils.js [app-client] (ecmascript)");
+const _stitchederror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)");
+const _errorsource = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/error-source.js [app-client] (ecmascript)");
+const _terminalloggingconfig = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/terminal-logging-config.js [app-client] (ecmascript)");
+const _forwardlogsshared = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/shared/forward-logs-shared.js [app-client] (ecmascript)");
+const _forwardlogsutils = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/forward-logs-utils.js [app-client] (ecmascript)");
 // Client-side file logger for browser logs
 class ClientFileLogger {
     formatTimestamp() {
@@ -2926,7 +2926,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=forward-logs.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2958,14 +2958,14 @@ _export(exports, {
         return useErrorHandler;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _react = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-const _isnextroutererror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/is-next-router-error.js [app-client] (ecmascript)");
-const _console = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/lib/console.js [app-client] (ecmascript)");
-const _iserror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)"));
-const _consoleerror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/shared/console-error.js [app-client] (ecmascript)");
-const _stitchederror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)");
-const _forwardlogs = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)");
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _isnextroutererror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/is-next-router-error.js [app-client] (ecmascript)");
+const _console = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/lib/console.js [app-client] (ecmascript)");
+const _iserror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)"));
+const _consoleerror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/shared/console-error.js [app-client] (ecmascript)");
+const _stitchederror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)");
+const _forwardlogs = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)");
 const queueMicroTask = globalThis.queueMicrotask || ((cb)=>Promise.resolve().then(cb));
 const errorQueue = [];
 const errorHandlers = [];
@@ -3067,10 +3067,10 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=use-error-handler.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3093,12 +3093,12 @@ _export(exports, {
         return patchConsoleError;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _iserror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)"));
-const _isnextroutererror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/is-next-router-error.js [app-client] (ecmascript)");
-const _useerrorhandler = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
-const _console = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/lib/console.js [app-client] (ecmascript)");
-const _forwardlogs = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)");
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _iserror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/lib/is-error.js [app-client] (ecmascript)"));
+const _isnextroutererror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/is-next-router-error.js [app-client] (ecmascript)");
+const _useerrorhandler = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
+const _console = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/lib/console.js [app-client] (ecmascript)");
+const _forwardlogs = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)");
 const originConsoleError = globalThis.console.error;
 function patchConsoleError() {
     // Ensure it's only patched once
@@ -3137,15 +3137,15 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=intercept-console-error.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-setup.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-setup.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-const _interceptconsoleerror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js [app-client] (ecmascript)");
-const _useerrorhandler = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
-const _forwardlogs = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)");
+const _interceptconsoleerror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js [app-client] (ecmascript)");
+const _useerrorhandler = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
+const _forwardlogs = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/forward-logs.js [app-client] (ecmascript)");
 (0, _useerrorhandler.handleGlobalErrors)();
 (0, _interceptconsoleerror.patchConsoleError)();
 (0, _forwardlogs.initializeDebugLogForwarding)('app');
@@ -3157,7 +3157,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=app-dev-overlay-setup.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3185,9 +3185,9 @@ _export(exports, {
         return _interceptconsoleerror.originConsoleError;
     }
 });
-const _interceptconsoleerror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js [app-client] (ecmascript)");
-const _useerrorhandler = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
-const _stitchederror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)");
+const _interceptconsoleerror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js [app-client] (ecmascript)");
+const _useerrorhandler = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
+const _stitchederror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/stitched-error.js [app-client] (ecmascript)");
 if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
     Object.defineProperty(exports.default, '__esModule', {
         value: true
@@ -3196,7 +3196,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=index.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3236,10 +3236,10 @@ _export(exports, {
         return useSegmentState;
     }
 });
-const _jsxruntime = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
-const _react = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-const _nextdevtools = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/next-devtools/index.js (raw)");
-const _notfound = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/not-found.js [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _nextdevtools = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/next-devtools/index.js (raw)");
+const _notfound = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/not-found.js [app-client] (ecmascript)");
 const SEGMENT_EXPLORER_SIMULATED_ERROR_MESSAGE = 'NEXT_DEVTOOLS_SIMULATED_ERROR';
 function SegmentTrieNode({ type, pagePath }) {
     const { boundaryType, setBoundaryType } = useSegmentState();
@@ -3353,10 +3353,10 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=segment-explorer-node.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3367,14 +3367,14 @@ Object.defineProperty(exports, "AppDevOverlayErrorBoundary", {
         return AppDevOverlayErrorBoundary;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
-const _react = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-const _nextdevtools = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/next-devtools/index.js (raw)");
-const _runtimeerrorhandler = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/dev/runtime-error-handler.js [app-client] (ecmascript)");
-const _errorboundary = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/error-boundary.js [app-client] (ecmascript)");
-const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
-const _segmentexplorernode = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)");
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _nextdevtools = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/next-devtools/index.js (raw)");
+const _runtimeerrorhandler = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/dev/runtime-error-handler.js [app-client] (ecmascript)");
+const _errorboundary = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/error-boundary.js [app-client] (ecmascript)");
+const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
+const _segmentexplorernode = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)");
 function ErroredHtml({ globalError: [GlobalError, globalErrorStyles], error }) {
     if (!error) {
         return /*#__PURE__*/ (0, _jsxruntime.jsxs)("html", {
@@ -3430,7 +3430,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=app-dev-overlay-error-boundary.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/use-app-dev-rendering-indicator.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/use-app-dev-rendering-indicator.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3442,8 +3442,8 @@ Object.defineProperty(exports, "useAppDevRenderingIndicator", {
         return useAppDevRenderingIndicator;
     }
 });
-const _react = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-const _nextdevtools = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/next-devtools/index.js (raw)");
+const _react = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _nextdevtools = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/next-devtools/index.js (raw)");
 const useAppDevRenderingIndicator = ()=>{
     const [isPending, startTransition] = (0, _react.useTransition)();
     (0, _react.useEffect)(()=>{
@@ -3465,10 +3465,10 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=use-app-dev-rendering-indicator.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/replay-ssr-only-errors.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/replay-ssr-only-errors.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -3479,10 +3479,10 @@ Object.defineProperty(exports, "ReplaySsrOnlyErrors", {
         return ReplaySsrOnlyErrors;
     }
 });
-const _react = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-const _useerrorhandler = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
-const _isnextroutererror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/is-next-router-error.js [app-client] (ecmascript)");
-const _constants = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/errors/constants.js [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _useerrorhandler = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/errors/use-error-handler.js [app-client] (ecmascript)");
+const _isnextroutererror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/is-next-router-error.js [app-client] (ecmascript)");
+const _constants = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/errors/constants.js [app-client] (ecmascript)");
 function readSsrError() {
     if (typeof document === 'undefined') {
         return null;
@@ -3541,7 +3541,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=replay-ssr-only-errors.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/client-entry.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/client-entry.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3553,11 +3553,11 @@ Object.defineProperty(exports, "RootLevelDevOverlayElement", {
         return RootLevelDevOverlayElement;
     }
 });
-const _interop_require_default = __turbopack_context__.r("[project]/brainbridge/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _jsxruntime = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
-const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
-const _appdevoverlayerrorboundary = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js [app-client] (ecmascript)");
+const _interop_require_default = __turbopack_context__.r("[project]/Verixa/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
+const _appdevoverlayerrorboundary = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js [app-client] (ecmascript)");
 function RootLevelDevOverlayElement({ children }) {
     return /*#__PURE__*/ (0, _jsxruntime.jsx)(_appdevoverlayerrorboundary.AppDevOverlayErrorBoundary, {
         globalError: [
@@ -3575,7 +3575,7 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
     module.exports = exports.default;
 } //# sourceMappingURL=client-entry.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3651,7 +3651,7 @@ function createSnapshot() {
     };
 } //# sourceMappingURL=async-local-storage.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/work-unit-async-storage-instance.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/work-unit-async-storage-instance.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3663,10 +3663,10 @@ Object.defineProperty(exports, "workUnitAsyncStorageInstance", {
         return workUnitAsyncStorageInstance;
     }
 });
-const _asynclocalstorage = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)");
+const _asynclocalstorage = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)");
 const workUnitAsyncStorageInstance = (0, _asynclocalstorage.createAsyncLocalStorage)(); //# sourceMappingURL=work-unit-async-storage-instance.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3726,9 +3726,9 @@ _export(exports, {
         return _workunitasyncstorageinstance.workUnitAsyncStorageInstance;
     }
 });
-const _workunitasyncstorageinstance = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/work-unit-async-storage-instance.js [app-client] (ecmascript)");
-const _approuterheaders = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/app-router-headers.js [app-client] (ecmascript)");
-const _invarianterror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/invariant-error.js [app-client] (ecmascript)");
+const _workunitasyncstorageinstance = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/work-unit-async-storage-instance.js [app-client] (ecmascript)");
+const _approuterheaders = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/app-router-headers.js [app-client] (ecmascript)");
+const _invarianterror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/invariant-error.js [app-client] (ecmascript)");
 function throwForMissingRequestStore(callingExpression) {
     throw Object.defineProperty(new Error(`\`${callingExpression}\` was called outside a request scope. Read more: https://nextjs.org/docs/messages/next-dynamic-api-wrong-context`), "__NEXT_ERROR_CODE", {
         value: "E251",
@@ -3919,7 +3919,7 @@ function getRuntimeStagePromise(workUnitStore) {
     }
 } //# sourceMappingURL=work-unit-async-storage.external.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/work-async-storage-instance.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/work-async-storage-instance.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3931,10 +3931,10 @@ Object.defineProperty(exports, "workAsyncStorageInstance", {
         return workAsyncStorageInstance;
     }
 });
-const _asynclocalstorage = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)");
+const _asynclocalstorage = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)");
 const workAsyncStorageInstance = (0, _asynclocalstorage.createAsyncLocalStorage)(); //# sourceMappingURL=work-async-storage-instance.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/work-async-storage.external.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/work-async-storage.external.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3946,9 +3946,9 @@ Object.defineProperty(exports, "workAsyncStorage", {
         return _workasyncstorageinstance.workAsyncStorageInstance;
     }
 });
-const _workasyncstorageinstance = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/work-async-storage-instance.js [app-client] (ecmascript)"); //# sourceMappingURL=work-async-storage.external.js.map
+const _workasyncstorageinstance = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/work-async-storage-instance.js [app-client] (ecmascript)"); //# sourceMappingURL=work-async-storage.external.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/action-async-storage-instance.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/action-async-storage-instance.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3960,10 +3960,10 @@ Object.defineProperty(exports, "actionAsyncStorageInstance", {
         return actionAsyncStorageInstance;
     }
 });
-const _asynclocalstorage = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)");
+const _asynclocalstorage = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/async-local-storage.js [app-client] (ecmascript)");
 const actionAsyncStorageInstance = (0, _asynclocalstorage.createAsyncLocalStorage)(); //# sourceMappingURL=action-async-storage-instance.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/action-async-storage.external.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/action-async-storage.external.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3975,9 +3975,9 @@ Object.defineProperty(exports, "actionAsyncStorage", {
         return _actionasyncstorageinstance.actionAsyncStorageInstance;
     }
 });
-const _actionasyncstorageinstance = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/action-async-storage-instance.js [app-client] (ecmascript)"); //# sourceMappingURL=action-async-storage.external.js.map
+const _actionasyncstorageinstance = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/action-async-storage-instance.js [app-client] (ecmascript)"); //# sourceMappingURL=action-async-storage.external.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/dynamic-rendering-utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/dynamic-rendering-utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4064,7 +4064,7 @@ function makeDevtoolsIOAwarePromise(underlying, requestStore, stage) {
     });
 } //# sourceMappingURL=dynamic-rendering-utils.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/lib/router-utils/is-postpone.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/lib/router-utils/is-postpone.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4081,10 +4081,10 @@ function isPostpone(error) {
     return typeof error === 'object' && error !== null && error.$$typeof === REACT_POSTPONE_TYPE;
 } //# sourceMappingURL=is-postpone.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$brainbridge$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/brainbridge/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Verixa$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Verixa/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 /**
  * The functions provided by this module are used to communicate certain properties
  * about the currently running code so that Next.js can make decisions on how to handle
@@ -4231,16 +4231,16 @@ _export(exports, {
         return useDynamicSearchParams;
     }
 });
-const _react = /*#__PURE__*/ _interop_require_default(__turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
-const _hooksservercontext = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/hooks-server-context.js [app-client] (ecmascript)");
-const _staticgenerationbailout = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/client/components/static-generation-bailout.js [app-client] (ecmascript)");
-const _workunitasyncstorageexternal = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js [app-client] (ecmascript)");
-const _workasyncstorageexternal = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/app-render/work-async-storage.external.js [app-client] (ecmascript)");
-const _dynamicrenderingutils = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/server/dynamic-rendering-utils.js [app-client] (ecmascript)");
-const _boundaryconstants = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/lib/framework/boundary-constants.js [app-client] (ecmascript)");
-const _scheduler = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/lib/scheduler.js [app-client] (ecmascript)");
-const _bailouttocsr = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-client] (ecmascript)");
-const _invarianterror = __turbopack_context__.r("[project]/brainbridge/node_modules/next/dist/shared/lib/invariant-error.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_default(__turbopack_context__.r("[project]/Verixa/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _hooksservercontext = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/hooks-server-context.js [app-client] (ecmascript)");
+const _staticgenerationbailout = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/client/components/static-generation-bailout.js [app-client] (ecmascript)");
+const _workunitasyncstorageexternal = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js [app-client] (ecmascript)");
+const _workasyncstorageexternal = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/app-render/work-async-storage.external.js [app-client] (ecmascript)");
+const _dynamicrenderingutils = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/server/dynamic-rendering-utils.js [app-client] (ecmascript)");
+const _boundaryconstants = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/lib/framework/boundary-constants.js [app-client] (ecmascript)");
+const _scheduler = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/lib/scheduler.js [app-client] (ecmascript)");
+const _bailouttocsr = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/lazy-dynamic/bailout-to-csr.js [app-client] (ecmascript)");
+const _invarianterror = __turbopack_context__.r("[project]/Verixa/node_modules/next/dist/shared/lib/invariant-error.js [app-client] (ecmascript)");
 function _interop_require_default(obj) {
     return obj && obj.__esModule ? obj : {
         default: obj
@@ -4912,7 +4912,7 @@ function delayUntilRuntimeStage(prerenderStore, result) {
     return result;
 } //# sourceMappingURL=dynamic-rendering.js.map
 }),
-"[project]/brainbridge/node_modules/next/dist/server/dev/hot-reloader-types.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/Verixa/node_modules/next/dist/server/dev/hot-reloader-types.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -3,19 +3,16 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
-  LayoutDashboard, Layers, Heart, Compass, Mail, LogOut, X, Menu, Activity, Settings
+  LayoutDashboard, Layers, Activity, Compass, Mail, LogOut, X, CheckSquare, AlertCircle
 } from 'lucide-react';
 
 const workspaceLinks = [
   { name: 'Dashboard', icon: <LayoutDashboard size={18} />, path: '/dashboard' },
-  { name: 'My Projects', icon: <Layers size={18} />, path: '/dashboard/projects' },
-  { name: 'Favorites', icon: <Heart size={18} />, path: '/dashboard/favorites' },
-];
-
-const discoveryLinks = [
-  { name: 'Feed', icon: <Activity size={18} />, path: '/dashboard/feed' },
-  { name: 'Articles', icon: <Compass size={18} />, path: '/projects' },
-  { name: 'Inbox', icon: <Mail size={18} />, path: '/dashboard/inbox' },
+  { name: 'Projects', icon: <Layers size={18} />, path: '/dashboard/projects' },
+  { name: 'Test Cases', icon: <Activity size={18} />, path: '/dashboard/test-cases' },
+  { name: 'Test Runs', icon: <Compass size={18} />, path: '/dashboard/runs' },
+  { name: 'Executions', icon: <Activity size={18} />, path: '/dashboard/executions' },
+  { name: 'Defects', icon: <Mail size={18} />, path: '/dashboard/defects' },
 ];
 
 export default function Sidebar({ isOpen, onClose }) {
@@ -66,7 +63,7 @@ export default function Sidebar({ isOpen, onClose }) {
       `}>
         <div className="p-6 flex items-center justify-between border-b border-[var(--border)]">
           <Link href="/dashboard" className="text-lg font-extrabold text-[var(--primary)]" style={{ fontFamily: 'var(--font-heading)' }}>
-            BrainBridge
+            Verixa
           </Link>
           <button onClick={onClose} className="lg:hidden p-2 rounded-lg hover:bg-[var(--bg)] text-[var(--text-muted)]">
             <X size={18} />
@@ -75,29 +72,26 @@ export default function Sidebar({ isOpen, onClose }) {
 
         <nav className="flex-1 px-4 space-y-7 overflow-y-auto py-6">
           <div>
-            <p className="px-4 text-[10px] font-semibold text-[var(--text-muted)] uppercase tracking-[0.15em] mb-3">Workspace</p>
+            <p className="px-4 text-[10px] font-semibold text-[var(--text-muted)] uppercase tracking-[0.15em] mb-3">UAT Management</p>
             <div className="space-y-1">
               {workspaceLinks.map(item => <NavItem key={item.path} item={item} />)}
-            </div>
-          </div>
-
-          <div>
-            <p className="px-4 text-[10px] font-semibold text-[var(--text-muted)] uppercase tracking-[0.15em] mb-3">Discovery</p>
-            <div className="space-y-1">
-              {discoveryLinks.map(item => <NavItem key={item.path} item={item} />)}
             </div>
           </div>
         </nav>
 
         <div className="p-4 border-t border-[var(--border)] flex flex-col gap-0.5">
           <Link href="/dashboard/profile" className="flex items-center gap-3.5 px-4 py-2.5 w-full text-[var(--text-muted)] font-medium text-[13px] hover:text-[var(--text)] hover:bg-[var(--bg)] rounded-xl transition-all group">
-            <Settings size={18} />
+            <Activity size={18} />
             <span>Settings</span>
           </Link>
-          <Link href="/auth/login" className="flex items-center gap-3.5 px-4 py-2.5 w-full text-[var(--text-muted)] font-medium text-[13px] hover:text-[var(--accent)] hover:bg-red-50 rounded-xl transition-all group">
+          <button onClick={() => {
+            localStorage.removeItem('token');
+            localStorage.removeItem('tokenType');
+            window.location.href = '/auth/login';
+          }} className="flex items-center gap-3.5 px-4 py-2.5 w-full text-[var(--text-muted)] font-medium text-[13px] hover:text-[var(--accent)] hover:bg-red-50 rounded-xl transition-all group">
             <LogOut size={18} />
             <span>Logout</span>
-          </Link>
+          </button>
         </div>
       </aside>
     </>

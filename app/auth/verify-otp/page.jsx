@@ -114,7 +114,7 @@ function VerifyOTPContent() {
 
       <div className="w-full max-w-[480px] bg-white rounded-3xl border border-[var(--border)] shadow-2xl shadow-gray-200/40 p-8 sm:p-12">
         <Link href="/" className="text-xl font-extrabold text-[var(--primary)] mb-8 block" style={{ fontFamily: 'var(--font-heading)' }}>
-          BrainBridge
+          Verixa
         </Link>
 
         <div className="flex items-center justify-center mb-6">

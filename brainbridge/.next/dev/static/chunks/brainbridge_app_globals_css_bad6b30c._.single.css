@@ -1,4 +1,4 @@
-/* [project]/brainbridge/app/globals.css [app-client] (css) */
+/* [project]/Verixa/app/globals.css [app-client] (css) */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {
@@ -4961,4 +4961,4 @@ code, pre, .font-mono {
   }
 }
 
-/*# sourceMappingURL=brainbridge_app_globals_css_bad6b30c._.single.css.map*/
+/*# sourceMappingURL=Verixa_app_globals_css_bad6b30c._.single.css.map*/

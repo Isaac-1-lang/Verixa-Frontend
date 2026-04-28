@@ -22,7 +22,7 @@ export default function NavigationShell({ children }) {
       <aside className="w-64 bg-white flex flex-col fixed h-full z-30 border-r border-slate-200">
         <div className="p-7">
           <h1 className="text-2xl font-black text-[#08075C] tracking-tight">
-            BrainBridge
+            Verixa
           </h1>
         </div>
 
