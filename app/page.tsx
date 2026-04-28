@@ -8,7 +8,7 @@ import {
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 
 const NAV_LINKS = [
-  { label: 'Features', href: '#features' },
+  { label: 'Features', href: '#featuresssss' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Pricing', href: '#pricing' },
   { label: 'About', href: '#about' },
