@@ -61,14 +61,14 @@ export default function ProjectPage() {
         {/* Enterprise Interest Section */}
         <section className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm">
           <h3 className="text-[10px] font-black text-[var(--primary)] uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
-            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <span className="w-2 h-2 bg-slate-600 rounded-full"></span>
             Enterprise Requests
           </h3>
           <div className="space-y-4">
             <div className="p-5 bg-gray-50 rounded-3xl border border-gray-100">
               <div className="flex justify-between items-start mb-3">
                 <p className="text-xs font-black text-[var(--primary)]">Corporate Node A</p>
-                <span className="bg-blue-100 text-blue-600 px-2 py-0.5 rounded text-[8px] font-bold uppercase">New</span>
+                <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded text-[8px] font-bold uppercase">New</span>
               </div>
               <p className="text-[11px] text-gray-500 italic mb-4">"Requesting integration documentation for {project.title}."</p>
               <div className="flex gap-2">

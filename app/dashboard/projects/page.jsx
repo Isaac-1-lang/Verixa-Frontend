@@ -51,7 +51,7 @@ export default function ProjectsPage() {
       header: "Runs",
       accessor: "runs",
       cell: (row) => (
-        <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-semibold">
+        <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 text-xs font-semibold">
           {row.runs} runs
         </span>
       ),

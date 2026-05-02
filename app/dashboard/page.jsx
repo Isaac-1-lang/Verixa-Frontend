@@ -48,9 +48,9 @@ export default function DashboardPage() {
       title: "Total Projects",
       value: stats.totalProjects,
       icon: <Layers size={20} />,
-      color: "bg-blue-500",
-      bgColor: "bg-blue-50",
-      textColor: "text-blue-600",
+      color: "bg-slate-700",
+      bgColor: "bg-slate-50",
+      textColor: "text-slate-700",
       link: "/dashboard/projects"
     },
     {
@@ -189,7 +189,7 @@ export default function DashboardPage() {
                 activity.status === 'passed' ? 'bg-emerald-50 text-emerald-600' :
                 activity.status === 'failed' ? 'bg-red-50 text-red-600' :
                 activity.status === 'open' ? 'bg-amber-50 text-amber-600' :
-                'bg-blue-50 text-blue-600'
+                'bg-slate-50 text-slate-700'
               }`}>
                 {activity.status === 'passed' ? <CheckCircle size={18} /> :
                  activity.status === 'failed' ? <XCircle size={18} /> :
@@ -204,7 +204,7 @@ export default function DashboardPage() {
                 activity.status === 'passed' ? 'bg-emerald-50 text-emerald-700' :
                 activity.status === 'failed' ? 'bg-red-50 text-red-700' :
                 activity.status === 'open' ? 'bg-amber-50 text-amber-700' :
-                'bg-blue-50 text-blue-700'
+                'bg-slate-50 text-slate-700'
               }`}>
                 {activity.status.replace('_', ' ')}
               </span>

@@ -25,8 +25,8 @@ export default function ProjectView({ project, onUpdate, onDelete, isOwner }) {
   const getStatusTheme = (status) => {
     const map = {
       'DRAFT': { bg: 'bg-amber-50', text: 'text-amber-600', dot: 'bg-amber-500', border: 'border-amber-100' },
-      'ACTIVE': { bg: 'bg-blue-50/50', text: 'text-blue-700', dot: 'bg-blue-500', border: 'border-blue-100/50' },
-      'ONGOING': { bg: 'bg-blue-50/50', text: 'text-blue-700', dot: 'bg-blue-500', border: 'border-blue-100/50' },
+      'ACTIVE': { bg: 'bg-slate-50/50', text: 'text-slate-700', dot: 'bg-slate-600', border: 'border-slate-100/50' },
+      'ONGOING': { bg: 'bg-slate-50/50', text: 'text-slate-700', dot: 'bg-slate-600', border: 'border-slate-100/50' },
       'COMPLETED': { bg: 'bg-green-50/50', text: 'text-green-700', dot: 'bg-green-500', border: 'border-green-100/50' },
       'ARCHIVED': { bg: 'bg-gray-50/50', text: 'text-gray-600', dot: 'bg-gray-400', border: 'border-gray-100/50' },
       'DELETED': { bg: 'bg-red-50/50', text: 'text-red-700', dot: 'bg-red-500', border: 'border-red-100/50' }

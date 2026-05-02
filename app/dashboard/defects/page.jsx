@@ -21,7 +21,7 @@ export default function DefectsPage() {
             row.severity === 'Critical' ? 'bg-red-50 text-red-600' :
             row.severity === 'High' ? 'bg-orange-50 text-orange-600' :
             row.severity === 'Medium' ? 'bg-amber-50 text-amber-600' :
-            'bg-blue-50 text-blue-600'
+            'bg-slate-50 text-slate-700'
           }`}>
             <AlertCircle size={18} />
           </div>
@@ -40,7 +40,7 @@ export default function DefectsPage() {
           row.severity === 'Critical' ? 'bg-red-50 text-red-700' :
           row.severity === 'High' ? 'bg-orange-50 text-orange-700' :
           row.severity === 'Medium' ? 'bg-amber-50 text-amber-700' :
-          'bg-blue-50 text-blue-700'
+          'bg-slate-50 text-slate-700'
         }`}>
           {row.severity}
         </span>
@@ -52,7 +52,7 @@ export default function DefectsPage() {
       cell: (row) => (
         <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
           row.status === 'Resolved' ? 'bg-emerald-50 text-emerald-700' :
-          row.status === 'In Progress' ? 'bg-blue-50 text-blue-700' :
+          row.status === 'In Progress' ? 'bg-slate-50 text-slate-700' :
           'bg-zinc-100 text-zinc-700'
         }`}>
           {row.status}

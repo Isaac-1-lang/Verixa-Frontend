@@ -94,7 +94,7 @@ export default function TopBar({ onMenuClick }) {
                     <div 
                       key={notif.id} 
                       onClick={() => handleNotificationClick(notif)}
-                      className={`p-4 border-b border-[var(--border)] last:border-0 cursor-pointer transition-colors flex gap-3 ${!notif.isRead ? 'bg-blue-50/30 hover:bg-blue-50/60' : 'hover:bg-gray-50/80 grayscale-[0.2] opacity-80'}`}
+                      className={`p-4 border-b border-[var(--border)] last:border-0 cursor-pointer transition-colors flex gap-3 ${!notif.isRead ? 'bg-slate-50/30 hover:bg-slate-50/60' : 'hover:bg-gray-50/80 grayscale-[0.2] opacity-80'}`}
                     >
                       <div className={`w-2 h-2 mt-1.5 rounded-full flex-shrink-0 ${!notif.isRead ? 'bg-[var(--primary)] shadow-[0_0_8px_rgba(108,99,255,0.5)]' : 'bg-transparent'}`}></div>
                       <div className="flex-1">

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const STATUS_STYLES = {
   idea: "bg-slate-100 text-slate-600",
-  progress: "bg-blue-100 text-blue-700",
+  progress: "bg-slate-100 text-slate-700",
   completed: "bg-green-100 text-green-700",
   stopped: "bg-red-100 text-red-700",
 };
@@ -54,7 +54,7 @@ export default function ProjectCard({ project }) {
         <div className="flex gap-3 font-medium">
           <Link
             href={`/dashboard/projects/${id}`}
-            className="text-blue-600 hover:underline"
+            className="text-slate-700 hover:underline hover:text-slate-900"
           >
             View
           </Link>

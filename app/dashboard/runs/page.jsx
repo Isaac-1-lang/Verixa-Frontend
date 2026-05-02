@@ -32,7 +32,7 @@ export default function RunsPage() {
       cell: (row) => (
         <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
           row.status === 'Completed' ? 'bg-emerald-50 text-emerald-700' :
-          row.status === 'In Progress' ? 'bg-blue-50 text-blue-700' :
+          row.status === 'In Progress' ? 'bg-slate-50 text-slate-700' :
           'bg-zinc-100 text-zinc-700'
         }`}>
           {row.status}

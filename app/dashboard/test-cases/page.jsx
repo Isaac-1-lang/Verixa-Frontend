@@ -40,7 +40,7 @@ export default function TestCasesPage() {
         <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
           row.priority === 'Critical' ? 'bg-red-50 text-red-700' :
           row.priority === 'High' ? 'bg-orange-50 text-orange-700' :
-          'bg-blue-50 text-blue-700'
+          'bg-slate-50 text-slate-700'
         }`}>
           {row.priority}
         </span>
