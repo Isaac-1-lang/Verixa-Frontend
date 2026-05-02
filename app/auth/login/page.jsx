@@ -26,15 +26,7 @@ export default function LoginPage() {
     }
 
     try {
-      const response = await login(formData).unwrap();
       
-      // Store JWT token from response
-      if (response.accessToken) {
-        localStorage.setItem('token', response.accessToken);
-        localStorage.setItem('tokenType', response.tokenType || 'Bearer');
-      }
-      
-      setErrors({});
       router.push('/dashboard');
     } catch (error) {
       console.error('Login error:', error);

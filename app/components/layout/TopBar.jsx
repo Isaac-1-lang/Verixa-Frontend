@@ -2,16 +2,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Search, Bell, ChevronDown, Menu, Check } from 'lucide-react';
-import { useGetUnreadNotificationCountQuery, useGetNotificationsQuery, useMarkNotificationAsReadMutation } from '../../redux/api/MessagesApiSlice';
 
 export default function TopBar({ onMenuClick }) {
   const [user, setUser] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const { data: unreadCount = 0 } = useGetUnreadNotificationCountQuery(undefined, { skip: !user });
-  const { data: notifications = [] } = useGetNotificationsQuery(undefined, { skip: !user });
-  const [markAsRead] = useMarkNotificationAsReadMutation();
 
   useEffect(() => {
     const userStr = localStorage.getItem('user');
@@ -70,11 +66,6 @@ export default function TopBar({ onMenuClick }) {
             className="relative p-2 rounded-lg hover:bg-[var(--bg)] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
           >
             <Bell size={18} />
-            {unreadCount > 0 && (
-              <span className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 flex items-center justify-center min-w-[1.25rem] h-5 px-1 bg-[var(--accent)] text-white text-[10px] font-bold rounded-full ring-2 ring-white shadow-sm">
-                {unreadCount > 99 ? '99+' : unreadCount}
-              </span>
-            )}
           </button>
           
           {/* Notification Dropdown Box */}
