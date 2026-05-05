@@ -19,16 +19,16 @@
   --field-education: #FFA726;
   --field-ai: #6C63FF;
   --field-mining: #8D6E63;
-  --field-tourism: #29B6F6;
+  --field-tourism: #1E88E5; /* Changed from #29B6F6 to darker blue */
   --field-sustainability: #66BB6A;
-  --field-water: #26C6DA;
+  --field-water: #0277BD; /* Changed from #26C6DA to darker blue */
   --field-cybersecurity: #EF5350;
   --field-finance: #AB47BC;
   --field-food: #FF7043;
   --field-energy: #FFD54F;
-  --field-smart-cities: #5C6BC0;
+  --field-smart-cities: #3949AB; /* Changed from #5C6BC0 to darker blue */
   --field-environment: #81C784;
-  --field-transport: #42A5F5;
+  --field-transport: #1565C0; /* Changed from #42A5F5 to darker blue */
 }
 
 @theme inline {
