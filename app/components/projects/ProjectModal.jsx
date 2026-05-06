@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
  * Project Create Modal
  * Backend DTO: CreateProjectRequest { name }
  */
-export default function ProjectModal({ isOpen, onClose }) {
+export default function ProjectModal({ isOpen, onClose, onSuccess }) {
   const [name, setName] = useState("");
   const [createProject, { isLoading }] = useCreateProjectMutation();
 
@@ -23,8 +23,11 @@ export default function ProjectModal({ isOpen, onClose }) {
     e.preventDefault();
     
     try {
-      await createProject({ name }).unwrap();
+      const result = await createProject({ name }).unwrap();
       toast.success("Project created successfully");
+      if (onSuccess && result?.id) {
+        onSuccess(result.id);
+      }
       onClose();
     } catch (error) {
       console.error("Error creating project:", error);

@@ -126,6 +126,10 @@ export default function ProjectsPage() {
       <ProjectModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        onSuccess={(id) => {
+          setSearchId(id);
+          setSearchInput(id);
+        }}
       />
     </div>
   );
