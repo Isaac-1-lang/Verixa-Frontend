@@ -2,13 +2,27 @@
 import { useState } from "react";
 import { Plus, PlayCircle } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
+import TestRunModal from "../../components/runs/TestRunModal";
+import { useSearchTestRunsQuery } from "@/app/redux/api/TestRunApiSlice";
 
 export default function RunsPage() {
-  const [runs] = useState([
-    { id: 1, name: "Sprint 23 UAT", project: "Mobile App v2.0", status: "In Progress", progress: 65, startDate: "2024-02-20", testCases: 45, passed: 29, failed: 0, pending: 16 },
-    { id: 2, name: "Payment Integration Test", project: "Payment Gateway", status: "Completed", progress: 100, startDate: "2024-02-18", testCases: 32, passed: 30, failed: 2, pending: 0 },
-    { id: 3, name: "Regression Suite", project: "E-commerce Platform", status: "Planned", progress: 0, startDate: "2024-02-25", testCases: 89, passed: 0, failed: 0, pending: 89 },
-  ]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [page, setPage] = useState(0);
+  const [statusFilter, setStatusFilter] = useState("");
+  
+  // TODO: Get projectId from context or route params
+  const projectId = 1;
+
+  const { data, isLoading, error } = useSearchTestRunsQuery({
+    projectId,
+    status: statusFilter || undefined,
+    page,
+    size: 20
+  }, {
+    skip: !projectId
+  });
+
+  const runs = data?.content || [];
 
   const columns = [
     {
@@ -21,7 +35,7 @@ export default function RunsPage() {
           </div>
           <div>
             <p className="font-semibold text-zinc-900">{row.name}</p>
-            <p className="text-xs text-zinc-500">{row.project}</p>
+            <p className="text-xs text-zinc-500">{row.environment}</p>
           </div>
         </div>
       ),
@@ -31,43 +45,19 @@ export default function RunsPage() {
       accessor: "status",
       cell: (row) => (
         <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
-          row.status === 'Completed' ? 'bg-emerald-50 text-emerald-700' :
-          row.status === 'In Progress' ? 'bg-slate-50 text-slate-700' :
+          row.status === 'COMPLETED' ? 'bg-emerald-50 text-emerald-700' :
+          row.status === 'IN_PROGRESS' ? 'bg-blue-50 text-blue-700' :
+          row.status === 'PLANNED' ? 'bg-slate-50 text-slate-700' :
           'bg-zinc-100 text-zinc-700'
         }`}>
-          {row.status}
+          {row.status?.replace('_', ' ')}
         </span>
       ),
     },
     {
-      header: "Progress",
-      accessor: "progress",
-      cell: (row) => (
-        <div className="w-full max-w-[120px]">
-          <div className="flex items-center justify-between text-xs text-zinc-600 mb-1">
-            <span>{row.progress}%</span>
-          </div>
-          <div className="w-full bg-zinc-200 rounded-full h-2">
-            <div className="bg-[var(--primary)] h-2 rounded-full transition-all" style={{ width: `${row.progress}%` }}></div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      header: "Results",
-      accessor: "results",
-      cell: (row) => (
-        <div className="flex items-center gap-2 text-xs">
-          <span className="text-emerald-600 font-semibold">✓ {row.passed}</span>
-          <span className="text-red-600 font-semibold">✗ {row.failed}</span>
-          <span className="text-zinc-500">⏳ {row.pending}</span>
-        </div>
-      ),
-    },
-    {
-      header: "Start Date",
-      accessor: "startDate",
-      cell: (row) => <span className="text-sm text-zinc-600">{new Date(row.startDate).toLocaleDateString()}</span>,
+      header: "Created At",
+      accessor: "createdAt",
+      cell: (row) => <span className="text-sm text-zinc-600">{row.createdAt ? new Date(row.createdAt).toLocaleDateString() : "-"}</span>,
     },
   ];
 
@@ -78,17 +68,40 @@ export default function RunsPage() {
           <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Test Runs</h1>
           <p className="text-sm text-zinc-600 mt-1">Execute and track test run progress</p>
         </div>
-        <button className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20">
+        <button 
+          onClick={() => setIsModalOpen(true)}
+          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20"
+        >
           <Plus size={16} /> New Test Run
         </button>
       </div>
 
-      <DataTable
-        columns={columns}
-        data={runs}
-        searchPlaceholder="Search test runs..."
-        onRowClick={(row) => console.log('Clicked:', row)}
-        emptyMessage="No test runs found. Create your first test run to get started."
+      {!projectId ? (
+        <div className="text-center py-12">
+          <p className="text-zinc-600">Please select a project to view test runs.</p>
+        </div>
+      ) : isLoading ? (
+        <div className="text-center py-12">
+          <p className="text-zinc-600">Loading test runs...</p>
+        </div>
+      ) : error ? (
+        <div className="text-center py-12">
+          <p className="text-red-600">Error loading test runs: {error.message}</p>
+        </div>
+      ) : (
+        <DataTable
+          columns={columns}
+          data={runs}
+          searchPlaceholder="Search test runs..."
+          onRowClick={(row) => console.log('Clicked:', row)}
+          emptyMessage="No test runs found. Create your first test run to get started."
+        />
+      )}
+
+      <TestRunModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        projectId={projectId}
       />
     </div>
   );

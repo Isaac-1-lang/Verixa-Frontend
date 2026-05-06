@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from './redux/ProviderClient';
+import { Toaster } from 'react-hot-toast';
 
 
 const jakarta = Plus_Jakarta_Sans({
@@ -41,6 +42,32 @@ export default function RootLayout({
         <ReduxProvider>
             {children}
         </ReduxProvider>
+        <Toaster 
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: '#fff',
+              color: '#363636',
+              borderRadius: '12px',
+              padding: '16px',
+              fontSize: '14px',
+              fontWeight: '500',
+            },
+            success: {
+              iconTheme: {
+                primary: '#10b981',
+                secondary: '#fff',
+              },
+            },
+            error: {
+              iconTheme: {
+                primary: '#ef4444',
+                secondary: '#fff',
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );
