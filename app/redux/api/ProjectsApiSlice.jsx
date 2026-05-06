@@ -11,10 +11,10 @@ export const projectsApi = apiSlice.injectEndpoints({
   endpoints: builder => ({
     // POST /api/projects - Create project
     createProject: builder.mutation({
-      query: (name) => ({ 
+      query: (projectData) => ({ 
         url: '/api/projects', 
         method: 'POST', 
-        body: { name } 
+        body: projectData 
       }),
       invalidatesTags: ['Projects']
     }),
