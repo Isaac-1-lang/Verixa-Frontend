@@ -4,17 +4,17 @@ import { Plus, AlertCircle } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import DefectModal from "../../components/defects/DefectModal";
 import { useGetDefectsByRunQuery, useUpdateDefectStatusMutation } from "@/app/redux/api/DefectApiSlice";
+import { useProject } from "@/app/context/ProjectContext";
 import toast from "react-hot-toast";
 
 export default function DefectsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedExecutionId, setSelectedExecutionId] = useState(null);
   
-  // TODO: Get runId from context or route params
-  const runId = 1;
+  const { selectedRunId } = useProject();
 
-  const { data: defects = [], isLoading, error } = useGetDefectsByRunQuery(runId, {
-    skip: !runId
+  const { data: defects = [], isLoading, error } = useGetDefectsByRunQuery(selectedRunId, {
+    skip: !selectedRunId
   });
 
   const [updateDefectStatus] = useUpdateDefectStatusMutation();
@@ -95,15 +95,16 @@ export default function DefectsPage() {
             setSelectedExecutionId(1);
             setIsModalOpen(true);
           }}
-          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20"
+          disabled={!selectedRunId}
+          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Plus size={16} /> Log Defect
         </button>
       </div>
 
-      {!runId ? (
-        <div className="text-center py-12">
-          <p className="text-zinc-600">Please select a test run to view defects.</p>
+      {!selectedRunId ? (
+        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+          <p className="text-zinc-600">Please select a test run from the Runs page to view defects.</p>
         </div>
       ) : isLoading ? (
         <div className="text-center py-12">

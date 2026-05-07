@@ -4,6 +4,7 @@ import { Plus, FileText } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import RequirementModal from "../../components/requirements/RequirementModal";
 import { useSearchRequirementsQuery } from "@/app/redux/api/RequirementApiSlice";
+import { useProject } from "@/app/context/ProjectContext";
 
 export default function RequirementsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,16 +12,15 @@ export default function RequirementsPage() {
   const [page, setPage] = useState(0);
   const [search, setSearch] = useState("");
   
-  // TODO: Get projectId from context or route params
-  const projectId = 1;
+  const { selectedProjectId } = useProject();
 
   const { data, isLoading, error } = useSearchRequirementsQuery({
-    projectId,
+    projectId: selectedProjectId,
     q: search,
     page,
     size: 20
   }, {
-    skip: !projectId
+    skip: !selectedProjectId
   });
 
   const requirements = data?.content || [];
@@ -77,11 +77,11 @@ export default function RequirementsPage() {
     setSelectedRequirement(null);
   };
 
-  if (!projectId) {
+  if (!selectedProjectId) {
     return (
       <div className="max-w-[1400px] mx-auto">
-        <div className="text-center py-12">
-          <p className="text-zinc-600">Please select a project to view requirements.</p>
+        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+          <p className="text-zinc-600">Please select a project from the top bar to view requirements.</p>
         </div>
       </div>
     );
@@ -125,7 +125,7 @@ export default function RequirementsPage() {
       <RequirementModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        projectId={projectId}
+        projectId={selectedProjectId}
         requirement={selectedRequirement}
       />
     </div>

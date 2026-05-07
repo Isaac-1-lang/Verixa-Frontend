@@ -26,6 +26,18 @@ export const testRunApi = apiSlice.injectEndpoints({
       invalidatesTags: (result, error, { id }) => [{ type: 'Runs', id }, 'Runs']
     }),
 
+    // GET /api/runs/{id} - Get run by ID
+    getTestRunById: builder.query({
+      query: (id) => `/api/runs/${id}`,
+      providesTags: (result, error, id) => [{ type: 'Runs', id }]
+    }),
+
+    // GET /api/runs/project/{projectId} - List ALL runs by project (not paginated)
+    listTestRunsByProject: builder.query({
+      query: (projectId) => `/api/runs/project/${projectId}`,
+      providesTags: ['Runs']
+    }),
+
     // GET /api/runs/project/{projectId}/search - Search runs with pagination
     searchTestRuns: builder.query({
       query: ({ projectId, status, page = 0, size = 20 }) => ({
@@ -41,5 +53,7 @@ export const testRunApi = apiSlice.injectEndpoints({
 export const {
   useCreateTestRunMutation,
   useUpdateRunStatusMutation,
+  useGetTestRunByIdQuery,
+  useListTestRunsByProjectQuery,
   useSearchTestRunsQuery
 } = testRunApi

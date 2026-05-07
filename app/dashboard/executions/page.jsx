@@ -4,6 +4,7 @@ import { CheckCircle, XCircle, Clock, Plus } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import ExecutionModal from "../../components/executions/ExecutionModal";
 import { useSearchExecutionsQuery } from "@/app/redux/api/ExecutionApiSlice";
+import { useProject } from "@/app/context/ProjectContext";
 
 export default function ExecutionsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,16 +12,15 @@ export default function ExecutionsPage() {
   const [page, setPage] = useState(0);
   const [resultFilter, setResultFilter] = useState("");
   
-  // TODO: Get runId from context or route params
-  const runId = 1;
+  const { selectedRunId } = useProject();
 
   const { data, isLoading, error } = useSearchExecutionsQuery({
-    runId,
+    runId: selectedRunId,
     result: resultFilter || undefined,
     page,
     size: 20
   }, {
-    skip: !runId
+    skip: !selectedRunId
   });
 
   const executions = data?.content || [];
@@ -77,9 +77,9 @@ export default function ExecutionsPage() {
         </div>
       </div>
 
-      {!runId ? (
-        <div className="text-center py-12">
-          <p className="text-zinc-600">Please select a test run to view executions.</p>
+      {!selectedRunId ? (
+        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+          <p className="text-zinc-600">Please select a test run from the Runs page to view executions.</p>
         </div>
       ) : isLoading ? (
         <div className="text-center py-12">
@@ -110,7 +110,7 @@ export default function ExecutionsPage() {
             setSelectedExecution(null);
           }}
           execution={selectedExecution}
-          runId={runId}
+          runId={selectedRunId}
           testCaseId={selectedExecution.testCase?.id}
         />
       )}

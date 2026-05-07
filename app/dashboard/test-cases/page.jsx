@@ -4,6 +4,7 @@ import { Plus, FileText } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import TestCaseModal from "../../components/testcases/TestCaseModal";
 import { useSearchTestCasesQuery } from "@/app/redux/api/TestCaseApiSlice";
+import { useProject } from "@/app/context/ProjectContext";
 
 export default function TestCasesPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,17 +12,15 @@ export default function TestCasesPage() {
   const [page, setPage] = useState(0);
   const [search, setSearch] = useState("");
   
-  // TODO: Get projectId from context or route params
-  // For now using a placeholder - this should come from selected project
-  const projectId = 1;
+  const { selectedProjectId } = useProject();
 
   const { data, isLoading, error } = useSearchTestCasesQuery({
-    projectId,
+    projectId: selectedProjectId,
     q: search,
     page,
     size: 20
   }, {
-    skip: !projectId
+    skip: !selectedProjectId
   });
 
   const testCases = data?.content || [];
@@ -82,11 +81,11 @@ export default function TestCasesPage() {
     setSelectedTestCase(null);
   };
 
-  if (!projectId) {
+  if (!selectedProjectId) {
     return (
       <div className="max-w-[1400px] mx-auto">
-        <div className="text-center py-12">
-          <p className="text-zinc-600">Please select a project to view test cases.</p>
+        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+          <p className="text-zinc-600">Please select a project from the top bar to view test cases.</p>
         </div>
       </div>
     );
@@ -130,7 +129,7 @@ export default function TestCasesPage() {
       <TestCaseModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        projectId={projectId}
+        projectId={selectedProjectId}
         testCase={selectedTestCase}
       />
     </div>

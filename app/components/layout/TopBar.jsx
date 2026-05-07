@@ -2,10 +2,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Search, Bell, ChevronDown, Menu, Check } from 'lucide-react';
+import ProjectSelector from '../common/ProjectSelector';
 
 export default function TopBar({ onMenuClick }) {
   const [user, setUser] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [notifications, setNotifications] = useState([]);
+  const [unreadCount, setUnreadCount] = useState(0);
   const dropdownRef = useRef(null);
 
 
@@ -29,7 +32,10 @@ export default function TopBar({ onMenuClick }) {
 
   const handleNotificationClick = async (notif) => {
     if (!notif.isRead) {
-      try { await markAsRead(notif.id); } catch(e) {}
+      try { 
+        // TODO: Implement mark as read API
+        // await markAsRead(notif.id); 
+      } catch(e) {}
     }
     setIsDropdownOpen(false);
   };
@@ -60,6 +66,10 @@ export default function TopBar({ onMenuClick }) {
       </div>
 
       <div className="flex items-center gap-3 sm:gap-4 ml-4">
+        <ProjectSelector />
+        
+        <div className="h-6 w-px bg-[var(--border)] hidden sm:block"></div>
+        
         <div className="relative" ref={dropdownRef}>
           <button 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}

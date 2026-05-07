@@ -3,26 +3,23 @@ import { useState } from "react";
 import { Plus, PlayCircle } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import TestRunModal from "../../components/runs/TestRunModal";
-import { useSearchTestRunsQuery } from "@/app/redux/api/TestRunApiSlice";
+import { useListTestRunsByProjectQuery } from "@/app/redux/api/TestRunApiSlice";
+import { useProject } from "@/app/context/ProjectContext";
 
 export default function RunsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [page, setPage] = useState(0);
-  const [statusFilter, setStatusFilter] = useState("");
   
-  // TODO: Get projectId from context or route params
-  const projectId = 1;
+  const { selectedProjectId, selectRun } = useProject();
 
-  const { data, isLoading, error } = useSearchTestRunsQuery({
-    projectId,
-    status: statusFilter || undefined,
-    page,
-    size: 20
-  }, {
-    skip: !projectId
+  // Use list endpoint instead of paginated search for simpler data fetching
+  const { data: runs = [], isLoading, error } = useListTestRunsByProjectQuery(selectedProjectId, {
+    skip: !selectedProjectId
   });
 
-  const runs = data?.content || [];
+  const handleRowClick = (row) => {
+    // Select this run as the active run
+    selectRun(row.id);
+  };
 
   const columns = [
     {
@@ -70,15 +67,16 @@ export default function RunsPage() {
         </div>
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20"
+          disabled={!selectedProjectId}
+          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Plus size={16} /> New Test Run
         </button>
       </div>
 
-      {!projectId ? (
-        <div className="text-center py-12">
-          <p className="text-zinc-600">Please select a project to view test runs.</p>
+      {!selectedProjectId ? (
+        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+          <p className="text-zinc-600">Please select a project from the top bar to view test runs.</p>
         </div>
       ) : isLoading ? (
         <div className="text-center py-12">
@@ -93,16 +91,18 @@ export default function RunsPage() {
           columns={columns}
           data={runs}
           searchPlaceholder="Search test runs..."
-          onRowClick={(row) => console.log('Clicked:', row)}
+          onRowClick={handleRowClick}
           emptyMessage="No test runs found. Create your first test run to get started."
         />
       )}
 
-      <TestRunModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        projectId={projectId}
-      />
+      {selectedProjectId && (
+        <TestRunModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          projectId={selectedProjectId}
+        />
+      )}
     </div>
   );
 }

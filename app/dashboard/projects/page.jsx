@@ -4,11 +4,13 @@ import { Plus, Folder, Calendar, User, Search } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import ProjectModal from "../../components/projects/ProjectModal";
 import { useGetProjectByIdQuery } from "@/app/redux/api/ProjectsApiSlice";
+import { useProject } from "@/app/context/ProjectContext";
 
 export default function ProjectsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [searchId, setSearchId] = useState("");
+  const { selectProject } = useProject();
 
   const { data: project, isLoading, error } = useGetProjectByIdQuery(searchId, {
     skip: !searchId,
@@ -19,6 +21,11 @@ export default function ProjectsPage() {
     if (searchInput.trim()) {
       setSearchId(searchInput.trim());
     }
+  };
+
+  const handleRowClick = (row) => {
+    // Select this project as the active project
+    selectProject(row.id);
   };
 
   const projects = project ? [project] : [];
@@ -118,7 +125,7 @@ export default function ProjectsPage() {
           columns={columns}
           data={projects}
           searchPlaceholder="Filter result..."
-          onRowClick={(row) => console.log('Clicked:', row)}
+          onRowClick={handleRowClick}
           emptyMessage={searchId ? "No project found with this ID." : "Enter a Project ID to search for a project."}
         />
       )}
