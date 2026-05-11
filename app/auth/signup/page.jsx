@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useRegisterMutation } from '../../redux/api/UserApiSlice';
-import { ArrowRight, Eye, EyeOff, Check, Shield, AlertCircle } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, Check, Shield, AlertCircle, User, Mail, Lock } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -19,12 +20,12 @@ export default function SignUpPage() {
     lastName: ''
   });
 
-  const [requirements, setRequirements] = useState({ 
-    length: false, 
-    lower: false, 
-    upper: false, 
-    number: false, 
-    special: false 
+  const [requirements, setRequirements] = useState({
+    length: false,
+    lower: false,
+    upper: false,
+    number: false,
+    special: false
   });
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function SignUpPage() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     let newErrors = {};
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) {
       newErrors.email = "Email is required";
@@ -63,7 +64,7 @@ export default function SignUpPage() {
     }
 
     setErrors(newErrors);
-    
+
     if (Object.keys(newErrors).length === 0) {
       try {
         const payload = {
@@ -72,19 +73,19 @@ export default function SignUpPage() {
           firstName: formData.firstName,
           lastName: formData.lastName
         };
-        
+
         const response = await registerUser(payload).unwrap();
-        
+
         // Store token if returned
         if (response.accessToken) {
           localStorage.setItem('token', response.accessToken);
           localStorage.setItem('tokenType', response.tokenType || 'Bearer');
         }
-        
+
         router.push('/dashboard');
       } catch (error) {
         console.error('Registration error:', error);
-        
+
         if (error.data?.fieldErrors) {
           setErrors(error.data.fieldErrors);
         } else if (error.data?.message) {
@@ -107,123 +108,141 @@ export default function SignUpPage() {
   const allRequirementsMet = Object.values(requirements).every(Boolean);
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-zinc-50 to-zinc-100 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center px-6 py-20 bg-offwhite relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[var(--primary)] opacity-[0.04] rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[var(--primary)] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute inset-0 dot-grid opacity-5 pointer-events-none" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-navy opacity-[0.03] rounded-md blur-[150px] pointer-events-none"
+      />
 
-      <div className="w-full max-w-[1000px] bg-white rounded-3xl border border-zinc-200 shadow-2xl shadow-zinc-900/5 overflow-hidden flex flex-col lg:flex-row">
-        
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        className="w-full max-w-[1100px] bg-white rounded-md border border-navy/5 shadow-2xl shadow-navy/5 overflow-hidden flex flex-col lg:flex-row relative z-10"
+      >
+
         {/* LEFT — Form */}
-        <div className="w-full lg:w-1/2 p-8 sm:p-10 lg:p-12">
-          <Link href="/" className="text-2xl font-extrabold text-[var(--primary)] mb-8 block tracking-tight">
+        <div className="w-full lg:w-1/2 p-12 sm:p-20 lg:p-24 bg-white/2">
+          <Link href="/" className="text-4xl font-bold text-navy mb-16 block ">
             Verixa
           </Link>
 
-          <h2 className="text-3xl font-extrabold text-zinc-900 mb-2 tracking-tight">Create your account</h2>
-          <p className="text-sm text-zinc-600 mb-7">
-            Already have an account?{' '}
-            <Link href="/auth/login" className="text-[var(--primary)] font-semibold hover:underline">Log In</Link>
+          <h2 className="text-5xl font-bold text-navy mb-4  leading-tight">Create Workspace</h2>
+          <p className="text-navy/40 text-sm font-medium mb-12">
+            Already have an account? <Link href="/auth/login" className="text-navy font-bold hover:underline">Log in to Hive</Link>
           </p>
 
           {errors._root && (
-            <div className="mb-5 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm font-medium flex items-start gap-3">
-              <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
-              <span>{errors._root}</span>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="mb-8 p-5 bg-red-50 border border-red-100 text-red-600 rounded-md text-xs font-bold flex items-center gap-3"
+            >
+              <AlertCircle size={14} className="text-red-400" />
+              <span>Error: {errors._root}</span>
+            </motion.div>
           )}
 
-          <form onSubmit={handleSignUp} className="space-y-4">
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">First Name</label>
-                <input 
-                  type="text" 
-                  value={formData.firstName} 
-                  onChange={(e) => handleChange(e, 'firstName')}
-                  className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                    errors.firstName 
-                      ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                      : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                  } outline-none`}
-                  placeholder="Verixa"
-                  disabled={isLoading}
-                />
+          <form onSubmit={handleSignUp} className="space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <label className="block text-xs font-bold text-navy/40 ml-2">First Name</label>
+                <div className="relative group">
+                  <User className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy transition-colors" size={18} />
+                  <input
+                    type="text"
+                    value={formData.firstName}
+                    onChange={(e) => handleChange(e, 'firstName')}
+                    className={`w-full rounded-md pl-16 pr-8 py-5 text-sm font-bold border transition-all ${errors.firstName
+                      ? 'border-red-200 bg-red-50/30 text-navy'
+                      : 'border-navy/10 bg-offwhite text-navy focus:border-navy focus:bg-white focus:ring-4 focus:ring-navy/5'
+                      } outline-none placeholder:text-navy/20`}
+                    placeholder="First Name"
+                    disabled={isLoading}
+                  />
+                </div>
               </div>
-              <div className="flex-1">
-                <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Last Name</label>
-                <input 
-                  type="text" 
-                  value={formData.lastName} 
-                  onChange={(e) => handleChange(e, 'lastName')}
-                  className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                    errors.lastName 
-                      ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                      : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                  } outline-none`}
-                  placeholder="Verixa"
-                  disabled={isLoading}
-                />
+              <div className="space-y-3">
+                <label className="block text-xs font-bold text-navy/40 ml-2">Last Name</label>
+                <div className="relative group">
+                  <User className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy transition-colors" size={18} />
+                  <input
+                    type="text"
+                    value={formData.lastName}
+                    onChange={(e) => handleChange(e, 'lastName')}
+                    className={`w-full rounded-md pl-16 pr-8 py-5 text-sm font-bold border transition-all ${errors.lastName
+                      ? 'border-red-200 bg-red-50/30 text-navy'
+                      : 'border-navy/10 bg-offwhite text-navy focus:border-navy focus:bg-white focus:ring-4 focus:ring-navy/5'
+                      } outline-none placeholder:text-navy/20`}
+                    placeholder="Last Name"
+                    disabled={isLoading}
+                  />
+                </div>
               </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Email Address</label>
-              <input 
-                type="email" 
-                value={formData.email} 
-                onChange={(e) => handleChange(e, 'email')} 
-                placeholder="john.doe@company.com"
-                className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                  errors.email 
-                    ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                    : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                } outline-none`}
-                disabled={isLoading}
-              />
-              {errors.email && <span className="text-xs text-red-600 font-medium mt-1.5 block">{errors.email}</span>}
+            <div className="space-y-3">
+              <label className="block text-xs font-bold text-navy/40 ml-2">Email Address</label>
+              <div className="relative group">
+                <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy transition-colors" size={18} />
+                <input
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleChange(e, 'email')}
+                  placeholder="Enter your email"
+                  className={`w-full rounded-md pl-16 pr-8 py-5 text-sm font-bold border transition-all ${errors.email
+                    ? 'border-red-200 bg-red-50/30 text-navy'
+                    : 'border-navy/10 bg-offwhite text-navy focus:border-navy focus:bg-white focus:ring-4 focus:ring-navy/5'
+                    } outline-none placeholder:text-navy/20`}
+                  disabled={isLoading}
+                />
+              </div>
+              {errors.email && <span className="text-[10px] text-red-500 font-bold ml-4">{errors.email}</span>}
             </div>
 
-            <div>
-              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Password</label>
-              <div className="relative">
-                <input 
-                  type={showPassword ? 'text' : 'password'} 
-                  value={formData.password} 
+            <div className="space-y-3">
+              <label className="block text-xs font-bold text-navy/40 ml-2">Password</label>
+              <div className="relative group">
+                <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy transition-colors" size={18} />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={formData.password}
                   onChange={(e) => handleChange(e, 'password')}
-                  className={`w-full rounded-xl px-4 py-3 pr-11 text-sm border-2 transition-all ${
-                    errors.password 
-                      ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                      : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                  } outline-none`}
-                  placeholder="Create a strong password"
+                  className={`w-full rounded-md pl-16 pr-16 py-5 text-sm font-bold border transition-all ${errors.password
+                    ? 'border-red-200 bg-red-50/30 text-navy'
+                    : 'border-navy/10 bg-offwhite text-navy focus:border-navy focus:bg-white focus:ring-4 focus:ring-navy/5'
+                    } outline-none placeholder:text-navy/20`}
+                  placeholder="••••••••••••"
                   disabled={isLoading}
                 />
-                <button 
-                  type="button" 
-                  onClick={() => setShowPassword(!showPassword)} 
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 transition-colors"
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-6 top-1/2 -translate-y-1/2 text-navy/20 hover:text-navy transition-colors"
                   disabled={isLoading}
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
-              
-              <div className="grid grid-cols-2 gap-2 mt-3">
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                 {[
-                  { label: '8+ characters', met: requirements.length },
+                  { label: '8+ Chars', met: requirements.length },
                   { label: 'Lowercase', met: requirements.lower },
                   { label: 'Uppercase', met: requirements.upper },
-                  { label: 'Number', met: requirements.number },
-                  { label: 'Special char', met: requirements.special },
+                  { label: 'Numeric', met: requirements.number },
+                  { label: 'Symbol', met: requirements.special },
                 ].map(r => (
                   <div key={r.label} className="flex items-center gap-2">
-                    <div className={`w-4 h-4 rounded-full flex items-center justify-center transition-all ${
-                      r.met ? 'bg-emerald-500' : 'bg-zinc-200'
-                    }`}>
-                      {r.met && <Check size={10} className="text-white" strokeWidth={3} />}
+                    <div className={`w-4 h-4 rounded-md flex items-center justify-center border transition-all ${r.met ? 'bg-navy border-navy' : 'bg-transparent border-navy/10'
+                      }`}>
+                      {r.met && <Check size={10} className="text-white" strokeWidth={4} />}
                     </div>
-                    <span className={`text-xs font-medium ${r.met ? 'text-emerald-600' : 'text-zinc-500'}`}>
+                    <span className={`text-[10px] font-bold transition-colors ${r.met ? 'text-navy' : 'text-navy/20'}`}>
                       {r.label}
                     </span>
                   </div>
@@ -231,48 +250,60 @@ export default function SignUpPage() {
               </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Confirm Password</label>
-              <input 
-                type="password" 
-                value={formData.confirmPassword} 
-                onChange={(e) => handleChange(e, 'confirmPassword')}
-                className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                  errors.confirmPassword 
-                    ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                    : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                } outline-none`}
-                placeholder="Re-enter your password"
-                disabled={isLoading}
-              />
-              {errors.confirmPassword && <span className="text-xs text-red-600 font-medium mt-1.5 block">{errors.confirmPassword}</span>}
+            <div className="space-y-3">
+              <label className="block text-xs font-bold text-navy/40 ml-2">Confirm Password</label>
+              <div className="relative group">
+                <Lock className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy transition-colors" size={18} />
+                <input
+                  type="password"
+                  value={formData.confirmPassword}
+                  onChange={(e) => handleChange(e, 'confirmPassword')}
+                  className={`w-full rounded-md pl-16 pr-8 py-5 text-sm font-bold border transition-all ${errors.confirmPassword
+                    ? 'border-red-200 bg-red-50/30 text-navy'
+                    : 'border-navy/10 bg-offwhite text-navy focus:border-navy focus:bg-white focus:ring-4 focus:ring-navy/5'
+                    } outline-none placeholder:text-navy/20`}
+                  placeholder="Confirm password"
+                  disabled={isLoading}
+                />
+              </div>
+              {errors.confirmPassword && <span className="text-[10px] text-red-500 font-bold ml-4">{errors.confirmPassword}</span>}
             </div>
 
-            <button 
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 mt-2 bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20 hover:shadow-[var(--primary)]/40 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-6 rounded-md font-bold text-sm flex items-center justify-center gap-4 mt-8 bg-navy text-white transition-all shadow-xl shadow-navy/20 disabled:opacity-50"
             >
-              {isLoading ? 'Creating Account...' : 'Create Account'} <ArrowRight size={16} />
-            </button>
+              {isLoading ? 'Creating account...' : 'Create Account'} <ArrowRight size={20} />
+            </motion.button>
           </form>
         </div>
 
         {/* RIGHT — Brand Panel */}
-        <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-zinc-50 to-zinc-100 relative items-center justify-center p-14">
-          <div className="relative z-10 text-center">
-            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl mb-8 mx-auto border border-zinc-200">
-              <Shield className="text-[var(--primary)]" size={40} strokeWidth={2} />
-            </div>
-            <h3 className="text-2xl font-extrabold text-zinc-900 mb-3 leading-tight tracking-tight">
-              Join Verixa<br/>Today
+        <div className="hidden lg:flex w-1/2 bg-offwhite relative items-center justify-center p-24 border-l border-navy/5 text-center">
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-[-20%] left-[-20%] w-[140%] h-[140%] bg-navy/5 rotate-12 blur-3xl" />
+          </div>
+
+          <div className="relative z-10">
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="w-32 h-32 bg-white rounded-md border border-navy/10 flex items-center justify-center shadow-2xl mb-12 mx-auto"
+            >
+              <Shield className="text-navy" size={60} strokeWidth={1} />
+            </motion.div>
+            <h3 className="text-4xl font-bold text-navy mb-8 leading-tight ">
+              Start Quality<br />Control Now.
             </h3>
-            <p className="text-sm text-zinc-600 max-w-xs mx-auto leading-relaxed">
-              Start managing your UAT processes with confidence. Execute tests, track defects, and ensure quality across your projects.
+            <p className="text-sm text-navy/40 font-medium max-w-xs mx-auto leading-relaxed">
+              Access the high-performance UAT environment. Secure your deployment vector today with Verixa.
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

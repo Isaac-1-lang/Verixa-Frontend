@@ -20,9 +20,9 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const userStr = localStorage.getItem('user');
-    if (userStr) { try { setUser(JSON.parse(userStr)); } catch (e) {} }
+    if (userStr) { try { setUser(JSON.parse(userStr)); } catch (e) { } }
     const extraStr = localStorage.getItem('Verixa_extra_profile');
-    if (extraStr) { try { setExtraProfile(JSON.parse(extraStr)); } catch (e) {} }
+    if (extraStr) { try { setExtraProfile(JSON.parse(extraStr)); } catch (e) { } }
   }, []);
 
   const handleSave = () => {
@@ -40,7 +40,7 @@ export default function ProfilePage() {
     setExtraProfile(prev => ({ ...prev, [name]: value }));
   };
 
-  if (!user) return <div className="p-8 text-[var(--text-muted)]">Loading Profile...</div>;
+  if (!user) return <div className="p-12 text-navy/20 font-bold text-sm">Initializing profile...</div>;
 
   const fullNameRaw = `${user.firstName || ''} ${user.lastName || ''}`.trim() || user.username;
   const fullName = toTitleCase(fullNameRaw);
@@ -52,38 +52,38 @@ export default function ProfilePage() {
   return (
     <div className="max-w-[960px] mx-auto pb-10">
       {/* Banner */}
-      <div className="relative w-full h-44 sm:h-56 rounded-2xl overflow-hidden mb-16 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-dark)]">
-        <button className="absolute top-4 right-4 bg-white/15 hover:bg-white/25 backdrop-blur-md px-4 py-2 rounded-lg text-xs font-semibold text-white transition-colors flex items-center gap-2">
-          <Camera size={14} /> Edit Cover
+      <div className="relative w-full h-44 sm:h-56 rounded-md overflow-hidden mb-16 bg-navy/5 border border-navy/5">
+        <div className="absolute inset-0 bg-navy/5 opacity-50" />
+        <button className="absolute top-6 right-6 bg-navy text-white px-5 py-2.5 rounded-md text-xs font-bold shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all">
+          <Camera size={14} strokeWidth={2.5} /> Edit Cover
         </button>
-        <div className="absolute -bottom-12 left-8 flex items-end gap-5">
-          <div className="relative group cursor-pointer w-24 h-24 rounded-2xl bg-white p-1.5 shadow-lg border border-[var(--border)]">
-            <img src={avatarUrl} alt={fullName} className="w-full h-full rounded-xl object-cover" />
-            <div className="absolute inset-1.5 rounded-xl bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-              <Camera size={20} />
+        <div className="absolute -bottom-16 left-12 flex items-end gap-8">
+          <div className="relative group cursor-pointer w-32 h-32 rounded-md bg-white p-1 shadow-2xl border-4 border-offwhite overflow-hidden">
+            <img src={avatarUrl} alt={fullName} className="w-full h-full rounded-md object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white backdrop-blur-sm">
+              <Camera size={24} strokeWidth={1.5} />
             </div>
           </div>
-          <div className="mb-14">
-            <h1 className="text-2xl font-extrabold text-white" style={{ fontFamily: 'var(--font-heading)' }}>{fullName}</h1>
-            <p className="text-white/70 text-sm font-medium">@{user.username}</p>
+          <div className="mb-20">
+            <h1 className="text-5xl font-bold text-navy leading-none">{fullName}</h1>
+            <p className="text-navy/30 text-sm font-medium mt-2">@{user.username}</p>
           </div>
         </div>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Settings Nav */}
-        <div className="w-full lg:w-56 flex-shrink-0">
-          <div className="bg-white rounded-2xl p-2 border border-[var(--border)] sticky top-20">
+        <div className="w-full lg:w-64 shrink-0">
+          <div className="bg-white border border-navy/10 rounded-md p-3 sticky top-28 shadow-xl shadow-navy/5">
             {[
-              { key: 'general', icon: <UserIcon size={16} />, label: 'General' },
+              { key: 'general', icon: <UserIcon size={16} />, label: 'Profile' },
               { key: 'security', icon: <Shield size={16} />, label: 'Security' },
               { key: 'preferences', icon: <Settings size={16} />, label: 'Preferences' },
             ].map(tab => (
               <button key={tab.key} onClick={() => setActiveTab(tab.key)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                  activeTab === tab.key ? 'bg-[var(--bg)] text-[var(--text)]' : 'text-[var(--text-muted)] hover:bg-[var(--bg)]'
-                }`}>
-                <span className={activeTab === tab.key ? 'text-[var(--primary)]' : ''}>{tab.icon}</span>
+                className={`w-full flex items-center gap-4 px-6 py-4 rounded-md text-sm font-bold transition-all duration-300 ${activeTab === tab.key ? 'bg-navy text-white shadow-lg shadow-navy/20' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+                  }`}>
+                {tab.icon}
                 {tab.label}
               </button>
             ))}
@@ -92,103 +92,106 @@ export default function ProfilePage() {
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <div className="bg-white rounded-2xl p-8 border border-[var(--border)]">
-            
+          <div className="bg-white border border-navy/10 rounded-md p-12 shadow-xl shadow-navy/5">
+
             {activeTab === 'general' && (
-              <div className="space-y-8 animate-fade-in">
+              <div className="space-y-12 animate-fade-in">
                 <div>
-                  <h2 className="text-xl font-extrabold text-[var(--text)] mb-1" style={{ fontFamily: 'var(--font-heading)' }}>Personal Details</h2>
-                  <p className="text-[var(--text-muted)] text-sm">Update your profile information.</p>
+                  <h2 className="text-3xl font-bold text-navy mb-1">General Information</h2>
+                  <p className="text-navy/40 text-sm font-medium">Update your primary identity information</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
-                    <label className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-1.5">First Name</label>
-                    <input type="text" disabled defaultValue={toTitleCase(user.firstName)} className="input-field w-full rounded-xl py-2.5 px-4 text-sm opacity-60 cursor-not-allowed" />
+                    <label className="block text-xs font-bold text-navy/40 mb-3">First Name</label>
+                    <input type="text" disabled defaultValue={toTitleCase(user.firstName)} className="w-full bg-offwhite border border-navy/5 rounded-md py-4 px-6 text-sm text-navy/50 font-bold cursor-not-allowed" />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-1.5">Last Name</label>
-                    <input type="text" disabled defaultValue={toTitleCase(user.lastName)} className="input-field w-full rounded-xl py-2.5 px-4 text-sm opacity-60 cursor-not-allowed" />
+                    <label className="block text-xs font-bold text-navy/40 mb-3">Last Name</label>
+                    <input type="text" disabled defaultValue={toTitleCase(user.lastName)} className="w-full bg-offwhite border border-navy/5 rounded-md py-4 px-6 text-sm text-navy/50 font-bold cursor-not-allowed" />
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-1.5">Email</label>
-                    <input type="email" disabled defaultValue={user.email} className="input-field w-full rounded-xl py-2.5 px-4 text-sm opacity-60 cursor-not-allowed" />
+                    <label className="block text-xs font-bold text-navy/40 mb-3">Email Address</label>
+                    <input type="email" disabled defaultValue={user.email} className="w-full bg-offwhite border border-navy/5 rounded-md py-4 px-6 text-sm text-navy/50 font-bold cursor-not-allowed" />
                   </div>
                 </div>
 
-                <hr className="border-[var(--border)]" />
+                <div className="w-full h-px bg-white/5" />
 
-                <div className="space-y-5">
-                  <h3 className="text-sm font-bold text-[var(--text)] uppercase tracking-wider">Bio</h3>
+                <div className="space-y-6">
+                  <h3 className="text-xs font-bold text-navy/40">Biography</h3>
                   <textarea name="bio" value={extraProfile.bio} onChange={handleExtraChange}
-                    className="input-field w-full rounded-xl py-3 px-4 text-sm resize-none h-24"
-                    placeholder="Tell others about yourself..." />
+                    className="w-full bg-offwhite border border-navy/10 rounded-md py-6 px-8 text-sm text-navy font-medium resize-none h-32 focus:bg-white focus:border-navy focus:ring-4 focus:ring-navy/5 outline-none transition-all placeholder:text-navy/20"
+                    placeholder="Tell us about yourself..." />
                 </div>
 
-                <hr className="border-[var(--border)]" />
+                <div className="w-full h-px bg-navy/5" />
 
-                <div className="space-y-4">
-                  <h3 className="text-sm font-bold text-[var(--text)] uppercase tracking-wider">Social Links</h3>
+                <div className="space-y-6">
+                  <h3 className="text-xs font-bold text-navy/40">Social Links</h3>
                   {[
-                    { icon: <Github size={16} />, name: 'github', placeholder: 'https://github.com/username' },
-                    { icon: <Linkedin size={16} />, name: 'linkedin', placeholder: 'https://linkedin.com/in/username' },
-                    { icon: <Globe size={16} />, name: 'portfolio', placeholder: 'https://yoursite.com' },
+                    { icon: <Github size={16} />, name: 'github', placeholder: 'GitHub Profile URL' },
+                    { icon: <Linkedin size={16} />, name: 'linkedin', placeholder: 'LinkedIn Profile URL' },
+                    { icon: <Globe size={16} />, name: 'portfolio', placeholder: 'Portfolio Website' },
                   ].map(s => (
-                    <div key={s.name} className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--text-muted)]">{s.icon}</span>
+                    <div key={s.name} className="relative group">
+                      <span className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy/60 transition-colors">{s.icon}</span>
                       <input type="url" name={s.name} value={extraProfile[s.name]} onChange={handleExtraChange}
-                        className="input-field w-full rounded-xl py-2.5 pl-11 pr-4 text-sm" placeholder={s.placeholder} />
+                        className="w-full bg-offwhite border border-navy/10 rounded-md py-4 pl-16 pr-6 text-sm text-navy font-bold focus:bg-white focus:border-navy focus:ring-4 focus:ring-navy/5 outline-none transition-all placeholder:text-navy/20"
+                        placeholder={s.placeholder} />
                     </div>
                   ))}
                 </div>
 
-                <div className="flex justify-end pt-2">
+                <div className="flex justify-end pt-4">
                   <button onClick={handleSave} disabled={isSaving}
-                    className="btn-primary px-6 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 disabled:opacity-60">
-                    {isSaving ? <span className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></span>
-                     : <>{saveSuccess ? <CheckCircle2 size={16} /> : <Save size={16} />} {saveSuccess ? 'Saved!' : 'Save Changes'}</>}
+                    className="flex items-center gap-3 shrink-0 bg-navy text-white px-10 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all disabled:opacity-50">
+                    {isSaving ? <span className="w-5 h-5 rounded-md border-[3px] border-white/20 border-t-white animate-spin"></span>
+                      : <>{saveSuccess ? <CheckCircle2 size={20} strokeWidth={2.5} /> : <Save size={20} strokeWidth={2.5} />} {saveSuccess ? 'Changes Saved' : 'Save Changes'}</>}
                   </button>
                 </div>
               </div>
             )}
 
             {activeTab === 'security' && (
-              <div className="space-y-8 animate-fade-in">
+              <div className="space-y-12 animate-fade-in">
                 <div>
-                  <h2 className="text-xl font-extrabold text-[var(--text)] mb-1" style={{ fontFamily: 'var(--font-heading)' }}>Security</h2>
-                  <p className="text-[var(--text-muted)] text-sm">Manage your password and authentication.</p>
+                  <h2 className="text-3xl font-bold text-navy mb-1">Security Settings</h2>
+                  <p className="text-navy/40 text-sm font-medium">Update your access credentials and protect your account</p>
                 </div>
-                <div className="space-y-4 max-w-sm">
+                <div className="space-y-6 max-w-sm">
                   {['Current Password', 'New Password', 'Confirm New Password'].map(label => (
                     <div key={label}>
-                      <label className="block text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-1.5">{label}</label>
-                      <input type="password" placeholder="••••••••" className="input-field w-full rounded-xl py-2.5 px-4 text-sm" />
+                      <label className="block text-xs font-bold text-navy/40 mb-3">{label}</label>
+                      <input type="password" placeholder="••••••••" className="w-full bg-offwhite border border-navy/10 rounded-md py-4 px-6 text-sm text-navy font-bold focus:bg-white focus:border-navy focus:ring-4 focus:ring-navy/5 outline-none transition-all" />
                     </div>
                   ))}
                 </div>
-                <button className="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold">Update Password</button>
+                <button className="flex items-center gap-4 bg-navy text-white px-10 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all">
+                  Update Password
+                </button>
               </div>
             )}
 
             {activeTab === 'preferences' && (
-              <div className="space-y-8 animate-fade-in">
+              <div className="space-y-12 animate-fade-in">
                 <div>
-                  <h2 className="text-xl font-extrabold text-[var(--text)] mb-1" style={{ fontFamily: 'var(--font-heading)' }}>Preferences</h2>
-                  <p className="text-[var(--text-muted)] text-sm">Manage your notification settings.</p>
+                  <h2 className="text-3xl font-bold text-navy mb-1">Preferences</h2>
+                  <p className="text-navy/40 text-sm font-medium">Manage your notification settings and platform experience</p>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {[
-                    { label: 'Platform Announcements', desc: 'New features and updates', on: true },
-                    { label: 'Collaboration Invites', desc: 'When someone matches your project', on: true },
-                    { label: 'Weekly Digest', desc: 'Trending projects summary every Monday', on: false },
+                    { label: 'Platform Updates', desc: 'Global announcements and system updates', on: true },
+                    { label: 'Team Collaboration', desc: 'Notifications for mentions and project activity', on: true },
+                    { label: 'Weekly Digest', desc: 'A summary of your weekly testing metrics', on: false },
                   ].map(pref => (
-                    <div key={pref.label} className="flex items-center justify-between p-4 border border-[var(--border)] rounded-xl hover:bg-[var(--bg)] transition-colors">
+                    <div key={pref.label} className="flex items-center justify-between p-8 bg-offwhite border border-navy/5 rounded-md hover:bg-navy/5 transition-all group">
                       <div>
-                        <p className="text-sm font-semibold text-[var(--text)]">{pref.label}</p>
-                        <p className="text-xs text-[var(--text-muted)]">{pref.desc}</p>
+                        <p className="text-base font-bold text-navy group-hover:translate-x-1 transition-transform">{pref.label}</p>
+                        <p className="text-xs font-medium text-navy/40 mt-1">{pref.desc}</p>
                       </div>
-                      <div className={`w-9 h-5 rounded-full relative transition-colors cursor-pointer ${pref.on ? 'bg-[var(--primary)]' : 'bg-gray-200'}`}>
-                        <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full transition-all shadow-sm ${pref.on ? 'right-0.5' : 'left-0.5'}`}></div>
+                      <div className={`w-14 h-7 rounded-md relative transition-all duration-300 cursor-pointer ${pref.on ? 'bg-navy' : 'bg-navy/10 border border-navy/5'}`}>
+                        <div className={`absolute top-1 w-5 h-5 rounded-md transition-all duration-300 shadow-sm ${pref.on ? 'right-1 bg-white' : 'left-1 bg-navy/20'}`}></div>
                       </div>
                     </div>
                   ))}

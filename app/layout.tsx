@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
+import { Afacad, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from './redux/ProviderClient';
 
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const inter = Inter({
-  variable: "--font-sans",
+const afacad = Afacad({
+  variable: "--font-afacad",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -37,9 +30,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.png" />
       </head>
-      <body className={`${jakarta.variable} ${inter.variable} ${jetbrains.variable} antialiased`}>
+      <body className={`${afacad.variable} ${jetbrains.variable} antialiased`}>
         <ReduxProvider>
-            {children}
+          {children}
         </ReduxProvider>
       </body>
     </html>

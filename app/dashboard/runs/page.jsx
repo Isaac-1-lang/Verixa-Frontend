@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Plus, PlayCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import DataTable from "../../components/common/DataTable";
 
 export default function RunsPage() {
@@ -12,16 +13,16 @@ export default function RunsPage() {
 
   const columns = [
     {
-      header: "Run Name",
+      header: "Operation Name",
       accessor: "name",
       cell: (row) => (
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
-            <PlayCircle size={18} />
+        <div className="flex items-center gap-6">
+          <div className="w-12 h-12 bg-navy/5 rounded-md flex items-center justify-center text-navy/40 group-hover:bg-navy group-hover:text-white transition-all border border-navy/5 group-hover:scale-105">
+            <PlayCircle size={20} strokeWidth={1.5} />
           </div>
           <div>
-            <p className="font-semibold text-zinc-900">{row.name}</p>
-            <p className="text-xs text-zinc-500">{row.project}</p>
+            <p className="font-bold text-navy text-sm">{row.name}</p>
+            <p className="text-xs text-navy/40 font-medium mt-1">{row.project}</p>
           </div>
         </div>
       ),
@@ -30,56 +31,69 @@ export default function RunsPage() {
       header: "Status",
       accessor: "status",
       cell: (row) => (
-        <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
-          row.status === 'Completed' ? 'bg-emerald-50 text-emerald-700' :
-          row.status === 'In Progress' ? 'bg-slate-50 text-slate-700' :
-          'bg-zinc-100 text-zinc-700'
-        }`}>
-          {row.status}
-        </span>
+        <div className="flex items-center gap-3">
+          <div className={`w-2 h-2 rounded-md ${row.status === 'In Progress' ? 'bg-navy animate-pulse' : 'bg-navy/10'}`} />
+          <span className={`text-xs font-bold ${row.status === 'In Progress' ? 'text-navy' : 'text-navy/20'}`}>
+            {row.status}
+          </span>
+        </div>
       ),
     },
     {
       header: "Progress",
       accessor: "progress",
       cell: (row) => (
-        <div className="w-full max-w-[120px]">
-          <div className="flex items-center justify-between text-xs text-zinc-600 mb-1">
-            <span>{row.progress}%</span>
+        <div className="w-full max-w-[140px]">
+          <div className="flex items-center justify-between text-[10px] font-bold text-navy/40 mb-2">
+            <span>{row.progress}% sync</span>
           </div>
-          <div className="w-full bg-zinc-200 rounded-full h-2">
-            <div className="bg-[var(--primary)] h-2 rounded-full transition-all" style={{ width: `${row.progress}%` }}></div>
+          <div className="w-full bg-navy/5 rounded-md h-1 overflow-hidden">
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: `${row.progress}%` }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="bg-navy h-full transition-all"
+            />
           </div>
         </div>
       ),
     },
     {
-      header: "Results",
+      header: "Telemetry",
       accessor: "results",
       cell: (row) => (
-        <div className="flex items-center gap-2 text-xs">
-          <span className="text-emerald-600 font-semibold">✓ {row.passed}</span>
-          <span className="text-red-600 font-semibold">✗ {row.failed}</span>
-          <span className="text-zinc-500">⏳ {row.pending}</span>
+        <div className="flex items-center gap-5">
+          <div className="flex flex-col">
+            <span className="text-xs font-bold text-emerald leading-none">{row.passed}</span>
+            <span className="text-[9px] font-bold text-navy/20 mt-1">Pass</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xs font-bold text-navy/40 leading-none">{row.failed}</span>
+            <span className="text-[9px] font-bold text-navy/20 mt-1">Fail</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xs font-bold text-navy/20 leading-none">{row.pending}</span>
+            <span className="text-[9px] font-bold text-navy/20 mt-1">Wait</span>
+          </div>
         </div>
       ),
     },
     {
-      header: "Start Date",
+      header: "Initiation",
       accessor: "startDate",
-      cell: (row) => <span className="text-sm text-zinc-600">{new Date(row.startDate).toLocaleDateString()}</span>,
+      cell: (row) => <span className="text-xs font-bold text-navy/30">{new Date(row.startDate).toLocaleDateString()}</span>,
     },
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div className="max-w-[1400px] mx-auto px-8 py-12">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
         <div>
-          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Test Runs</h1>
-          <p className="text-sm text-zinc-600 mt-1">Execute and track test run progress</p>
+          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Test Runs</h1>
+          <p className="text-navy/40 text-sm font-medium">Active execution streams and progress monitoring</p>
         </div>
-        <button className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20">
-          <Plus size={16} /> New Test Run
+        <button className="flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all">
+          <Plus size={20} strokeWidth={2.5} /> Initialize Test Run
         </button>
       </div>
 

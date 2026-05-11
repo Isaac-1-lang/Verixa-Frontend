@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
+import {
   LayoutDashboard, Layers, Activity, Compass, Mail, LogOut, X, CheckSquare, AlertCircle
 } from 'lucide-react';
 
@@ -27,21 +27,17 @@ export default function Sidebar({ isOpen, onClose }) {
 
   const NavItem = ({ item }) => {
     const isActive = mounted && (pathname === item.path || (item.path !== '/dashboard' && pathname.startsWith(item.path)));
-    
+
     return (
-      <Link 
+      <Link
         href={item.path}
         onClick={() => { if (window.innerWidth < 1024) onClose(); }}
-        className={`group relative flex items-center gap-3.5 px-4 py-2.5 rounded-xl font-medium text-[13px] transition-all ${
-          isActive 
-          ? 'bg-[var(--primary)]/8 text-[var(--primary)]' 
-          : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--bg)]'
-        }`}
+        className={`group relative flex items-center gap-4 px-5 py-3 rounded-md font-bold text-sm transition-all ${isActive
+          ? 'bg-navy text-white shadow-md shadow-navy/10'
+          : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+          }`}
       >
-        {isActive && (
-          <div className="absolute left-0 w-[3px] h-5 bg-[var(--primary)] rounded-r-full" />
-        )}
-        <div className={`transition-colors ${isActive ? 'text-[var(--primary)]' : 'group-hover:text-[var(--text)]'}`}>
+        <div className={`transition-all ${isActive ? 'text-white' : 'text-navy/20 group-hover:text-navy'}`}>
           {item.icon}
         </div>
         <span>{item.name}</span>
@@ -56,40 +52,40 @@ export default function Sidebar({ isOpen, onClose }) {
       )}
 
       <aside className={`
-        w-64 min-h-screen bg-white border-r border-[var(--border)] flex flex-col fixed left-0 top-0 z-50
-        transform transition-transform duration-300 ease-in-out
+        w-80 min-h-screen bg-white border-r border-navy/5 flex flex-col fixed left-0 top-0 z-50
+        transform transition-transform duration-500 cubic-bezier(0.23, 1, 0.32, 1)
         lg:translate-x-0
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
-        <div className="p-6 flex items-center justify-between border-b border-[var(--border)]">
-          <Link href="/dashboard" className="text-lg font-extrabold text-[var(--primary)]" style={{ fontFamily: 'var(--font-heading)' }}>
+        <div className="h-20 px-8 flex items-center justify-between border-b border-navy/5">
+          <Link href="/dashboard" className="text-2xl font-bold text-navy tracking-tight">
             Verixa
           </Link>
-          <button onClick={onClose} className="lg:hidden p-2 rounded-lg hover:bg-[var(--bg)] text-[var(--text-muted)]">
-            <X size={18} />
+          <button onClick={onClose} className="lg:hidden p-2.5 rounded-md hover:bg-navy/5 text-navy/40">
+            <X size={20} />
           </button>
         </div>
 
-        <nav className="flex-1 px-4 space-y-7 overflow-y-auto py-6">
+        <nav className="flex-1 px-6 space-y-10 overflow-y-auto py-10 custom-scrollbar">
           <div>
-            <p className="px-4 text-[10px] font-semibold text-[var(--text-muted)] uppercase tracking-[0.15em] mb-3">UAT Management</p>
-            <div className="space-y-1">
+            <p className="px-5 text-xs font-bold text-navy/20 mb-6">Operations</p>
+            <div className="space-y-2">
               {workspaceLinks.map(item => <NavItem key={item.path} item={item} />)}
             </div>
           </div>
         </nav>
 
-        <div className="p-4 border-t border-[var(--border)] flex flex-col gap-0.5">
-          <Link href="/dashboard/profile" className="flex items-center gap-3.5 px-4 py-2.5 w-full text-[var(--text-muted)] font-medium text-[13px] hover:text-[var(--text)] hover:bg-[var(--bg)] rounded-xl transition-all group">
-            <Activity size={18} />
+        <div className="p-6 border-t border-navy/5 flex flex-col gap-2">
+          <Link href="/dashboard/profile" className="flex items-center gap-4 px-5 py-3 w-full text-navy/40 font-bold text-sm hover:text-navy hover:bg-navy/5 rounded-md transition-all group">
+            <Activity size={18} className="text-navy/20 group-hover:text-navy transition-colors" />
             <span>Settings</span>
           </Link>
           <button onClick={() => {
             localStorage.removeItem('token');
             localStorage.removeItem('tokenType');
             window.location.href = '/auth/login';
-          }} className="flex items-center gap-3.5 px-4 py-2.5 w-full text-[var(--text-muted)] font-medium text-[13px] hover:text-[var(--accent)] hover:bg-red-50 rounded-xl transition-all group">
-            <LogOut size={18} />
+          }} className="flex items-center gap-4 px-5 py-3 w-full text-navy/40 font-bold text-sm hover:text-navy hover:bg-navy/5 rounded-md transition-all group">
+            <LogOut size={18} className="text-navy/20 group-hover:text-navy transition-colors" />
             <span>Logout</span>
           </button>
         </div>

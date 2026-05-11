@@ -13,12 +13,12 @@ export default function ExecutionsPage() {
 
   const columns = [
     {
-      header: "Test Case",
+      header: "Test Unit",
       accessor: "testCase",
       cell: (row) => (
-        <div>
-          <p className="font-semibold text-zinc-900 text-sm">{row.testCase}</p>
-          <p className="text-xs text-zinc-500">{row.run}</p>
+        <div className="flex flex-col gap-1">
+          <p className="font-bold text-navy text-sm group-hover:translate-x-1 transition-transform duration-300">{row.testCase}</p>
+          <p className="text-xs text-navy/40 font-medium">{row.run}</p>
         </div>
       ),
     },
@@ -26,43 +26,52 @@ export default function ExecutionsPage() {
       header: "Result",
       accessor: "result",
       cell: (row) => (
-        <div className="flex items-center gap-2">
-          {row.result === 'Passed' && <CheckCircle size={16} className="text-emerald-600" />}
-          {row.result === 'Failed' && <XCircle size={16} className="text-red-600" />}
-          {row.result === 'Pending' && <Clock size={16} className="text-amber-600" />}
-          <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
-            row.result === 'Passed' ? 'bg-emerald-50 text-emerald-700' :
-            row.result === 'Failed' ? 'bg-red-50 text-red-700' :
-            'bg-amber-50 text-amber-700'
-          }`}>
-            {row.result}
+        <div className="flex items-center gap-3">
+          <div className={`p-2 rounded-xl border border-navy/5 bg-navy/5 ${row.result === 'Passed' ? 'text-emerald' :
+            row.result === 'Failed' ? 'text-navy' :
+              'text-navy/20'
+            }`}>
+            {row.result === 'Passed' && <CheckCircle size={14} strokeWidth={2.5} />}
+            {row.result === 'Failed' && <XCircle size={14} strokeWidth={2.5} />}
+            {row.result === 'Pending' && <Clock size={14} strokeWidth={2.5} />}
+          </div>
+          <span className={`text-xs font-bold ${row.result === 'Passed' ? 'text-emerald' :
+            row.result === 'Failed' ? 'text-navy' :
+              'text-navy/20'
+            }`}>
+            {row.result === 'Passed' ? 'Passed' : row.result === 'Failed' ? 'Failed' : 'Pending'}
           </span>
         </div>
       ),
     },
     {
-      header: "Executed By",
+      header: "Operator",
       accessor: "executedBy",
-      cell: (row) => <span className="text-sm text-zinc-700">{row.executedBy}</span>,
+      cell: (row) => <span className="text-sm font-bold text-navy/50">{row.executedBy}</span>,
     },
     {
-      header: "Executed At",
+      header: "Timestamp",
       accessor: "executedAt",
-      cell: (row) => <span className="text-sm text-zinc-600">{row.executedAt}</span>,
+      cell: (row) => <span className="text-xs font-bold text-navy/30">{row.executedAt}</span>,
     },
     {
       header: "Duration",
       accessor: "duration",
-      cell: (row) => <span className="text-sm text-zinc-600">{row.duration}</span>,
+      cell: (row) => (
+        <div className="flex items-center gap-2">
+          <Clock size={10} className="text-navy/20" />
+          <span className="text-xs font-bold text-navy/30">{row.duration}</span>
+        </div>
+      ),
     },
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div className="max-w-[1400px] mx-auto px-8 py-12">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
         <div>
-          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Test Executions</h1>
-          <p className="text-sm text-zinc-600 mt-1">View and manage test execution results</p>
+          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Execution Logs</h1>
+          <p className="text-navy/40 text-sm font-medium">Historical trace of all quality assurance streams</p>
         </div>
       </div>
 

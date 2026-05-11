@@ -95,23 +95,24 @@ export default function ProfileSetupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-[var(--bg)] dot-grid relative">
-      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-[var(--primary)] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
+  return (
+    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-white dot-grid relative">
+      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-navy opacity-[0.03] rounded-md blur-[100px] pointer-events-none"></div>
 
-      <div className="w-full max-w-[500px] bg-white rounded-3xl border border-[var(--border)] shadow-2xl shadow-gray-200/40 p-8 sm:p-12">
-        <Link href="/" className="text-xl font-extrabold text-[var(--primary)] mb-8 block" style={{ fontFamily: 'var(--font-heading)' }}>
+      <div className="w-full max-w-[500px] bg-white rounded-md border border-navy/5 shadow-2xl shadow-navy/5 p-8 sm:p-12">
+        <Link href="/" className="text-xl font-bold text-navy mb-8 block">
           Verixa
         </Link>
 
-        <h2 className="text-3xl font-extrabold text-[var(--text)] mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
+        <h2 className="text-3xl font-bold text-navy mb-2">
           Complete Your Profile
         </h2>
-        <p className="text-sm text-[var(--text-muted)] mb-8">
+        <p className="text-sm text-navy/40 mb-8 font-medium">
           Add a profile picture to personalize your account (optional)
         </p>
 
         {error && (
-          <div className="mb-6 p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-sm font-semibold">
+          <div className="mb-6 p-3 bg-red-50 border border-red-200 text-red-600 rounded-md text-sm font-semibold">
             {error}
           </div>
         )}
@@ -119,14 +120,14 @@ export default function ProfileSetupPage() {
         <div className="flex flex-col items-center mb-8">
           <div 
             onClick={() => fileInputRef.current?.click()}
-            className="w-40 h-40 rounded-full border-4 border-dashed border-[var(--border)] flex items-center justify-center cursor-pointer hover:border-[var(--primary)] transition-colors overflow-hidden bg-[var(--bg)]"
+            className="w-40 h-40 rounded-md border-2 border-dashed border-navy/10 flex items-center justify-center cursor-pointer hover:border-navy hover:bg-navy/5 transition-all overflow-hidden bg-offwhite"
           >
             {preview ? (
               <img src={preview} alt="Preview" className="w-full h-full object-cover" />
             ) : (
               <div className="text-center">
-                <User size={48} className="text-[var(--text-muted)] mx-auto mb-2" />
-                <p className="text-xs text-[var(--text-muted)] font-semibold">Click to upload</p>
+                <User size={48} className="text-navy/20 mx-auto mb-2" />
+                <p className="text-xs text-navy/40 font-bold">Select Image</p>
               </div>
             )}
           </div>
@@ -140,7 +141,7 @@ export default function ProfileSetupPage() {
           />
 
           {selectedFile && (
-            <p className="mt-4 text-sm text-[var(--text-muted)]">
+            <p className="mt-4 text-sm text-navy/40 font-bold">
               {selectedFile.name} ({(selectedFile.size / 1024).toFixed(1)} KB)
             </p>
           )}
@@ -150,14 +151,14 @@ export default function ProfileSetupPage() {
           <button
             onClick={handleUpload}
             disabled={!selectedFile || isUploading}
-            className="btn-primary w-full py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-4 bg-navy text-white rounded-md font-bold text-sm flex items-center justify-center gap-3 shadow-xl shadow-navy/10 hover:bg-navy/90 transition-all disabled:opacity-50 active:scale-95"
           >
             {isUploading ? (
-              'Uploading...'
+              'Processing...'
             ) : (
               <>
-                <Upload size={16} />
-                Upload & Continue
+                <Upload size={18} />
+                Confirm & Continue
               </>
             )}
           </button>
@@ -165,14 +166,14 @@ export default function ProfileSetupPage() {
           <button
             onClick={handleSkip}
             disabled={isUploading}
-            className="w-full py-3.5 rounded-xl font-semibold text-sm text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--bg)] transition-colors flex items-center justify-center gap-2"
+            className="w-full py-4 rounded-md font-bold text-sm text-navy/40 hover:text-navy hover:bg-navy/5 transition-all flex items-center justify-center gap-2"
           >
-            Skip for now <ArrowRight size={16} />
+            Skip for now <ArrowRight size={18} />
           </button>
         </div>
 
-        <p className="text-xs text-[var(--text-muted)] text-center mt-6">
-          Supported formats: JPG, PNG, GIF (max 5MB)
+        <p className="text-xs text-navy/20 text-center mt-8 font-bold">
+          Supported: JPG, PNG, GIF (max 5MB)
         </p>
       </div>
     </div>
