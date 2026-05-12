@@ -215,7 +215,7 @@ export default function LandingPage() {
         }}
       >
         <motion.div
-          className="bg-white/70 backdrop-blur-3xl rounded-md shadow-2xl shadow-navy/5 border border-navy/5 px-10 h-20 flex items-center justify-between transition-all duration-500"
+          className="bg-white/80 backdrop-blur-3xl rounded-md shadow-2xl shadow-navy/5 border border-navy/5 px-10 h-20 flex items-center justify-between transition-all duration-500"
           style={{ opacity: navbarOpacity }}
         >
           <Link href="/" className="text-3xl font-bold text-navy flex items-center gap-3 group">
@@ -250,23 +250,23 @@ export default function LandingPage() {
             className="md:hidden absolute top-full left-0 right-0 mt-4 border border-navy/5 bg-white/95 backdrop-blur-2xl rounded-md shadow-2xl p-8 space-y-6"
           >
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-4 text-sm font-semibold text-navy/40 hover:text-navy border-b border-navy/5 last:border-0">
+              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-4 text-md font-semibold text-navy/40 hover:text-navy border-b border-navy/5 last:border-0">
                 {link.label}
               </a>
             ))}
-            <Link href="/auth/login" className="block py-4 text-sm font-semibold text-navy/40 hover:text-navy">Log In</Link>
-            <Link href="/auth/signup" className="bg-navy text-white block text-center py-5 rounded-md text-sm font-bold shadow-xl shadow-navy/20">Get Started Now</Link>
+            <Link href="/auth/login" className="block py-4 text-md font-semibold text-navy/40 hover:text-navy">Log In</Link>
+            <Link href="/auth/signup" className="bg-navy text-white block text-center py-3 rounded-md text-md font-bold">Get Started Now</Link>
           </motion.div>
         )}
       </motion.nav>
 
-      <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[#0B1121]">
-        {/* Animated Background elements */}
-        <div className="absolute inset-0 dot-grid opacity-[0.08]" />
+      <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-white">
+        {/* Subtle Decorative elements */}
+        <div className="absolute inset-0 dot-grid opacity-[0.03]" />
 
-        {/* Glows */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-[0.02] rounded-full blur-[150px] -mr-96 -mt-96" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-navy opacity-30 rounded-full blur-[120px] -ml-48 -mb-48" />
+        {/* Soft Background Glows */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-navy opacity-[0.03] rounded-full blur-[150px] -mr-96 -mt-96" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-navy opacity-[0.02] rounded-full blur-[120px] -ml-48 -mb-48" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -274,21 +274,11 @@ export default function LandingPage() {
               style={{ opacity: heroOpacity, scale: heroScale }}
               className="max-w-xl"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 mb-8"
-              >
-                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-[11px] font-bold text-white/60">Professional Grade QA Platform</span>
-              </motion.div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
-                className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-8"
+                className="text-5xl md:text-7xl font-bold text-navy leading-[1.1] mb-8"
               >
                 The Standard for Quality Excellence.
               </motion.h1>
@@ -297,7 +287,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
-                className="text-lg md:text-xl text-white/40 leading-relaxed font-semibold mb-12"
+                className="text-lg md:text-xl text-navy/60 leading-relaxed font-semibold mb-12"
               >
                 Verixa is the unified platform where elite QA teams execute tests, track defects, and master the standard of modern UAT.
               </motion.p>
@@ -314,7 +304,7 @@ export default function LandingPage() {
                     <motion.div
                       key={i}
                       whileHover={{ y: -5, zIndex: 10 }}
-                      className="w-12 h-12 rounded-md border-4 border-[#0B1121] overflow-hidden shadow-2xl cursor-pointer transition-all bg-white"
+                      className="w-12 h-12 rounded-full border-4 border-white overflow-hidden shadow-2xl shadow-navy/5 cursor-pointer transition-all bg-white"
                     >
                       <img
                         src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 40}`}
@@ -323,19 +313,19 @@ export default function LandingPage() {
                       />
                     </motion.div>
                   ))}
-                  <div className="w-12 h-12 rounded-md border-4 border-[#0B1121] bg-white flex items-center justify-center shadow-2xl relative z-10 font-bold">
-                    <span className="text-[11px] text-navy">+5K</span>
+                  <div className="w-12 h-12 rounded-full border-4 border-white bg-navy flex items-center justify-center shadow-lg relative z-10 font-bold">
+                    <span className="text-[11px] text-white">+5K</span>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <div className="flex items-center gap-1.5">
                     {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} size={14} className="fill-white text-white opacity-80" />
+                      <Star key={s} size={14} className="fill-navy text-navy opacity-80" />
                     ))}
-                    <span className="ml-2 text-sm font-bold text-white/60">4.9/5 Rating</span>
+                    <span className="ml-2 text-sm font-bold text-navy/60">4.9/5 Rating</span>
                   </div>
-                  <p className="text-[11px] font-bold text-white/20">Trusted by Global QA Elite</p>
+                  <p className="text-[11px] font-bold text-navy/20">Trusted by Global QA Elite</p>
                 </div>
               </motion.div>
 
@@ -346,19 +336,38 @@ export default function LandingPage() {
                 className="flex flex-wrap gap-6"
               >
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Link href="/auth/signup" className="bg-white text-navy inline-flex items-center gap-4 text-sm font-bold px-10 py-5 rounded-md shadow-[0_20px_40px_rgba(255,255,255,0.1)] group transition-all">
+                  <Link href="/auth/signup" className="bg-navy text-white inline-flex items-center gap-4 text-md font-bold px-8 py-4 rounded-md shadow-2xl shadow-navy/20 group transition-all">
                     Get Started Now
                     <ArrowRight className="group-hover:translate-x-2 transition-transform" size={18} />
                   </Link>
                 </motion.div>
                 <motion.a
                   href="#features"
-                  whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.05)' }}
-                  className="inline-flex items-center gap-4 text-sm font-bold px-10 py-5 rounded-md border border-white/10 text-white hover:border-white/30 transition-all"
+                  whileHover={{ scale: 1.02, backgroundColor: 'rgba(26,38,74,0.02)' }}
+                  className="inline-flex items-center gap-4 text-md font-bold px-8 py-4 rounded-md border border-navy/10 text-navy hover:border-navy/30 transition-all"
                 >
                   Explore Features
                 </motion.a>
               </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1.5, ease: [0.23, 1, 0.32, 1], delay: 0.4 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative z-10 rounded-md overflow-hidden shadow-[0_40px_80px_rgba(26,38,74,0.1)] border border-navy/5 group">
+                <img
+                  src="/image.png"
+                  alt="Professional Collaboration"
+                  className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-white/5 to-transparent pointer-events-none" />
+              </div>
+
+              {/* Decorative side accent */}
+              <div className="absolute -inset-4 border border-navy/0.03 rounded-md pointer-events-none z-0" />
             </motion.div>
           </div>
         </div>
@@ -414,8 +423,8 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-6xl font-bold text-navy mb-8">Professional Toolkit</h2>
-            <p className="text-navy/60 text-xl font-medium">Engineered for teams that demand absolute quality control and professional-grade performance.</p>
+            <h2 className="text-6xl font-bold text-navy mb-2">Professional Toolkit</h2>
+            <p className="text-navy/60 text-lg font-medium">Engineered for teams that demand absolute quality control and professional-grade performance.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
