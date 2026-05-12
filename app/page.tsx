@@ -187,7 +187,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white text-navy overflow-hidden relative">
       <motion.div
-        className="fixed w-11 h-11 pointer-events-none z-100 hidden lg:block mix-blend-screen"
+        className="fixed pointer-events-none z-100 hidden lg:block mix-blend-difference"
         style={{
           left: cursorX,
           top: cursorY,
@@ -195,8 +195,15 @@ export default function LandingPage() {
           y: "-50%"
         }}
       >
-        <div className="w-full h-full border border-navy/30 rounded-md flex items-center justify-center">
-          <div className="w-2 h-2 bg-navy rounded-md" />
+        <div className="relative flex items-center justify-center">
+          {/* Outer Ring */}
+          <motion.div
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-10 h-10 border border-white/40 rounded-full"
+          />
+          {/* Inner Dot */}
+          <div className="absolute w-1 h-1 bg-white rounded-full" />
         </div>
       </motion.div>
 
@@ -253,7 +260,7 @@ export default function LandingPage() {
         )}
       </motion.nav>
 
-      <section className="relative min-h-100dvh flex items-center pt-32 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden">
         <motion.div
           className="absolute inset-0 dot-grid opacity-5"
           style={{ y: bgY }}
@@ -305,79 +312,11 @@ export default function LandingPage() {
                 </motion.a>
               </motion.div>
             </motion.div>
-
-            {/* 3D Dashboard tracking cursor */}
-            <motion.div
-              className="flex-1 max-w-xl w-full hidden lg:block"
-              initial={{ opacity: 0, x: 100, rotateY: -30 }}
-              animate={{ opacity: 1, x: 0, rotateY: 0 }}
-              transition={{ duration: 1.8, ease: [0.23, 1, 0.32, 1] as [number, number, number, number], delay: 0.4 }}
-              style={{ perspective: 1800 }}
-            >
-              <motion.div
-                style={{ rotateX: cardRotateX, rotateY: cardRotateY }}
-                className="bg-white rounded-md border border-white/5 shadow-[0_32px_64px_rgba(0,0,0,0.2)] p-10 relative overflow-hidden group transition-all"
-              >
-                <div className="flex items-center gap-3 mb-10 shrink-0">
-                  <div className="w-3.5 h-3.5 rounded-md bg-navy/10" />
-                  <div className="w-3.5 h-3.5 rounded-md bg-navy/10" />
-                  <div className="w-3.5 h-3.5 rounded-md bg-navy/10" />
-                  <span className="text-sm text-navy/30 ml-4 font-bold">Verixa Dashboard</span>
-                </div>
-
-                <div className="space-y-10">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-navy/40 font-bold mb-1">Access Level: Admin</p>
-                      <p className="text-4xl font-bold text-navy">Welcome back 👋</p>
-                    </div>
-                    <div className="w-16 h-16 rounded-md bg-navy flex items-center justify-center text-white font-bold text-2xl shadow-xl shadow-navy/20">VX</div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-6">
-                    {[{ l: 'Test Cases', v: '2,450' }, { l: 'Passed Rate', v: '98.5%' }].map(s => (
-                      <motion.div
-                        key={s.l}
-                        whileHover={{ y: -8, backgroundColor: 'rgba(26,38,74,0.02)' }}
-                        className="bg-navy/5 rounded-md p-6 border border-navy/5 transition-all"
-                      >
-                        <p className="text-4xl font-bold text-navy leading-none">{s.v}</p>
-                        <p className="text-sm text-navy/40 font-bold mt-3">{s.l}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4">
-                    {[
-                      { title: 'Project Sentinel', field: 'Deploying', active: true },
-                      { title: 'Nexus Core', field: 'Stable', active: false },
-                    ].map((p, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{ x: 12, backgroundColor: 'rgba(26,38,74,0.02)' }}
-                        className="bg-navy/5 rounded-md p-5 flex items-center justify-between border border-navy/5 transition-all cursor-pointer"
-                      >
-                        <div className="flex items-center gap-5">
-                          <div className={`w-3 h-3 rounded-md ${p.active ? 'bg-emerald animate-pulse' : 'bg-navy/10'}`} />
-                          <div>
-                            <p className="font-bold text-sm text-navy">{p.title}</p>
-                            <p className="text-xs text-navy/40 font-bold">{p.field}</p>
-                          </div>
-                        </div>
-                        <ChevronRight size={18} className="text-navy/20" />
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* FIELD BADGES MARQUEE */}
       <section className="py-16 bg-navy overflow-hidden relative">
-        {/* Ambient glows */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 -translate-y-1/2 left-1/4 w-[500px] h-[300px] opacity-10 rounded-full"
             style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, transparent 70%)' }} />
@@ -385,7 +324,6 @@ export default function LandingPage() {
             style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.2) 0%, transparent 70%)' }} />
         </div>
 
-        {/* Edge fade masks — navy-coloured */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-40 z-10"
           style={{ background: 'linear-gradient(to right, #1A264A 0%, transparent 100%)' }} />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-40 z-10"
@@ -396,7 +334,7 @@ export default function LandingPage() {
           {[...FIELDS, ...FIELDS, ...FIELDS].map((f, i) => (
             <span
               key={`r1-${i}`}
-              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/[0.06] text-white/70 hover:bg-white/[0.12] hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/6 text-white/70 hover:bg-white/12 hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
             >
               <span className="w-2 h-2 rounded-full bg-white opacity-30" />
               {f.name}
@@ -409,7 +347,7 @@ export default function LandingPage() {
           {[...FIELDS.slice(5), ...FIELDS, ...FIELDS.slice(0, 5), ...FIELDS].map((f, i) => (
             <span
               key={`r2-${i}`}
-              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/[0.06] text-white/70 hover:bg-white/[0.12] hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/6 text-white/70 hover:bg-white/12 hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
             >
               <span className="w-2 h-2 rounded-full bg-white opacity-20" />
               {f.name}
@@ -419,7 +357,7 @@ export default function LandingPage() {
       </section>
 
       {/* STATS */}
-      <section className="py-32 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
           {STATS.map((s, i) => (
             <motion.div
@@ -431,7 +369,7 @@ export default function LandingPage() {
               className="group"
             >
               <p className="text-6xl font-bold text-navy group-hover:scale-105 transition-transform duration-500">{s.value}</p>
-              <p className="text-sm text-navy/40 font-bold mt-4">{s.label}</p>
+              <p className="text-md text-navy/40 font-semibold mt-2">{s.label}</p>
             </motion.div>
           ))}
         </div>
@@ -483,7 +421,7 @@ export default function LandingPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="how-it-works" ref={stepsRef} className="py-40 px-6 bg-navy overflow-hidden relative">
+      <section id="how-it-works" ref={stepsRef} className="py-24 px-6 bg-navy overflow-hidden relative">
         {/* Background layers */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Radial ambient glows */}
@@ -504,9 +442,6 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-28"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-white/10 border border-white/10 text-xs font-bold text-white/50 mb-6 tracking-widest uppercase">
-              The Process
-            </div>
             <h2 className="text-6xl font-bold text-white mb-8">Execution Flow</h2>
             <p className="text-white/40 text-xl font-medium">A systematic approach to quality assurance, engineered for absolute efficiency.</p>
           </motion.div>
@@ -519,7 +454,7 @@ export default function LandingPage() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.4, ease: [0.23, 1, 0.32, 1], delay: 0.3 }}
-              className="hidden md:block absolute top-[4.5rem] left-[16.6%] right-[16.6%] h-px bg-white/10 origin-left"
+              className="hidden md:block absolute top-18 left-[16.6%] right-[16.6%] h-px bg-white/10 origin-left"
             />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
@@ -535,7 +470,7 @@ export default function LandingPage() {
                   {/* Ghost number — parallax */}
                   <motion.div
                     style={{ y: sNumY }}
-                    className="absolute -top-8 text-[11rem] font-bold text-white/[0.03] pointer-events-none select-none leading-none"
+                    className="absolute -top-8 text-[11rem] font-bold text-white/0.03 pointer-events-none select-none leading-none"
                   >
                     {s.number}
                   </motion.div>
@@ -562,7 +497,7 @@ export default function LandingPage() {
                   {/* Card */}
                   <motion.div
                     whileHover={{ y: -8, backgroundColor: 'rgba(255,255,255,0.07)' }}
-                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md p-10 transition-all duration-500 group-hover:border-white/20"
+                    className="w-full bg-white/0.04 border border-white/0.08 rounded-md p-10 transition-all duration-500 group-hover:border-white/20"
                   >
                     <h3 className="text-2xl font-bold text-white mb-4">{s.title}</h3>
                     <p className="text-white/40 text-base leading-relaxed font-medium">{s.desc}</p>
@@ -584,23 +519,20 @@ export default function LandingPage() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing" ref={pricingRef} className="py-40 px-6 overflow-hidden bg-white">
+      <section id="pricing" ref={pricingRef} className="py-24 px-6 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={sectionVariant}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-32"
+            className="text-center max-w-3xl mx-auto mb-16"
           >
-            <div className="inline-flex px-4 py-1.5 rounded-md bg-navy/5 border border-navy/10 text-xs font-bold text-navy/40 mb-6">
-              Investment Models
-            </div>
-            <h2 className="text-6xl font-bold text-navy mb-8">Scaling Logic</h2>
+            <h2 className="text-6xl font-bold text-navy mb-4">Scaling Logic</h2>
             <p className="text-navy/60 text-xl font-medium">Clear, transparent investment options for organizations focused on excellence.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
             {PRICING.map((plan, i) => (
               <motion.div key={i} style={{ y: priceYArr[i % 3] }} className="h-full">
                 <motion.div
@@ -653,7 +585,7 @@ export default function LandingPage() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" ref={aboutRef} className="py-40 px-6 bg-white overflow-hidden">
+      <section id="about" ref={aboutRef} className="py-24 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-32">
           <motion.div
             style={{ y: aYText }}
@@ -663,9 +595,6 @@ export default function LandingPage() {
             viewport={{ once: true, margin: "-50px" }}
             className="flex-1"
           >
-            <div className="inline-flex px-4 py-1.5 rounded-md bg-navy/5 border border-navy/10 text-xs font-bold text-navy/40 mb-8">
-              Corporate Philosophy
-            </div>
             <h2 className="text-6xl font-bold text-navy mb-12">Quality Simplified</h2>
 
             <div className="space-y-8 text-navy/60 leading-relaxed text-xl font-medium">
@@ -713,21 +642,21 @@ export default function LandingPage() {
       </section>
 
       {/* CTA BANNER */}
-      <section className="py-40 px-6 bg-white">
+      <section className="py-24 px-6 bg-white">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-6xl mx-auto text-center bg-offwhite rounded-md px-20 py-32 border border-navy/5 relative overflow-hidden"
+          className="max-w-6xl mx-auto text-center bg-offwhite rounded-md px-10 py-16 border border-navy/5 relative overflow-hidden"
         >
           <div className="absolute inset-0 dot-grid opacity-20" />
 
-          <h2 className="text-6xl sm:text-7xl font-bold text-navy mb-10 relative z-10 leading-tight">Ready to secure your quality gates?</h2>
-          <p className="text-navy/40 text-2xl mb-16 max-w-2xl mx-auto relative z-10 font-medium">Join the thousands of teams using Verixa to eliminate uncertainty and drive excellence.</p>
+          <h2 className="text-6xl sm:text-7xl font-bold text-navy mb-4 relative z-10 leading-tight">Ready to secure your quality gates?</h2>
+          <p className="text-navy/40 text-xl mb-8 max-w-2xl mx-auto relative z-10 font-medium">Join the thousands of teams using Verixa to eliminate uncertainty and drive excellence.</p>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/auth/signup" className="bg-navy text-white inline-flex items-center gap-6 text-2xl font-bold px-16 py-7 rounded-md relative z-10 shadow-2xl shadow-navy/20">
+            <Link href="/auth/signup" className="bg-navy text-white inline-flex items-center gap-3 text-lg font-bold px-10 py-5 rounded-md relative z-10 shadow-2xl shadow-navy/20">
               Get Started <ArrowRight size={28} />
             </Link>
           </motion.div>
@@ -735,9 +664,9 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-white border-t border-navy/5 py-32 px-6 relative overflow-hidden">
+      <footer className="bg-white border-t border-navy/5 py-16 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-20 mb-32">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-20 mb-16">
             <div className="col-span-2 md:col-span-1">
               <span className="text-4xl font-bold text-navy">Verixa</span>
               <p className="text-base text-navy/30 font-bold leading-relaxed mt-4">High-performance UAT management platform. Absolute confidence in every deployment.</p>
@@ -749,7 +678,7 @@ export default function LandingPage() {
               { title: 'Support', links: ['Directives', 'Terms', 'Privacy'] },
             ].map((col, idx) => (
               <div key={idx}>
-                <p className="text-xs font-bold text-navy/20 mb-10 tracking-[0.2em]">{col.title.toUpperCase()}</p>
+                <p className="text-xs font-bold text-navy/20 mb-6 tracking-[0.2em]">{col.title.toUpperCase()}</p>
                 <ul className="space-y-6">
                   {col.links.map(l => (
                     <li key={l}><a href="#" className="text-base font-bold text-navy/40 hover:text-navy transition-all hover:translate-x-1 inline-block">{l}</a></li>
@@ -759,7 +688,7 @@ export default function LandingPage() {
             ))}
           </div>
 
-          <div className="border-t border-navy/5 pt-20 flex flex-col sm:flex-row items-center justify-between gap-12 text-sm font-bold text-navy/20">
+          <div className="border-t border-navy/5 pt-4 flex flex-col sm:flex-row items-center justify-between gap-12 text-sm font-bold text-navy/20">
             <p>© {new Date().getFullYear()} Verixa Engineering. All rights reserved.</p>
             <div className="flex items-center gap-12">
               {['github', 'linkedin', 'twitter'].map(icon => (
