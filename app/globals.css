@@ -136,3 +136,29 @@ h6 {
 .dot-grid {
   background: transparent;
 }
+
+/* ─── Marquee Animations ─── */
+@keyframes marquee-ltr {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes marquee-rtl {
+  0%   { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  animation: marquee-ltr 28s linear infinite;
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  animation: marquee-rtl 32s linear infinite;
+}
+
+.animate-marquee-ltr:hover,
+.animate-marquee-rtl:hover {
+  animation-play-state: paused;
+}

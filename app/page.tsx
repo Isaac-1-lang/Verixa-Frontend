@@ -217,7 +217,7 @@ export default function LandingPage() {
 
           <div className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} className="text-sm font-bold text-navy/40 hover:text-navy transition-all hover:-translate-y-px">
+              <a key={link.href} href={link.href} className="text-md font-bold text-navy/40 hover:text-navy transition-all hover:-translate-y-px">
                 {link.label}
               </a>
             ))}
@@ -236,20 +236,20 @@ export default function LandingPage() {
         </motion.div>
 
         {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="md:hidden absolute top-full left-0 right-0 mt-4 border border-navy/5 bg-white/95 backdrop-blur-2xl rounded-md shadow-2xl p-8 space-y-6"
-            >
-              {NAV_LINKS.map(link => (
-                <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-3 text-xl font-bold text-navy/40 hover:text-navy">
-                  {link.label}
-                </a>
-              ))}
-              <Link href="/auth/login" className="block py-3 text-xl font-bold">Log In</Link>
-              <Link href="/auth/signup" className="bg-navy text-white block text-center py-4 rounded-md font-bold">Get Started</Link>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden absolute top-full left-0 right-0 mt-4 border border-navy/5 bg-white/95 backdrop-blur-2xl rounded-md shadow-2xl p-8 space-y-6"
+          >
+            {NAV_LINKS.map(link => (
+              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-3 text-xl font-bold text-navy/40 hover:text-navy">
+                {link.label}
+              </a>
+            ))}
+            <Link href="/auth/login" className="block py-3 text-xl font-bold">Log In</Link>
+            <Link href="/auth/signup" className="bg-navy text-white block text-center py-4 rounded-md font-bold">Get Started</Link>
+          </motion.div>
         )}
       </motion.nav>
 
@@ -265,31 +265,20 @@ export default function LandingPage() {
               className="flex-1 max-w-3xl"
               style={{ opacity: heroOpacity, scale: heroScale }}
             >
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-navy/5 border border-navy/10 text-xs font-bold text-navy/40 mb-8"
-              >
-                <div className="w-1.5 h-1.5 rounded-md bg-navy animate-pulse" />
-                The Future of UAT Manager
-              </motion.div>
-
-              {/* Headline */}
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
-                className="text-7xl md:text-8xl font-bold text-navy leading-[1.1] mb-8"
+                className="text-5xl md:text-7xl font-bold text-navy leading-[1.1] mb-8"
               >
-                The Standard for Professional <span className="text-navy/20 italic">UAT Mastery.</span>
+                The Standard for Professional UAT Mastery.
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
-                className="text-2xl text-navy/40 leading-relaxed max-w-2xl mb-12 font-medium"
+                className="text-lg text-navy/40 leading-relaxed max-w-2xl mb-12 font-medium"
               >
                 Verixa is the premium UAT management platform where QA teams execute tests, track defects, and get formal sign-off with absolute precision.
               </motion.p>
@@ -314,18 +303,6 @@ export default function LandingPage() {
                 >
                   Explore Features
                 </motion.a>
-              </motion.div>
-
-              {/* Trust signals */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.1 }}
-                className="flex items-center gap-10 text-base font-bold text-navy/20"
-              >
-                <span className="flex items-center gap-3"><Check size={18} /> Enterprise Ready</span>
-                <span className="flex items-center gap-3"><Check size={18} /> Instant Onboarding</span>
-                <span className="flex items-center gap-3"><Check size={18} /> High Security</span>
               </motion.div>
             </motion.div>
 
@@ -399,20 +376,45 @@ export default function LandingPage() {
       </section>
 
       {/* FIELD BADGES MARQUEE */}
-      <section className="py-12 border-y border-navy/5 bg-offwhite">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="text-center text-xs font-bold text-navy/20 mb-10 tracking-[0.2em]">GLOBAL TEST EXECUTION COVERAGE</p>
-          <div className="flex gap-8 animate-marquee whitespace-nowrap">
-            {[...FIELDS, ...FIELDS].map((f, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-md text-sm font-bold border border-navy/5 bg-white text-navy transition-all hover:bg-navy/5"
-              >
-                <div className="w-2 h-2 rounded-md bg-navy/20" />
-                {f.name}
-              </span>
-            ))}
-          </div>
+      <section className="py-16 bg-navy overflow-hidden relative">
+        {/* Ambient glows */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 -translate-y-1/2 left-1/4 w-[500px] h-[300px] opacity-10 rounded-full"
+            style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, transparent 70%)' }} />
+          <div className="absolute top-1/2 -translate-y-1/2 right-1/4 w-[400px] h-[300px] opacity-10 rounded-full"
+            style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.2) 0%, transparent 70%)' }} />
+        </div>
+
+        {/* Edge fade masks — navy-coloured */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-40 z-10"
+          style={{ background: 'linear-gradient(to right, #1A264A 0%, transparent 100%)' }} />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-40 z-10"
+          style={{ background: 'linear-gradient(to left, #1A264A 0%, transparent 100%)' }} />
+
+        {/* Row 1 — left to right */}
+        <div className="flex gap-5 mb-4 animate-marquee-ltr whitespace-nowrap">
+          {[...FIELDS, ...FIELDS, ...FIELDS].map((f, i) => (
+            <span
+              key={`r1-${i}`}
+              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/[0.06] text-white/70 hover:bg-white/[0.12] hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+            >
+              <span className="w-2 h-2 rounded-full bg-white opacity-30" />
+              {f.name}
+            </span>
+          ))}
+        </div>
+
+        {/* Row 2 — right to left */}
+        <div className="flex gap-5 animate-marquee-rtl whitespace-nowrap">
+          {[...FIELDS.slice(5), ...FIELDS, ...FIELDS.slice(0, 5), ...FIELDS].map((f, i) => (
+            <span
+              key={`r2-${i}`}
+              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/[0.06] text-white/70 hover:bg-white/[0.12] hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+            >
+              <span className="w-2 h-2 rounded-full bg-white opacity-20" />
+              {f.name}
+            </span>
+          ))}
         </div>
       </section>
 
@@ -436,18 +438,15 @@ export default function LandingPage() {
       </section>
 
       {/* FEATURES */}
-      <section id="features" ref={featuresRef} className="py-40 px-6 overflow-hidden bg-white">
+      <section id="features" ref={featuresRef} className="py-16 px-6 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={sectionVariant}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-32"
+            className="text-center max-w-3xl mx-auto mb-16"
           >
-            <div className="inline-flex px-4 py-1.5 rounded-md bg-navy/5 border border-navy/10 text-xs font-bold text-navy/40 mb-6">
-              Core Capabilities
-            </div>
             <h2 className="text-6xl font-bold text-navy mb-8">Professional Toolkit</h2>
             <p className="text-navy/60 text-xl font-medium">Engineered for teams that demand absolute quality control and professional-grade performance.</p>
           </motion.div>
@@ -484,41 +483,102 @@ export default function LandingPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="how-it-works" ref={stepsRef} className="py-40 px-6 bg-offwhite overflow-hidden relative">
-        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
+      <section id="how-it-works" ref={stepsRef} className="py-40 px-6 bg-navy overflow-hidden relative">
+        {/* Background layers */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Radial ambient glows */}
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-10"
+            style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%)' }}
+          />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-10"
+            style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)' }}
+          />
+        </div>
+
         <div className="max-w-7xl mx-auto relative z-10">
+          {/* Header */}
           <motion.div
             variants={sectionVariant}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-32"
+            className="text-center max-w-3xl mx-auto mb-28"
           >
-            <div className="inline-flex px-4 py-1.5 rounded-md bg-navy/5 border border-navy/10 text-xs font-bold text-navy/40 mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-white/10 border border-white/10 text-xs font-bold text-white/50 mb-6 tracking-widest uppercase">
               The Process
             </div>
-            <h2 className="text-6xl font-bold text-navy mb-8">Execution Flow</h2>
-            <p className="text-navy/60 text-xl font-medium">A systematic approach to quality assurance, engineered for absolute efficiency.</p>
+            <h2 className="text-6xl font-bold text-white mb-8">Execution Flow</h2>
+            <p className="text-white/40 text-xl font-medium">A systematic approach to quality assurance, engineered for absolute efficiency.</p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
-            {STEPS.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2, duration: 1 }}
-                whileHover={{ y: -15 }}
-                className="relative text-center group"
-              >
-                <motion.div style={{ y: sNumY }} className="absolute inset-0 flex items-center justify-center text-[15rem] font-bold text-navy/3 mb-6 group-hover:text-navy/5 transition-colors pointer-events-none -z-10">{s.number}</motion.div>
-                <div className="pt-12">
-                  <h3 className="text-4xl font-bold text-navy mb-8">{s.title}</h3>
-                  <p className="text-navy/60 text-lg leading-relaxed max-w-xs mx-auto font-medium">{s.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+          {/* Steps */}
+          <div className="relative">
+            {/* Connecting line (desktop) */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.4, ease: [0.23, 1, 0.32, 1], delay: 0.3 }}
+              className="hidden md:block absolute top-[4.5rem] left-[16.6%] right-[16.6%] h-px bg-white/10 origin-left"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+              {STEPS.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 70 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.18, duration: 1, ease: [0.23, 1, 0.32, 1] }}
+                  className="relative flex flex-col items-center text-center group"
+                >
+                  {/* Ghost number — parallax */}
+                  <motion.div
+                    style={{ y: sNumY }}
+                    className="absolute -top-8 text-[11rem] font-bold text-white/[0.03] pointer-events-none select-none leading-none"
+                  >
+                    {s.number}
+                  </motion.div>
+
+                  {/* Orb */}
+                  <div className="relative mb-10 z-10">
+                    {/* Pulse ring */}
+                    <motion.div
+                      animate={{ scale: [1, 1.45, 1], opacity: [0.3, 0, 0.3] }}
+                      transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut', delay: i * 0.6 }}
+                      className="absolute inset-0 rounded-full border border-white/20"
+                    />
+                    {/* Outer ring */}
+                    <div className="absolute -inset-3 rounded-full border border-white/10" />
+                    {/* Main orb */}
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="w-20 h-20 rounded-full bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm shadow-[0_0_40px_rgba(255,255,255,0.07)] group-hover:bg-white/15 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.12)] transition-all duration-500"
+                    >
+                      <span className="text-2xl font-black text-white">{s.number}</span>
+                    </motion.div>
+                  </div>
+
+                  {/* Card */}
+                  <motion.div
+                    whileHover={{ y: -8, backgroundColor: 'rgba(255,255,255,0.07)' }}
+                    className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md p-10 transition-all duration-500 group-hover:border-white/20"
+                  >
+                    <h3 className="text-2xl font-bold text-white mb-4">{s.title}</h3>
+                    <p className="text-white/40 text-base leading-relaxed font-medium">{s.desc}</p>
+
+                    {/* Bottom accent line */}
+                    <motion.div
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 + i * 0.2, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+                      className="mt-8 h-px bg-white/10 origin-left"
+                    />
+                  </motion.div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
