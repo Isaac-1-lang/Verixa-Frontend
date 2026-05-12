@@ -19,6 +19,8 @@ export default function DashboardPage() {
     openDefects: 0
   });
 
+  const [recentActivity, setRecentActivity] = useState(null);
+
   useEffect(() => {
     // Get user info from localStorage
     try {

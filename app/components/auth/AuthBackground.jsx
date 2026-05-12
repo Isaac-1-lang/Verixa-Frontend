@@ -15,9 +15,9 @@ const FeaturePill = ({ text, className }) => (
     </motion.div>
 );
 
-export default function AuthBackground({ logoOnly = false }) {
+export default function AuthBackground({ title, subtitle }) {
     return (
-        <div className="relative w-full h-full bg-navy overflow-hidden flex flex-col items-center justify-center">
+        <div className="relative w-full h-full bg-navy overflow-hidden flex flex-col items-center justify-center p-12">
             {/* Dot Pattern Texture */}
             <div
                 className="absolute inset-0 opacity-[0.05]"
@@ -47,6 +47,27 @@ export default function AuthBackground({ logoOnly = false }) {
                         d="M826,628Q719,756,589,836Q459,916,331,811Q203,706,145.5,556.5Q88,407,192,291.5Q296,176,432,159.5Q568,143,694.5,232.5Q821,322,877,461Q933,600,826,628Z"
                     />
                 </motion.svg>
+            </div>
+
+            {/* Content Group */}
+            <div className="relative z-10 flex flex-col items-center text-center max-w-lg">
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 1 }}
+                    className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6"
+                >
+                    {title}
+                </motion.h1>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 1 }}
+                    className="text-white/40 text-lg font-medium leading-relaxed"
+                >
+                    {subtitle}
+                </motion.p>
             </div>
         </div>
     );

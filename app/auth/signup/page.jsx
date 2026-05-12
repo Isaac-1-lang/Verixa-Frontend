@@ -21,7 +21,7 @@ export default function SignUpPage() {
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [registerUser, { isLoading }] = useRegisterMutation();
-  const [strength, setStrength] = useState(0); // 0 to 4
+  const [strength, setStrength] = useState(0);
 
   useEffect(() => {
     const pass = formData.password;
@@ -81,25 +81,28 @@ export default function SignUpPage() {
     <div className="min-h-screen flex flex-col md:flex-row bg-white">
       {/* Left Panel - 55% */}
       <div className="hidden md:flex md:w-[55%] h-screen sticky top-0">
-        <AuthBackground />
+        <AuthBackground
+          title="Join the Elite QA Community"
+          subtitle="Experience the most advanced UAT management platform today."
+        />
       </div>
 
       {/* Right Panel - 45% */}
       <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
         <div className="w-full max-w-[440px]">
           <div className="mb-12 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-4 tracking-tight">
-              Create an account
+            <h1 className="text-4xl md:text-5xl font-bold text-navy leading-tight mb-2">
+              Create Account
             </h1>
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-navy/30 mb-8 ml-1">
-              Join the elite Verixa QA community
+            <p className="text-md font-medium text-navy/40 mb-2 ml-1">
+              Join Verixa and start streamlining your QA today.
             </p>
             <div className="h-1 w-12 bg-navy rounded-full mx-auto md:mx-1 shadow-lg shadow-navy/20" />
           </div>
 
           <form onSubmit={handleSignUp} className="space-y-6">
             {errors._root && (
-              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-[12px] font-black uppercase tracking-wider">
+              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm font-bold">
                 {errors._root}
               </div>
             )}
@@ -168,7 +171,7 @@ export default function SignUpPage() {
                     />
                   ))}
                 </div>
-                <p className="text-[10px] font-black uppercase tracking-widest text-navy/20">
+                <p className="text-[10px] font-bold text-navy/20">
                   Security Grade: {strength === 4 ? 'Elite' : strength >= 2 ? 'Professional' : 'Standard'}
                 </p>
               </div>
@@ -195,7 +198,7 @@ export default function SignUpPage() {
                 />
               </div>
               <label htmlFor="terms" className="text-[12px] font-bold text-navy/40 leading-tight cursor-pointer hover:text-navy transition-colors">
-                I agree to the <Link href="#" className="text-navy font-black hover:underline">Terms</Link> and <Link href="#" className="text-navy font-black hover:underline">Privacy Policy</Link>
+                I agree to the <Link href="#" className="text-navy font-bold hover:underline">Terms</Link> and <Link href="#" className="text-navy font-bold hover:underline">Privacy Policy</Link>
               </label>
             </div>
 
@@ -204,22 +207,22 @@ export default function SignUpPage() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full h-[60px] bg-navy text-white rounded-xl font-black text-xs uppercase tracking-[0.3em] shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
+              className="w-full h-[60px] bg-navy text-white rounded-xl font-bold text-sm shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
                 <>
-                  'Create Account'
+                  Create Account
                   <ArrowRight size={18} className="opacity-40" />
                 </>
               )}
             </motion.button>
           </form>
 
-          <p className="text-center text-[15px] text-navy/60 mt-10">
+          <p className="text-center text-sm text-navy/40 mt-10 font-medium">
             Already have an account?{' '}
-            <Link href="/auth/login" className="text-navy font-semibold hover:underline">
+            <Link href="/auth/login" className="text-navy font-bold hover:underline transition-all">
               Sign in
             </Link>
           </p>

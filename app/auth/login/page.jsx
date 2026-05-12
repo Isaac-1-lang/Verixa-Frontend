@@ -51,7 +51,10 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-white">
       <div className="hidden md:flex md:w-[55%] h-screen sticky top-0">
-        <AuthBackground />
+        <AuthBackground
+          title="The Standard for Professional Quality Control"
+          subtitle="Verixa provides the elite toolkit for modern QA teams."
+        />
       </div>
 
       <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
@@ -67,18 +70,18 @@ export default function LoginPage() {
           </div>
 
           <div className="mb-12 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-4 tracking-tight">
-              Welcome back
+            <h1 className="text-4xl md:text-5xl font-bold text-navy leading-tight mb-2">
+              Sign In
             </h1>
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-navy/30 mb-8 ml-1">
-              Access the Verixa Control Panel
+            <p className="text-md font-medium text-navy/40 mb-2 ml-1">
+              Enter your credentials to access the platform.
             </p>
             <div className="h-1 w-12 bg-navy rounded-full mx-auto md:mx-1 shadow-lg shadow-navy/20" />
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-8">
+          <form onSubmit={handleLogin} className="space-y-6">
             {errors._root && (
-              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-[12px] font-black uppercase tracking-wider">
+              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm font-bold">
                 {errors._root}
               </div>
             )}
@@ -94,7 +97,7 @@ export default function LoginPage() {
               disabled={isLoading}
             />
 
-            <div className="space-y-4">
+            <div className="space-y-2">
               <AuthInput
                 label="Password"
                 icon={Lock}
@@ -114,12 +117,12 @@ export default function LoginPage() {
                   </button>
                 }
               />
-              <div className="flex justify-end pr-1">
+              <div className="flex justify-end px-1">
                 <Link
                   href="/auth/forgot-password"
-                  className="text-[11px] font-black uppercase tracking-widest text-navy/40 hover:text-navy transition-colors"
+                  className="text-xs font-semibold text-navy/40 hover:text-navy transition-all"
                 >
-                  Forgot Password?
+                  Forgot password?
                 </Link>
               </div>
             </div>
@@ -129,23 +132,23 @@ export default function LoginPage() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full h-[60px] bg-navy text-white rounded-xl font-black text-xs uppercase tracking-[0.3em] shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all"
+              className="w-full h-[60px] bg-navy text-white rounded-xl font-bold text-sm shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
                 <>
-                  'Sign In'
+                  Sign In
                   <ArrowRight size={18} className="opacity-40" />
                 </>
               )}
             </motion.button>
           </form>
 
-          <p className="text-center text-[15px] text-navy/60 pt-16">
+          <p className="text-center text-sm text-navy/40 mt-10 font-medium">
             Don't have an account?{' '}
-            <Link href="/auth/signup" className="text-navy font-semibold hover:underline">
-              Sign up
+            <Link href="/auth/signup" className="text-navy font-bold hover:underline transition-all">
+              Create one
             </Link>
           </p>
         </div>
