@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useRegisterMutation } from '../../redux/api/UserApiSlice';
 import { motion } from 'framer-motion';
-import { User, Mail, Lock, Eye, EyeOff, Check } from 'lucide-react';
+import { User, Mail, Lock, Eye, EyeOff, Check, ArrowRight } from 'lucide-react';
 import AuthBackground from '@/app/components/auth/AuthBackground';
 import AuthInput from '@/app/components/auth/AuthInput';
 
@@ -87,19 +87,19 @@ export default function SignUpPage() {
       {/* Right Panel - 45% */}
       <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
         <div className="w-full max-w-[440px]">
-          <div className="mb-10 text-center md:text-left">
-            <h1 className="text-[36px] font-semibold text-navy leading-tight mb-2">
-              Create your account
+          <div className="mb-12 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-4 tracking-tight">
+              Create an account
             </h1>
-            <p className="text-[15px] font-normal text-navy/55 mb-6">
-              Join Verixa today and streamline your QA
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-navy/30 mb-8 ml-1">
+              Join the elite Verixa QA community
             </p>
-            <div className="h-px w-10 bg-navy/10 mx-auto md:mx-0" />
+            <div className="h-1 w-12 bg-navy rounded-full mx-auto md:mx-1 shadow-lg shadow-navy/20" />
           </div>
 
-          <form onSubmit={handleSignUp} className="space-y-5">
+          <form onSubmit={handleSignUp} className="space-y-6">
             {errors._root && (
-              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm font-medium">
+              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-[12px] font-black uppercase tracking-wider">
                 {errors._root}
               </div>
             )}
@@ -136,7 +136,7 @@ export default function SignUpPage() {
               disabled={isLoading}
             />
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               <AuthInput
                 label="Password"
                 icon={Lock}
@@ -150,26 +150,28 @@ export default function SignUpPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="text-navy/40 hover:text-navy transition-colors"
+                    className="text-navy/20 hover:text-navy transition-colors p-1"
                   >
-                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                   </button>
                 }
               />
 
               {/* Password Strength Indicator */}
-              <div className="flex gap-1.5 px-1 py-1">
-                {[1, 2, 3, 4].map((seg) => (
-                  <div
-                    key={seg}
-                    className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${strength >= seg ? 'bg-navy' : 'bg-navy/10'
-                      }`}
-                  />
-                ))}
+              <div className="space-y-3 px-1">
+                <div className="flex gap-1.5">
+                  {[1, 2, 3, 4].map((seg) => (
+                    <div
+                      key={seg}
+                      className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${strength >= seg ? 'bg-navy shadow-[0_0_10px_rgba(26,38,74,0.2)]' : 'bg-navy/5'
+                        }`}
+                    />
+                  ))}
+                </div>
+                <p className="text-[10px] font-black uppercase tracking-widest text-navy/20">
+                  Security Grade: {strength === 4 ? 'Elite' : strength >= 2 ? 'Professional' : 'Standard'}
+                </p>
               </div>
-              <p className="text-[11px] text-navy/40 px-1">
-                Must be at least 8 characters with upper, lower, numbers & symbols.
-              </p>
             </div>
 
             <AuthInput
@@ -189,25 +191,28 @@ export default function SignUpPage() {
                   id="terms"
                   type="checkbox"
                   required
-                  className="w-5 h-5 rounded border-navy/20 text-navy focus:ring-navy cursor-pointer accent-navy"
+                  className="w-5 h-5 rounded-md border-navy/10 text-navy focus:ring-navy cursor-pointer accent-navy"
                 />
               </div>
-              <label htmlFor="terms" className="text-[13px] text-navy/60 leading-tight cursor-pointer">
-                I agree to the <Link href="#" className="text-navy font-semibold hover:underline">Terms of Service</Link> and <Link href="#" className="text-navy font-semibold hover:underline">Privacy Policy</Link>
+              <label htmlFor="terms" className="text-[12px] font-bold text-navy/40 leading-tight cursor-pointer hover:text-navy transition-colors">
+                I agree to the <Link href="#" className="text-navy font-black hover:underline">Terms</Link> and <Link href="#" className="text-navy font-black hover:underline">Privacy Policy</Link>
               </label>
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.01, backgroundColor: '#243058' }}
-              whileTap={{ scale: 0.99 }}
+              whileHover={{ scale: 1.02, backgroundColor: '#131B34' }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full h-[52px] bg-navy text-white rounded-xl font-semibold text-[16px] tracking-[0.5px] shadow-lg shadow-navy/10 flex items-center justify-center gap-2 transition-all mt-4"
+              className="w-full h-[60px] bg-navy text-white rounded-xl font-black text-xs uppercase tracking-[0.3em] shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
-                'Create Account'
+                <>
+                  'Create Account'
+                  <ArrowRight size={18} className="opacity-40" />
+                </>
               )}
             </motion.button>
           </form>

@@ -35,7 +35,6 @@ export default function LoginPage() {
     }
 
     try {
-      // Logic from original file
       router.push('/dashboard');
     } catch (error) {
       console.error('Login error:', error);
@@ -48,20 +47,13 @@ export default function LoginPage() {
     }
   };
 
-  const socialButtons = [
-    { name: 'Google', icon: 'https://www.svgrepo.com/show/355037/google.svg' },
-    { name: 'Apple', icon: 'https://www.svgrepo.com/show/511330/apple.svg' },
-    { name: 'Microsoft', icon: 'https://www.svgrepo.com/show/448239/microsoft.svg' },
-  ];
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-white">
-      {/* Left Panel - 55% */}
       <div className="hidden md:flex md:w-[55%] h-screen sticky top-0">
         <AuthBackground />
       </div>
 
-      {/* Right Panel - 45% */}
       <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
         <div className="w-full max-w-[440px]">
           {/* Mobile Logo */}
@@ -74,19 +66,19 @@ export default function LoginPage() {
             </Link>
           </div>
 
-          <div className="mb-10 text-center md:text-left">
-            <h1 className="text-[36px] font-semibold text-navy leading-tight mb-2">
+          <div className="mb-12 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-black text-navy leading-tight mb-4 tracking-tight">
               Welcome back
             </h1>
-            <p className="text-[15px] font-normal text-navy/55 mb-6">
-              Sign in to continue to your account
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-navy/30 mb-8 ml-1">
+              Access the Verixa Control Panel
             </p>
-            <div className="h-px w-10 bg-navy/10 mx-auto md:mx-0" />
+            <div className="h-1 w-12 bg-navy rounded-full mx-auto md:mx-1 shadow-lg shadow-navy/20" />
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-8">
             {errors._root && (
-              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm font-medium">
+              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-[12px] font-black uppercase tracking-wider">
                 {errors._root}
               </div>
             )}
@@ -102,7 +94,7 @@ export default function LoginPage() {
               disabled={isLoading}
             />
 
-            <div className="space-y-2">
+            <div className="space-y-4">
               <AuthInput
                 label="Password"
                 icon={Lock}
@@ -116,16 +108,16 @@ export default function LoginPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="text-navy/40 hover:text-navy transition-colors"
+                    className="text-navy/20 hover:text-navy transition-colors p-1"
                   >
-                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                   </button>
                 }
               />
               <div className="flex justify-end pr-1">
                 <Link
                   href="/auth/forgot-password"
-                  className="text-[13px] font-normal text-navy hover:underline"
+                  className="text-[11px] font-black uppercase tracking-widest text-navy/40 hover:text-navy transition-colors"
                 >
                   Forgot Password?
                 </Link>
@@ -133,39 +125,24 @@ export default function LoginPage() {
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.01, backgroundColor: '#243058' }}
-              whileTap={{ scale: 0.99 }}
+              whileHover={{ scale: 1.02, backgroundColor: '#131B34' }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full h-[52px] bg-navy text-white rounded-xl font-semibold text-[16px] tracking-[0.5px] shadow-lg shadow-navy/10 flex items-center justify-center gap-2 transition-all"
+              className="w-full h-[60px] bg-navy text-white rounded-xl font-black text-xs uppercase tracking-[0.3em] shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
-                'Sign In'
+                <>
+                  'Sign In'
+                  <ArrowRight size={18} className="opacity-40" />
+                </>
               )}
             </motion.button>
           </form>
 
-          <div className="my-10 flex items-center gap-4">
-            <div className="flex-1 h-px bg-navy/10" />
-            <span className="text-[13px] font-normal text-navy/40">or continue with</span>
-            <div className="flex-1 h-px bg-navy/10" />
-          </div>
-
-          <div className="grid grid-cols-3 gap-4 mb-10">
-            {socialButtons.map((social) => (
-              <button
-                key={social.name}
-                type="button"
-                className="flex items-center justify-center py-2.5 px-4 rounded-xl border-[1.5px] border-navy/20 hover:border-navy/40 hover:bg-navy/5 transition-all"
-              >
-                <img src={social.icon} alt={social.name} className="w-5 h-5" />
-              </button>
-            ))}
-          </div>
-
-          <p className="text-center text-[15px] text-navy/60">
+          <p className="text-center text-[15px] text-navy/60 pt-16">
             Don't have an account?{' '}
             <Link href="/auth/signup" className="text-navy font-semibold hover:underline">
               Sign up

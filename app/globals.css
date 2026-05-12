@@ -11,6 +11,7 @@
   --text-muted: rgba(26, 38, 74, 0.6);
   --border: rgba(26, 38, 74, 0.1);
   --accent: #1A264A;
+  --premium-dark: #0B1121;
 
   /* Standardized Accents */
   --emerald: #10b981;
@@ -135,9 +136,34 @@ h6 {
   background: rgba(26, 38, 74, 0.2);
 }
 
-/* Dot Grid removed as per no-gradient requirement */
+/* ─── Patterns & Surfaces ─── */
 .dot-grid {
-  background: transparent;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.badge-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+}
+
+.badge-premium:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* ─── Marquee Animations ─── */

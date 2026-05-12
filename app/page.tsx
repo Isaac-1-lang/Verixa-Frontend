@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import {
-  ArrowRight, ChevronRight, Layers, Users, TrendingUp, Shield,
-  Zap, Globe, Check, Menu, X, BarChart3, BookOpen
+  ArrowRight, Layers, Users, TrendingUp, Shield,
+  Zap, Globe, Check, Menu, X, BarChart3, BookOpen, Star
 } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 
@@ -215,30 +215,30 @@ export default function LandingPage() {
         }}
       >
         <motion.div
-          className="bg-white/80 backdrop-blur-2xl rounded-md shadow-xl shadow-navy/5 border border-navy/5 px-8 h-20 flex items-center justify-between"
+          className="bg-white/70 backdrop-blur-3xl rounded-md shadow-2xl shadow-navy/5 border border-navy/5 px-10 h-20 flex items-center justify-between transition-all duration-500"
           style={{ opacity: navbarOpacity }}
         >
-          <Link href="/" className="text-3xl font-bold tracking-tight text-navy">
+          <Link href="/" className="text-3xl font-bold text-navy flex items-center gap-3 group">
             Verixa
           </Link>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-12">
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} className="text-md font-bold text-navy/40 hover:text-navy transition-all hover:-translate-y-px">
+              <a key={link.href} href={link.href} className="text-sm font-semibold text-navy/40 hover:text-navy transition-all hover:-translate-y-0.5">
                 {link.label}
               </a>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/auth/login" className="text-sm font-bold px-6 py-2 text-navy/40 hover:text-navy transition-colors">Log In</Link>
-            <Link href="/auth/signup" className="bg-white text-navy text-sm font-black px-8 py-3 rounded-md shadow-xl shadow-white/10 hover:shadow-white/20 transition-all active:scale-[0.95] hover:-translate-y-px">
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/auth/login" className="text-sm font-semibold px-4 py-2 text-navy/40 hover:text-navy transition-all">Log In</Link>
+            <Link href="/auth/signup" className="bg-navy text-white text-sm font-bold px-8 py-3.5 rounded-md shadow-2xl shadow-navy/20 hover:scale-105 active:scale-95 transition-all">
               Get Started
             </Link>
           </div>
 
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-navy">
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-3 rounded-md hover:bg-navy/5 text-navy transition-colors">
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </motion.div>
 
@@ -250,63 +250,111 @@ export default function LandingPage() {
             className="md:hidden absolute top-full left-0 right-0 mt-4 border border-navy/5 bg-white/95 backdrop-blur-2xl rounded-md shadow-2xl p-8 space-y-6"
           >
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-3 text-xl font-bold text-navy/40 hover:text-navy">
+              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-4 text-sm font-semibold text-navy/40 hover:text-navy border-b border-navy/5 last:border-0">
                 {link.label}
               </a>
             ))}
-            <Link href="/auth/login" className="block py-3 text-xl font-bold">Log In</Link>
-            <Link href="/auth/signup" className="bg-navy text-white block text-center py-4 rounded-md font-bold">Get Started</Link>
+            <Link href="/auth/login" className="block py-4 text-sm font-semibold text-navy/40 hover:text-navy">Log In</Link>
+            <Link href="/auth/signup" className="bg-navy text-white block text-center py-5 rounded-md text-sm font-bold shadow-xl shadow-navy/20">Get Started Now</Link>
           </motion.div>
         )}
       </motion.nav>
 
-      <section className="relative min-h-screen flex items-center pt-32 overflow-hidden">
-        <motion.div
-          className="absolute inset-0 dot-grid opacity-5"
-          style={{ y: bgY }}
-        />
+      <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[#0B1121]">
+        {/* Animated Background elements */}
+        <div className="absolute inset-0 dot-grid opacity-[0.08]" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
+        {/* Glows */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-[0.02] rounded-full blur-[150px] -mr-96 -mt-96" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-navy opacity-30 rounded-full blur-[120px] -ml-48 -mb-48" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <motion.div
-              className="flex-1 max-w-3xl"
               style={{ opacity: heroOpacity, scale: heroScale }}
+              className="max-w-xl"
             >
-              <motion.h1
-                initial={{ opacity: 0, y: 40 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
-                className="text-5xl md:text-7xl font-bold text-navy leading-[1.1] mb-8"
+                transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 mb-8"
               >
-                The Standard for Professional UAT Mastery.
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                <span className="text-[11px] font-bold text-white/60">Professional Grade QA Platform</span>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
+                className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-8"
+              >
+                The Standard for Quality Excellence.
               </motion.h1>
 
               <motion.p
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
-                className="text-lg text-navy/40 leading-relaxed max-w-2xl mb-12 font-medium"
+                className="text-lg md:text-xl text-white/40 leading-relaxed font-semibold mb-12"
               >
-                Verixa is the premium UAT management platform where QA teams execute tests, track defects, and get formal sign-off with absolute precision.
+                Verixa is the unified platform where elite QA teams execute tests, track defects, and master the standard of modern UAT.
               </motion.p>
 
-              {/* CTA Buttons */}
+              {/* Social Proof */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 1 }}
+                className="flex flex-wrap items-center gap-10 mb-12"
+              >
+                <div className="flex -space-x-4">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <motion.div
+                      key={i}
+                      whileHover={{ y: -5, zIndex: 10 }}
+                      className="w-12 h-12 rounded-md border-4 border-[#0B1121] overflow-hidden shadow-2xl cursor-pointer transition-all bg-white"
+                    >
+                      <img
+                        src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 40}`}
+                        alt="Expert User"
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  ))}
+                  <div className="w-12 h-12 rounded-md border-4 border-[#0B1121] bg-white flex items-center justify-center shadow-2xl relative z-10 font-bold">
+                    <span className="text-[11px] text-navy">+5K</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center gap-1.5">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <Star key={s} size={14} className="fill-white text-white opacity-80" />
+                    ))}
+                    <span className="ml-2 text-sm font-bold text-white/60">4.9/5 Rating</span>
+                  </div>
+                  <p className="text-[11px] font-bold text-white/20">Trusted by Global QA Elite</p>
+                </div>
+              </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 1 }}
-                className="flex flex-wrap gap-6 mb-16"
+                className="flex flex-wrap gap-6"
               >
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Link href="/auth/signup" className="bg-navy text-white inline-flex items-center gap-4 text-xl font-bold px-12 py-5 rounded-md shadow-xl shadow-navy/10 group transition-all">
-                    Get Started
-                    <ArrowRight className="group-hover:translate-x-2 transition-transform" size={24} />
+                  <Link href="/auth/signup" className="bg-white text-navy inline-flex items-center gap-4 text-sm font-bold px-10 py-5 rounded-md shadow-[0_20px_40px_rgba(255,255,255,0.1)] group transition-all">
+                    Get Started Now
+                    <ArrowRight className="group-hover:translate-x-2 transition-transform" size={18} />
                   </Link>
                 </motion.div>
                 <motion.a
                   href="#features"
-                  whileHover={{ scale: 1.02, backgroundColor: 'rgba(26,38,74,0.02)' }}
-                  className="inline-flex items-center gap-4 text-xl font-bold px-12 py-5 rounded-md border border-navy/10 text-navy hover:border-navy/30 transition-all"
+                  whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.05)' }}
+                  className="inline-flex items-center gap-4 text-sm font-bold px-10 py-5 rounded-md border border-white/10 text-white hover:border-white/30 transition-all"
                 >
                   Explore Features
                 </motion.a>
@@ -352,25 +400,6 @@ export default function LandingPage() {
               <span className="w-2 h-2 rounded-full bg-white opacity-20" />
               {f.name}
             </span>
-          ))}
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
-          {STATS.map((s, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 1 }}
-              className="group"
-            >
-              <p className="text-6xl font-bold text-navy group-hover:scale-105 transition-transform duration-500">{s.value}</p>
-              <p className="text-md text-navy/40 font-semibold mt-2">{s.label}</p>
-            </motion.div>
           ))}
         </div>
       </section>

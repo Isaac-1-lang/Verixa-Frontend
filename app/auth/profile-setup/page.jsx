@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function ProfileSetupPage() {
   const router = useRouter();
   const fileInputRef = useRef(null);
-  
+
   const [preview, setPreview] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [error, setError] = useState('');
@@ -32,7 +32,7 @@ export default function ProfileSetupPage() {
 
     setError('');
     setSelectedFile(file);
-    
+
     // Create preview
     const reader = new FileReader();
     reader.onloadend = () => {
@@ -95,7 +95,6 @@ export default function ProfileSetupPage() {
   };
 
   return (
-  return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-white dot-grid relative">
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-navy opacity-[0.03] rounded-md blur-[100px] pointer-events-none"></div>
 
@@ -118,7 +117,7 @@ export default function ProfileSetupPage() {
         )}
 
         <div className="flex flex-col items-center mb-8">
-          <div 
+          <div
             onClick={() => fileInputRef.current?.click()}
             className="w-40 h-40 rounded-md border-2 border-dashed border-navy/10 flex items-center justify-center cursor-pointer hover:border-navy hover:bg-navy/5 transition-all overflow-hidden bg-offwhite"
           >
@@ -131,7 +130,7 @@ export default function ProfileSetupPage() {
               </div>
             )}
           </div>
-          
+
           <input
             ref={fileInputRef}
             type="file"

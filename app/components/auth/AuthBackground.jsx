@@ -48,43 +48,7 @@ export default function AuthBackground({ logoOnly = false }) {
                     />
                 </motion.svg>
             </div>
-
-            {/* Center Content */}
-            <div className="relative z-10 flex flex-col items-center text-center px-12">
-                <div className="mb-6 flex flex-col items-center">
-                    <Link href="/" className="flex flex-col items-center gap-4">
-                        <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-2xl">
-                            <Shield className="text-navy" size={36} strokeWidth={1.5} />
-                        </div>
-                        <span className="text-white text-3xl font-semibold tracking-tight">Verixa</span>
-                    </Link>
-                </div>
-                {!logoOnly && (
-                    <p className="text-white/60 text-lg font-normal max-w-sm">
-                        Quality Unified. Engineered QA.
-                    </p>
-                )}
-            </div>
-
-            {/* Floating Feature Pills */}
-            {!logoOnly && (
-                <>
-                    <FeaturePill
-                        text="Secure & Encrypted"
-                        className="top-[20%] left-[15%]"
-                    />
-                    <FeaturePill
-                        text="Real-time Collaboration"
-                        className="bottom-[30%] right-[10%]"
-                    />
-                    <FeaturePill
-                        text="AI-Powered Insights"
-                        className="bottom-[15%] left-[25%]"
-                    />
-                </>
-            )}
         </div>
     );
 }
 
-import Link from 'next/link';
