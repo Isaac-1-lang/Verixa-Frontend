@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import Modal from "../common/Modal";
 import FormInput from "../common/FormInput";
 import FormSelect from "../common/FormSelect";
+import DefectModal from "../defects/DefectModal";
 import { useSaveExecutionMutation } from "@/app/redux/api/ExecutionApiSlice";
+import { AlertCircle, CheckCircle } from "lucide-react";
 import toast from "react-hot-toast";
 
 const RESULT_OPTIONS = [
@@ -23,6 +25,9 @@ const STEP_RESULT_OPTIONS = [
   { value: "SKIPPED", label: "Skipped" },
 ];
 
+// Results that warrant logging a defect
+const FAILED_RESULTS = ["FAILED", "BLOCKED", "PARTIALLY_PASSED"];
+
 export default function ExecutionModal({ isOpen, onClose, execution = null, runId, testCaseId }) {
   const [formData, setFormData] = useState({
     result: "NOT_RUN",
@@ -30,20 +35,27 @@ export default function ExecutionModal({ isOpen, onClose, execution = null, runI
     stepResults: []
   });
 
+  // After saving: show defect prompt
+  const [savedExecutionId, setSavedExecutionId] = useState(null);
+  const [showDefectPrompt, setShowDefectPrompt] = useState(false);
+  const [isDefectModalOpen, setIsDefectModalOpen] = useState(false);
+
   const [saveExecution, { isLoading }] = useSaveExecutionMutation();
 
-  // Initialize form from existing execution data
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      // Reset everything when modal closes
+      setSavedExecutionId(null);
+      setShowDefectPrompt(false);
+      setIsDefectModalOpen(false);
+      return;
+    }
 
     if (execution) {
-      // steps come from the DTO as execution.steps
       const stepResults = (execution.steps || []).map(se => ({
         stepOrder: se.stepOrder,
         result: se.result || "NOT_RUN",
         actualResult: se.actualResult || "",
-        action: execution.testCase?.steps?.find(s => s.stepOrder === se.stepOrder)?.action || "",
-        expectedResult: execution.testCase?.steps?.find(s => s.stepOrder === se.stepOrder)?.expectedResult || "",
       }));
 
       setFormData({
@@ -86,16 +98,77 @@ export default function ExecutionModal({ isOpen, onClose, execution = null, runI
 
       await saveExecution(payload).unwrap();
       toast.success("Execution saved successfully");
-      onClose();
+
+      // If result is a failure type, show defect prompt
+      if (FAILED_RESULTS.includes(formData.result)) {
+        setSavedExecutionId(execution?.id);
+        setShowDefectPrompt(true);
+      } else {
+        onClose();
+      }
     } catch (error) {
       console.error("Error saving execution:", error);
       toast.error(error?.data?.message || "Failed to save execution");
     }
   };
 
+  const handleDefectCreated = () => {
+    setIsDefectModalOpen(false);
+    onClose();
+  };
+
+  const handleSkipDefect = () => {
+    onClose();
+  };
+
   const testCaseInfo = execution?.testCase;
   const steps = execution?.steps || [];
 
+  // --- Defect Prompt Screen (shown after failed execution saved) ---
+  if (showDefectPrompt) {
+    return (
+      <>
+        <Modal isOpen={isOpen} onClose={handleSkipDefect} title="Execution Saved" size="sm">
+          <div className="text-center py-4 space-y-5">
+            <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto">
+              <AlertCircle size={32} className="text-red-500" />
+            </div>
+            <div>
+              <p className="text-zinc-900 font-bold text-lg">Test Failed</p>
+              <p className="text-zinc-600 text-sm mt-1">
+                The execution was saved with result <span className="font-semibold text-red-600">{formData.result.replace(/_/g, " ")}</span>.
+                <br />Would you like to log a defect for this failure?
+              </p>
+            </div>
+            <div className="flex gap-3 justify-center pt-2">
+              <button
+                onClick={handleSkipDefect}
+                className="px-5 py-2.5 rounded-xl font-semibold text-sm text-zinc-700 hover:bg-zinc-100 border border-zinc-200 transition-all"
+              >
+                Skip for Now
+              </button>
+              <button
+                onClick={() => setIsDefectModalOpen(true)}
+                className="px-5 py-2.5 rounded-xl font-semibold text-sm bg-red-600 text-white hover:bg-red-700 transition-all flex items-center gap-2 shadow-lg shadow-red-600/20"
+              >
+                <AlertCircle size={16} /> Log Defect
+              </button>
+            </div>
+          </div>
+        </Modal>
+
+        {/* Defect Modal opens on top */}
+        <DefectModal
+          isOpen={isDefectModalOpen}
+          onClose={() => setIsDefectModalOpen(false)}
+          executionId={savedExecutionId}
+          onSuccess={handleDefectCreated}
+        />
+      </>
+    );
+  }
+
+  // --- Main Execution Form ---
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Execute Test Case" size="lg">
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -136,19 +209,24 @@ export default function ExecutionModal({ isOpen, onClose, execution = null, runI
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-zinc-900">Step Results</h3>
             {formData.stepResults.map((stepResult, index) => {
-              // Get step details from testCase.steps
               const stepDetail = testCaseInfo?.steps?.find(s => s.stepOrder === stepResult.stepOrder);
               return (
-                <div key={index} className="p-4 border-2 border-zinc-200 rounded-xl space-y-3">
-                  <div className="flex items-center gap-2 mb-2">
+                <div key={index} className={`p-4 border-2 rounded-xl space-y-3 ${
+                  stepResult.result === "FAILED" ? "border-red-200 bg-red-50/30" :
+                  stepResult.result === "PASSED" ? "border-emerald-200 bg-emerald-50/30" :
+                  "border-zinc-200"
+                }`}>
+                  <div className="flex items-center gap-2">
                     <span className="w-6 h-6 rounded-full bg-zinc-200 text-zinc-700 text-xs font-bold flex items-center justify-center flex-shrink-0">
                       {stepResult.stepOrder}
                     </span>
                     <span className="text-xs font-semibold text-zinc-600">Step {stepResult.stepOrder}</span>
+                    {stepResult.result === "PASSED" && <CheckCircle size={14} className="text-emerald-600 ml-auto" />}
+                    {stepResult.result === "FAILED" && <AlertCircle size={14} className="text-red-600 ml-auto" />}
                   </div>
 
                   {stepDetail && (
-                    <div className="text-xs text-zinc-600 space-y-1 bg-zinc-50 p-3 rounded-lg">
+                    <div className="text-xs text-zinc-600 space-y-1 bg-white p-3 rounded-lg border border-zinc-100">
                       {stepDetail.action && <p><span className="font-semibold">Action:</span> {stepDetail.action}</p>}
                       {stepDetail.expectedResult && <p><span className="font-semibold">Expected:</span> {stepDetail.expectedResult}</p>}
                     </div>
