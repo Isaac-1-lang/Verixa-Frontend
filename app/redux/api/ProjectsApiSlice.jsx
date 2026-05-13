@@ -3,9 +3,6 @@ import apiSlice from './apiSlice'
 /**
  * Project Management API Integration
  * Backend endpoints: /api/projects
- * 
- * Note: Backend only has POST and GET by ID.
- * For listing projects, we'll need to fetch by project IDs or implement a workaround.
  */
 export const projectsApi = apiSlice.injectEndpoints({
   endpoints: builder => ({
@@ -23,12 +20,19 @@ export const projectsApi = apiSlice.injectEndpoints({
     getProjectById: builder.query({
       query: (id) => `/api/projects/${id}`,
       providesTags: (result, error, id) => [{ type: 'Projects', id }]
+    }),
+
+    // GET /api/projects - List all projects
+    listAllProjects: builder.query({
+      query: () => '/api/projects',
+      providesTags: ['Projects']
     })
   }),
-  overrideExisting: false,
+  overrideExisting: true,
 })
 
 export const {
   useCreateProjectMutation,
-  useGetProjectByIdQuery
+  useGetProjectByIdQuery,
+  useListAllProjectsQuery
 } = projectsApi
