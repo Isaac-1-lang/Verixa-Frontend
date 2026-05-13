@@ -1,23 +1,17 @@
 "use client";
-import { useState } from "react";
-import { Plus, AlertCircle } from "lucide-react";
+import { AlertCircle, PlayCircle } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
-import DefectModal from "../../components/defects/DefectModal";
-import { useGetDefectsByRunQuery, useUpdateDefectStatusMutation } from "@/app/redux/api/DefectApiSlice";
+import { useGetDefectsByRunQuery } from "@/app/redux/api/DefectApiSlice";
 import { useProject } from "@/app/context/ProjectContext";
-import toast from "react-hot-toast";
 
 export default function DefectsPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedExecutionId, setSelectedExecutionId] = useState(null);
-  
   const { selectedRunId } = useProject();
 
-  const { data: defects = [], isLoading, error } = useGetDefectsByRunQuery(selectedRunId, {
+  const { data: defectsData = [], isLoading, error } = useGetDefectsByRunQuery(selectedRunId, {
     skip: !selectedRunId
   });
 
-  const [updateDefectStatus] = useUpdateDefectStatusMutation();
+  const defects = Array.isArray(defectsData) ? defectsData.filter(item => item != null) : [];
 
   const columns = [
     {
@@ -88,23 +82,13 @@ export default function DefectsPage() {
           <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Defects</h1>
           <p className="text-sm text-zinc-600 mt-1">Track and manage defects found during testing</p>
         </div>
-        <button 
-          onClick={() => {
-            // For now, open modal with a placeholder executionId
-            // In real scenario, this would come from execution selection
-            setSelectedExecutionId(1);
-            setIsModalOpen(true);
-          }}
-          disabled={!selectedRunId}
-          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <Plus size={16} /> Log Defect
-        </button>
       </div>
 
       {!selectedRunId ? (
         <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
-          <p className="text-zinc-600">Please select a test run from the Runs page to view defects.</p>
+          <PlayCircle className="mx-auto mb-4 text-zinc-300" size={48} />
+          <p className="text-zinc-900 font-semibold mb-2">No Test Run Selected</p>
+          <p className="text-zinc-600 text-sm">Select a test run from the top bar to view defects.</p>
         </div>
       ) : isLoading ? (
         <div className="text-center py-12">
@@ -112,26 +96,14 @@ export default function DefectsPage() {
         </div>
       ) : error ? (
         <div className="text-center py-12">
-          <p className="text-red-600">Error loading defects: {error.message}</p>
+          <p className="text-red-600">Error loading defects.</p>
         </div>
       ) : (
         <DataTable
           columns={columns}
           data={defects}
           searchPlaceholder="Search defects..."
-          onRowClick={(row) => console.log('Clicked:', row)}
-          emptyMessage="No defects found."
-        />
-      )}
-
-      {selectedExecutionId && (
-        <DefectModal
-          isOpen={isModalOpen}
-          onClose={() => {
-            setIsModalOpen(false);
-            setSelectedExecutionId(null);
-          }}
-          executionId={selectedExecutionId}
+          emptyMessage="No defects found for this run."
         />
       )}
     </div>
