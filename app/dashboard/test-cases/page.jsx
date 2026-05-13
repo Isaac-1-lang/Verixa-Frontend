@@ -3,27 +3,21 @@ import { useState } from "react";
 import { Plus, FileText } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import TestCaseModal from "../../components/testcases/TestCaseModal";
-import { useSearchTestCasesQuery } from "@/app/redux/api/TestCaseApiSlice";
+import { useGetTestCasesByProjectQuery } from "@/app/redux/api/TestCaseApiSlice";
 import { useProject } from "@/app/context/ProjectContext";
 
 export default function TestCasesPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTestCase, setSelectedTestCase] = useState(null);
-  const [page, setPage] = useState(0);
-  const [search, setSearch] = useState("");
   
   const { selectedProjectId } = useProject();
 
-  const { data, isLoading, error } = useSearchTestCasesQuery({
-    projectId: selectedProjectId,
-    q: search,
-    page,
-    size: 20
-  }, {
+  const { data: testCasesData = [], isLoading, error } = useGetTestCasesByProjectQuery(selectedProjectId, {
     skip: !selectedProjectId
   });
 
-  const testCases = data?.content || [];
+  // Filter out null/undefined items
+  const testCases = Array.isArray(testCasesData) ? testCasesData.filter(item => item != null) : [];
 
   const columns = [
     {
@@ -119,8 +113,6 @@ export default function TestCasesPage() {
           columns={columns}
           data={testCases}
           searchPlaceholder="Search test cases..."
-          searchValue={search}
-          onSearchChange={setSearch}
           onRowClick={handleRowClick}
           emptyMessage="No test cases found. Create your first test case to get started."
         />
