@@ -12,9 +12,12 @@ export default function RunsPage() {
   const { selectedProjectId, selectRun } = useProject();
 
   // Use list endpoint instead of paginated search for simpler data fetching
-  const { data: runs = [], isLoading, error } = useListTestRunsByProjectQuery(selectedProjectId, {
+  const { data: runsData = [], isLoading, error } = useListTestRunsByProjectQuery(selectedProjectId, {
     skip: !selectedProjectId
   });
+
+  // Filter out null/undefined items
+  const runs = Array.isArray(runsData) ? runsData.filter(item => item != null) : [];
 
   const handleRowClick = (row) => {
     // Select this run as the active run
