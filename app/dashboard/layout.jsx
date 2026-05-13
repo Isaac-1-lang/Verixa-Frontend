@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }) {
 
   return (
     <ProjectProvider>
-      <div className="min-h-screen bg-[var(--bg)]">
+      <div className="min-h-screen bg-[var(--bg)] selection:bg-navy selection:text-white">
         <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         
         <div className="lg:ml-64 flex flex-col min-h-screen">

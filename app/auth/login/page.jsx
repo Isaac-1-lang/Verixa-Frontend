@@ -2,163 +2,155 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useLoginMutation } from '../../redux/api/UserApiSlice';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, Eye, EyeOff, Shield } from 'lucide-react';
+import { useLoginMutation } from '../../redux/api/UserApiSlice';
+import { motion } from 'framer-motion';
+import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
+import AuthBackground from '@/app/components/auth/AuthBackground';
+import AuthInput from '@/app/components/auth/AuthInput';
 import toast from 'react-hot-toast';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
-  const router = useRouter();
   const [login, { isLoading }] = useLoginMutation();
+  const router = useRouter();
+
+  const handleChange = (e, field) => {
+    setFormData({ ...formData, [field]: e.target.value });
+    if (errors[field]) setErrors(prev => ({ ...prev, [field]: undefined }));
+    if (errors._root) setErrors(prev => ({ ...prev, _root: undefined }));
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    
-    if (!formData.email) {
-      toast.error("Email is required");
-      return;
-    }
-    
-    if (!formData.password) {
-      toast.error("Password is required");
+    let newErrors = {};
+
+    if (!formData.email) newErrors.email = "Email is required";
+    if (!formData.password) newErrors.password = "Password is required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
     try {
-      // Backend expects: email and password
-      const payload = {
-        email: formData.email.trim(),
-        password: formData.password
-      };
-      
-      const response = await login(payload).unwrap();
-      
-      toast.success("Login successful!");
-      
-      // Token is already stored by the mutation's onQueryStarted
-      // Just redirect to dashboard
       router.push('/dashboard');
     } catch (error) {
       console.error('Login error:', error);
-      
-      // Handle all error cases with toast
-      if (error?.data?.message) {
-        toast.error(error.data.message);
-      } else if (error?.status === 403) {
-        toast.error("Invalid email or password");
-      } else if (error?.status === 401) {
-        toast.error("Invalid email or password");
-      } else if (error?.message) {
-        toast.error(error.message);
+      if (error.data?.message) {
+        newErrors._root = error.data.message;
       } else {
         toast.error("Login failed. Please try again.");
       }
     }
   };
 
-  const handleChange = (e, field) => {
-    setFormData({ ...formData, [field]: e.target.value });
-  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-zinc-50 to-zinc-100 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[var(--primary)] opacity-[0.04] rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[var(--primary)] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
+    <div className="min-h-screen flex flex-col md:flex-row bg-white">
+      <div className="hidden md:flex md:w-[55%] h-screen sticky top-0">
+        <AuthBackground
+          title="The Standard for Professional Quality Control"
+          subtitle="Verixa provides the elite toolkit for modern QA teams."
+        />
+      </div>
 
-      <div className="w-full max-w-[960px] bg-white rounded-3xl border border-zinc-200 shadow-2xl shadow-zinc-900/5 overflow-hidden flex flex-col lg:flex-row">
-        
-        {/* LEFT — Form */}
-        <div className="w-full lg:w-1/2 p-8 sm:p-12 lg:p-14">
-          <Link href="/" className="text-2xl font-extrabold text-[var(--primary)] mb-10 block tracking-tight">
-            Verixa
-          </Link>
+      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
+        <div className="w-full max-w-[440px]">
+          {/* Mobile Logo */}
+          <div className="md:hidden mb-12 flex justify-center">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
+                <Lock className="text-white" size={20} />
+              </div>
+              <span className="text-navy text-2xl font-semibold">Verixa</span>
+            </Link>
+          </div>
 
-          <h2 className="text-3xl font-extrabold text-zinc-900 mb-2 tracking-tight">Welcome back</h2>
-          <p className="text-sm text-zinc-600 mb-8">
-            Don't have an account?{' '}
-            <Link href="/auth/signup" className="text-[var(--primary)] font-semibold hover:underline">Sign Up</Link>
-          </p>
+          <div className="mb-12 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-bold text-navy leading-tight mb-2">
+              Sign In
+            </h1>
+            <p className="text-md font-medium text-navy/40 mb-2 ml-1">
+              Enter your credentials to access the platform.
+            </p>
+            <div className="h-1 w-12 bg-navy rounded-full mx-auto md:mx-1 shadow-lg shadow-navy/20" />
+          </div>
 
-          <form onSubmit={handleLogin} className="space-y-5">
-            <div>
-              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Email Address</label>
-              <input 
-                type="email" 
-                value={formData.email} 
-                onChange={(e) => handleChange(e, 'email')}
-                className="w-full rounded-xl px-4 py-3 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
-                placeholder="your.email@company.com"
+          <form onSubmit={handleLogin} className="space-y-6">
+            {errors._root && (
+              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm font-bold">
+                {errors._root}
+              </div>
+            )}
+
+            <AuthInput
+              label="Email Address"
+              icon={Mail}
+              type="email"
+              value={formData.email}
+              onChange={(e) => handleChange(e, 'email')}
+              error={errors.email}
+              placeholder="name@company.com"
+              disabled={isLoading}
+            />
+
+            <div className="space-y-2">
+              <AuthInput
+                label="Password"
+                icon={Lock}
+                type={showPassword ? 'text' : 'password'}
+                value={formData.password}
+                onChange={(e) => handleChange(e, 'password')}
+                error={errors.password}
+                placeholder="••••••••"
                 disabled={isLoading}
-                required
+                rightElement={
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="text-navy/20 hover:text-navy transition-colors p-1"
+                  >
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                }
               />
-            </div>
-
-            <div>
-              <div className="flex justify-between items-center mb-2">
-                <label className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">Password</label>
-                <Link href="/forgot-password" className="text-xs font-semibold text-[var(--primary)] hover:underline">
-                  Forgot Password?
+              <div className="flex justify-end px-1">
+                <Link
+                  href="/auth/forgot-password"
+                  className="text-xs font-semibold text-navy/40 hover:text-navy transition-all"
+                >
+                  Forgot password?
                 </Link>
               </div>
-              <div className="relative">
-                <input 
-                  type={showPassword ? 'text' : 'password'} 
-                  value={formData.password} 
-                  onChange={(e) => handleChange(e, 'password')}
-                  className="w-full rounded-xl px-4 py-3 pr-11 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
-                  placeholder="Enter your password"
-                  disabled={isLoading}
-                  required
-                />
-                <button 
-                  type="button" 
-                  onClick={() => setShowPassword(!showPassword)} 
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 transition-colors"
-                  disabled={isLoading}
-                >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
-              </div>
             </div>
 
-            <div className="flex items-center gap-2">
-              <input 
-                type="checkbox" 
-                id="remember" 
-                className="w-4 h-4 accent-[var(--primary)] cursor-pointer rounded border-zinc-300"
-                disabled={isLoading}
-              />
-              <label htmlFor="remember" className="text-sm text-zinc-600 font-medium cursor-pointer select-none">
-                Keep me logged in
-              </label>
-            </div>
-
-            <button 
+            <motion.button
+              whileHover={{ scale: 1.02, backgroundColor: '#131B34' }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full py-3.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 mt-2 bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20 hover:shadow-[var(--primary)]/40 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-[60px] bg-navy text-white rounded-xl font-bold text-sm shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
             >
-              {isLoading ? 'Signing In...' : 'Sign In'} <ArrowRight size={16} />
-            </button>
+              {isLoading ? (
+                <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+              ) : (
+                <>
+                  Sign In
+                  <ArrowRight size={18} className="opacity-40" />
+                </>
+              )}
+            </motion.button>
           </form>
-        </div>
 
-        {/* RIGHT — Brand Panel */}
-        <div className="hidden lg:flex w-1/2 bg-gradient-to-br from-zinc-50 to-zinc-100 relative items-center justify-center p-14">
-          <div className="relative z-10 text-center">
-            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl mb-8 mx-auto border border-zinc-200">
-              <Shield className="text-[var(--primary)]" size={40} strokeWidth={2} />
-            </div>
-            <h3 className="text-2xl font-extrabold text-zinc-900 mb-3 leading-tight tracking-tight">
-              Quality Assurance<br/>Made Simple
-            </h3>
-            <p className="text-sm text-zinc-600 max-w-xs mx-auto leading-relaxed">
-              Access your UAT dashboard, manage test cases, track executions, and ensure quality with confidence.
-            </p>
-          </div>
+          <p className="text-center text-sm text-navy/40 mt-10 font-medium">
+            Don't have an account?{' '}
+            <Link href="/auth/signup" className="text-navy font-bold hover:underline transition-all">
+              Create one
+            </Link>
+          </p>
         </div>
       </div>
     </div>

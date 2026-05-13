@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { 
-  Plus, TrendingUp, CheckCircle, XCircle, Clock, 
-  AlertCircle, Layers, PlayCircle, FileText, Target
+import {
+  Plus, TrendingUp, CheckCircle, XCircle, Clock,
+  AlertCircle, Layers, PlayCircle, FileText, Target,
+  ArrowUpRight, Activity as ActivityIcon
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function DashboardPage() {
   const [userName, setUserName] = useState("QA Team");
@@ -17,6 +19,8 @@ export default function DashboardPage() {
     openDefects: 0
   });
 
+  const [recentActivity, setRecentActivity] = useState(null);
+
   useEffect(() => {
     // Get user info from localStorage
     try {
@@ -25,10 +29,10 @@ export default function DashboardPage() {
         window.location.href = '/auth/login';
         return;
       }
-      
+
       // TODO: Fetch actual user data from API
       setUserName("QA Team");
-      
+
       // TODO: Fetch actual stats from API
       setStats({
         totalProjects: 5,
@@ -47,171 +51,181 @@ export default function DashboardPage() {
     {
       title: "Total Projects",
       value: stats.totalProjects,
-      icon: <Layers size={20} />,
-      color: "bg-slate-700",
-      bgColor: "bg-slate-50",
-      textColor: "text-slate-700",
+      icon: <Layers size={22} />,
       link: "/dashboard/projects"
     },
     {
       title: "Test Cases",
       value: stats.totalTestCases,
-      icon: <FileText size={20} />,
-      color: "bg-purple-500",
-      bgColor: "bg-purple-50",
-      textColor: "text-purple-600",
+      icon: <FileText size={22} />,
       link: "/dashboard/test-cases"
     },
     {
       title: "Active Runs",
       value: stats.activeRuns,
-      icon: <PlayCircle size={20} />,
-      color: "bg-emerald-500",
-      bgColor: "bg-emerald-50",
-      textColor: "text-emerald-600",
+      icon: <PlayCircle size={22} />,
       link: "/dashboard/runs"
     },
     {
       title: "Pass Rate",
       value: `${stats.passRate}%`,
-      icon: <Target size={20} />,
-      color: "bg-green-500",
-      bgColor: "bg-green-50",
-      textColor: "text-green-600",
+      icon: <Target size={22} />,
       trend: "+2.5%"
     },
     {
       title: "Pending Executions",
       value: stats.pendingExecutions,
-      icon: <Clock size={20} />,
-      color: "bg-amber-500",
-      bgColor: "bg-amber-50",
-      textColor: "text-amber-600",
+      icon: <Clock size={22} />,
       link: "/dashboard/executions"
     },
     {
       title: "Open Defects",
       value: stats.openDefects,
-      icon: <AlertCircle size={20} />,
-      color: "bg-red-500",
-      bgColor: "bg-red-50",
-      textColor: "text-red-600",
+      icon: <AlertCircle size={22} />,
       link: "/dashboard/defects"
     }
   ];
 
-  const recentActivity = [
-    { type: "execution", title: "Mobile App v2.0 - Login Test", status: "passed", time: "5 min ago" },
-    { type: "defect", title: "Payment Gateway Timeout", status: "open", time: "1 hour ago" },
-    { type: "run", title: "Sprint 23 UAT", status: "in_progress", time: "2 hours ago" },
-    { type: "execution", title: "API Integration Tests", status: "failed", time: "3 hours ago" },
-  ];
-
   const quickActions = [
-    { title: "Create Project", icon: <Plus size={18} />, link: "/dashboard/projects", color: "bg-[var(--primary)]" },
-    { title: "New Test Case", icon: <FileText size={18} />, link: "/dashboard/test-cases", color: "bg-purple-600" },
-    { title: "Start Test Run", icon: <PlayCircle size={18} />, link: "/dashboard/runs", color: "bg-emerald-600" },
-    { title: "Log Defect", icon: <AlertCircle size={18} />, link: "/dashboard/defects", color: "bg-red-600" },
+    { title: "NEW_PROJECT", icon: <Plus size={20} />, link: "/dashboard/projects" },
+    { title: "ADD_TEST_CASE", icon: <FileText size={20} />, link: "/dashboard/test-cases" },
+    { title: "INITIALIZE_RUN", icon: <PlayCircle size={20} />, link: "/dashboard/runs" },
+    { title: "LOG_DEFECT", icon: <AlertCircle size={20} />, link: "/dashboard/defects" },
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div className="max-w-[1400px] mx-auto py-10 px-4 sm:px-8">
       {/* Welcome Section */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16"
+      >
         <div>
-          <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight">
+          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">
             Welcome back, {userName} 👋
           </h1>
-          <p className="text-zinc-600 text-sm font-medium mt-1">
-            {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
+          <p className="text-navy/40 text-sm font-medium">
+            Operational Date: {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
           </p>
         </div>
-      </div>
+
+        <div className="flex items-center gap-4">
+          <div className="px-5 py-2.5 rounded-md bg-navy/5 text-navy font-bold text-xs shadow-sm shadow-navy/5 shrink-0">
+            Status: Fully Operational
+          </div>
+        </div>
+      </motion.div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         {quickActions.map((action, idx) => (
-          <Link
+          <motion.div
             key={idx}
-            href={action.link}
-            className="group relative overflow-hidden bg-white border-2 border-zinc-200 rounded-2xl p-4 hover:border-[var(--primary)] transition-all hover:shadow-lg hover:shadow-[var(--primary)]/10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 + idx * 0.1 }}
           >
-            <div className={`w-10 h-10 ${action.color} rounded-xl flex items-center justify-center text-white mb-3 group-hover:scale-110 transition-transform`}>
-              {action.icon}
-            </div>
-            <p className="text-sm font-semibold text-zinc-900">{action.title}</p>
-          </Link>
+            <Link
+              href={action.link}
+              className="group relative overflow-hidden bg-offwhite border border-navy/5 rounded-md p-8 hover:bg-navy/5 hover:border-navy/10 transition-all block"
+            >
+              <div className="flex justify-between items-start mb-8">
+                <div className="w-14 h-14 bg-navy text-white rounded-md flex items-center justify-center group-hover:scale-105 transition-transform shadow-lg shadow-navy/10">
+                  {action.icon}
+                </div>
+                <ArrowUpRight className="text-navy/10 group-hover:text-navy transition-colors" size={20} />
+              </div>
+              <p className="text-sm font-bold text-navy">{action.title === 'NEW_PROJECT' ? 'New Project' : action.title === 'ADD_TEST_CASE' ? 'Add Test Case' : action.title === 'INITIALIZE_RUN' ? 'New Test Run' : 'Log Defect'}</p>
+            </Link>
+          </motion.div>
         ))}
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {statCards.map((stat, idx) => (
-          <div
+          <motion.div
             key={idx}
-            className="bg-white border border-zinc-200 rounded-2xl p-6 hover:shadow-lg hover:border-zinc-300 transition-all group"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 + idx * 0.1 }}
+            className="bg-white border border-navy/5 rounded-md p-10 hover:shadow-xl hover:shadow-navy/5 transition-all group relative overflow-hidden"
           >
-            <div className="flex items-start justify-between mb-4">
-              <div className={`w-12 h-12 ${stat.bgColor} rounded-xl flex items-center justify-center ${stat.textColor} group-hover:scale-110 transition-transform`}>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-navy/2 rounded-md group-hover:bg-navy/4 transition-colors" />
+
+            <div className="flex items-start justify-between mb-8 relative z-10">
+              <div className="w-16 h-16 bg-navy/5 rounded-md border border-navy/5 flex items-center justify-center text-navy group-hover:scale-105 transition-transform">
                 {stat.icon}
               </div>
               {stat.trend && (
-                <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-lg flex items-center gap-1">
-                  <TrendingUp size={12} /> {stat.trend}
+                <span className="text-xs font-bold text-navy bg-navy/5 px-3 py-1.5 rounded-md border border-navy/5">
+                  {stat.trend}
                 </span>
               )}
             </div>
-            <div>
-              <p className="text-sm font-medium text-zinc-600 mb-1">{stat.title}</p>
-              <p className="text-3xl font-extrabold text-zinc-900 tracking-tight">{stat.value}</p>
+            <div className="relative z-10">
+              <p className="text-sm font-bold text-navy/40 mb-2">{stat.title}</p>
+              <p className="text-5xl font-bold text-navy">{stat.value}</p>
             </div>
             {stat.link && (
-              <Link href={stat.link} className="text-xs font-semibold text-[var(--primary)] hover:underline mt-3 inline-block">
-                View Details →
+              <Link href={stat.link} className="text-xs font-bold text-navy/30 hover:text-navy mt-8 inline-block transition-all">
+                View detailed logs →
               </Link>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Recent Activity */}
-      <div className="bg-white border border-zinc-200 rounded-2xl p-6">
-        <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-bold text-zinc-900">Recent Activity</h2>
-          <Link href="/dashboard/executions" className="text-sm font-semibold text-[var(--primary)] hover:underline">
-            View All
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+        className="bg-offwhite border border-navy/5 rounded-md p-12 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
+
+        <div className="flex items-center justify-between mb-12 relative z-10">
+          <div>
+            <h2 className="text-2xl font-bold text-navy mb-1">Recent Activity</h2>
+            <p className="text-sm font-medium text-navy/30">Latest updates from your QA streams</p>
+          </div>
+          <Link href="/dashboard/executions" className="text-xs font-bold text-navy/30 hover:text-navy transition-all border-b border-navy/10 hover:border-navy/40 pb-1">
+            View full stream
           </Link>
         </div>
-        <div className="space-y-3">
-          {recentActivity.map((activity, idx) => (
-            <div key={idx} className="flex items-center gap-4 p-3 rounded-xl hover:bg-zinc-50 transition-colors">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                activity.status === 'passed' ? 'bg-emerald-50 text-emerald-600' :
-                activity.status === 'failed' ? 'bg-red-50 text-red-600' :
-                activity.status === 'open' ? 'bg-amber-50 text-amber-600' :
-                'bg-slate-50 text-slate-700'
-              }`}>
-                {activity.status === 'passed' ? <CheckCircle size={18} /> :
-                 activity.status === 'failed' ? <XCircle size={18} /> :
-                 activity.status === 'open' ? <AlertCircle size={18} /> :
-                 <PlayCircle size={18} />}
+
+        <div className="space-y-4 relative z-10">
+          {(recentActivity || [
+            { type: "execution", title: "MOBILE_APP_V2.0::AUTH_PASS", status: "PASSED", time: "5 MIN AGO" },
+            { type: "defect", title: "PAYMENT_GATEWAY::INTERNAL_REV", status: "OPEN", time: "1 HOUR AGO" },
+            { type: "run", title: "SPRINT_23_UAT::VALIDATION", status: "STABLE", time: "2 HOURS AGO" },
+          ]).map((activity, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ x: 10, backgroundColor: 'rgba(26,38,74,0.02)' }}
+              className="flex items-center gap-8 p-6 rounded-md transition-all cursor-pointer border border-navy/2 bg-white shadow-sm shadow-navy/2"
+            >
+              <div className="w-12 h-12 rounded-md bg-navy/5 flex items-center justify-center text-navy/40 group-hover:text-navy">
+                <ActivityIcon size={22} />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-zinc-900 truncate">{activity.title}</p>
-                <p className="text-xs text-zinc-500">{activity.time}</p>
+                <p className="text-base font-bold text-navy truncate">{activity.title.toLowerCase().split('::').join(' — ')}</p>
+                <div className="flex items-center gap-4 mt-2">
+                  <p className="text-xs text-navy/30 font-bold">{activity.time}</p>
+                  <span className="w-1 h-1 rounded-md bg-navy/10" />
+                  <p className="text-xs text-navy/40 font-medium capitalize">{activity.type}</p>
+                </div>
               </div>
-              <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg ${
-                activity.status === 'passed' ? 'bg-emerald-50 text-emerald-700' :
-                activity.status === 'failed' ? 'bg-red-50 text-red-700' :
-                activity.status === 'open' ? 'bg-amber-50 text-amber-700' :
-                'bg-slate-50 text-slate-700'
-              }`}>
+              <span className={`text-[11px] font-bold px-4 py-1.5 rounded-md border ${activity.status === 'PASSED' ? 'bg-emerald/5 border-emerald/10 text-emerald' : 'bg-navy/5 border-navy/10 text-navy'}`}>
                 {activity.status.replace('_', ' ')}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

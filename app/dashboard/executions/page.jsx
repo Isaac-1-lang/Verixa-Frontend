@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { CheckCircle, XCircle, Clock, Plus } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
@@ -27,53 +28,69 @@ export default function ExecutionsPage() {
 
   const columns = [
     {
-      header: "Test Case",
+      header: "Test Unit",
       accessor: "testCase",
       cell: (row) => (
-        <div>
-          <p className="font-semibold text-zinc-900 text-sm">{row.testCase?.tcNumber || "-"}</p>
-          <p className="text-xs text-zinc-500">{row.testCase?.title || "-"}</p>
+        <div className="flex flex-col gap-1">
+          <p className="font-bold text-navy text-sm group-hover:translate-x-1 transition-transform duration-300">
+            {row.testCase?.tcNumber || "-"}
+          </p>
+          <p className="text-xs text-navy/40 font-medium">{row.testCase?.title || "-"}</p>
         </div>
       ),
     },
     {
       header: "Result",
       accessor: "result",
-      cell: (row) => (
-        <div className="flex items-center gap-2">
-          {row.result === 'PASSED' && <CheckCircle size={16} className="text-emerald-600" />}
-          {row.result === 'FAILED' && <XCircle size={16} className="text-red-600" />}
-          {row.result === 'NOT_EXECUTED' && <Clock size={16} className="text-amber-600" />}
-          <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
-            row.result === 'PASSED' ? 'bg-emerald-50 text-emerald-700' :
-            row.result === 'FAILED' ? 'bg-red-50 text-red-700' :
-            row.result === 'BLOCKED' ? 'bg-orange-50 text-orange-700' :
-            row.result === 'SKIPPED' ? 'bg-slate-50 text-slate-700' :
-            'bg-amber-50 text-amber-700'
-          }`}>
-            {row.result?.replace('_', ' ')}
-          </span>
-        </div>
-      ),
+      cell: (row) => {
+        const isPassed = row.result === 'PASSED' || row.result === 'Passed';
+        const isFailed = row.result === 'FAILED' || row.result === 'Failed';
+        const isPending = row.result === 'NOT_EXECUTED' || row.result === 'Pending';
+        
+        return (
+          <div className="flex items-center gap-3">
+            <div className={`p-2 rounded-xl border border-navy/5 bg-navy/5 ${
+              isPassed ? 'text-emerald-600' : isFailed ? 'text-red-600' : 'text-amber-500'
+            }`}>
+              {isPassed && <CheckCircle size={14} strokeWidth={2.5} />}
+              {isFailed && <XCircle size={14} strokeWidth={2.5} />}
+              {isPending && <Clock size={14} strokeWidth={2.5} />}
+            </div>
+            <span className={`text-xs font-bold ${
+              isPassed ? 'text-emerald-600' : isFailed ? 'text-red-600' : 'text-amber-500'
+            }`}>
+              {row.result?.replace('_', ' ')}
+            </span>
+          </div>
+        );
+      },
     },
     {
       header: "Assigned To",
       accessor: "assignedTo",
-      cell: (row) => <span className="text-sm text-zinc-700">{row.assignedTo?.username || "-"}</span>,
+      cell: (row) => (
+        <span className="text-sm font-bold text-navy/50">
+          {row.assignedTo?.username || "-"}
+        </span>
+      ),
     },
     {
-      header: "Executed At",
+      header: "Timestamp",
       accessor: "executedAt",
-      cell: (row) => <span className="text-sm text-zinc-600">{row.executedAt ? new Date(row.executedAt).toLocaleString() : "-"}</span>,
+      cell: (row) => (
+        <span className="text-xs font-bold text-navy/30">
+          {row.executedAt ? new Date(row.executedAt).toLocaleString() : "-"}
+        </span>
+      ),
     },
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div className="max-w-[1400px] mx-auto px-8 py-12">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
         <div>
-          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Test Executions</h1>
-          <p className="text-sm text-zinc-600 mt-1">View and manage test execution results</p>
+          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Execution Logs</h1>
+          <p className="text-navy/40 text-sm font-medium">Historical trace of all quality assurance streams</p>
         </div>
       </div>
 
@@ -87,7 +104,7 @@ export default function ExecutionsPage() {
         </div>
       ) : error ? (
         <div className="text-center py-12">
-          <p className="text-red-600">Error loading executions: {error.message}</p>
+          <p className="text-red-600">Error loading executions: {error.data?.message || "Unknown error"}</p>
         </div>
       ) : (
         <DataTable

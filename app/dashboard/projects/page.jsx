@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Plus, Folder, Calendar, User, Search } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
@@ -42,12 +43,12 @@ export default function ProjectsPage() {
       header: "Project Name",
       accessor: "name",
       cell: (row) => (
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-[var(--primary)]/10 rounded-xl flex items-center justify-center text-[var(--primary)]">
-            <Folder size={18} />
+        <div className="flex items-center gap-6">
+          <div className="w-12 h-12 bg-navy/5 rounded-md flex items-center justify-center text-navy/40 group-hover:bg-navy group-hover:text-white transition-all border border-navy/5 group-hover:scale-105">
+            <Folder size={20} strokeWidth={1.5} />
           </div>
           <div>
-            <p className="font-semibold text-zinc-900">{row.name}</p>
+            <p className="font-bold text-navy text-base">{row.name}</p>
           </div>
         </div>
       ),
@@ -56,9 +57,11 @@ export default function ProjectsPage() {
       header: "Created By",
       accessor: "createdBy",
       cell: (row) => (
-        <div className="flex items-center gap-2">
-          <User size={14} className="text-zinc-400" />
-          <span className="text-sm text-zinc-700">{row.createdBy || "-"}</span>
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 rounded-md bg-navy/5 flex items-center justify-center border border-navy/5">
+            <User size={12} className="text-navy/30" />
+          </div>
+          <span className="text-sm font-bold text-navy/60">{row.createdBy || "-"}</span>
         </div>
       ),
     },
@@ -66,27 +69,27 @@ export default function ProjectsPage() {
       header: "Created At",
       accessor: "createdAt",
       cell: (row) => (
-        <div className="flex items-center gap-2 text-zinc-600">
-          <Calendar size={14} className="text-zinc-400" />
-          <span className="text-sm">{row.createdAt ? new Date(row.createdAt).toLocaleDateString() : "-"}</span>
+        <div className="flex items-center gap-3 text-navy/30 group-hover:text-navy/60 transition-colors">
+          <Calendar size={14} strokeWidth={1.5} />
+          <span className="text-xs font-bold">{row.createdAt ? new Date(row.createdAt).toLocaleDateString() : "-"}</span>
         </div>
       ),
     },
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div className="max-w-[1400px] mx-auto px-8 py-12">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
         <div>
-          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Projects</h1>
-          <p className="text-sm text-zinc-600 mt-1">Search projects by ID or create a new one</p>
+          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Projects</h1>
+          <p className="text-navy/40 text-sm font-medium">Manage and monitor your software quality initiatives by Project ID</p>
         </div>
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20"
+          className="flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all"
         >
-          <Plus size={16} /> New Project
+          <Plus size={20} strokeWidth={2.5} /> Create New Project
         </button>
       </div>
 

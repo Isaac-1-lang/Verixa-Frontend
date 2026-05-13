@@ -1,6 +1,7 @@
 "use client";
+
 import { useState } from "react";
-import { Plus, PlayCircle } from "lucide-react";
+import { Plus, PlayCircle, Calendar } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import TestRunModal from "../../components/runs/TestRunModal";
 import { useListTestRunsByProjectQuery } from "@/app/redux/api/TestRunApiSlice";
@@ -11,7 +12,6 @@ export default function RunsPage() {
   
   const { selectedProjectId, selectRun } = useProject();
 
-  // Use list endpoint instead of paginated search for simpler data fetching
   const { data: runs = [], isLoading, error } = useListTestRunsByProjectQuery(selectedProjectId, {
     skip: !selectedProjectId
   });
@@ -23,16 +23,16 @@ export default function RunsPage() {
 
   const columns = [
     {
-      header: "Run Name",
+      header: "Operation Name",
       accessor: "name",
       cell: (row) => (
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
-            <PlayCircle size={18} />
+        <div className="flex items-center gap-6">
+          <div className="w-12 h-12 bg-navy/5 rounded-md flex items-center justify-center text-navy/40 group-hover:bg-navy group-hover:text-white transition-all border border-navy/5 group-hover:scale-105">
+            <PlayCircle size={20} strokeWidth={1.5} />
           </div>
           <div>
-            <p className="font-semibold text-zinc-900">{row.name}</p>
-            <p className="text-xs text-zinc-500">{row.environment}</p>
+            <p className="font-bold text-navy text-sm">{row.name}</p>
+            <p className="text-xs text-navy/40 font-medium mt-1">{row.environment || "Default Env"}</p>
           </div>
         </div>
       ),
@@ -40,37 +40,51 @@ export default function RunsPage() {
     {
       header: "Status",
       accessor: "status",
-      cell: (row) => (
-        <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
-          row.status === 'COMPLETED' ? 'bg-emerald-50 text-emerald-700' :
-          row.status === 'IN_PROGRESS' ? 'bg-blue-50 text-blue-700' :
-          row.status === 'PLANNED' ? 'bg-slate-50 text-slate-700' :
-          'bg-zinc-100 text-zinc-700'
-        }`}>
-          {row.status?.replace('_', ' ')}
-        </span>
-      ),
+      cell: (row) => {
+        const isInProgress = row.status === 'IN_PROGRESS' || row.status === 'In Progress';
+        const isCompleted = row.status === 'COMPLETED' || row.status === 'Completed';
+        
+        return (
+          <div className="flex items-center gap-3">
+            <div className={`w-2 h-2 rounded-md ${
+              isInProgress ? 'bg-navy animate-pulse' : 
+              isCompleted ? 'bg-emerald-500' : 'bg-navy/10'
+            }`} />
+            <span className={`text-xs font-bold ${
+              isInProgress ? 'text-navy' : isCompleted ? 'text-emerald-600' : 'text-navy/20'
+            }`}>
+              {row.status?.replace('_', ' ')}
+            </span>
+          </div>
+        );
+      },
     },
     {
       header: "Created At",
       accessor: "createdAt",
-      cell: (row) => <span className="text-sm text-zinc-600">{row.createdAt ? new Date(row.createdAt).toLocaleDateString() : "-"}</span>,
+      cell: (row) => (
+        <div className="flex items-center gap-2 text-navy/30 group-hover:text-navy/60 transition-colors">
+          <Calendar size={14} strokeWidth={1.5} />
+          <span className="text-xs font-bold">{row.createdAt ? new Date(row.createdAt).toLocaleDateString() : "-"}</span>
+        </div>
+      ),
     },
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div className="max-w-[1400px] mx-auto px-8 py-12">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
         <div>
-          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Test Runs</h1>
-          <p className="text-sm text-zinc-600 mt-1">Execute and track test run progress</p>
+          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Test Runs</h1>
+          <p className="text-navy/40 text-sm font-medium">Active execution streams and progress monitoring</p>
         </div>
         <button 
           onClick={() => setIsModalOpen(true)}
           disabled={!selectedProjectId}
-          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <Plus size={16} /> New Test Run
+          <Plus size={20} strokeWidth={2.5} /> Initialize Test Run
         </button>
       </div>
 
@@ -84,7 +98,7 @@ export default function RunsPage() {
         </div>
       ) : error ? (
         <div className="text-center py-12">
-          <p className="text-red-600">Error loading test runs: {error.message}</p>
+          <p className="text-red-600">Error loading test runs: {error.data?.message || "Unknown error"}</p>
         </div>
       ) : (
         <DataTable

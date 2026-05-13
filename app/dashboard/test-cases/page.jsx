@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Plus, FileText } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
@@ -27,16 +28,16 @@ export default function TestCasesPage() {
 
   const columns = [
     {
-      header: "Test Case",
+      header: "Test Unit",
       accessor: "tcNumber",
       cell: (row) => (
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600">
-            <FileText size={18} />
+        <div className="flex items-center gap-6">
+          <div className="w-12 h-12 bg-navy/5 rounded-md flex items-center justify-center text-navy/40 group-hover:bg-navy group-hover:text-white transition-all border border-navy/5 group-hover:scale-105">
+            <FileText size={20} strokeWidth={1.5} />
           </div>
           <div>
-            <p className="font-semibold text-zinc-900">{row.tcNumber}</p>
-            <p className="text-xs text-zinc-500">{row.title}</p>
+            <p className="font-bold text-navy text-sm">{row.tcNumber}</p>
+            <p className="text-xs text-navy/40 font-medium mt-1">{row.title}</p>
           </div>
         </div>
       ),
@@ -44,13 +45,15 @@ export default function TestCasesPage() {
     {
       header: "App Reference",
       accessor: "appRef",
-      cell: (row) => <span className="text-sm text-zinc-700">{row.appRef || "-"}</span>,
+      cell: (row) => (
+        <span className="text-sm font-bold text-navy/50">{row.appRef || "-"}</span>
+      ),
     },
     {
       header: "Requirement",
       accessor: "frId",
       cell: (row) => (
-        <span className="text-sm text-zinc-600">
+        <span className="text-sm font-bold text-navy/50">
           {row.frId ? `FR-${row.frId}` : "-"}
         </span>
       ),
@@ -59,8 +62,8 @@ export default function TestCasesPage() {
       header: "Steps",
       accessor: "steps",
       cell: (row) => (
-        <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 text-xs font-semibold">
-          {row.steps?.length || 0} steps
+        <span className="px-3 py-1.5 rounded-md text-xs font-bold border bg-navy/5 text-navy border-navy/10">
+          {row.steps?.length || 0} Steps
         </span>
       ),
     },
@@ -92,17 +95,17 @@ export default function TestCasesPage() {
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div className="max-w-[1400px] mx-auto px-8 py-12">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
         <div>
-          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Test Cases</h1>
-          <p className="text-sm text-zinc-600 mt-1">Create and manage test cases with detailed steps</p>
+          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Test Cases</h1>
+          <p className="text-navy/40 text-sm font-medium">Defined structural quality benchmarks</p>
         </div>
         <button 
           onClick={handleCreateNew}
-          className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20"
+          className="flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all"
         >
-          <Plus size={16} /> New Test Case
+          <Plus size={20} strokeWidth={2.5} /> Create Test Case
         </button>
       </div>
 
@@ -112,7 +115,7 @@ export default function TestCasesPage() {
         </div>
       ) : error ? (
         <div className="text-center py-12">
-          <p className="text-red-600">Error loading test cases: {error.message}</p>
+          <p className="text-red-600">Error loading test cases: {error.data?.message || "Unknown error"}</p>
         </div>
       ) : (
         <DataTable
