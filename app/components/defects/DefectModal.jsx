@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
  * Defect Create Modal
  * Backend DTO: CreateDefectRequest
  */
-export default function DefectModal({ isOpen, onClose, executionId }) {
+export default function DefectModal({ isOpen, onClose, executionId, onSuccess }) {
   const [formData, setFormData] = useState({
     title: "",
     severity: "MEDIUM",
@@ -53,7 +53,8 @@ export default function DefectModal({ isOpen, onClose, executionId }) {
 
       await createDefect(payload).unwrap();
       toast.success("Defect created successfully");
-      onClose();
+      if (onSuccess) onSuccess();
+      else onClose();
     } catch (error) {
       console.error("Error creating defect:", error);
       toast.error(error.data?.message || "Failed to create defect");
