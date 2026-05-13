@@ -4,19 +4,18 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useRegisterMutation } from '../../redux/api/UserApiSlice';
-import { ArrowRight, Eye, EyeOff, Check, Shield, AlertCircle } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, Check, Shield } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function SignUpPage() {
   const router = useRouter();
-  const [errors, setErrors] = useState({});
   const [registerUser, { isLoading }] = useRegisterMutation();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
+    fullName: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    firstName: '',
-    lastName: ''
+    confirmPassword: ''
   });
 
   const [requirements, setRequirements] = useState({ 
@@ -40,68 +39,85 @@ export default function SignUpPage() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    let newErrors = {};
+    
+    // Basic validation
+    if (!formData.fullName?.trim()) {
+      toast.error("Full name is required");
+      return;
+    }
+    
+    if (formData.fullName.trim().length > 120) {
+      toast.error("Full name must be 120 characters or less");
+      return;
+    }
     
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) {
-      newErrors.email = "Email is required";
+      toast.error("Email is required");
+      return;
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email format";
+      toast.error("Invalid email format");
+      return;
+    }
+    
+    if (formData.email.length > 160) {
+      toast.error("Email must be 160 characters or less");
+      return;
     }
 
-    if (!formData.firstName?.trim()) newErrors.firstName = "First name is required";
-    if (!formData.lastName?.trim()) newErrors.lastName = "Last name is required";
-
     if (!formData.password) {
-      newErrors.password = "Password is required";
-    } else if (!requirements.length || !requirements.lower || !requirements.upper || !requirements.number || !requirements.special) {
-      newErrors.password = "Password does not meet all requirements";
+      toast.error("Password is required");
+      return;
+    } else if (formData.password.length < 8) {
+      toast.error("Password must be at least 8 characters");
+      return;
+    } else if (formData.password.length > 120) {
+      toast.error("Password must be 120 characters or less");
+      return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match";
+      toast.error("Passwords do not match");
+      return;
     }
-
-    setErrors(newErrors);
     
-    if (Object.keys(newErrors).length === 0) {
-      try {
-        const payload = {
-          email: formData.email,
-          password: formData.password,
-          firstName: formData.firstName,
-          lastName: formData.lastName
-        };
-        
-        const response = await registerUser(payload).unwrap();
-        
-        // Store token if returned
-        if (response.accessToken) {
-          localStorage.setItem('token', response.accessToken);
-          localStorage.setItem('tokenType', response.tokenType || 'Bearer');
-        }
-        
-        router.push('/dashboard');
-      } catch (error) {
-        console.error('Registration error:', error);
-        
-        if (error.data?.fieldErrors) {
-          setErrors(error.data.fieldErrors);
-        } else if (error.data?.message) {
-          setErrors({ _root: error.data.message });
-        } else if (error.status === 409) {
-          setErrors({ _root: "An account with this email already exists" });
-        } else {
-          setErrors({ _root: "Registration failed. Please try again." });
-        }
+    try {
+      // Backend expects: fullName, email, password
+      const payload = {
+        fullName: formData.fullName.trim(),
+        email: formData.email.trim(),
+        password: formData.password
+      };
+      
+      const response = await registerUser(payload).unwrap();
+      
+      toast.success("Account created successfully! Please login.");
+      
+      // Backend doesn't return token on registration
+      // Redirect to login page
+      router.push('/auth/login');
+    } catch (error) {
+      console.error('Registration error:', error);
+      
+      // Handle validation errors from backend
+      if (error.data?.violations && Array.isArray(error.data.violations)) {
+        error.data.violations.forEach(violation => {
+          toast.error(`${violation.field}: ${violation.message}`);
+        });
+      } else if (error.data?.message) {
+        toast.error(error.data.message);
+      } else if (error.status === 409) {
+        toast.error("An account with this email already exists");
+      } else if (error.status === 400) {
+        toast.error("Invalid registration data. Please check your inputs.");
+      } else {
+        toast.error("Registration failed. Please try again.");
       }
     }
   };
 
   const handleChange = (e, field) => {
     setFormData({ ...formData, [field]: e.target.value });
-    if (errors[field]) setErrors(prev => ({ ...prev, [field]: undefined }));
-    if (errors._root) setErrors(prev => ({ ...prev, _root: undefined }));
   };
 
   const allRequirementsMet = Object.values(requirements).every(Boolean);
@@ -126,45 +142,19 @@ export default function SignUpPage() {
             <Link href="/auth/login" className="text-[var(--primary)] font-semibold hover:underline">Log In</Link>
           </p>
 
-          {errors._root && (
-            <div className="mb-5 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm font-medium flex items-start gap-3">
-              <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
-              <span>{errors._root}</span>
-            </div>
-          )}
-
           <form onSubmit={handleSignUp} className="space-y-4">
-            <div className="flex gap-4">
-              <div className="flex-1">
-                <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">First Name</label>
-                <input 
-                  type="text" 
-                  value={formData.firstName} 
-                  onChange={(e) => handleChange(e, 'firstName')}
-                  className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                    errors.firstName 
-                      ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                      : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                  } outline-none`}
-                  placeholder="Verixa"
-                  disabled={isLoading}
-                />
-              </div>
-              <div className="flex-1">
-                <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Last Name</label>
-                <input 
-                  type="text" 
-                  value={formData.lastName} 
-                  onChange={(e) => handleChange(e, 'lastName')}
-                  className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                    errors.lastName 
-                      ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                      : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                  } outline-none`}
-                  placeholder="Verixa"
-                  disabled={isLoading}
-                />
-              </div>
+            <div>
+              <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Full Name</label>
+              <input 
+                type="text" 
+                value={formData.fullName} 
+                onChange={(e) => handleChange(e, 'fullName')}
+                className="w-full rounded-xl px-4 py-3 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
+                placeholder="John Doe"
+                maxLength={120}
+                disabled={isLoading}
+                required
+              />
             </div>
 
             <div>
@@ -174,14 +164,11 @@ export default function SignUpPage() {
                 value={formData.email} 
                 onChange={(e) => handleChange(e, 'email')} 
                 placeholder="john.doe@company.com"
-                className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                  errors.email 
-                    ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                    : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                } outline-none`}
+                className="w-full rounded-xl px-4 py-3 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
+                maxLength={160}
                 disabled={isLoading}
+                required
               />
-              {errors.email && <span className="text-xs text-red-600 font-medium mt-1.5 block">{errors.email}</span>}
             </div>
 
             <div>
@@ -191,13 +178,12 @@ export default function SignUpPage() {
                   type={showPassword ? 'text' : 'password'} 
                   value={formData.password} 
                   onChange={(e) => handleChange(e, 'password')}
-                  className={`w-full rounded-xl px-4 py-3 pr-11 text-sm border-2 transition-all ${
-                    errors.password 
-                      ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                      : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                  } outline-none`}
-                  placeholder="Create a strong password"
+                  className="w-full rounded-xl px-4 py-3 pr-11 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
+                  placeholder="Create a strong password (min 8 characters)"
+                  minLength={8}
+                  maxLength={120}
                   disabled={isLoading}
+                  required
                 />
                 <button 
                   type="button" 
@@ -237,15 +223,11 @@ export default function SignUpPage() {
                 type="password" 
                 value={formData.confirmPassword} 
                 onChange={(e) => handleChange(e, 'confirmPassword')}
-                className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                  errors.confirmPassword 
-                    ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                    : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                } outline-none`}
+                className="w-full rounded-xl px-4 py-3 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
                 placeholder="Re-enter your password"
                 disabled={isLoading}
+                required
               />
-              {errors.confirmPassword && <span className="text-xs text-red-600 font-medium mt-1.5 block">{errors.confirmPassword}</span>}
             </div>
 
             <button 

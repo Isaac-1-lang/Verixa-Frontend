@@ -4,15 +4,26 @@ const AUTH_URL = '/api/auth';
 
 export const userApi = apiSlice.injectEndpoints({
   endpoints: builder => ({
+    // POST /api/auth/login - Login and receive JWT
     login: builder.mutation({
       query: credentials => ({
         url: `${AUTH_URL}/login`,
         method: 'POST',
         body: credentials
-      })
+      }),
+      async onQueryStarted(arg, { queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled
+          if (data.accessToken) {
+            localStorage.setItem('token', data.accessToken)
+          }
+        } catch (err) {
+          // Error handled by component
+        }
+      }
     }),
-    // Note: Registration endpoint not in OpenAPI spec yet
-    // This is a placeholder - update when backend adds registration
+    
+    // POST /api/auth/register - Register new user
     register: builder.mutation({
       query: user => ({
         url: `${AUTH_URL}/register`,
@@ -20,12 +31,18 @@ export const userApi = apiSlice.injectEndpoints({
         body: user
       })
     }),
+    
+    // GET /api/users/me - Get current user profile
     getProfile: builder.query({
-      query: () => ({ url: `/api/users/me` }),
+      query: () => '/api/users/me',
       providesTags: ['User']
     })
   }),
   overrideExisting: false
 })
 
-export const { useLoginMutation, useRegisterMutation, useGetProfileQuery } = userApi
+export const { 
+  useLoginMutation, 
+  useRegisterMutation, 
+  useGetProfileQuery 
+} = userApi

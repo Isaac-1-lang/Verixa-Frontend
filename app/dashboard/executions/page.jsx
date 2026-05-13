@@ -1,15 +1,29 @@
 "use client";
 import { useState } from "react";
-import { CheckCircle, XCircle, Clock } from "lucide-react";
+import { CheckCircle, XCircle, Clock, Plus } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
+import ExecutionModal from "../../components/executions/ExecutionModal";
+import { useSearchExecutionsQuery } from "@/app/redux/api/ExecutionApiSlice";
+import { useProject } from "@/app/context/ProjectContext";
 
 export default function ExecutionsPage() {
-  const [executions] = useState([
-    { id: 1, testCase: "TC-001: User Login", run: "Sprint 23 UAT", result: "Passed", executedBy: "John Doe", executedAt: "2024-02-20 10:30", duration: "2m 15s" },
-    { id: 2, testCase: "TC-002: Password Reset", run: "Sprint 23 UAT", result: "Passed", executedBy: "Jane Smith", executedAt: "2024-02-20 11:00", duration: "3m 45s" },
-    { id: 3, testCase: "TC-003: Payment Processing", run: "Payment Integration Test", result: "Failed", executedBy: "Mike Johnson", executedAt: "2024-02-19 14:20", duration: "5m 30s" },
-    { id: 4, testCase: "TC-004: User Registration", run: "Sprint 23 UAT", result: "Pending", executedBy: "-", executedAt: "-", duration: "-" },
-  ]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedExecution, setSelectedExecution] = useState(null);
+  const [page, setPage] = useState(0);
+  const [resultFilter, setResultFilter] = useState("");
+  
+  const { selectedRunId } = useProject();
+
+  const { data, isLoading, error } = useSearchExecutionsQuery({
+    runId: selectedRunId,
+    result: resultFilter || undefined,
+    page,
+    size: 20
+  }, {
+    skip: !selectedRunId
+  });
+
+  const executions = data?.content || [];
 
   const columns = [
     {
@@ -17,8 +31,8 @@ export default function ExecutionsPage() {
       accessor: "testCase",
       cell: (row) => (
         <div>
-          <p className="font-semibold text-zinc-900 text-sm">{row.testCase}</p>
-          <p className="text-xs text-zinc-500">{row.run}</p>
+          <p className="font-semibold text-zinc-900 text-sm">{row.testCase?.tcNumber || "-"}</p>
+          <p className="text-xs text-zinc-500">{row.testCase?.title || "-"}</p>
         </div>
       ),
     },
@@ -27,33 +41,30 @@ export default function ExecutionsPage() {
       accessor: "result",
       cell: (row) => (
         <div className="flex items-center gap-2">
-          {row.result === 'Passed' && <CheckCircle size={16} className="text-emerald-600" />}
-          {row.result === 'Failed' && <XCircle size={16} className="text-red-600" />}
-          {row.result === 'Pending' && <Clock size={16} className="text-amber-600" />}
+          {row.result === 'PASSED' && <CheckCircle size={16} className="text-emerald-600" />}
+          {row.result === 'FAILED' && <XCircle size={16} className="text-red-600" />}
+          {row.result === 'NOT_EXECUTED' && <Clock size={16} className="text-amber-600" />}
           <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
-            row.result === 'Passed' ? 'bg-emerald-50 text-emerald-700' :
-            row.result === 'Failed' ? 'bg-red-50 text-red-700' :
+            row.result === 'PASSED' ? 'bg-emerald-50 text-emerald-700' :
+            row.result === 'FAILED' ? 'bg-red-50 text-red-700' :
+            row.result === 'BLOCKED' ? 'bg-orange-50 text-orange-700' :
+            row.result === 'SKIPPED' ? 'bg-slate-50 text-slate-700' :
             'bg-amber-50 text-amber-700'
           }`}>
-            {row.result}
+            {row.result?.replace('_', ' ')}
           </span>
         </div>
       ),
     },
     {
-      header: "Executed By",
-      accessor: "executedBy",
-      cell: (row) => <span className="text-sm text-zinc-700">{row.executedBy}</span>,
+      header: "Assigned To",
+      accessor: "assignedTo",
+      cell: (row) => <span className="text-sm text-zinc-700">{row.assignedTo?.username || "-"}</span>,
     },
     {
       header: "Executed At",
       accessor: "executedAt",
-      cell: (row) => <span className="text-sm text-zinc-600">{row.executedAt}</span>,
-    },
-    {
-      header: "Duration",
-      accessor: "duration",
-      cell: (row) => <span className="text-sm text-zinc-600">{row.duration}</span>,
+      cell: (row) => <span className="text-sm text-zinc-600">{row.executedAt ? new Date(row.executedAt).toLocaleString() : "-"}</span>,
     },
   ];
 
@@ -66,13 +77,43 @@ export default function ExecutionsPage() {
         </div>
       </div>
 
-      <DataTable
-        columns={columns}
-        data={executions}
-        searchPlaceholder="Search executions..."
-        onRowClick={(row) => console.log('Clicked:', row)}
-        emptyMessage="No executions found."
-      />
+      {!selectedRunId ? (
+        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+          <p className="text-zinc-600">Please select a test run from the Runs page to view executions.</p>
+        </div>
+      ) : isLoading ? (
+        <div className="text-center py-12">
+          <p className="text-zinc-600">Loading executions...</p>
+        </div>
+      ) : error ? (
+        <div className="text-center py-12">
+          <p className="text-red-600">Error loading executions: {error.message}</p>
+        </div>
+      ) : (
+        <DataTable
+          columns={columns}
+          data={executions}
+          searchPlaceholder="Search executions..."
+          onRowClick={(row) => {
+            setSelectedExecution(row);
+            setIsModalOpen(true);
+          }}
+          emptyMessage="No executions found."
+        />
+      )}
+
+      {selectedExecution && (
+        <ExecutionModal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false);
+            setSelectedExecution(null);
+          }}
+          execution={selectedExecution}
+          runId={selectedRunId}
+          testCaseId={selectedExecution.testCase?.id}
+        />
+      )}
     </div>
   );
 }

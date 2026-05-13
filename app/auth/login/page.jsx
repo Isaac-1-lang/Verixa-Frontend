@@ -5,49 +5,61 @@ import Link from 'next/link';
 import { useLoginMutation } from '../../redux/api/UserApiSlice';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Eye, EyeOff, Shield } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
   const [login, { isLoading }] = useLoginMutation();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    let newErrors = {};
     
-    if (!formData.email) newErrors.email = "Email is required";
-    if (!formData.password) newErrors.password = "Password is required";
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+    if (!formData.email) {
+      toast.error("Email is required");
+      return;
+    }
+    
+    if (!formData.password) {
+      toast.error("Password is required");
       return;
     }
 
     try {
+      // Backend expects: email and password
+      const payload = {
+        email: formData.email.trim(),
+        password: formData.password
+      };
       
+      const response = await login(payload).unwrap();
+      
+      toast.success("Login successful!");
+      
+      // Token is already stored by the mutation's onQueryStarted
+      // Just redirect to dashboard
       router.push('/dashboard');
     } catch (error) {
       console.error('Login error:', error);
       
-      if (error.data?.message) {
-        newErrors._root = error.data.message;
-      } else if (error.status === 401) {
-        newErrors._root = "Invalid email or password";
-      } else if (error.status === 403) {
-        newErrors._root = "Access denied. Please contact administrator.";
+      // Handle all error cases with toast
+      if (error?.data?.message) {
+        toast.error(error.data.message);
+      } else if (error?.status === 403) {
+        toast.error("Invalid email or password");
+      } else if (error?.status === 401) {
+        toast.error("Invalid email or password");
+      } else if (error?.message) {
+        toast.error(error.message);
       } else {
-        newErrors._root = "Login failed. Please try again.";
+        toast.error("Login failed. Please try again.");
       }
-      setErrors(newErrors);
     }
   };
 
   const handleChange = (e, field) => {
     setFormData({ ...formData, [field]: e.target.value });
-    if (errors[field]) setErrors(prev => ({ ...prev, [field]: undefined }));
-    if (errors._root) setErrors(prev => ({ ...prev, _root: undefined }));
   };
 
   return (
@@ -71,27 +83,17 @@ export default function LoginPage() {
           </p>
 
           <form onSubmit={handleLogin} className="space-y-5">
-            {errors._root && (
-              <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm font-medium">
-                {errors._root}
-              </div>
-            )}
-
             <div>
               <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-2">Email Address</label>
               <input 
                 type="email" 
                 value={formData.email} 
                 onChange={(e) => handleChange(e, 'email')}
-                className={`w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
-                  errors.email 
-                    ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                    : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                } outline-none`}
+                className="w-full rounded-xl px-4 py-3 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
                 placeholder="your.email@company.com"
                 disabled={isLoading}
+                required
               />
-              {errors.email && <span className="text-xs text-red-600 font-medium mt-1.5 block">{errors.email}</span>}
             </div>
 
             <div>
@@ -106,13 +108,10 @@ export default function LoginPage() {
                   type={showPassword ? 'text' : 'password'} 
                   value={formData.password} 
                   onChange={(e) => handleChange(e, 'password')}
-                  className={`w-full rounded-xl px-4 py-3 pr-11 text-sm border-2 transition-all ${
-                    errors.password 
-                      ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
-                      : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
-                  } outline-none`}
+                  className="w-full rounded-xl px-4 py-3 pr-11 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none transition-all"
                   placeholder="Enter your password"
                   disabled={isLoading}
+                  required
                 />
                 <button 
                   type="button" 
@@ -123,7 +122,6 @@ export default function LoginPage() {
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
-              {errors.password && <span className="text-xs text-red-600 font-medium mt-1.5 block">{errors.password}</span>}
             </div>
 
             <div className="flex items-center gap-2">

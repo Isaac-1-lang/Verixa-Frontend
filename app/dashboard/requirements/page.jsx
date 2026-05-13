@@ -2,19 +2,19 @@
 import { useState } from "react";
 import { Plus, FileText } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
-import TestCaseModal from "../../components/testcases/TestCaseModal";
-import { useSearchTestCasesQuery } from "@/app/redux/api/TestCaseApiSlice";
+import RequirementModal from "../../components/requirements/RequirementModal";
+import { useSearchRequirementsQuery } from "@/app/redux/api/RequirementApiSlice";
 import { useProject } from "@/app/context/ProjectContext";
 
-export default function TestCasesPage() {
+export default function RequirementsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedTestCase, setSelectedTestCase] = useState(null);
+  const [selectedRequirement, setSelectedRequirement] = useState(null);
   const [page, setPage] = useState(0);
   const [search, setSearch] = useState("");
   
   const { selectedProjectId } = useProject();
 
-  const { data, isLoading, error } = useSearchTestCasesQuery({
+  const { data, isLoading, error } = useSearchRequirementsQuery({
     projectId: selectedProjectId,
     q: search,
     page,
@@ -23,20 +23,20 @@ export default function TestCasesPage() {
     skip: !selectedProjectId
   });
 
-  const testCases = data?.content || [];
+  const requirements = data?.content || [];
 
   const columns = [
     {
-      header: "Test Case",
-      accessor: "tcNumber",
+      header: "Requirement",
+      accessor: "frRefCode",
       cell: (row) => (
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600">
+          <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
             <FileText size={18} />
           </div>
           <div>
-            <p className="font-semibold text-zinc-900">{row.tcNumber}</p>
-            <p className="text-xs text-zinc-500">{row.title}</p>
+            <p className="font-semibold text-zinc-900">{row.frRefCode}</p>
+            <p className="text-xs text-zinc-500 line-clamp-1">{row.description}</p>
           </div>
         </div>
       ),
@@ -47,45 +47,41 @@ export default function TestCasesPage() {
       cell: (row) => <span className="text-sm text-zinc-700">{row.appRef || "-"}</span>,
     },
     {
-      header: "Requirement",
-      accessor: "frId",
+      header: "Priority",
+      accessor: "priority",
       cell: (row) => (
-        <span className="text-sm text-zinc-600">
-          {row.frId ? `FR-${row.frId}` : "-"}
-        </span>
-      ),
-    },
-    {
-      header: "Steps",
-      accessor: "steps",
-      cell: (row) => (
-        <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 text-xs font-semibold">
-          {row.steps?.length || 0} steps
+        <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
+          row.priority === 'CRITICAL' ? 'bg-red-50 text-red-700' :
+          row.priority === 'HIGH' ? 'bg-orange-50 text-orange-700' :
+          row.priority === 'MEDIUM' ? 'bg-amber-50 text-amber-700' :
+          'bg-slate-50 text-slate-700'
+        }`}>
+          {row.priority}
         </span>
       ),
     },
   ];
 
   const handleRowClick = (row) => {
-    setSelectedTestCase(row);
+    setSelectedRequirement(row);
     setIsModalOpen(true);
   };
 
   const handleCreateNew = () => {
-    setSelectedTestCase(null);
+    setSelectedRequirement(null);
     setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    setSelectedTestCase(null);
+    setSelectedRequirement(null);
   };
 
   if (!selectedProjectId) {
     return (
       <div className="max-w-[1400px] mx-auto">
         <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
-          <p className="text-zinc-600">Please select a project from the top bar to view test cases.</p>
+          <p className="text-zinc-600">Please select a project from the top bar to view requirements.</p>
         </div>
       </div>
     );
@@ -95,42 +91,42 @@ export default function TestCasesPage() {
     <div className="max-w-[1400px] mx-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Test Cases</h1>
-          <p className="text-sm text-zinc-600 mt-1">Create and manage test cases with detailed steps</p>
+          <h1 className="text-2xl font-extrabold text-zinc-900 tracking-tight">Requirements</h1>
+          <p className="text-sm text-zinc-600 mt-1">Manage functional requirements for your project</p>
         </div>
         <button 
           onClick={handleCreateNew}
           className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 w-fit bg-[var(--primary)] text-white hover:bg-[#5851e6] transition-all shadow-lg shadow-[var(--primary)]/20"
         >
-          <Plus size={16} /> New Test Case
+          <Plus size={16} /> New Requirement
         </button>
       </div>
 
       {isLoading ? (
         <div className="text-center py-12">
-          <p className="text-zinc-600">Loading test cases...</p>
+          <p className="text-zinc-600">Loading requirements...</p>
         </div>
       ) : error ? (
         <div className="text-center py-12">
-          <p className="text-red-600">Error loading test cases: {error.message}</p>
+          <p className="text-red-600">Error loading requirements: {error.message}</p>
         </div>
       ) : (
         <DataTable
           columns={columns}
-          data={testCases}
-          searchPlaceholder="Search test cases..."
+          data={requirements}
+          searchPlaceholder="Search requirements..."
           searchValue={search}
           onSearchChange={setSearch}
           onRowClick={handleRowClick}
-          emptyMessage="No test cases found. Create your first test case to get started."
+          emptyMessage="No requirements found. Create your first requirement to get started."
         />
       )}
 
-      <TestCaseModal
+      <RequirementModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         projectId={selectedProjectId}
-        testCase={selectedTestCase}
+        requirement={selectedRequirement}
       />
     </div>
   );
