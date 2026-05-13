@@ -3,21 +3,24 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Search, Bell, ChevronDown, Menu, Check } from 'lucide-react';
 import ProjectSelector from '../common/ProjectSelector';
+import RunSelector from '../common/RunSelector';
+import { useGetCurrentUserProfileQuery } from '@/app/redux/api/DashboardApiSlice';
 
 export default function TopBar({ onMenuClick }) {
-  const [user, setUser] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
   const dropdownRef = useRef(null);
 
+  // Fetch current user profile from backend
+  const { data: userProfile, isLoading: userLoading } = useGetCurrentUserProfileQuery();
 
+  // Save user profile to localStorage when fetched
   useEffect(() => {
-    const userStr = localStorage.getItem('user');
-    if (userStr) {
-      try { setUser(JSON.parse(userStr)); } catch (e) {}
+    if (userProfile) {
+      localStorage.setItem('user', JSON.stringify(userProfile));
     }
-  }, []);
+  }, [userProfile]);
 
   // Close dropdown if clicked outside
   useEffect(() => {
@@ -40,12 +43,9 @@ export default function TopBar({ onMenuClick }) {
     setIsDropdownOpen(false);
   };
 
-  const fullName = user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || user.username : "Guest";
-  const userRole = user ? 'Student' : 'Guest';
-  const avatarUrl =
-    user?.profilePicture ||
-    user?.profileImageUrl ||
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=6C63FF&color=fff&bold=true`;
+  const fullName = userProfile?.fullName || "Guest";
+  const userRole = userProfile?.role || 'UAT Tester';
+  const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=6C63FF&color=fff&bold=true`;
 
   return (
     <header className="h-16 bg-white/80 backdrop-blur-xl border-b border-[var(--border)] flex items-center justify-between px-4 sm:px-8 sticky top-0 z-40">
@@ -67,6 +67,7 @@ export default function TopBar({ onMenuClick }) {
 
       <div className="flex items-center gap-3 sm:gap-4 ml-4">
         <ProjectSelector />
+        <RunSelector />
         
         <div className="h-6 w-px bg-[var(--border)] hidden sm:block"></div>
         
