@@ -47,7 +47,7 @@ export default function SignUpPage() {
     if (!formData.lastName) newErrors.lastName = "Required";
     if (!formData.email) newErrors.email = "Email is required";
     if (!formData.password) newErrors.password = "Password is required";
-    else if (strength < 4) newErrors.password = "Password is too weak";
+    else if (formData.password.length < 8) newErrors.password = "Password must be at least 8 characters";
 
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = "Passwords do not match";
@@ -60,13 +60,12 @@ export default function SignUpPage() {
 
     try {
       const payload = {
+        fullName: `${formData.firstName} ${formData.lastName}`.trim(),
         email: formData.email,
         password: formData.password,
-        firstName: formData.firstName,
-        lastName: formData.lastName
       };
       await registerUser(payload).unwrap();
-      router.push('/dashboard');
+      router.push('/auth/login');
     } catch (error) {
       console.error('Registration error:', error);
       if (error.data?.message) {
