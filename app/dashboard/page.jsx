@@ -2,46 +2,38 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
-  Plus, TrendingUp, CheckCircle, XCircle, Clock, 
+  Plus, TrendingUp, Clock, 
   AlertCircle, Layers, PlayCircle, FileText, Target
 } from "lucide-react";
+import { useGetDashboardAnalyticsQuery } from "@/app/redux/api/DashboardApiSlice";
 
 export default function DashboardPage() {
   const [userName, setUserName] = useState("QA Team");
-  const [stats, setStats] = useState({
-    totalProjects: 0,
-    totalTestCases: 0,
-    activeRuns: 0,
-    passRate: 0,
-    pendingExecutions: 0,
-    openDefects: 0
-  });
+  
+  // Fetch real analytics from backend
+  const { data: analytics, isLoading, error } = useGetDashboardAnalyticsQuery();
 
   useEffect(() => {
     // Get user info from localStorage
     try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        window.location.href = '/auth/login';
-        return;
+      const userStr = localStorage.getItem('user');
+      if (userStr) {
+        const user = JSON.parse(userStr);
+        setUserName(user.fullName || user.username || "QA Team");
       }
-      
-      // TODO: Fetch actual user data from API
-      setUserName("QA Team");
-      
-      // TODO: Fetch actual stats from API
-      setStats({
-        totalProjects: 5,
-        totalTestCases: 245,
-        activeRuns: 3,
-        passRate: 94,
-        pendingExecutions: 12,
-        openDefects: 8
-      });
     } catch (error) {
-      console.error('Error loading dashboard:', error);
+      console.error('Error loading user:', error);
     }
   }, []);
+
+  const stats = {
+    totalProjects: analytics?.totalProjects || 0,
+    totalTestCases: analytics?.totalTestCases || 0,
+    activeRuns: analytics?.activeRuns || 0,
+    passRate: analytics?.passRate || 0,
+    pendingExecutions: analytics?.pendingExecutions || 0,
+    openDefects: analytics?.openDefects || 0
+  };
 
   const statCards = [
     {
@@ -178,38 +170,11 @@ export default function DashboardPage() {
       <div className="bg-white border border-zinc-200 rounded-2xl p-6">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-lg font-bold text-zinc-900">Recent Activity</h2>
-          <Link href="/dashboard/executions" className="text-sm font-semibold text-[var(--primary)] hover:underline">
-            View All
-          </Link>
         </div>
-        <div className="space-y-3">
-          {recentActivity.map((activity, idx) => (
-            <div key={idx} className="flex items-center gap-4 p-3 rounded-xl hover:bg-zinc-50 transition-colors">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                activity.status === 'passed' ? 'bg-emerald-50 text-emerald-600' :
-                activity.status === 'failed' ? 'bg-red-50 text-red-600' :
-                activity.status === 'open' ? 'bg-amber-50 text-amber-600' :
-                'bg-slate-50 text-slate-700'
-              }`}>
-                {activity.status === 'passed' ? <CheckCircle size={18} /> :
-                 activity.status === 'failed' ? <XCircle size={18} /> :
-                 activity.status === 'open' ? <AlertCircle size={18} /> :
-                 <PlayCircle size={18} />}
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-zinc-900 truncate">{activity.title}</p>
-                <p className="text-xs text-zinc-500">{activity.time}</p>
-              </div>
-              <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg ${
-                activity.status === 'passed' ? 'bg-emerald-50 text-emerald-700' :
-                activity.status === 'failed' ? 'bg-red-50 text-red-700' :
-                activity.status === 'open' ? 'bg-amber-50 text-amber-700' :
-                'bg-slate-50 text-slate-700'
-              }`}>
-                {activity.status.replace('_', ' ')}
-              </span>
-            </div>
-          ))}
+        <div className="text-center py-12">
+          <Clock className="mx-auto mb-4 text-zinc-300" size={48} />
+          <p className="text-zinc-600 font-medium">Recent activity tracking coming soon</p>
+          <p className="text-sm text-zinc-500 mt-2">View your latest test executions, defects, and runs</p>
         </div>
       </div>
     </div>

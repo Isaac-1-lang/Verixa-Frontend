@@ -18,7 +18,7 @@ export const matrixImportApi = apiSlice.injectEndpoints({
       invalidatesTags: ['TestCases', 'Requirements']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

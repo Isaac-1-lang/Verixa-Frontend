@@ -26,8 +26,8 @@ export const executionApi = apiSlice.injectEndpoints({
     getExecutionsByRun: builder.query({
       query: (runId) => `/api/executions/run/${runId}`,
       providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'Executions', id })), 'Executions']
+        result && Array.isArray(result)
+          ? [...result.filter(item => item && item.id).map(({ id }) => ({ type: 'Executions', id })), 'Executions']
           : ['Executions']
     }),
 
@@ -49,7 +49,7 @@ export const executionApi = apiSlice.injectEndpoints({
       providesTags: ['Executions', 'Queue']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

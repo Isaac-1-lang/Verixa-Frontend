@@ -20,8 +20,8 @@ export const testCaseApi = apiSlice.injectEndpoints({
     getTestCasesByProject: builder.query({
       query: (projectId) => `/api/testcases/project/${projectId}`,
       providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'TestCases', id })), 'TestCases']
+        result && Array.isArray(result)
+          ? [...result.filter(item => item && item.id).map(({ id }) => ({ type: 'TestCases', id })), 'TestCases']
           : ['TestCases']
     }),
 
@@ -40,7 +40,7 @@ export const testCaseApi = apiSlice.injectEndpoints({
       providesTags: ['TestCases']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {
