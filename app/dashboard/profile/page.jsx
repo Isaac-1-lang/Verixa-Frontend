@@ -1,23 +1,16 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Camera, Save, User as UserIcon, Shield, Settings, Github, Linkedin, Globe, CheckCircle2 } from 'lucide-react';
+import { User as UserIcon, Mail, Shield } from 'lucide-react';
+import { useGetCurrentUserProfileQuery } from '@/app/redux/api/DashboardApiSlice';
 
 export default function ProfilePage() {
-  const [activeTab, setActiveTab] = useState('general');
-  const [user, setUser] = useState(null);
-  const [extraProfile, setExtraProfile] = useState({ bio: '', github: '', linkedin: '', portfolio: '' });
-  const [isSaving, setIsSaving] = useState(false);
-  const [saveSuccess, setSaveSuccess] = useState(false);
+  const { data: userProfile, isLoading } = useGetCurrentUserProfileQuery();
 
-  const toTitleCase = (str) => {
-    if (!str || typeof str !== 'string') return '';
-    return str
-      .toLowerCase()
-      .split(' ')
-      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(' ');
-  };
+  if (isLoading) {
+    return <div className="p-8 text-zinc-600">Loading Profile...</div>;
+  }
 
+<<<<<<< HEAD
   useEffect(() => {
     const userStr = localStorage.getItem('user');
     if (userStr) { try { setUser(JSON.parse(userStr)); } catch (e) { } }
@@ -48,10 +41,19 @@ export default function ProfilePage() {
     user.profilePicture ||
     user.profileImageUrl ||
     `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=6C63FF&color=fff&bold=true`;
+=======
+  if (!userProfile) {
+    return <div className="p-8 text-zinc-600">Unable to load profile</div>;
+  }
+
+  const fullName = userProfile.fullName || "User";
+  const avatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=6C63FF&color=fff&bold=true`;
+>>>>>>> Integration
 
   return (
     <div className="max-w-[960px] mx-auto pb-10">
       {/* Banner */}
+<<<<<<< HEAD
       <div className="relative w-full h-44 sm:h-56 rounded-md overflow-hidden mb-16 bg-navy/5 border border-navy/5">
         <div className="absolute inset-0 bg-navy/5 opacity-50" />
         <button className="absolute top-6 right-6 bg-navy text-white px-5 py-2.5 rounded-md text-xs font-bold shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all">
@@ -67,10 +69,21 @@ export default function ProfilePage() {
           <div className="mb-20">
             <h1 className="text-5xl font-bold text-navy leading-none">{fullName}</h1>
             <p className="text-navy/30 text-sm font-medium mt-2">@{user.username}</p>
+=======
+      <div className="relative w-full h-44 sm:h-56 rounded-2xl overflow-hidden mb-16 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-dark)]">
+        <div className="absolute -bottom-12 left-8 flex items-end gap-5">
+          <div className="relative w-24 h-24 rounded-2xl bg-white p-1.5 shadow-lg border border-zinc-200">
+            <img src={avatarUrl} alt={fullName} className="w-full h-full rounded-xl object-cover" />
+          </div>
+          <div className="mb-14">
+            <h1 className="text-2xl font-extrabold text-white">{fullName}</h1>
+            <p className="text-white/70 text-sm font-medium">{userProfile.email}</p>
+>>>>>>> Integration
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Settings Nav */}
         <div className="w-full lg:w-64 shrink-0">
@@ -87,9 +100,17 @@ export default function ProfilePage() {
                 {tab.label}
               </button>
             ))}
+=======
+      {/* Profile Info */}
+      <div className="bg-white rounded-2xl p-8 border border-zinc-200">
+        <div className="space-y-6">
+          <div>
+            <h2 className="text-xl font-extrabold text-zinc-900 mb-1">Profile Information</h2>
+            <p className="text-zinc-600 text-sm">Your account details</p>
+>>>>>>> Integration
           </div>
-        </div>
 
+<<<<<<< HEAD
         {/* Content */}
         <div className="flex-1 min-w-0">
           <div className="bg-white border border-navy/10 rounded-md p-12 shadow-xl shadow-navy/5">
@@ -170,9 +191,20 @@ export default function ProfilePage() {
                 <button className="flex items-center gap-4 bg-navy text-white px-10 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all">
                   Update Password
                 </button>
+=======
+          <div className="space-y-4">
+            <div className="flex items-center gap-4 p-4 border border-zinc-200 rounded-xl">
+              <div className="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-600">
+                <UserIcon size={20} />
               </div>
-            )}
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Full Name</p>
+                <p className="text-sm font-semibold text-zinc-900 mt-0.5">{userProfile.fullName}</p>
+>>>>>>> Integration
+              </div>
+            </div>
 
+<<<<<<< HEAD
             {activeTab === 'preferences' && (
               <div className="space-y-12 animate-fade-in">
                 <div>
@@ -196,8 +228,43 @@ export default function ProfilePage() {
                     </div>
                   ))}
                 </div>
+=======
+            <div className="flex items-center gap-4 p-4 border border-zinc-200 rounded-xl">
+              <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                <Mail size={20} />
+>>>>>>> Integration
               </div>
-            )}
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Email Address</p>
+                <p className="text-sm font-semibold text-zinc-900 mt-0.5">{userProfile.email}</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-4 border border-zinc-200 rounded-xl">
+              <div className="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600">
+                <Shield size={20} />
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Role</p>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-purple-50 text-purple-700 mt-1">
+                  {userProfile.role || 'Admin'}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-4 border border-zinc-200 rounded-xl">
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                userProfile.active ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'
+              }`}>
+                <div className={`w-3 h-3 rounded-full ${userProfile.active ? 'bg-emerald-600' : 'bg-red-600'}`}></div>
+              </div>
+              <div className="flex-1">
+                <p className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Account Status</p>
+                <p className="text-sm font-semibold text-zinc-900 mt-0.5">
+                  {userProfile.active ? 'Active' : 'Inactive'}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

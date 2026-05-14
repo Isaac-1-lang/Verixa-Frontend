@@ -1,30 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, XCircle, Clock, Plus } from "lucide-react";
+import { CheckCircle, XCircle, Clock, PlayCircle } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import ExecutionModal from "../../components/executions/ExecutionModal";
-import { useSearchExecutionsQuery } from "@/app/redux/api/ExecutionApiSlice";
+import { useGetExecutionsByRunQuery } from "@/app/redux/api/ExecutionApiSlice";
 import { useProject } from "@/app/context/ProjectContext";
+
+const resultBadge = (result) => {
+  const map = {
+    PASSED: "bg-emerald-50 text-emerald-700",
+    FAILED: "bg-red-50 text-red-700",
+    BLOCKED: "bg-orange-50 text-orange-700",
+    PARTIALLY_PASSED: "bg-yellow-50 text-yellow-700",
+    FEATURE_NOT_AVAILABLE: "bg-slate-50 text-slate-700",
+    NOT_RUN: "bg-amber-50 text-amber-700",
+  };
+  return map[result] || "bg-zinc-100 text-zinc-700";
+};
 
 export default function ExecutionsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedExecution, setSelectedExecution] = useState(null);
-  const [page, setPage] = useState(0);
-  const [resultFilter, setResultFilter] = useState("");
-  
+
   const { selectedRunId } = useProject();
 
-  const { data, isLoading, error } = useSearchExecutionsQuery({
-    runId: selectedRunId,
-    result: resultFilter || undefined,
-    page,
-    size: 20
-  }, {
+  const { data: executionsData = [], isLoading, error, refetch } = useGetExecutionsByRunQuery(selectedRunId, {
     skip: !selectedRunId
   });
 
-  const executions = data?.content || [];
+  const executions = Array.isArray(executionsData) ? executionsData.filter(item => item != null) : [];
 
   const columns = [
     {
@@ -42,6 +47,7 @@ export default function ExecutionsPage() {
     {
       header: "Result",
       accessor: "result",
+<<<<<<< HEAD
       cell: (row) => {
         const isPassed = row.result === 'PASSED' || row.result === 'Passed';
         const isFailed = row.result === 'FAILED' || row.result === 'Failed';
@@ -64,24 +70,66 @@ export default function ExecutionsPage() {
           </div>
         );
       },
+=======
+      cell: (row) => (
+        <div className="flex items-center gap-2">
+          {row.result === "PASSED" && <CheckCircle size={15} className="text-emerald-600" />}
+          {row.result === "FAILED" && <XCircle size={15} className="text-red-600" />}
+          {row.result === "NOT_RUN" && <Clock size={15} className="text-amber-600" />}
+          <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${resultBadge(row.result)}`}>
+            {row.result?.replace(/_/g, " ")}
+          </span>
+        </div>
+      ),
+>>>>>>> Integration
     },
     {
       header: "Assigned To",
       accessor: "assignedTo",
+<<<<<<< HEAD
       cell: (row) => (
         <span className="text-sm font-bold text-navy/50">
           {row.assignedTo?.username || "-"}
         </span>
       ),
+=======
+      cell: (row) => <span className="text-sm text-zinc-700">{row.assignedTo || "-"}</span>,
+    },
+    {
+      header: "Executed By",
+      accessor: "executedBy",
+      cell: (row) => <span className="text-sm text-zinc-700">{row.executedBy || "-"}</span>,
+>>>>>>> Integration
     },
     {
       header: "Timestamp",
       accessor: "executedAt",
       cell: (row) => (
+<<<<<<< HEAD
         <span className="text-xs font-bold text-navy/30">
           {row.executedAt ? new Date(row.executedAt).toLocaleString() : "-"}
         </span>
       ),
+=======
+        <span className="text-sm text-zinc-600">
+          {row.executedAt ? new Date(row.executedAt).toLocaleString() : "-"}
+        </span>
+      ),
+    },
+    {
+      header: "Status",
+      accessor: "assignmentStatus",
+      cell: (row) => (
+        <span className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold ${
+          row.assignmentStatus === "DONE" ? "bg-emerald-50 text-emerald-700" :
+          row.assignmentStatus === "ASSIGNED" ? "bg-blue-50 text-blue-700" :
+          row.assignmentStatus === "CLAIMED" ? "bg-purple-50 text-purple-700" :
+          "bg-zinc-100 text-zinc-600"
+        }`}>
+          {row.assignmentStatus?.replace(/_/g, " ")}
+        </span>
+      ),
+>>>>>>> Integration
     },
   ];
 
@@ -95,16 +143,23 @@ export default function ExecutionsPage() {
       </div>
 
       {!selectedRunId ? (
-        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
-          <p className="text-zinc-600">Please select a test run from the Runs page to view executions.</p>
+        <div className="text-center py-16 bg-white rounded-xl border border-zinc-200">
+          <PlayCircle className="mx-auto mb-4 text-zinc-300" size={48} />
+          <p className="text-zinc-900 font-semibold mb-2">No Test Run Selected</p>
+          <p className="text-zinc-500 text-sm">Select a test run from the top bar to view executions.</p>
         </div>
       ) : isLoading ? (
-        <div className="text-center py-12">
+        <div className="text-center py-16">
           <p className="text-zinc-600">Loading executions...</p>
         </div>
       ) : error ? (
+<<<<<<< HEAD
         <div className="text-center py-12">
           <p className="text-red-600">Error loading executions: {error.data?.message || "Unknown error"}</p>
+=======
+        <div className="text-center py-16">
+          <p className="text-red-600">Error loading executions.</p>
+>>>>>>> Integration
         </div>
       ) : (
         <DataTable
@@ -115,7 +170,7 @@ export default function ExecutionsPage() {
             setSelectedExecution(row);
             setIsModalOpen(true);
           }}
-          emptyMessage="No executions found."
+          emptyMessage="No executions found for this run."
         />
       )}
 
@@ -125,10 +180,11 @@ export default function ExecutionsPage() {
           onClose={() => {
             setIsModalOpen(false);
             setSelectedExecution(null);
+            refetch();
           }}
           execution={selectedExecution}
           runId={selectedRunId}
-          testCaseId={selectedExecution.testCase?.id}
+          testCaseId={selectedExecution.testCaseId}
         />
       )}
     </div>

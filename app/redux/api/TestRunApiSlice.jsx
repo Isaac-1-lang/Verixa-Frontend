@@ -47,7 +47,7 @@ export const testRunApi = apiSlice.injectEndpoints({
       providesTags: ['Runs']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {
