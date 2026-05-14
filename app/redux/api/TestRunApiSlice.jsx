@@ -6,17 +6,17 @@ import apiSlice from './apiSlice'
  */
 export const testRunApi = apiSlice.injectEndpoints({
   endpoints: builder => ({
-    // POST /api/runs - Create run with auto-populated executions
+    // POST /api/runs - Create run (auto-creates executions for all test cases)
     createTestRun: builder.mutation({
       query: (run) => ({
         url: '/api/runs',
         method: 'POST',
-        body: run
+        body: run   // { projectId, name, environment }
       }),
-      invalidatesTags: ['Runs']
+      invalidatesTags: ['Runs', 'Executions']
     }),
 
-    // PATCH /api/runs/{id}/status - Transition run status
+    // PATCH /api/runs/{id}/status - Transition status (PLANNED->IN_PROGRESS->CLOSED)
     updateRunStatus: builder.mutation({
       query: ({ id, status }) => ({
         url: `/api/runs/${id}/status`,
@@ -32,10 +32,13 @@ export const testRunApi = apiSlice.injectEndpoints({
       providesTags: (result, error, id) => [{ type: 'Runs', id }]
     }),
 
-    // GET /api/runs/project/{projectId} - List ALL runs by project (not paginated)
+    // GET /api/runs/project/{projectId} - List all runs by project (non-paginated)
     listTestRunsByProject: builder.query({
       query: (projectId) => `/api/runs/project/${projectId}`,
-      providesTags: ['Runs']
+      providesTags: (result) =>
+        result && Array.isArray(result)
+          ? [...result.filter(r => r?.id).map(({ id }) => ({ type: 'Runs', id })), 'Runs']
+          : ['Runs']
     }),
 
     // GET /api/runs/project/{projectId}/search - Search runs with pagination
@@ -47,7 +50,7 @@ export const testRunApi = apiSlice.injectEndpoints({
       providesTags: ['Runs']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

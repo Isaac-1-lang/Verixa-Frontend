@@ -16,19 +16,19 @@ export const testCaseApi = apiSlice.injectEndpoints({
       invalidatesTags: ['TestCases']
     }),
 
-    // GET /api/testcases/project/{projectId} - List test cases by project
-    getTestCasesByProject: builder.query({
-      query: (projectId) => `/api/testcases/project/${projectId}`,
-      providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'TestCases', id })), 'TestCases']
-          : ['TestCases']
-    }),
-
     // GET /api/testcases/{id} - Get test case by id
     getTestCaseById: builder.query({
       query: (id) => `/api/testcases/${id}`,
       providesTags: (result, error, id) => [{ type: 'TestCases', id }]
+    }),
+
+    // GET /api/testcases/project/{projectId} - List test cases by project
+    getTestCasesByProject: builder.query({
+      query: (projectId) => `/api/testcases/project/${projectId}`,
+      providesTags: (result) =>
+        result && Array.isArray(result)
+          ? [...result.filter(t => t?.id).map(({ id }) => ({ type: 'TestCases', id })), 'TestCases']
+          : ['TestCases']
     }),
 
     // GET /api/testcases/project/{projectId}/search - Search with pagination
@@ -40,12 +40,12 @@ export const testCaseApi = apiSlice.injectEndpoints({
       providesTags: ['TestCases']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {
   useUpsertTestCaseMutation,
-  useGetTestCasesByProjectQuery,
   useGetTestCaseByIdQuery,
+  useGetTestCasesByProjectQuery,
   useSearchTestCasesQuery
 } = testCaseApi

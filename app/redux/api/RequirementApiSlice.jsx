@@ -7,6 +7,7 @@ import apiSlice from './apiSlice'
 export const requirementApi = apiSlice.injectEndpoints({
   endpoints: builder => ({
     // POST /api/requirements - Create or update functional requirement
+    // Body: { id?, projectId, frRefCode, appRef, description, priority }
     upsertRequirement: builder.mutation({
       query: (requirement) => ({
         url: '/api/requirements',
@@ -16,12 +17,12 @@ export const requirementApi = apiSlice.injectEndpoints({
       invalidatesTags: ['Requirements']
     }),
 
-    // GET /api/requirements/project/{projectId} - List requirements by project
+    // GET /api/requirements/project/{projectId} - List all requirements by project
     getRequirementsByProject: builder.query({
       query: (projectId) => `/api/requirements/project/${projectId}`,
-      providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'Requirements', id })), 'Requirements']
+      providesTags: (result) =>
+        result && Array.isArray(result)
+          ? [...result.filter(r => r?.id).map(({ id }) => ({ type: 'Requirements', id })), 'Requirements']
           : ['Requirements']
     }),
 
@@ -34,7 +35,7 @@ export const requirementApi = apiSlice.injectEndpoints({
       providesTags: ['Requirements']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

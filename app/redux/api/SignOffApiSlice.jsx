@@ -7,6 +7,7 @@ import apiSlice from './apiSlice'
 export const signOffApi = apiSlice.injectEndpoints({
   endpoints: builder => ({
     // POST /api/signoff - Sign off a run (approve/reject)
+    // Body: { runId, decision, comment }
     signOffRun: builder.mutation({
       query: (signOff) => ({
         url: '/api/signoff',
@@ -16,13 +17,13 @@ export const signOffApi = apiSlice.injectEndpoints({
       invalidatesTags: ['SignOffs', 'Runs']
     }),
 
-    // GET /api/signoff/run/{runId} - Get latest sign-off for run
+    // GET /api/signoff/run/{runId} - Get latest sign-off for a run
     getLatestSignOff: builder.query({
       query: (runId) => `/api/signoff/run/${runId}`,
       providesTags: (result, error, runId) => [{ type: 'SignOffs', id: runId }]
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {
