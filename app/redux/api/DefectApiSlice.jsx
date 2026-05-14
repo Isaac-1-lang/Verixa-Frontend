@@ -20,8 +20,8 @@ export const defectApi = apiSlice.injectEndpoints({
     getDefectsByExecution: builder.query({
       query: (executionId) => `/api/defects/execution/${executionId}`,
       providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'Defects', id })), 'Defects']
+        result && Array.isArray(result)
+          ? [...result.filter(item => item && item.id).map(({ id }) => ({ type: 'Defects', id })), 'Defects']
           : ['Defects']
     }),
 
@@ -29,8 +29,8 @@ export const defectApi = apiSlice.injectEndpoints({
     getDefectsByRun: builder.query({
       query: (runId) => `/api/defects/run/${runId}`,
       providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'Defects', id })), 'Defects']
+        result && Array.isArray(result)
+          ? [...result.filter(item => item && item.id).map(({ id }) => ({ type: 'Defects', id })), 'Defects']
           : ['Defects']
     }),
 
@@ -44,7 +44,7 @@ export const defectApi = apiSlice.injectEndpoints({
       invalidatesTags: (result, error, { id }) => [{ type: 'Defects', id }, 'Defects']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

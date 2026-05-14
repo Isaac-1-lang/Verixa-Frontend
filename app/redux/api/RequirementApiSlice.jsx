@@ -20,8 +20,8 @@ export const requirementApi = apiSlice.injectEndpoints({
     getRequirementsByProject: builder.query({
       query: (projectId) => `/api/requirements/project/${projectId}`,
       providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'Requirements', id })), 'Requirements']
+        result && Array.isArray(result)
+          ? [...result.filter(item => item && item.id).map(({ id }) => ({ type: 'Requirements', id })), 'Requirements']
           : ['Requirements']
     }),
 
@@ -34,7 +34,7 @@ export const requirementApi = apiSlice.injectEndpoints({
       providesTags: ['Requirements']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

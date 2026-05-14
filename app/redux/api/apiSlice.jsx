@@ -30,6 +30,7 @@ export const apiSlice = createApi({
     'Attachments',
     'SignOffs',
     'Queue',
+    'Analytics',
     'Articles', 
     'Article', 
     'ArticleLikes', 

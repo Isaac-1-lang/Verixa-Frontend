@@ -1,23 +1,23 @@
 "use client";
+<<<<<<< HEAD
 
 import { useState } from "react";
 import { Plus, AlertCircle } from "lucide-react";
+=======
+import { AlertCircle, PlayCircle } from "lucide-react";
+>>>>>>> Integration
 import DataTable from "../../components/common/DataTable";
-import DefectModal from "../../components/defects/DefectModal";
-import { useGetDefectsByRunQuery, useUpdateDefectStatusMutation } from "@/app/redux/api/DefectApiSlice";
+import { useGetDefectsByRunQuery } from "@/app/redux/api/DefectApiSlice";
 import { useProject } from "@/app/context/ProjectContext";
 
 export default function DefectsPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedExecutionId, setSelectedExecutionId] = useState(null);
-  
   const { selectedRunId } = useProject();
 
-  const { data: defects = [], isLoading, error } = useGetDefectsByRunQuery(selectedRunId, {
+  const { data: defectsData = [], isLoading, error } = useGetDefectsByRunQuery(selectedRunId, {
     skip: !selectedRunId
   });
 
-  const [updateDefectStatus] = useUpdateDefectStatusMutation();
+  const defects = Array.isArray(defectsData) ? defectsData.filter(item => item != null) : [];
 
   const columns = [
     {
@@ -99,6 +99,7 @@ export default function DefectsPage() {
           <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Defects</h1>
           <p className="text-navy/40 text-sm font-medium">Critical vulnerabilities and resolution streams</p>
         </div>
+<<<<<<< HEAD
         <button 
           onClick={() => {
             setSelectedExecutionId(1);
@@ -109,11 +110,15 @@ export default function DefectsPage() {
         >
           <Plus size={20} strokeWidth={2.5} /> Log New Defect
         </button>
+=======
+>>>>>>> Integration
       </div>
 
       {!selectedRunId ? (
         <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
-          <p className="text-zinc-600">Please select a test run from the Runs page to view defects.</p>
+          <PlayCircle className="mx-auto mb-4 text-zinc-300" size={48} />
+          <p className="text-zinc-900 font-semibold mb-2">No Test Run Selected</p>
+          <p className="text-zinc-600 text-sm">Select a test run from the top bar to view defects.</p>
         </div>
       ) : isLoading ? (
         <div className="text-center py-12">
@@ -121,26 +126,18 @@ export default function DefectsPage() {
         </div>
       ) : error ? (
         <div className="text-center py-12">
+<<<<<<< HEAD
           <p className="text-red-600">Error loading defects: {error.data?.message || "Unknown error"}</p>
+=======
+          <p className="text-red-600">Error loading defects.</p>
+>>>>>>> Integration
         </div>
       ) : (
         <DataTable
           columns={columns}
           data={defects}
           searchPlaceholder="Search defects..."
-          onRowClick={(row) => console.log('Clicked:', row)}
-          emptyMessage="No defects found."
-        />
-      )}
-
-      {selectedExecutionId && (
-        <DefectModal
-          isOpen={isModalOpen}
-          onClose={() => {
-            setIsModalOpen(false);
-            setSelectedExecutionId(null);
-          }}
-          executionId={selectedExecutionId}
+          emptyMessage="No defects found for this run."
         />
       )}
     </div>

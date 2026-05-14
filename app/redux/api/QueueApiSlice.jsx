@@ -52,7 +52,7 @@ export const queueApi = apiSlice.injectEndpoints({
       providesTags: ['Queue']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {
