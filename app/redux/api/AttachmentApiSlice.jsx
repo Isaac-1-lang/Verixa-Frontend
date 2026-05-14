@@ -35,8 +35,8 @@ export const attachmentApi = apiSlice.injectEndpoints({
         params: { ownerType, ownerId }
       }),
       providesTags: (result) => 
-        result 
-          ? [...result.map(({ id }) => ({ type: 'Attachments', id })), 'Attachments']
+        result && Array.isArray(result)
+          ? [...result.filter(item => item && item.id).map(({ id }) => ({ type: 'Attachments', id })), 'Attachments']
           : ['Attachments']
     }),
 
@@ -48,7 +48,7 @@ export const attachmentApi = apiSlice.injectEndpoints({
       })
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

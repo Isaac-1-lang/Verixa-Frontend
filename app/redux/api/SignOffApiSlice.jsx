@@ -22,7 +22,7 @@ export const signOffApi = apiSlice.injectEndpoints({
       providesTags: (result, error, runId) => [{ type: 'SignOffs', id: runId }]
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {

@@ -1,34 +1,38 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+<<<<<<< HEAD
 import {
   Plus, TrendingUp, CheckCircle, XCircle, Clock,
   AlertCircle, Layers, PlayCircle, FileText, Target,
   ArrowUpRight, Activity as ActivityIcon
 } from "lucide-react";
 import { motion } from "framer-motion";
+=======
+import { 
+  Plus, TrendingUp, Clock, 
+  AlertCircle, Layers, PlayCircle, FileText, Target
+} from "lucide-react";
+import { useGetDashboardAnalyticsQuery } from "@/app/redux/api/DashboardApiSlice";
+>>>>>>> Integration
 
 export default function DashboardPage() {
   const [userName, setUserName] = useState("QA Team");
-  const [stats, setStats] = useState({
-    totalProjects: 0,
-    totalTestCases: 0,
-    activeRuns: 0,
-    passRate: 0,
-    pendingExecutions: 0,
-    openDefects: 0
-  });
+  
+  // Fetch real analytics from backend
+  const { data: analytics, isLoading, error } = useGetDashboardAnalyticsQuery();
 
   const [recentActivity, setRecentActivity] = useState(null);
 
   useEffect(() => {
     // Get user info from localStorage
     try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        window.location.href = '/auth/login';
-        return;
+      const userStr = localStorage.getItem('user');
+      if (userStr) {
+        const user = JSON.parse(userStr);
+        setUserName(user.fullName || user.username || "QA Team");
       }
+<<<<<<< HEAD
 
       // TODO: Fetch actual user data from API
       setUserName("QA Team");
@@ -42,10 +46,21 @@ export default function DashboardPage() {
         pendingExecutions: 12,
         openDefects: 8
       });
+=======
+>>>>>>> Integration
     } catch (error) {
-      console.error('Error loading dashboard:', error);
+      console.error('Error loading user:', error);
     }
   }, []);
+
+  const stats = {
+    totalProjects: analytics?.totalProjects || 0,
+    totalTestCases: analytics?.totalTestCases || 0,
+    activeRuns: analytics?.activeRuns || 0,
+    passRate: analytics?.passRate || 0,
+    pendingExecutions: analytics?.pendingExecutions || 0,
+    openDefects: analytics?.openDefects || 0
+  };
 
   const statCards = [
     {
@@ -179,6 +194,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Recent Activity */}
+<<<<<<< HEAD
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -224,6 +240,16 @@ export default function DashboardPage() {
               </span>
             </motion.div>
           ))}
+=======
+      <div className="bg-white border border-zinc-200 rounded-2xl p-6">
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-lg font-bold text-zinc-900">Recent Activity</h2>
+        </div>
+        <div className="text-center py-12">
+          <Clock className="mx-auto mb-4 text-zinc-300" size={48} />
+          <p className="text-zinc-600 font-medium">Recent activity tracking coming soon</p>
+          <p className="text-sm text-zinc-500 mt-2">View your latest test executions, defects, and runs</p>
+>>>>>>> Integration
         </div>
       </motion.div>
     </div>
