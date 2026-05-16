@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Afacad, JetBrains_Mono } from "next/font/google";
+import { Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from './redux/ProviderClient';
 import { Toaster } from 'react-hot-toast';
 
-const afacad = Afacad({
-  variable: "--font-afacad",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 const jetbrains = JetBrains_Mono({
@@ -31,7 +31,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.png" />
       </head>
-      <body className={`${afacad.variable} ${jetbrains.variable} antialiased`}>
+      <body className={`${poppins.variable} ${jetbrains.variable} antialiased`}>
         <ReduxProvider>
           {children}
         </ReduxProvider>
