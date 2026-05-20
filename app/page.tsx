@@ -196,66 +196,61 @@ export default function LandingPage() {
         }}
       >
         <div className="relative flex items-center justify-center">
-          {/* Outer Ring */}
           <motion.div
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="w-10 h-10 border border-white/40 rounded-full"
           />
-          {/* Inner Dot */}
           <div className="absolute w-1 h-1 bg-white rounded-full" />
         </div>
       </motion.div>
 
       <motion.nav
-        className="fixed left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl"
+        className="fixed left-1/2 -translate-x-1/2 z-50 w-full px-4 sm:px-6 lg:px-8 max-w-7xl pt-4"
         style={{
           top: navbarY,
           scale: navbarScale
         }}
       >
         <motion.div
-          className="bg-white/80 backdrop-blur-3xl rounded-md shadow-2xl shadow-navy/5 border border-navy/5 px-10 h-20 flex items-center justify-between transition-all duration-500"
+          className="bg-white/70 backdrop-blur-xl rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 px-6 sm:px-8 h-[72px] flex items-center justify-between transition-all duration-500 relative"
           style={{ opacity: navbarOpacity }}
         >
-          <Link href="/" className="text-3xl font-bold text-navy flex items-center gap-3 group">
-            Verixa
+          <Link href="/" className="relative z-10 text-[30px] font-extrabold tracking-tight text-navy flex items-center gap-2 group">
+            <img src="/logo.png" alt="Verixa Logo" className="h-[34px] w-auto group-hover:scale-105 transition-transform duration-300" />
+            VERIXA
           </Link>
 
-          <div className="hidden lg:flex items-center gap-12">
+          <div className="hidden lg:flex items-center gap-10 relative z-10">
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} className="text-sm font-semibold text-navy/40 hover:text-navy transition-all hover:-translate-y-0.5">
+              <a key={link.href} href={link.href} className="text-[18px] font-semibold text-navy hover:text-navy transition-colors relative group py-2">
                 {link.label}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-navy rounded-full transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100" />
               </a>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="/auth/login" className="text-sm font-semibold px-4 py-2 text-navy/40 hover:text-navy transition-all">Log In</Link>
-            <Link href="/auth/signup" className="bg-navy text-white text-sm font-bold px-8 py-3.5 rounded-md shadow-2xl shadow-navy/20 hover:scale-105 active:scale-95 transition-all">
-              Get Started
-            </Link>
-          </div>
-
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-3 rounded-md hover:bg-navy/5 text-navy transition-colors">
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden relative z-10 p-2.5 rounded-full hover:bg-navy/5 text-navy transition-colors">
+            {mobileMenuOpen ? <X size={22} className="stroke-[1.5]" /> : <Menu size={22} className="stroke-[1.5]" />}
           </button>
         </motion.div>
 
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-full left-0 right-0 mt-4 border border-navy/5 bg-white/95 backdrop-blur-2xl rounded-md shadow-2xl p-8 space-y-6"
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            className="md:hidden absolute top-full left-4 right-4 mt-4 border border-white/60 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_20px_40px_rgb(0,0,0,0.08)] p-6 space-y-1 overflow-hidden"
           >
+            <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.8)] pointer-events-none rounded-3xl" />
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-4 text-md font-semibold text-navy/40 hover:text-navy border-b border-navy/5 last:border-0">
+              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 rounded-xl text-[15px] font-semibold text-navy/70 hover:text-navy hover:bg-navy/5 transition-colors relative z-10">
                 {link.label}
               </a>
             ))}
-            <Link href="/auth/login" className="block py-4 text-md font-semibold text-navy/40 hover:text-navy">Log In</Link>
-            <Link href="/auth/signup" className="bg-navy text-white block text-center py-3 rounded-md text-md font-bold">Get Started Now</Link>
+            <div className="w-full h-px bg-navy/5 my-4 relative z-10" />
+            <Link href="/auth/login" className="block px-4 py-3.5 rounded-md text-[15px] font-semibold text-navy/70 hover:text-navy relative z-10 hover:bg-navy/5 transition-colors">Sign In</Link>
+            <Link href="/auth/signup" className="mt-2 bg-navy text-white flex justify-center py-4 rounded-md text-[15px] font-bold shadow-lg shadow-navy/20 relative z-10">Get Started Now</Link>
           </motion.div>
         )}
       </motion.nav>
@@ -366,7 +361,6 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-linear-to-t from-white/5 to-transparent pointer-events-none" />
               </div>
 
-              {/* Decorative side accent */}
               <div className="absolute -inset-4 border border-navy/0.03 rounded-md pointer-events-none z-0" />
             </motion.div>
           </div>
@@ -386,7 +380,6 @@ export default function LandingPage() {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-40 z-10"
           style={{ background: 'linear-gradient(to left, #1A264A 0%, transparent 100%)' }} />
 
-        {/* Row 1 — left to right */}
         <div className="flex gap-5 mb-4 animate-marquee-ltr whitespace-nowrap">
           {[...FIELDS, ...FIELDS, ...FIELDS].map((f, i) => (
             <span
@@ -399,7 +392,6 @@ export default function LandingPage() {
           ))}
         </div>
 
-        {/* Row 2 — right to left */}
         <div className="flex gap-5 animate-marquee-rtl whitespace-nowrap">
           {[...FIELDS.slice(5), ...FIELDS, ...FIELDS.slice(0, 5), ...FIELDS].map((f, i) => (
             <span
@@ -441,11 +433,11 @@ export default function LandingPage() {
                     backgroundColor: 'rgba(26,38,74,0.02)',
                     transition: { type: "spring", stiffness: 300, damping: 25 }
                   }}
-                  className="group h-full bg-offwhite border border-navy/5 rounded-md p-12 hover:border-navy/10 transition-all duration-500"
+                  className="group h-full bg-offwhite border border-navy/5 rounded-2xl p-8 hover:border-navy/10 transition-all duration-500"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-20 h-20 rounded-md bg-navy text-white flex items-center justify-center mb-10 shadow-2xl shadow-navy/20"
+                    className="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center mb-10 shadow-2xl shadow-navy/20"
                   >
                     {f.icon}
                   </motion.div>
@@ -480,8 +472,8 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-28"
           >
-            <h2 className="text-6xl font-bold text-white mb-8">Execution Flow</h2>
-            <p className="text-white/40 text-xl font-medium">A systematic approach to quality assurance, engineered for absolute efficiency.</p>
+            <h2 className="text-6xl font-bold text-white mb-2">Execution Flow</h2>
+            <p className="text-white/40 text-xl font-normal">A systematic approach to quality assurance, engineered for absolute efficiency.</p>
           </motion.div>
 
           {/* Steps */}
@@ -566,8 +558,8 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-6xl font-bold text-navy mb-4">Scaling Logic</h2>
-            <p className="text-navy/60 text-xl font-medium">Clear, transparent investment options for organizations focused on excellence.</p>
+            <h2 className="text-6xl font-bold text-navy mb-2">Pricing Plans</h2>
+            <p className="text-navy/60 text-xl font-normal">Clear, transparent investment options for organizations focused on excellence.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
@@ -583,12 +575,12 @@ export default function LandingPage() {
                     backgroundColor: plan.highlighted ? '#1A264A' : 'rgba(26,38,74,0.02)',
                     transition: { duration: 0.4 }
                   }}
-                  className={`group h-full rounded-md p-12 border transition-all duration-500 flex flex-col ${plan.highlighted
+                  className={`group h-full rounded-md p-6 border transition-all duration-500 flex flex-col ${plan.highlighted
                     ? 'bg-navy text-white border-navy shadow-[0_32px_64px_rgba(26,38,74,0.16)]'
                     : 'bg-offwhite border-navy/5 hover:border-navy/10'
                     }`}
                 >
-                  <p className={`text-xs font-bold mb-8 ${plan.highlighted ? 'text-white/60' : 'text-navy/40'}`}>{plan.name}</p>
+                  <p className={`text-sm font-bold mb-8 uppercase ${plan.highlighted ? 'text-white/60' : 'text-navy/40'}`}>{plan.name}</p>
                   <div className="flex items-baseline gap-2 mb-8">
                     <span className="text-6xl font-bold leading-none">{plan.price}</span>
                     {plan.period && <span className={`text-sm font-bold ${plan.highlighted ? 'text-white/40' : 'text-navy/20'}`}>{plan.period.replace('/', '')}</span>}
@@ -608,7 +600,7 @@ export default function LandingPage() {
 
                   <Link
                     href="/auth/signup"
-                    className={`block w-full text-center py-5 rounded-md text-base font-bold transition-all ${plan.highlighted
+                    className={`block w-full text-center py-4 rounded-md text-base font-bold transition-all ${plan.highlighted
                       ? 'bg-white text-navy hover:scale-[1.02]'
                       : 'bg-navy text-white hover:scale-[1.02]'
                       }`}
@@ -706,7 +698,10 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-20 mb-16">
             <div className="col-span-2 md:col-span-1">
-              <span className="text-4xl font-bold text-navy">Verixa</span>
+              <Link href="/" className="flex items-center gap-3">
+                <img src="/logo.png" alt="Verixa Logo" className="h-10 w-auto" />
+                <span className="text-4xl font-bold text-navy">Verixa</span>
+              </Link>
               <p className="text-base text-navy/30 font-bold leading-relaxed mt-4">High-performance UAT management platform. Absolute confidence in every deployment.</p>
             </div>
 
