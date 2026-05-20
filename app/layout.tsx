@@ -18,6 +18,9 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Verixa | UAT Test Manager",
   description: "Verixa: Verify Acceptance. Comprehensive UAT management platform for test case execution, defect tracking, and quality sign-off.",
+  icons: {
+    icon: "/logo.png"
+  }
 };
 
 export default function RootLayout({
