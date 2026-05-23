@@ -1,23 +1,12 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-<<<<<<< HEAD
-import { Search, Bell, ChevronDown, Menu, Check } from 'lucide-react';
-import ProjectSelector from '../common/ProjectSelector';
-
-export default function TopBar({ onMenuClick }) {
-  const [user, setUser] = useState(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [notifications, setNotifications] = useState([]);
-  const [unreadCount, setUnreadCount] = useState(0);
-=======
 import { Search, Bell, ChevronDown, Menu, Check, Settings, LogOut, User } from 'lucide-react';
 
 export default function TopBar({ onMenuClick }) {
   const [user, setUser] = useState(null);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
->>>>>>> 83abdde2e117b464a3573f8e16b240b58f9e0a65
   const dropdownRef = useRef(null);
   const profileRef = useRef(null);
 
@@ -48,17 +37,7 @@ export default function TopBar({ onMenuClick }) {
   }, []);
 
   const handleNotificationClick = async (notif) => {
-<<<<<<< HEAD
-    if (!notif.isRead) {
-      try { 
-        // TODO: Implement mark as read API
-        // await markAsRead(notif.id); 
-      } catch(e) {}
-    }
-    setIsDropdownOpen(false);
-=======
     setIsNotificationsOpen(false);
->>>>>>> 83abdde2e117b464a3573f8e16b240b58f9e0a65
   };
 
   const fullName = user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || user.username : "John Doe";
@@ -97,15 +76,7 @@ export default function TopBar({ onMenuClick }) {
         </button>
       </div>
 
-<<<<<<< HEAD
-      <div className="flex items-center gap-3 sm:gap-4 ml-4">
-        <ProjectSelector />
-        
-        <div className="h-6 w-px bg-[var(--border)] hidden sm:block"></div>
-        
-=======
       <div className="flex items-center gap-7 ml-4 relative">
->>>>>>> 83abdde2e117b464a3573f8e16b240b58f9e0a65
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
