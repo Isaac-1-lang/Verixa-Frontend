@@ -63,7 +63,7 @@ export default function ProfileSetupPage() {
     formData.append('file', selectedFile);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8081';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8086';
       const res = await fetch(`${apiUrl}/api/users/me/profile-picture`, {
         method: 'POST',
         headers: {

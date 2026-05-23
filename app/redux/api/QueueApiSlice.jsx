@@ -6,7 +6,17 @@ import apiSlice from './apiSlice'
  */
 export const queueApi = apiSlice.injectEndpoints({
   endpoints: builder => ({
-    // POST /api/queue/runs/{runId}/assign/round-robin - Auto-assign executions
+    // POST /api/queue/runs/{runId}/claim-next - Claim next execution in queue
+    claimNextExecution: builder.mutation({
+      query: (runId) => ({
+        url: `/api/queue/runs/${runId}/claim-next`,
+        method: 'POST'
+      }),
+      invalidatesTags: ['Queue', 'Executions']
+    }),
+
+    // POST /api/queue/runs/{runId}/assign/round-robin - Auto-assign using round-robin
+    // Body: { testerIds: [number] }
     assignRoundRobin: builder.mutation({
       query: ({ runId, testerIds }) => ({
         url: `/api/queue/runs/${runId}/assign/round-robin`,
@@ -16,25 +26,7 @@ export const queueApi = apiSlice.injectEndpoints({
       invalidatesTags: ['Queue', 'Executions']
     }),
 
-    // POST /api/queue/runs/{runId}/claim-next - Claim next execution
-    claimNextExecution: builder.mutation({
-      query: (runId) => ({
-        url: `/api/queue/runs/${runId}/claim-next`,
-        method: 'POST'
-      }),
-      invalidatesTags: ['Queue', 'Executions']
-    }),
-
-    // POST /api/queue/executions/{executionId}/claim - Claim specific execution
-    claimExecution: builder.mutation({
-      query: (executionId) => ({
-        url: `/api/queue/executions/${executionId}/claim`,
-        method: 'POST'
-      }),
-      invalidatesTags: ['Queue', 'Executions']
-    }),
-
-    // POST /api/queue/executions/{executionId}/release - Release execution
+    // POST /api/queue/executions/{executionId}/release - Release claimed execution back to ASSIGNED
     releaseExecution: builder.mutation({
       query: (executionId) => ({
         url: `/api/queue/executions/${executionId}/release`,
@@ -43,7 +35,16 @@ export const queueApi = apiSlice.injectEndpoints({
       invalidatesTags: ['Queue', 'Executions']
     }),
 
-    // GET /api/queue/runs/{runId} - Queue view with pagination
+    // POST /api/queue/executions/{executionId}/claim - Claim a specific execution
+    claimExecution: builder.mutation({
+      query: (executionId) => ({
+        url: `/api/queue/executions/${executionId}/claim`,
+        method: 'POST'
+      }),
+      invalidatesTags: ['Queue', 'Executions']
+    }),
+
+    // GET /api/queue/runs/{runId} - Queue view (UNASSIGNED + ASSIGNED) with pagination
     getQueueByRun: builder.query({
       query: ({ runId, page = 0, size = 50 }) => ({
         url: `/api/queue/runs/${runId}`,
@@ -52,13 +53,13 @@ export const queueApi = apiSlice.injectEndpoints({
       providesTags: ['Queue']
     })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
 export const {
-  useAssignRoundRobinMutation,
   useClaimNextExecutionMutation,
-  useClaimExecutionMutation,
+  useAssignRoundRobinMutation,
   useReleaseExecutionMutation,
+  useClaimExecutionMutation,
   useGetQueueByRunQuery
 } = queueApi

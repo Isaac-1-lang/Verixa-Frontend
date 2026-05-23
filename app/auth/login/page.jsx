@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
 import AuthBackground from '@/app/components/auth/AuthBackground';
 import AuthInput from '@/app/components/auth/AuthInput';
-import toast from 'react-hot-toast';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -25,7 +24,7 @@ export default function LoginPage() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    let newErrors = {};
+    const newErrors = {};
 
     if (!formData.email) newErrors.email = "Email is required";
     if (!formData.password) newErrors.password = "Password is required";
@@ -36,17 +35,19 @@ export default function LoginPage() {
     }
 
     try {
+      await login({ email: formData.email, password: formData.password }).unwrap();
       router.push('/dashboard');
     } catch (error) {
       console.error('Login error:', error);
-      if (error.data?.message) {
-        newErrors._root = error.data.message;
-      } else {
-        toast.error("Login failed. Please try again.");
-      }
+      const message =
+        error?.data?.message ||
+        error?.data?.error ||
+        (error?.status === 401 || error?.status === 403
+          ? "Invalid email or password"
+          : "Login failed. Please try again.");
+      setErrors({ _root: message });
     }
   };
-
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-white">

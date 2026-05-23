@@ -3,27 +3,21 @@ import { useState } from "react";
 import { Plus, FileText } from "lucide-react";
 import DataTable from "../../components/common/DataTable";
 import RequirementModal from "../../components/requirements/RequirementModal";
-import { useSearchRequirementsQuery } from "@/app/redux/api/RequirementApiSlice";
+import { useGetRequirementsByProjectQuery } from "@/app/redux/api/RequirementApiSlice";
 import { useProject } from "@/app/context/ProjectContext";
 
 export default function RequirementsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRequirement, setSelectedRequirement] = useState(null);
-  const [page, setPage] = useState(0);
-  const [search, setSearch] = useState("");
   
   const { selectedProjectId } = useProject();
 
-  const { data, isLoading, error } = useSearchRequirementsQuery({
-    projectId: selectedProjectId,
-    q: search,
-    page,
-    size: 20
-  }, {
+  const { data: requirementsData = [], isLoading, error } = useGetRequirementsByProjectQuery(selectedProjectId, {
     skip: !selectedProjectId
   });
 
-  const requirements = data?.content || [];
+  // Filter out null/undefined items
+  const requirements = Array.isArray(requirementsData) ? requirementsData.filter(item => item != null) : [];
 
   const columns = [
     {
@@ -115,8 +109,6 @@ export default function RequirementsPage() {
           columns={columns}
           data={requirements}
           searchPlaceholder="Search requirements..."
-          searchValue={search}
-          onSearchChange={setSearch}
           onRowClick={handleRowClick}
           emptyMessage="No requirements found. Create your first requirement to get started."
         />

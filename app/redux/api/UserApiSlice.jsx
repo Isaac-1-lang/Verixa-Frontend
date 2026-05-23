@@ -13,16 +13,30 @@ export const userApi = apiSlice.injectEndpoints({
       }),
       async onQueryStarted(arg, { queryFulfilled }) {
         try {
-          const { data } = await queryFulfilled
-          if (data.accessToken) {
-            localStorage.setItem('token', data.accessToken)
+          const { data } = await queryFulfilled;
+          if (data?.accessToken) {
+            localStorage.setItem('token', data.accessToken);
+
+            // Fetch and cache user profile right after login
+            try {
+              const res = await fetch(
+                `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8086'}/api/dashboard/profile`,
+                { headers: { Authorization: `Bearer ${data.accessToken}` } }
+              );
+              if (res.ok) {
+                const profile = await res.json();
+                localStorage.setItem('user', JSON.stringify(profile));
+              }
+            } catch (_) {
+              // Profile fetch failure should not block login
+            }
           }
-        } catch (err) {
+        } catch (_) {
           // Error handled by component
         }
       }
     }),
-    
+
     // POST /api/auth/register - Register new user
     register: builder.mutation({
       query: user => ({
@@ -31,18 +45,11 @@ export const userApi = apiSlice.injectEndpoints({
         body: user
       })
     }),
-    
-    // GET /api/users/me - Get current user profile
-    getProfile: builder.query({
-      query: () => '/api/users/me',
-      providesTags: ['User']
-    })
   }),
-  overrideExisting: false
+  overrideExisting: true
 })
 
-export const { 
-  useLoginMutation, 
-  useRegisterMutation, 
-  useGetProfileQuery 
+export const {
+  useLoginMutation,
+  useRegisterMutation,
 } = userApi
