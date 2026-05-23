@@ -43,19 +43,12 @@ const STEPS = [
 ];
 
 const PRICING = [
-  { name: 'Starter', price: 'Free', period: 'forever', desc: 'Perfect for small teams and pilot projects.', features: ['Up to 3 projects', 'Up to 50 test cases', 'Basic reporting', 'Email support', 'Community access'], cta: 'Get Started Free', highlighted: false },
-  { name: 'Professional', price: '$99', period: '/month', desc: 'For growing QA teams managing multiple projects.', features: ['Unlimited projects', 'Unlimited test cases', 'Advanced analytics', 'Defect tracking', 'Team collaboration', 'Priority support'], cta: 'Start Free Trial', highlighted: true },
+  { name: 'Starter', price: 'Free', period: 'Forever', desc: 'Perfect for small teams and pilot projects.', features: ['Up to 3 projects', 'Up to 50 test cases', 'Basic reporting', 'Email support', 'Community access'], cta: 'Get Started Free', highlighted: false },
+  { name: 'Professional', price: '$99', period: 'Month', desc: 'For growing QA teams managing multiple projects.', features: ['Unlimited projects', 'Unlimited test cases', 'Advanced analytics', 'Defect tracking', 'Team collaboration', 'Priority support'], cta: 'Start Free Trial', highlighted: true },
   { name: 'Enterprise', price: 'Custom', period: '', desc: 'For large organizations with complex requirements.', features: ['Custom deployment', 'SSO & LDAP', 'Advanced security', 'API access', 'Custom integrations', 'Dedicated support'], cta: 'Contact Sales', highlighted: false },
 ];
 
-const STATS = [
-  { value: '10K+', label: 'Test Cases Executed' },
-  { value: '500+', label: 'Active Projects' },
-  { value: '99.9%', label: 'Platform Uptime' },
-  { value: '24/7', label: 'Support Available' },
-];
 
-// Typing Effect
 const TypingText = () => {
   const [displayText, setDisplayText] = useState('');
   const fullText = "Quality Assured";
@@ -133,12 +126,10 @@ export default function LandingPage() {
   const fY3 = useSpring(fY3Raw, smoothConfig);
   const featYArr = [fY1, fY2, fY3];
 
-  // Steps Parallax
   const { scrollYProgress: sProg } = useScroll({ target: stepsRef, offset: ["start end", "end start"] });
   const sNumYRaw = useTransform(sProg, [0, 1], [-120, 120]);
   const sNumY = useSpring(sNumYRaw, smoothConfig);
 
-  // Pricing Parallax
   const { scrollYProgress: pProg } = useScroll({ target: pricingRef, offset: ["start end", "end start"] });
   const pY1Raw = useTransform(pProg, [0, 1], [100, -100]);
   const pY2Raw = useTransform(pProg, [0, 1], [0, 0]);
@@ -148,19 +139,16 @@ export default function LandingPage() {
   const pY3 = useSpring(pY3Raw, smoothConfig);
   const priceYArr = [pY1, pY2, pY3];
 
-  // Navbar scroll animation
   const navbarScale = useTransform(scrollY, [0, 100], [1, 0.95]);
   const navbarY = useTransform(scrollY, [0, 100], [24, 12]);
   const navbarOpacity = useTransform(scrollY, [0, 50], [0.8, 1]);
 
-  // About Parallax
   const { scrollYProgress: aProg } = useScroll({ target: aboutRef, offset: ["start end", "end start"] });
   const aYTextRaw = useTransform(aProg, [0, 1], [80, -80]);
   const aYGridRaw = useTransform(aProg, [0, 1], [-100, 100]);
   const aYText = useSpring(aYTextRaw, smoothConfig);
   const aYGrid = useSpring(aYGridRaw, smoothConfig);
 
-  // Cinematic shared variants
   const sectionVariant = {
     hidden: { opacity: 0, y: 110 },
     visible: {
@@ -196,66 +184,61 @@ export default function LandingPage() {
         }}
       >
         <div className="relative flex items-center justify-center">
-          {/* Outer Ring */}
           <motion.div
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="w-10 h-10 border border-white/40 rounded-full"
           />
-          {/* Inner Dot */}
           <div className="absolute w-1 h-1 bg-white rounded-full" />
         </div>
       </motion.div>
 
       <motion.nav
-        className="fixed left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl"
+        className="fixed left-1/2 -translate-x-1/2 z-50 w-full px-4 sm:px-6 lg:px-8 max-w-7xl pt-4"
         style={{
           top: navbarY,
           scale: navbarScale
         }}
       >
         <motion.div
-          className="bg-white/80 backdrop-blur-3xl rounded-md shadow-2xl shadow-navy/5 border border-navy/5 px-10 h-20 flex items-center justify-between transition-all duration-500"
+          className="bg-white/70 backdrop-blur-xl rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 px-6 sm:px-8 h-[72px] flex items-center justify-between transition-all duration-500 relative"
           style={{ opacity: navbarOpacity }}
         >
-          <Link href="/" className="text-3xl font-bold text-navy flex items-center gap-3 group">
-            Verixa
+          <Link href="/" className="relative z-10 text-[36px] font-extrabold tracking-tight text-navy flex items-center group">
+            <img src="/logo.png" alt="Verixa Logo" className="h-[84px] w-auto group-hover:scale-105 transition-transform duration-300" />
+            VERIXA
           </Link>
 
-          <div className="hidden lg:flex items-center gap-12">
+          <div className="hidden lg:flex items-center gap-10 relative z-10">
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} className="text-sm font-semibold text-navy/40 hover:text-navy transition-all hover:-translate-y-0.5">
+              <a key={link.href} href={link.href} className="text-[18px] font-semibold text-navy hover:text-navy transition-colors relative group py-2">
                 {link.label}
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-navy rounded-full transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100" />
               </a>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="/auth/login" className="text-sm font-semibold px-4 py-2 text-navy/40 hover:text-navy transition-all">Log In</Link>
-            <Link href="/auth/signup" className="bg-navy text-white text-sm font-bold px-8 py-3.5 rounded-md shadow-2xl shadow-navy/20 hover:scale-105 active:scale-95 transition-all">
-              Get Started
-            </Link>
-          </div>
-
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-3 rounded-md hover:bg-navy/5 text-navy transition-colors">
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden relative z-10 p-2.5 rounded-full hover:bg-navy/5 text-navy transition-colors">
+            {mobileMenuOpen ? <X size={22} className="stroke-[1.5]" /> : <Menu size={22} className="stroke-[1.5]" />}
           </button>
         </motion.div>
 
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="md:hidden absolute top-full left-0 right-0 mt-4 border border-navy/5 bg-white/95 backdrop-blur-2xl rounded-md shadow-2xl p-8 space-y-6"
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            className="md:hidden absolute top-full left-4 right-4 mt-4 border border-white/60 bg-white/95 backdrop-blur-2xl rounded-3xl shadow-[0_20px_40px_rgb(0,0,0,0.08)] p-6 space-y-1 overflow-hidden"
           >
+            <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.8)] pointer-events-none rounded-3xl" />
             {NAV_LINKS.map(link => (
-              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block py-4 text-md font-semibold text-navy/40 hover:text-navy border-b border-navy/5 last:border-0">
+              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="block px-4 py-3.5 rounded-xl text-[15px] font-semibold text-navy/70 hover:text-navy hover:bg-navy/5 transition-colors relative z-10">
                 {link.label}
               </a>
             ))}
-            <Link href="/auth/login" className="block py-4 text-md font-semibold text-navy/40 hover:text-navy">Log In</Link>
-            <Link href="/auth/signup" className="bg-navy text-white block text-center py-3 rounded-md text-md font-bold">Get Started Now</Link>
+            <div className="w-full h-px bg-navy/5 my-4 relative z-10" />
+            <Link href="/auth/login" className="block px-4 py-3.5 rounded-md text-[15px] font-semibold text-navy/70 hover:text-navy relative z-10 hover:bg-navy/5 transition-colors">Sign In</Link>
+            <Link href="/auth/signup" className="mt-2 bg-navy text-white flex justify-center py-4 rounded-md text-[15px] font-bold shadow-lg shadow-navy/20 relative z-10">Get Started Now</Link>
           </motion.div>
         )}
       </motion.nav>
@@ -361,55 +344,119 @@ export default function LandingPage() {
                 <img
                   src="/image.png"
                   alt="Professional Collaboration"
-                  className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
+                  className="w-full h-[420px] object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-white/5 to-transparent pointer-events-none" />
               </div>
 
-              {/* Decorative side accent */}
               <div className="absolute -inset-4 border border-navy/0.03 rounded-md pointer-events-none z-0" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-navy overflow-hidden relative">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 -translate-y-1/2 left-1/4 w-[500px] h-[300px] opacity-10 rounded-full"
-            style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.3) 0%, transparent 70%)' }} />
-          <div className="absolute top-1/2 -translate-y-1/2 right-1/4 w-[400px] h-[300px] opacity-10 rounded-full"
-            style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.2) 0%, transparent 70%)' }} />
+
+      <section className="py-4 bg-navy overflow-hidden relative border-t-2 border-white group/marquee">
+        <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-white via-navy to-navy" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 z-10 bg-linear-to-r from-navy to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 z-10 bg-linear-to-l from-navy to-transparent" />
+        <div className="relative flex flex-col gap-3 md:gap-4 -rotate-1 lg:-rotate-2 scale-[1.01] mt-2 mb-2 transition-transform duration-3000 ease-out group-hover/marquee:scale-[1.02]">
+
+          {/* Single Focused Marquee Row */}
+          <div className="flex gap-4 animate-marquee-ltr whitespace-nowrap items-center w-max">
+            {[...FIELDS, ...FIELDS, ...FIELDS].map((f, i) => (
+              <span key={`r1-${i}`} className="inline-flex items-center gap-4 group/item cursor-pointer">
+                <span className="text-base md:text-lg lg:text-xl font-black text-white group-hover/item:text-blue-400 uppercase tracking-tighter transition-colors select-none">
+                  {f.name}
+                </span>
+                <span className="shrink-0 flex items-center justify-center">
+                  <Star size={16} className="fill-white text-white opacity-40 rotate-15 group-hover/item:rotate-180 group-hover/item:fill-blue-400 group-hover/item:text-blue-400 group-hover/item:opacity-100 transition-all duration-700" />
+                </span>
+              </span>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-40 z-10"
-          style={{ background: 'linear-gradient(to right, #1A264A 0%, transparent 100%)' }} />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-40 z-10"
-          style={{ background: 'linear-gradient(to left, #1A264A 0%, transparent 100%)' }} />
+      {/* PREMIUM BENTO ABOUT SECTION */}
+      <section id="about" ref={aboutRef} className="py-16 px-6 bg-[#FAFBFF] overflow-hidden relative">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <motion.div style={{ y: aYText }} className="text-center max-w-3xl mx-auto mb-20 relative z-10">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-navy tracking-tight leading-[1.05] mb-8">
+              The Definitive Standard For <br />
+              <span className="relative inline-block mt-2">
+                <span className="relative z-10 italic pr-4">Software Quality.</span>
+              </span>
+            </h2>
+            <p className="text-xl text-navy/60 font-medium max-w-2xl mx-auto">
+              Verixa converges real-time testing telemetry with formal governance, allowing elite engineering teams to deploy with absolute confidence.
+            </p>
+          </motion.div>
 
-        {/* Row 1 — left to right */}
-        <div className="flex gap-5 mb-4 animate-marquee-ltr whitespace-nowrap">
-          {[...FIELDS, ...FIELDS, ...FIELDS].map((f, i) => (
-            <span
-              key={`r1-${i}`}
-              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/6 text-white/70 hover:bg-white/12 hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
-            >
-              <span className="w-2 h-2 rounded-full bg-white opacity-30" />
-              {f.name}
-            </span>
-          ))}
-        </div>
+          {/* Bento Grid */}
+          <motion.div style={{ y: aYGrid }} className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10">
 
-        {/* Row 2 — right to left */}
-        <div className="flex gap-5 animate-marquee-rtl whitespace-nowrap">
-          {[...FIELDS.slice(5), ...FIELDS, ...FIELDS.slice(0, 5), ...FIELDS].map((f, i) => (
-            <span
-              key={`r2-${i}`}
-              className="cursor-pointer inline-flex items-center gap-3 px-7 py-3.5 rounded-md text-sm font-bold border border-white/10 bg-white/6 text-white/70 hover:bg-white/12 hover:border-white/20 hover:text-white hover:scale-105 transition-all duration-300 shrink-0 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
-            >
-              <span className="w-2 h-2 rounded-full bg-white opacity-20" />
-              {f.name}
-            </span>
-          ))}
+            {/* Main Hero Card - Spans 7 cols */}
+            <div className="lg:col-span-7 bg-navy rounded-[2.5rem] p-10 md:p-14 text-white overflow-hidden relative group/hero flex flex-col justify-between min-h-[480px] shadow-[0_20px_60px_rgba(26,38,74,0.15)]">
+              <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white opacity-[0.03] rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 group-hover/hero:scale-110 group-hover/hero:opacity-[0.05] transition-all duration-1000" />
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
+
+              <div className="relative z-10">
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6">
+                  Defense Grade <br /> Architecture.
+                </h3>
+                <p className="text-white/70 text-lg font-medium max-w-md leading-relaxed">
+                  Engineered to eradicate friction. We replace fragmented tools with a singular, high-performance execution engine backed by cryptographic security.
+                </p>
+              </div>
+
+              <div className="mt-12 flex items-center gap-5 relative z-10 bg-white/5 p-4 pr-8 rounded-2xl w-max backdrop-blur-md border border-white/10">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3].map((i) => (
+                    <img key={i} src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 60}&backgroundColor=ffffff`} alt="Team" className="w-12 h-12 rounded-full border-2 border-navy object-cover shadow-lg" />
+                  ))}
+                </div>
+                <div>
+                  <p className="font-bold text-lg text-white">Built by Experts</p>
+                  <p className="text-white/60 font-semibold text-xs tracking-wider uppercase mt-0.5">For Global Teams</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side stack - Spans 5 cols */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+
+              {/* Top Right Card */}
+              <div className="bg-white rounded-[2.5rem] p-10 lg:p-12 border border-navy/[0.04] shadow-[0_20px_40px_rgba(26,38,74,0.03)] flex-1 group/card hover:-translate-y-2 transition-transform duration-500 hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
+                <h3 className="text-3xl font-black text-navy mb-4 tracking-tight">Global Scale</h3>
+                <p className="text-navy/60 font-medium text-lg leading-relaxed">
+                  Operates seamlessly across distributed nodes with zero configuration drift. Operates seamlessly across distributed nodes with zero configuration drift. Operates seamlessly across distributed nodes with zero configuration drift.
+                </p>
+              </div>
+
+              {/* Bottom Right Split */}
+              <div className="grid grid-cols-2 gap-6 flex-1">
+                <div className="bg-white rounded-[2rem] p-8 border border-navy/[0.04] shadow-[0_20px_40px_rgba(26,38,74,0.03)] group/min hover:-translate-y-2 transition-all duration-500 flex flex-col justify-center items-center text-center hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
+                  <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center mb-5 group-hover/min:scale-110 transition-transform duration-500">
+                    <Zap className="text-navy w-7 h-7" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-black text-navy mb-2 tracking-tight">Zero Latency</h3>
+                  <p className="text-navy/50 text-sm font-semibold">Immediate telemetry.</p>
+                </div>
+
+                <div className="bg-white rounded-[2rem] p-8 border border-navy/[0.04] shadow-[0_20px_40px_rgba(26,38,74,0.03)] group/min hover:-translate-y-2 transition-all duration-500 flex flex-col justify-center items-center text-center hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
+                  <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center mb-5 group-hover/min:scale-110 transition-transform duration-500">
+                    <Users className="text-navy w-7 h-7" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-black text-navy mb-2 tracking-tight">Elite Teams</h3>
+                  <p className="text-navy/50 text-sm font-semibold">For heavy QA pipelines.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </motion.div>
         </div>
       </section>
 
@@ -441,11 +488,11 @@ export default function LandingPage() {
                     backgroundColor: 'rgba(26,38,74,0.02)',
                     transition: { type: "spring", stiffness: 300, damping: 25 }
                   }}
-                  className="group h-full bg-offwhite border border-navy/5 rounded-md p-12 hover:border-navy/10 transition-all duration-500"
+                  className="group h-full bg-offwhite border border-navy/5 rounded-2xl p-8 hover:border-navy/10 transition-all duration-500"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-20 h-20 rounded-md bg-navy text-white flex items-center justify-center mb-10 shadow-2xl shadow-navy/20"
+                    className="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center mb-10 shadow-2xl shadow-navy/20"
                   >
                     {f.icon}
                   </motion.div>
@@ -480,8 +527,8 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-28"
           >
-            <h2 className="text-6xl font-bold text-white mb-8">Execution Flow</h2>
-            <p className="text-white/40 text-xl font-medium">A systematic approach to quality assurance, engineered for absolute efficiency.</p>
+            <h2 className="text-6xl font-bold text-white mb-2">Execution Flow</h2>
+            <p className="text-white/40 text-xl font-normal">A systematic approach to quality assurance, engineered for absolute efficiency.</p>
           </motion.div>
 
           {/* Steps */}
@@ -566,8 +613,8 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <h2 className="text-6xl font-bold text-navy mb-4">Scaling Logic</h2>
-            <p className="text-navy/60 text-xl font-medium">Clear, transparent investment options for organizations focused on excellence.</p>
+            <h2 className="text-6xl font-bold text-navy mb-2">Pricing Plans</h2>
+            <p className="text-navy/60 text-xl font-normal">Clear, transparent investment options for organizations focused on excellence.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
@@ -583,15 +630,15 @@ export default function LandingPage() {
                     backgroundColor: plan.highlighted ? '#1A264A' : 'rgba(26,38,74,0.02)',
                     transition: { duration: 0.4 }
                   }}
-                  className={`group h-full rounded-md p-12 border transition-all duration-500 flex flex-col ${plan.highlighted
+                  className={`group h-full rounded-md p-6 border transition-all duration-500 flex flex-col ${plan.highlighted
                     ? 'bg-navy text-white border-navy shadow-[0_32px_64px_rgba(26,38,74,0.16)]'
                     : 'bg-offwhite border-navy/5 hover:border-navy/10'
                     }`}
                 >
-                  <p className={`text-xs font-bold mb-8 ${plan.highlighted ? 'text-white/60' : 'text-navy/40'}`}>{plan.name}</p>
+                  <p className={`text-lg font-bold mb-4 uppercase ${plan.highlighted ? 'text-white/60' : 'text-navy/40'}`}>{plan.name}</p>
                   <div className="flex items-baseline gap-2 mb-8">
                     <span className="text-6xl font-bold leading-none">{plan.price}</span>
-                    {plan.period && <span className={`text-sm font-bold ${plan.highlighted ? 'text-white/40' : 'text-navy/20'}`}>{plan.period.replace('/', '')}</span>}
+                    {plan.period && <span className={`text-md font-semibold ${plan.highlighted ? 'text-white/80' : 'text-navy/60'}`}>/ {plan.period}</span>}
                   </div>
                   <p className={`mb-12 text-lg font-medium leading-relaxed ${plan.highlighted ? 'text-white/80' : 'text-navy/60'}`}>{plan.desc}</p>
 
@@ -608,7 +655,7 @@ export default function LandingPage() {
 
                   <Link
                     href="/auth/signup"
-                    className={`block w-full text-center py-5 rounded-md text-base font-bold transition-all ${plan.highlighted
+                    className={`block w-full text-center py-4 rounded-md text-base font-bold transition-all ${plan.highlighted
                       ? 'bg-white text-navy hover:scale-[1.02]'
                       : 'bg-navy text-white hover:scale-[1.02]'
                       }`}
@@ -622,92 +669,63 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" ref={aboutRef} className="py-24 px-6 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-32">
+      {/* CTA BANNER */}
+      <section className="py-16 px-6 bg-white relative">
+        <div className="max-w-7xl mx-auto relative">
           <motion.div
-            style={{ y: aYText }}
-            variants={sectionVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="flex-1"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+            className="relative rounded-[3rem] px-8 sm:px-16 md:px-24 py-32 text-center overflow-hidden shadow-[0_40px_80px_rgba(26,38,74,0.15)] group"
           >
-            <h2 className="text-6xl font-bold text-navy mb-12">Quality Simplified</h2>
-
-            <div className="space-y-8 text-navy/60 leading-relaxed text-xl font-medium">
-              <p>Verixa was engineered to solve a critical systemic failure: QA teams spend 70% of their operational cycles managing architectural debt, scattered evidence, and opaque reporting.</p>
-              <p>We've created a unified high-performance environment where test strategy, execution telemetry, and formal governance converge. From agile disruptors to global enterprises, Verixa is the gold standard for quality authority.</p>
+            {/* Background Image Setup */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src="/image.png"
+                alt="Verixa Software"
+                className="w-full h-full object-cover transition-transform duration-2000 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-navy/80 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-navy/40" />
+              <div className="absolute inset-0 bg-linear-to-t from-navy/60 via-transparent to-navy/30" />
             </div>
 
-            <div className="mt-16">
-              <motion.div whileHover={{ scale: 1.02 }}>
-                <Link href="/auth/signup" className="bg-navy text-white inline-flex items-center gap-4 text-lg font-bold px-12 py-5 rounded-md shadow-xl shadow-navy/10">
-                  Secure Your Access <ArrowRight size={20} />
+            <div className="absolute inset-0 rounded-[3rem] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] pointer-events-none z-10" />
+            <div className="relative z-10 max-w-4xl mx-auto">
+              <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-[1.15] tracking-tight">
+                Ready to ensure quality?
+              </h2>
+              <p className="text-white text-md md:text-xl mb-14 font-normal leading-relaxed opacity-90 max-w-3xl mx-auto">
+                Join the thousands of elite organizations using Verixa to eliminate uncertainty, streamline testing, and drive excellence across every deployment.
+              </p>
+
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block">
+                <Link href="/auth/signup" className="group/btn bg-white text-navy inline-flex items-center gap-4 text-xl font-bold px-6 py-4 rounded-lg shadow-[0_10px_40px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-500">
+                  Get Started For Free
+                  <span className="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center group-hover/btn:bg-navy/10 transition-colors duration-300">
+                    <ArrowRight size={20} className="text-navy group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </span>
                 </Link>
               </motion.div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            style={{ y: aYGrid }}
-            variants={sectionVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="flex-1 max-w-xl w-full"
-          >
-            <div className="grid grid-cols-2 gap-8">
-              {[
-                { icon: <Globe size={40} />, label: 'Global Scale', sub: 'Deployed Worldwide' },
-                { icon: <Users size={40} />, label: 'Elite Teams', sub: 'Designed for Experts' },
-                { icon: <Zap size={40} />, label: 'Zero Latency', sub: 'Optimized Workflows' },
-                { icon: <Shield size={40} />, label: 'Secure Vault', sub: 'Enterprise Integrity' },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ y: -10, backgroundColor: 'rgba(26,38,74,0.02)' }}
-                  className="bg-offwhite rounded-md p-10 border border-navy/5 transition-all duration-500"
-                >
-                  <div className="text-navy mb-8 opacity-40">{item.icon}</div>
-                  <p className="font-bold text-lg text-navy mb-2">{item.label}</p>
-                  <p className="text-sm text-navy/40 font-medium">{item.sub}</p>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="py-24 px-6 bg-white">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-6xl mx-auto text-center bg-offwhite rounded-md px-10 py-16 border border-navy/5 relative overflow-hidden"
-        >
-          <div className="absolute inset-0 dot-grid opacity-20" />
-
-          <h2 className="text-6xl sm:text-7xl font-bold text-navy mb-4 relative z-10 leading-tight">Ready to secure your quality gates?</h2>
-          <p className="text-navy/40 text-xl mb-8 max-w-2xl mx-auto relative z-10 font-medium">Join the thousands of teams using Verixa to eliminate uncertainty and drive excellence.</p>
-
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/auth/signup" className="bg-navy text-white inline-flex items-center gap-3 text-lg font-bold px-10 py-5 rounded-md relative z-10 shadow-2xl shadow-navy/20">
-              Get Started <ArrowRight size={28} />
-            </Link>
-          </motion.div>
-        </motion.div>
-      </section>
-
       {/* FOOTER */}
-      <footer className="bg-white border-t border-navy/5 py-16 px-6 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-20 mb-16">
+      <footer className="bg-[#0b1224] border-t border-white/5 pt-16 pb-8 px-6 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-20 mb-20">
             <div className="col-span-2 md:col-span-1">
-              <span className="text-4xl font-bold text-navy">Verixa</span>
-              <p className="text-base text-navy/30 font-bold leading-relaxed mt-4">High-performance UAT management platform. Absolute confidence in every deployment.</p>
+              <Link href="/" className="flex items-center">
+                {/* Ensure logo works on dark background */}
+                <img src="/logo.png" alt="Verixa Logo" className="h-16 w-auto brightness-0 invert" />
+                <span className="text-4xl font-extrabold tracking-tight text-white">Verixa</span>
+              </Link>
+              <p className="text-base text-white/50 font-normal leading-relaxed mt-2">
+                High-performance UAT management platform. Absolute confidence in every deployment.
+              </p>
             </div>
 
             {[
@@ -716,25 +734,22 @@ export default function LandingPage() {
               { title: 'Support', links: ['Directives', 'Terms', 'Privacy'] },
             ].map((col, idx) => (
               <div key={idx}>
-                <p className="text-xs font-bold text-navy/20 mb-6 tracking-[0.2em]">{col.title.toUpperCase()}</p>
-                <ul className="space-y-6">
+                <p className="text-xs font-bold text-white/30 mb-8 tracking-[0.25em]">{col.title.toUpperCase()}</p>
+                <ul className="space-y-4">
                   {col.links.map(l => (
-                    <li key={l}><a href="#" className="text-base font-bold text-navy/40 hover:text-navy transition-all hover:translate-x-1 inline-block">{l}</a></li>
+                    <li key={l}>
+                      <a href="#" className="text-sm font-medium text-white/60 hover:text-white transition-all hover:translate-x-1 inline-block">
+                        {l}
+                      </a>
+                    </li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
 
-          <div className="border-t border-navy/5 pt-4 flex flex-col sm:flex-row items-center justify-between gap-12 text-sm font-bold text-navy/20">
+          <div className="border-t border-white/10 pt-4 flex flex-col md:flex-row items-center justify-center gap-6 text-sm font-medium text-white/40">
             <p>© {new Date().getFullYear()} Verixa Engineering. All rights reserved.</p>
-            <div className="flex items-center gap-12">
-              {['github', 'linkedin', 'twitter'].map(icon => (
-                <a key={icon} href="#" className="hover:text-navy transition-all hover:scale-110">
-                  <i className={`fa-brands fa-${icon} text-xl`} />
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </footer>
