@@ -88,7 +88,7 @@ export default function SignUpPage() {
       </div>
 
       {/* Right Panel - 45% */}
-      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
+      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[48px] bg-white">
         <div className="w-full max-w-[440px]">
           <div className="mb-12 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold text-navy leading-tight mb-2">
@@ -197,7 +197,7 @@ export default function SignUpPage() {
                   className="w-5 h-5 rounded-md border-navy/10 text-navy focus:ring-navy cursor-pointer accent-navy"
                 />
               </div>
-              <label htmlFor="terms" className="text-[12px] font-bold text-navy/40 leading-tight cursor-pointer hover:text-navy transition-colors">
+              <label htmlFor="terms" className="text-[14px] font-semibold text-navy/40 leading-tight cursor-pointer hover:text-navy transition-colors">
                 I agree to the <Link href="#" className="text-navy font-bold hover:underline">Terms</Link> and <Link href="#" className="text-navy font-bold hover:underline">Privacy Policy</Link>
               </label>
             </div>
@@ -207,7 +207,7 @@ export default function SignUpPage() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full h-[60px] bg-navy text-white rounded-xl font-bold text-sm shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
+              className="cursor-pointer w-full h-[54px] bg-navy text-white rounded-md font-bold text-sm shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
@@ -220,7 +220,7 @@ export default function SignUpPage() {
             </motion.button>
           </form>
 
-          <p className="text-center text-sm text-navy/40 mt-10 font-medium">
+          <p className="text-center text-sm text-navy/40 mt-4 font-medium">
             Already have an account?{' '}
             <Link href="/auth/login" className="text-navy font-bold hover:underline transition-all">
               Sign in

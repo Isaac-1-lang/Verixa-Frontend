@@ -209,13 +209,21 @@ export default function LandingPage() {
             VERIXA
           </Link>
 
-          <div className="hidden lg:flex items-center gap-10 relative z-10">
+          <div className="hidden lg:flex items-center gap-8 relative z-10">
             {NAV_LINKS.map(link => (
               <a key={link.href} href={link.href} className="text-[18px] font-semibold text-navy hover:text-navy transition-colors relative group py-2">
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-navy rounded-full transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100" />
               </a>
             ))}
+            <div className="flex items-center gap-6 ml-2 pl-8 border-l border-navy/10">
+              <Link href="/auth/login" className="text-[16px] font-bold text-navy hover:text-navy/70 transition-colors">
+                Sign In
+              </Link>
+              <Link href="/auth/signup" className="bg-navy text-white px-6 py-2.5 rounded-full font-bold text-[15px] hover:scale-105 transition-transform shadow-[0_4px_14px_rgba(26,38,74,0.15)]">
+                Get Started
+              </Link>
+            </div>
           </div>
 
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden relative z-10 p-2.5 rounded-full hover:bg-navy/5 text-navy transition-colors">
@@ -244,10 +252,8 @@ export default function LandingPage() {
       </motion.nav>
 
       <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-white">
-        {/* Subtle Decorative elements */}
         <div className="absolute inset-0 dot-grid opacity-[0.03]" />
 
-        {/* Soft Background Glows */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-navy opacity-[0.03] rounded-full blur-[150px] -mr-96 -mt-96" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-navy opacity-[0.02] rounded-full blur-[120px] -ml-48 -mb-48" />
 
@@ -275,7 +281,6 @@ export default function LandingPage() {
                 Verixa is the unified platform where elite QA teams execute tests, track defects, and master the standard of modern UAT.
               </motion.p>
 
-              {/* Social Proof */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -428,7 +433,7 @@ export default function LandingPage() {
             <div className="lg:col-span-5 flex flex-col gap-6">
 
               {/* Top Right Card */}
-              <div className="bg-white rounded-[2.5rem] p-10 lg:p-12 border border-navy/[0.04] shadow-[0_20px_40px_rgba(26,38,74,0.03)] flex-1 group/card hover:-translate-y-2 transition-transform duration-500 hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
+              <div className="bg-white rounded-[2.5rem] p-10 lg:p-12 border border-navy/0.04 shadow-[0_20px_40px_rgba(26,38,74,0.03)] flex-1 group/card hover:-translate-y-2 transition-transform duration-500 hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
                 <h3 className="text-3xl font-black text-navy mb-4 tracking-tight">Global Scale</h3>
                 <p className="text-navy/60 font-medium text-lg leading-relaxed">
                   Operates seamlessly across distributed nodes with zero configuration drift. Operates seamlessly across distributed nodes with zero configuration drift. Operates seamlessly across distributed nodes with zero configuration drift.
@@ -437,7 +442,7 @@ export default function LandingPage() {
 
               {/* Bottom Right Split */}
               <div className="grid grid-cols-2 gap-6 flex-1">
-                <div className="bg-white rounded-[2rem] p-8 border border-navy/[0.04] shadow-[0_20px_40px_rgba(26,38,74,0.03)] group/min hover:-translate-y-2 transition-all duration-500 flex flex-col justify-center items-center text-center hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
+                <div className="bg-white rounded-4xl p-8 border border-navy/0.04 shadow-[0_20px_40px_rgba(26,38,74,0.03)] group/min hover:-translate-y-2 transition-all duration-500 flex flex-col justify-center items-center text-center hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
                   <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center mb-5 group-hover/min:scale-110 transition-transform duration-500">
                     <Zap className="text-navy w-7 h-7" strokeWidth={1.5} />
                   </div>
@@ -445,7 +450,7 @@ export default function LandingPage() {
                   <p className="text-navy/50 text-sm font-semibold">Immediate telemetry.</p>
                 </div>
 
-                <div className="bg-white rounded-[2rem] p-8 border border-navy/[0.04] shadow-[0_20px_40px_rgba(26,38,74,0.03)] group/min hover:-translate-y-2 transition-all duration-500 flex flex-col justify-center items-center text-center hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
+                <div className="bg-white rounded-4xl p-8 border border-navy/0.04 shadow-[0_20px_40px_rgba(26,38,74,0.03)] group/min hover:-translate-y-2 transition-all duration-500 flex flex-col justify-center items-center text-center hover:shadow-[0_40px_80px_rgba(26,38,74,0.08)]">
                   <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center mb-5 group-hover/min:scale-110 transition-transform duration-500">
                     <Users className="text-navy w-7 h-7" strokeWidth={1.5} />
                   </div>
@@ -453,7 +458,6 @@ export default function LandingPage() {
                   <p className="text-navy/50 text-sm font-semibold">For heavy QA pipelines.</p>
                 </div>
               </div>
-
             </div>
 
           </motion.div>
