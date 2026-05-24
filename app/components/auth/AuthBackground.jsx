@@ -23,8 +23,44 @@ export default function AuthBackground({ title, subtitle }) {
                 >
                     <path
                         fill="currentColor"
+                        fillOpacity="0.15"
+                        d="M820,560Q740,720,590,790Q440,860,300,750Q160,640,130,495Q100,350,200,238Q300,126,458,122Q616,118,722,226Q828,334,848,447Q868,560,820,560Z"
+                    />
+
+                    <path
+                        fill="currentColor"
+                        fillOpacity="0.55"
                         d="M782,589Q700,728,558,792Q416,856,292,756Q168,656,120,520Q72,384,172,268Q272,152,420,140Q568,128,684,230Q800,332,832,466Q864,600,782,589Z"
                     />
+
+                    <path
+                        fill="currentColor"
+                        fillOpacity="0.30"
+                        d="M720,560Q660,670,550,710Q440,750,340,680Q240,610,220,500Q200,390,280,310Q360,230,470,228Q580,226,660,310Q740,394,748,477Q756,560,720,560Z"
+                    />
+
+                    {/* Top-right accent */}
+                    <path
+                        fill="currentColor"
+                        fillOpacity="0.25"
+                        d="M760,130Q800,90,840,130Q880,170,850,220Q820,270,770,260Q720,250,700,200Q680,150,760,130Z"
+                    />
+
+                    {/* Bottom-left accent */}
+                    <path
+                        fill="currentColor"
+                        fillOpacity="0.25"
+                        d="M150,730Q100,770,100,830Q100,890,160,890Q220,890,250,840Q280,790,250,750Q220,710,150,730Z"
+                    />
+
+                    {/* Small circle — top center */}
+                    <circle fill="currentColor" fillOpacity="0.20" cx="450" cy="155" r="55"/>
+
+                    {/* Small circle — bottom right */}
+                    <circle fill="currentColor" fillOpacity="0.18" cx="730" cy="750" r="42"/>
+
+                    {/* Small circle — left */}
+                    <circle fill="currentColor" fillOpacity="0.15" cx="128" cy="430" r="34"/>
                 </motion.svg>
             </div>
 
@@ -77,34 +113,6 @@ export default function AuthBackground({ title, subtitle }) {
                     ))}
                 </motion.ul>
             </div>
-
-            {/* Bottom — Testimonial card */}
-            <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 1 }}
-                className="relative z-10 bg-white/0.06 border border-white/10 backdrop-blur-sm rounded-2xl p-6"
-            >
-                <div className="flex items-center gap-1 mb-3">
-                    {[1, 2, 3, 4, 5].map(s => (
-                        <Star key={s} size={13} className="fill-white text-white opacity-70" />
-                    ))}
-                </div>
-                <p className="text-white/75 text-[15px] font-medium leading-relaxed mb-4">
-                    "Verixa transformed how our team manages QA. The clarity and control it provides is simply unmatched."
-                </p>
-                <div className="flex items-center gap-3">
-                    <img
-                        src={`https://api.dicebear.com/7.x/avataaars/svg?seed=72&backgroundColor=ffffff`}
-                        alt="Testimonial"
-                        className="w-9 h-9 rounded-full border border-white/20 bg-white/10"
-                    />
-                    <div>
-                        <p className="text-white font-bold text-sm">Sarah Mitchell</p>
-                        <p className="text-white/40 text-[12px] font-medium">Head of QA, Nexora Labs</p>
-                    </div>
-                </div>
-            </motion.div>
         </div>
     );
 }

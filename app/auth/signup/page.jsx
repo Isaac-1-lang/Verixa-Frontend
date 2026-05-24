@@ -69,11 +69,23 @@ export default function SignUpPage() {
       router.push('/dashboard');
     } catch (error) {
       console.error('Registration error:', error);
-      if (error.data?.message) {
-        setErrors({ _root: error.data.message });
-      } else {
-        setErrors({ _root: "Registration failed. Please try again." });
+
+      if (error?.status === 'NETWORK_ERROR' || error?.error) {
+        setErrors({ _root: 'Cannot connect to the server. Please make sure the backend is running.' });
+        return;
       }
+
+      if (error?.data?.message) {
+        setErrors({ _root: error.data.message });
+        return;
+      }
+      if (error?.data?.errors) {
+        const first = Object.values(error.data.errors)[0];
+        setErrors({ _root: Array.isArray(first) ? first[0] : first });
+        return;
+      }
+
+      setErrors({ _root: 'Registration failed. Please try again.' });
     }
   };
 
