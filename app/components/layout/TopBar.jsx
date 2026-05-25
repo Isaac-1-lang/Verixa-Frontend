@@ -41,7 +41,7 @@ export default function TopBar({ onMenuClick }) {
   const email = user?.email || '';
 
   return (
-    <header className="h-[72px] bg-white border-b border-navy/[0.06] flex items-center justify-between px-6 lg:px-8 sticky top-0 z-40"
+    <header className="h-[72px] bg-white border-b border-navy/6 flex items-center justify-between px-6 lg:px-8 sticky top-0 z-40"
       style={{ boxShadow: '0 1px 12px rgba(26,38,74,0.04)' }}
     >
       {/* Left — Hamburger + Search */}
@@ -105,7 +105,7 @@ export default function TopBar({ onMenuClick }) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.97 }}
                 transition={{ duration: 0.15 }}
-                className="absolute right-0 mt-2 w-[360px] bg-white border border-navy/[0.08] rounded-2xl shadow-2xl shadow-navy/10 z-50 overflow-hidden"
+                className="absolute right-0 mt-2 w-[360px] bg-white border border-navy/8 rounded-2xl shadow-2xl shadow-navy/10 z-50 overflow-hidden"
               >
                 <div className="px-5 py-4 border-b border-navy/5 flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -121,7 +121,7 @@ export default function TopBar({ onMenuClick }) {
                   {notifications.map((n) => (
                     <div
                       key={n.id}
-                      className={`px-5 py-3.5 border-b border-navy/[0.04] last:border-0 cursor-pointer transition-colors flex gap-3 ${!n.isRead ? 'bg-navy/[0.025] hover:bg-navy/[0.04]' : 'hover:bg-navy/[0.02]'
+                      className={`px-5 py-3.5 border-b border-navy/4 last:border-0 cursor-pointer transition-colors flex gap-3 ${!n.isRead ? 'bg-navy/2.5 hover:bg-navy/4' : 'hover:bg-navy/2'
                         }`}
                     >
                       <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${!n.isRead ? 'bg-navy' : 'bg-transparent'}`} />
@@ -134,7 +134,7 @@ export default function TopBar({ onMenuClick }) {
                   ))}
                 </div>
 
-                <div className="px-5 py-3 border-t border-navy/5 bg-navy/[0.01]">
+                <div className="px-5 py-3 border-t border-navy/5 bg-navy/1">
                   <Link href="/dashboard/notifications" onClick={() => setIsNotificationsOpen(false)}
                     className="text-[11.5px] font-bold text-navy/40 hover:text-navy transition-colors block text-center">
                     View all notifications →
@@ -146,13 +146,13 @@ export default function TopBar({ onMenuClick }) {
         </div>
 
         {/* Divider */}
-        <div className="w-px h-6 bg-navy/[0.08] mx-1" />
+        <div className="w-px h-6 bg-navy/8 mx-1" />
 
         {/* Profile */}
         <div className="relative" ref={profileRef}>
           <button
             onClick={() => { setIsProfileOpen(v => !v); setIsNotificationsOpen(false); }}
-            className={`flex items-center gap-2.5 py-1.5 px-2 rounded-xl transition-all ${isProfileOpen ? 'bg-navy/5' : 'hover:bg-navy/[0.04]'
+            className={`flex items-center gap-2.5 py-1.5 px-2 rounded-xl transition-all ${isProfileOpen ? 'bg-navy/5' : 'hover:bg-navy/4'
               }`}
           >
             {/* Avatar */}
@@ -180,10 +180,10 @@ export default function TopBar({ onMenuClick }) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.97 }}
                 transition={{ duration: 0.15 }}
-                className="absolute right-0 mt-2 w-[220px] bg-white border border-navy/[0.08] rounded-2xl shadow-2xl shadow-navy/10 z-50 overflow-hidden"
+                className="absolute right-0 mt-2 w-[220px] bg-white border border-navy/8 rounded-2xl shadow-2xl shadow-navy/10 z-50 overflow-hidden"
               >
                 {/* User info */}
-                <div className="px-4 py-3.5 border-b border-navy/5 bg-navy/[0.01]">
+                <div className="px-4 py-3.5 border-b border-navy/5 bg-navy/1">
                   <p className="text-[13px] font-bold text-navy truncate">{fullName}</p>
                   <p className="text-[11px] text-navy/40 mt-0.5 truncate">{email || 'Verixa User'}</p>
                 </div>
@@ -194,7 +194,7 @@ export default function TopBar({ onMenuClick }) {
                     { href: '/dashboard/settings', icon: Settings, label: 'Settings' },
                   ].map(({ href, icon: Icon, label }) => (
                     <Link key={href} href={href} onClick={() => setIsProfileOpen(false)}
-                      className="flex items-center gap-3 px-4 py-2.5 text-[12.5px] font-semibold text-navy/60 hover:text-navy hover:bg-navy/[0.04] transition-all">
+                      className="flex items-center gap-3 px-4 py-2.5 text-[12.5px] font-semibold text-navy/60 hover:text-navy hover:bg-navy/4 transition-all">
                       <Icon size={14} className="text-navy/30" />
                       {label}
                     </Link>
