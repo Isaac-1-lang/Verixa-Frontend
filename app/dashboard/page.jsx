@@ -63,9 +63,9 @@ export default function DashboardPage() {
         {quickActions.map((action, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + idx * 0.1 }}>
             <Link href={action.link}
-              className="group relative overflow-hidden bg-white border border-navy/5 rounded-md p-8 hover:bg-navy/5 hover:border-navy/10 transition-all block">
+              className="group relative overflow-hidden bg-white border border-navy/5 rounded-xl p-8 hover:bg-navy/5 hover:border-navy/10 transition-all block">
               <div className="flex justify-between items-start mb-8">
-                <div className="w-14 h-14 bg-navy text-white rounded-md flex items-center justify-center group-hover:scale-105 transition-transform shadow-lg shadow-navy/10">
+                <div className="w-14 h-14 bg-navy text-white rounded-full flex items-center justify-center group-hover:scale-105 transition-transform shadow-lg shadow-navy/10">
                   {action.icon}
                 </div>
                 <ArrowUpRight className="text-navy/10 group-hover:text-navy transition-colors" size={20} />
@@ -80,9 +80,9 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {statCards.map((stat, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 + idx * 0.1 }}
-            className="bg-white border border-navy/5 rounded-md p-10 hover:shadow-xl hover:shadow-navy/5 transition-all group">
+            className="bg-white border border-navy/5 rounded-xl p-6 hover:shadow-xl hover:shadow-navy/5 transition-all group">
             <div className="flex items-start justify-between mb-8">
-              <div className="w-16 h-16 bg-navy/5 rounded-md border border-navy/5 flex items-center justify-center text-navy group-hover:scale-105 transition-transform">
+              <div className="w-16 h-16 bg-navy/5 rounded-full border border-navy/5 flex items-center justify-center text-navy group-hover:scale-105 transition-transform">
                 {stat.icon}
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function DashboardPage() {
               <p className="text-5xl font-bold text-navy">{stat.value}</p>
             </div>
             {stat.link && (
-              <Link href={stat.link} className="text-xs font-bold text-navy/30 hover:text-navy mt-8 inline-block transition-all">
+              <Link href={stat.link} className="text-xs font-bold text-navy/30 hover:text-navy mt-4 inline-block transition-all">
                 View details →
               </Link>
             )}

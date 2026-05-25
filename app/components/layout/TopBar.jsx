@@ -1,170 +1,223 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Search, Bell, ChevronDown, Menu, Check, Settings, LogOut, User } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Bell, ChevronDown, Menu, Settings, LogOut, User, X } from 'lucide-react';
 
 export default function TopBar({ onMenuClick }) {
   const [user, setUser] = useState(null);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [searchFocused, setSearchFocused] = useState(false);
   const dropdownRef = useRef(null);
   const profileRef = useRef(null);
 
-  // Mock Notifications for design
   const notifications = [
-    { id: 1, title: 'New Document Shared', body: 'Sarah left a comment on your physics assignment.', isRead: false, createdAt: new Date() },
-    { id: 2, title: 'System Update', body: 'Maintenance scheduled for tonight at 12 AM.', isRead: true, createdAt: new Date() }
+    { id: 1, title: 'New test run assigned', body: 'Sarah assigned you to Run #42 — Login Flow.', isRead: false, time: '2m ago' },
+    { id: 2, title: 'Defect resolved', body: 'DEF-119 has been marked as resolved.', isRead: false, time: '14m ago' },
+    { id: 3, title: 'System maintenance', body: 'Scheduled tonight at 12:00 AM UTC.', isRead: true, time: '1h ago' },
   ];
+  const unreadCount = notifications.filter(n => !n.isRead).length;
 
   useEffect(() => {
     const userStr = localStorage.getItem('user');
-    if (userStr) {
-      try { setUser(JSON.parse(userStr)); } catch (e) { }
-    }
+    if (userStr) { try { setUser(JSON.parse(userStr)); } catch (e) { } }
   }, []);
 
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsNotificationsOpen(false);
-      }
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setIsProfileOpen(false);
-      }
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) setIsNotificationsOpen(false);
+      if (profileRef.current && !profileRef.current.contains(e.target)) setIsProfileOpen(false);
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleNotificationClick = async (notif) => {
-    setIsNotificationsOpen(false);
-  };
-
-  const fullName = user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || user.username : "John Doe";
-  const userRole = user ? 'Student' : 'Administrator';
-  const avatarUrl =
-    user?.profilePicture ||
-    user?.profileImageUrl ||
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(fullName)}&background=f8f9fa&color=334155&bold=true`;
+  const fullName = user
+    ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || user.fullName || user.username || 'User'
+    : 'User';
+  const initials = fullName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  const avatarUrl = user?.profilePicture || user?.profileImageUrl || null;
+  const email = user?.email || '';
 
   return (
-    <header className="h-[76px] bg-white border-b border-gray-100 flex items-center justify-between px-6 lg:px-10 sticky top-0 z-40 transition-all shadow-[0_1px_2px_0_rgba(0,0,0,0.02)]">
-      <div className="flex items-center gap-6 flex-1">
+    <header className="h-[72px] bg-white border-b border-navy/[0.06] flex items-center justify-between px-6 lg:px-8 sticky top-0 z-40"
+      style={{ boxShadow: '0 1px 12px rgba(26,38,74,0.04)' }}
+    >
+      {/* Left — Hamburger + Search */}
+      <div className="flex items-center gap-4 flex-1">
         <button
           onClick={onMenuClick}
-          className="lg:hidden p-2.5 rounded-xl hover:bg-gray-50 text-gray-500 transition-colors"
-          aria-label="Open menu"
+          className="lg:hidden w-9 h-9 rounded-xl hover:bg-navy/5 flex items-center justify-center text-navy/40 hover:text-navy transition-all"
         >
-          <Menu size={22} className="stroke-[1.5]" />
+          <Menu size={20} />
         </button>
 
-        <div className="relative flex-1 max-w-[480px] hidden md:block group">
-          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
-            <Search className="h-4 w-4 text-gray-400 group-focus-within:text-blue-500 transition-colors" />
+        {/* Search */}
+        <div className={`ml-4 relative hidden md:flex items-center max-w-[400px] flex-1 transition-all duration-300`}>
+          <div className="absolute left-3.5 text-navy/30 pointer-events-none">
+            <Search size={15} />
           </div>
           <input
             type="text"
-            placeholder="Search for resources, student records..."
-            className="block w-full pl-10 pr-4 py-2.5 border-0 rounded-2xl text-sm 
-            bg-gray-50/80 text-gray-900 placeholder-gray-400 font-medium tracking-wide
-            focus:ring-2 focus:ring-blue-500/20 focus:bg-white focus:outline-none transition-all duration-300"
+            placeholder="Search projects, tests, defects..."
+            onFocus={() => setSearchFocused(true)}
+            onBlur={() => setSearchFocused(false)}
+            className={`w-full pl-9 pr-4 py-2.5 text-[15px] font-medium rounded-md border transition-all duration-200 outline-none
+              ${searchFocused
+                ? 'border-navy/20 bg-white shadow-sm shadow-navy/5 text-navy placeholder-navy/30'
+                : 'border-navy/8 bg-navy/2 text-navy/60 placeholder-navy/20 hover:border-navy/15'
+              }`}
           />
+          {searchFocused && (
+            <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] font-bold text-navy/20 border border-navy/10 rounded px-1.5 py-0.5">
+              ⌘K
+            </div>
+          )}
         </div>
 
-        <button className="md:hidden p-2 rounded-full hover:bg-gray-50 text-gray-500 transition-colors">
-          <Search size={22} className="stroke-[1.5]" />
+        {/* Mobile search icon */}
+        <button className="md:hidden w-9 h-9 rounded-xl hover:bg-navy/5 flex items-center justify-center text-navy/40 transition-all">
+          <Search size={18} />
         </button>
       </div>
 
-      <div className="flex items-center gap-7 ml-4 relative">
+      {/* Right — Bell + Profile */}
+      <div className="flex items-center gap-2 ml-4">
+
+        {/* Notifications */}
         <div className="relative" ref={dropdownRef}>
           <button
-            onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
-            className="relative p-2 rounded-full hover:bg-gray-50 text-gray-500 hover:text-gray-900 transition-colors"
+            onClick={() => { setIsNotificationsOpen(v => !v); setIsProfileOpen(false); }}
+            className={`relative w-9 h-9 rounded-xl flex items-center justify-center transition-all ${isNotificationsOpen ? 'bg-navy text-white' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+              }`}
           >
-            <Bell size={22} className="stroke-[1.5]" />
-            <div className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-blue-500 rounded-full border-2 border-white" />
+            <Bell size={18} />
+            {unreadCount > 0 && (
+              <span className="absolute top-1.5 right-1.5 w-[7px] h-[7px] bg-red-500 rounded-full border border-white" />
+            )}
           </button>
 
-          {isNotificationsOpen && (
-            <div className="absolute right-0 mt-3 w-[380px] bg-white border border-gray-100 rounded-2xl shadow-xl shadow-gray-200/50 z-50 overflow-hidden transform opacity-100 scale-100 origin-top-right transition-all">
-              <div className="px-5 py-4 border-b border-gray-50 flex justify-between items-center bg-white">
-                <h3 className="text-sm font-semibold text-gray-900">Notifications</h3>
-                <button className="text-xs font-medium text-blue-600 hover:text-blue-700">Mark all as read</button>
-              </div>
-              <div className="max-h-[350px] overflow-y-auto">
-                {notifications.length === 0 ? (
-                  <div className="p-8 text-center text-gray-400 text-sm">
-                    You're all caught up!
+          <AnimatePresence>
+            {isNotificationsOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                transition={{ duration: 0.15 }}
+                className="absolute right-0 mt-2 w-[360px] bg-white border border-navy/[0.08] rounded-2xl shadow-2xl shadow-navy/10 z-50 overflow-hidden"
+              >
+                <div className="px-5 py-4 border-b border-navy/5 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-[13px] font-bold text-navy">Notifications</h3>
+                    {unreadCount > 0 && (
+                      <span className="bg-navy text-white text-[10px] font-bold rounded-full px-1.5 py-0.5 leading-none">{unreadCount}</span>
+                    )}
                   </div>
-                ) : (
-                  notifications.map((notif) => (
+                  <button className="text-[11px] font-bold text-navy/40 hover:text-navy transition-colors">Mark all read</button>
+                </div>
+
+                <div className="max-h-[300px] overflow-y-auto custom-scrollbar">
+                  {notifications.map((n) => (
                     <div
-                      key={notif.id}
-                      onClick={() => handleNotificationClick(notif)}
-                      className={`p-4 border-b border-gray-50 last:border-0 cursor-pointer transition-colors flex gap-4 ${!notif.isRead ? 'bg-blue-50/30' : 'hover:bg-gray-50/80'}`}
+                      key={n.id}
+                      className={`px-5 py-3.5 border-b border-navy/[0.04] last:border-0 cursor-pointer transition-colors flex gap-3 ${!n.isRead ? 'bg-navy/[0.025] hover:bg-navy/[0.04]' : 'hover:bg-navy/[0.02]'
+                        }`}
                     >
-                      <div className={`w-2 h-2 mt-2 rounded-full shrink-0 ${!notif.isRead ? 'bg-blue-500' : 'bg-transparent'}`}></div>
-                      <div className="flex-1">
-                        <p className={`text-sm font-semibold mb-0.5 ${!notif.isRead ? 'text-gray-900' : 'text-gray-600'}`}>{notif.title}</p>
-                        <p className={`text-xs leading-relaxed ${!notif.isRead ? 'text-gray-600' : 'text-gray-500'}`}>{notif.body}</p>
-                        <p className="text-[10px] font-medium text-gray-400 mt-2">
-                          {new Date(notif.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                        </p>
+                      <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${!n.isRead ? 'bg-navy' : 'bg-transparent'}`} />
+                      <div className="flex-1 min-w-0">
+                        <p className={`text-[12.5px] font-semibold leading-tight mb-0.5 ${!n.isRead ? 'text-navy' : 'text-navy/60'}`}>{n.title}</p>
+                        <p className="text-[11.5px] text-navy/40 leading-relaxed">{n.body}</p>
+                        <p className="text-[10px] font-bold text-navy/25 mt-1">{n.time}</p>
                       </div>
                     </div>
-                  ))
-                )}
-              </div>
-              <div className="p-3 border-t border-gray-50 bg-gray-50/50 text-center">
-                <Link href="/dashboard/notifications" onClick={() => setIsNotificationsOpen(false)} className="text-xs font-semibold text-gray-600 hover:text-gray-900 transition-colors">
-                  View all notifications
-                </Link>
-              </div>
-            </div>
-          )}
+                  ))}
+                </div>
+
+                <div className="px-5 py-3 border-t border-navy/5 bg-navy/[0.01]">
+                  <Link href="/dashboard/notifications" onClick={() => setIsNotificationsOpen(false)}
+                    className="text-[11.5px] font-bold text-navy/40 hover:text-navy transition-colors block text-center">
+                    View all notifications →
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        <div className="h-7 w-px bg-gray-200 hidden sm:block"></div>
+        {/* Divider */}
+        <div className="w-px h-6 bg-navy/[0.08] mx-1" />
 
+        {/* Profile */}
         <div className="relative" ref={profileRef}>
-          <div
-            onClick={() => setIsProfileOpen(!isProfileOpen)}
-            className="flex items-center gap-3 cursor-pointer group py-1 px-1.5 rounded-full hover:bg-gray-50/80 transition-all border border-transparent hover:border-gray-100"
+          <button
+            onClick={() => { setIsProfileOpen(v => !v); setIsNotificationsOpen(false); }}
+            className={`flex items-center gap-2.5 py-1.5 px-2 rounded-xl transition-all ${isProfileOpen ? 'bg-navy/5' : 'hover:bg-navy/[0.04]'
+              }`}
           >
-            <div className="text-right hidden sm:block mr-1">
-              <p className="text-[13px] font-semibold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">{fullName}</p>
-              <p className="text-[11px] text-gray-500 font-medium">{userRole}</p>
+            {/* Avatar */}
+            <div className="w-8 h-8 rounded-lg overflow-hidden bg-navy flex items-center justify-center shadow-sm shrink-0">
+              {avatarUrl ? (
+                <img src={avatarUrl} alt={fullName} className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-white text-[11px] font-black">{initials}</span>
+              )}
             </div>
-            <img
-              src={avatarUrl}
-              alt={fullName}
-              className="w-10 h-10 rounded-full object-cover ring-2 ring-white border border-gray-100 shadow-sm"
+            <div className="hidden sm:block text-left max-w-[100px]">
+              <p className="text-[12.5px] font-bold text-navy leading-tight truncate">{fullName}</p>
+              <p className="text-[10.5px] text-navy/35 font-medium truncate">{email || 'Verixa User'}</p>
+            </div>
+            <ChevronDown
+              size={13}
+              className={`text-navy/30 hidden sm:block transition-transform duration-200 ${isProfileOpen ? 'rotate-180' : ''}`}
             />
-            <ChevronDown size={14} className="text-gray-400 hidden sm:block mr-1" />
-          </div>
+          </button>
 
-          {isProfileOpen && (
-            <div className="absolute right-0 mt-3 w-[240px] bg-white border border-gray-100 rounded-2xl shadow-xl shadow-gray-200/50 z-50 overflow-hidden transform opacity-100 scale-100 origin-top-right transition-all">
-              <div className="px-5 py-4 border-b border-gray-50 bg-gray-50/30">
-                <p className="text-sm font-semibold text-gray-900 truncate">{fullName}</p>
-                <p className="text-xs text-gray-500 mt-0.5 truncate">{user?.email || 'admin@school.app'}</p>
-              </div>
-              <div className="py-2">
-                <Link href="/dashboard/profile" onClick={() => setIsProfileOpen(false)} className="px-5 py-2.5 hover:bg-gray-50 flex items-center gap-3 text-sm font-medium text-gray-700 transition-colors">
-                  <User size={16} className="text-gray-400" /> My Profile
-                </Link>
-                <Link href="/dashboard/settings" onClick={() => setIsProfileOpen(false)} className="px-5 py-2.5 hover:bg-gray-50 flex items-center gap-3 text-sm font-medium text-gray-700 transition-colors">
-                  <Settings size={16} className="text-gray-400" /> Settings
-                </Link>
-              </div>
-              <div className="py-2 border-t border-gray-50">
-                <button className="w-full px-5 py-2.5 hover:bg-red-50 hover:text-red-600 flex items-center gap-3 text-sm font-medium text-gray-700 transition-colors">
-                  <LogOut size={16} className="text-red-400" /> Log out
-                </button>
-              </div>
-            </div>
-          )}
+          <AnimatePresence>
+            {isProfileOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                transition={{ duration: 0.15 }}
+                className="absolute right-0 mt-2 w-[220px] bg-white border border-navy/[0.08] rounded-2xl shadow-2xl shadow-navy/10 z-50 overflow-hidden"
+              >
+                {/* User info */}
+                <div className="px-4 py-3.5 border-b border-navy/5 bg-navy/[0.01]">
+                  <p className="text-[13px] font-bold text-navy truncate">{fullName}</p>
+                  <p className="text-[11px] text-navy/40 mt-0.5 truncate">{email || 'Verixa User'}</p>
+                </div>
+
+                <div className="py-1.5">
+                  {[
+                    { href: '/dashboard/profile', icon: User, label: 'My Profile' },
+                    { href: '/dashboard/settings', icon: Settings, label: 'Settings' },
+                  ].map(({ href, icon: Icon, label }) => (
+                    <Link key={href} href={href} onClick={() => setIsProfileOpen(false)}
+                      className="flex items-center gap-3 px-4 py-2.5 text-[12.5px] font-semibold text-navy/60 hover:text-navy hover:bg-navy/[0.04] transition-all">
+                      <Icon size={14} className="text-navy/30" />
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="py-1.5 border-t border-navy/5">
+                  <button
+                    onClick={() => {
+                      localStorage.removeItem('token');
+                      localStorage.removeItem('tokenType');
+                      localStorage.removeItem('user');
+                      window.location.href = '/auth/login';
+                    }}
+                    className="w-full flex items-center gap-3 px-4 py-2.5 text-[12.5px] font-semibold text-red-500 hover:bg-red-50 transition-all"
+                  >
+                    <LogOut size={14} className="text-red-400" />
+                    Log out
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </header>
