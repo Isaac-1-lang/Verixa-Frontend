@@ -127,7 +127,7 @@ export default function Sidebar({ isOpen, onClose }) {
             }}
             className="group w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-[13.5px] text-navy/50 hover:text-red-500 hover:bg-red-50 transition-all"
           >
-            <div className="w-8 h-8 rounded-lg bg-navy/[0.04] group-hover:bg-red-100 flex items-center justify-center transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-navy/4 group-hover:bg-red-100 flex items-center justify-center transition-colors">
               <LogOut size={15} className="text-navy/40 group-hover:text-red-500" />
             </div>
             Logout
