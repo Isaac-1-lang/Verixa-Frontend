@@ -67,9 +67,13 @@ export default function SignUpPage() {
       await registerUser(payload).unwrap();
       router.push('/auth/login');
     } catch (error) {
-      console.error('Registration error:', error);
+      console.error('Registration error (raw):', JSON.stringify(error));
 
-      if (error?.status === 'NETWORK_ERROR' || error?.error) {
+      if (
+        error?.status === 'NETWORK_ERROR' ||
+        error?.status === 'FETCH_ERROR' ||
+        error?.error
+      ) {
         setErrors({ _root: 'Cannot connect to the server. Please make sure the backend is running.' });
         return;
       }
@@ -78,9 +82,23 @@ export default function SignUpPage() {
         setErrors({ _root: error.data.message });
         return;
       }
+
       if (error?.data?.errors) {
         const first = Object.values(error.data.errors)[0];
         setErrors({ _root: Array.isArray(first) ? first[0] : first });
+        return;
+      }
+
+      if (typeof error?.data === 'string' && error.data.length > 0) {
+        setErrors({ _root: error.data });
+        return;
+      }
+      if (error?.status === 409) {
+        setErrors({ _root: 'An account with this email already exists.' });
+        return;
+      }
+      if (error?.status === 400) {
+        setErrors({ _root: 'Invalid registration details. Please check your inputs.' });
         return;
       }
 
@@ -99,7 +117,7 @@ export default function SignUpPage() {
       </div>
 
       {/* Right Panel - 45% */}
-      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[48px] bg-white">
+      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[24px] bg-white">
         <div className="w-full max-w-[440px]">
           <div className="mb-12 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold text-navy leading-tight mb-2">
@@ -171,18 +189,17 @@ export default function SignUpPage() {
                 }
               />
 
-              {/* Password Strength Indicator */}
               <div className="space-y-3 px-1">
                 <div className="flex gap-1.5">
                   {[1, 2, 3, 4].map((seg) => (
                     <div
                       key={seg}
-                      className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${strength >= seg ? 'bg-navy shadow-[0_0_10px_rgba(26,38,74,0.2)]' : 'bg-navy/5'
+                      className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${strength >= seg ? 'bg-green-500 shadow-[0_0_10px_rgba(26,38,74,0.2)]' : 'bg-navy/5'
                         }`}
                     />
                   ))}
                 </div>
-                <p className="text-[10px] font-bold text-navy/20">
+                <p className="text-[12px] font-medium text-navy/60">
                   Security Grade: {strength === 4 ? 'Elite' : strength >= 2 ? 'Professional' : 'Standard'}
                 </p>
               </div>

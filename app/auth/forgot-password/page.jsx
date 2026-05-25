@@ -90,7 +90,7 @@ export default function ForgotPasswordPage() {
                                     whileTap={{ scale: 0.99 }}
                                     type="submit"
                                     disabled={isLoading}
-                                    className="w-full h-[52px] bg-navy text-white rounded-xl font-semibold text-[16px] tracking-[0.5px] shadow-lg shadow-navy/10 flex items-center justify-center gap-2 transition-all"
+                                    className="cursor-pointer w-full h-[52px] bg-navy text-white rounded-lg font-semibold text-[16px] tracking-[0.5px] shadow-lg shadow-navy/10 flex items-center justify-center gap-2 transition-all"
                                 >
                                     {isLoading ? (
                                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

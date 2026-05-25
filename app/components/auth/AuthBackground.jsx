@@ -71,9 +71,9 @@ export default function AuthBackground({ title, subtitle }) {
                 className="relative z-10 flex items-center gap-3"
             >
                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
-                    <img src="/logo.png" alt="Logo" className="w-18 h-14" />
+                    <img src="/logo.png" alt="Logo" className="w-14 h-14" />
                 </div>
-                <span className="text-white font-extrabold text-4xl tracking-tight">VERIXA</span>
+                <span className="text-white font-bold text-4xl tracking-tight">VERIXA</span>
             </motion.div>
 
             <div className="relative z-10 flex flex-col gap-8 my-auto py-12">
@@ -82,7 +82,7 @@ export default function AuthBackground({ title, subtitle }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 1, ease: [0.23, 1, 0.32, 1] }}
                 >
-                    <h1 className="text-4xl xl:text-5xl font-black text-white leading-[1.1] tracking-tight mb-6">
+                    <h1 className="text-4xl xl:text-5xl font-black text-white leading-[1.1] tracking-tight mb-2">
                         {title}
                     </h1>
                     <p className="text-white/60 text-lg xl:text-xl font-normal max-w-md">
@@ -108,7 +108,7 @@ export default function AuthBackground({ title, subtitle }) {
                             <div className="w-8 h-8 rounded-full bg-white/10 border border-white/15 flex items-center justify-center shrink-0">
                                 <Icon size={15} className="text-white/80" />
                             </div>
-                            <span className="text-white/70 text-[15px] font-semibold">{text}</span>
+                            <span className="text-white/70 text-[16px] font-medium">{text}</span>
                         </motion.li>
                     ))}
                 </motion.ul>
