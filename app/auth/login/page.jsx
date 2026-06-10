@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useLoginMutation } from '../../redux/api/UserApiSlice';
 import { motion } from 'framer-motion';
-import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, ArrowRight, Shield, Sparkles } from 'lucide-react';
 import AuthBackground from '@/app/components/auth/AuthBackground';
 import AuthInput from '@/app/components/auth/AuthInput';
 
@@ -51,38 +51,73 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-white">
-      <div className="hidden md:flex md:w-[55%] h-screen sticky top-0">
+      {/* Left decorative blob for form side */}
+      <div className="hidden md:block fixed top-0 right-0 w-[30%] h-[30%] pointer-events-none z-0">
+        <svg viewBox="0 0 400 400" className="w-full h-full opacity-[0.03]">
+          <defs>
+            <radialGradient id="formGlowL" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#1A264A" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#1A264A" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          <circle cx="200" cy="200" r="200" fill="url(#formGlowL)" />
+        </svg>
+      </div>
+      <motion.div
+        className="hidden md:block fixed bottom-8 left-[52%] pointer-events-none z-0"
+        animate={{ y: [0, -8, 0], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <Shield size={32} className="text-navy/10" />
+      </motion.div>
+      <motion.div
+        className="hidden md:block fixed top-20 right-[8%] pointer-events-none z-0"
+        animate={{ rotate: [0, 15, 0, -15, 0], scale: [1, 1.2, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <Sparkles size={24} className="text-navy/10" />
+      </motion.div>
+
+      <div className="hidden md:flex md:w-1/2 h-screen sticky top-0">
         <AuthBackground
           title="The Standard for Professional Quality Control"
           subtitle="Verixa provides the elite toolkit for modern QA teams."
         />
       </div>
 
-      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
-        <div className="w-full max-w-[440px]">
+      <div className="md:w-1/2 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white relative">
+        <div className="w-full max-w-[420px] relative z-10">
           {/* Mobile Logo */}
-          <div className="md:hidden mb-12 flex justify-center">
+          <div className="md:hidden mb-10 flex justify-center">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-                <Lock className="text-white" size={20} />
+              <div className="w-10 h-10 bg-navy rounded-xl flex items-center justify-center shadow-lg shadow-navy/10">
+                <img src="/logo.png" alt="Verixa" className="w-5 h-5 brightness-0 invert" />
               </div>
-              <span className="text-navy text-2xl font-semibold">Verixa</span>
+              <span className="text-navy text-xl font-bold tracking-tight">VERIXA</span>
             </Link>
           </div>
 
-          <div className="mb-12 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold text-navy leading-tight mb-2">
+          <div className="mb-8 text-center md:text-left">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="w-12 h-12 bg-navy/5 rounded-2xl border border-navy/10 flex items-center justify-center mb-4 mx-auto md:mx-0"
+            >
+              <Shield size={22} className="text-navy" />
+            </motion.div>
+            <h1 className="text-3xl font-bold text-navy leading-tight mb-1.5">
               Sign In
             </h1>
-            <p className="text-md font-medium text-navy/40 mb-2 ml-1">
+            <p className="text-sm font-medium text-navy/40 mb-3">
               Enter your credentials to access the platform.
             </p>
-            <div className="h-1 w-12 bg-navy rounded-full mx-auto md:mx-1 shadow-lg shadow-navy/20" />
+            <div className="h-0.5 w-10 bg-navy rounded-full mx-auto md:mx-0 shadow-lg shadow-navy/20" />
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-5">
             {errors._root && (
-              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm font-bold">
+              <div className="p-3 bg-red-50 border border-red-100 rounded-lg text-red-600 text-xs font-semibold">
                 {errors._root}
               </div>
             )}
@@ -114,7 +149,7 @@ export default function LoginPage() {
                     onClick={() => setShowPassword(!showPassword)}
                     className="text-navy/20 hover:text-navy transition-colors p-1"
                   >
-                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                   </button>
                 }
               />
@@ -129,24 +164,24 @@ export default function LoginPage() {
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.02, backgroundColor: '#131B34' }}
+              whileHover={{ scale: 1.01, backgroundColor: '#131B34' }}
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="w-full h-[60px] bg-navy text-white rounded-xl font-bold text-sm shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
+              className="cursor-pointer w-full h-[52px] bg-navy text-white rounded-xl font-bold text-sm shadow-xl shadow-navy/20 flex items-center justify-center gap-3 transition-all"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
                 <>
                   Sign In
-                  <ArrowRight size={18} className="opacity-40" />
+                  <ArrowRight size={16} className="opacity-40" />
                 </>
               )}
             </motion.button>
           </form>
 
-          <p className="text-center text-sm text-navy/40 mt-10 font-medium">
+          <p className="text-center text-sm text-navy/40 mt-8 font-medium">
             Don't have an account?{' '}
             <Link href="/auth/signup" className="text-navy font-bold hover:underline transition-all">
               Create one

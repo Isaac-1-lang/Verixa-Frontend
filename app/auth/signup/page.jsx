@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useRegisterMutation } from '../../redux/api/UserApiSlice';
 import { motion } from 'framer-motion';
-import { Mail, Lock, Eye, EyeOff, ArrowRight, User } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, ArrowRight, User, Sparkles, Zap } from 'lucide-react';
 import AuthBackground from '@/app/components/auth/AuthBackground';
 import AuthInput from '@/app/components/auth/AuthInput';
 
@@ -117,26 +117,26 @@ export default function SignUpPage() {
       </div>
 
       {/* Right Panel - 45% */}
-      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[24px] bg-white">
-        <div className="w-full max-w-[440px]">
-          <div className="mb-12 text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl font-bold text-navy leading-tight mb-2">
+      <div className="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white">
+        <div className="w-full max-w-[420px]">
+          <div className="mb-8 text-center md:text-left">
+            <h1 className="text-3xl font-bold text-navy leading-tight mb-1.5">
               Create Account
             </h1>
-            <p className="text-md font-medium text-navy/40 mb-2 ml-1">
+            <p className="text-sm font-medium text-navy/40 mb-3">
               Join Verixa and start streamlining your QA today.
             </p>
-            <div className="h-1 w-12 bg-navy rounded-full mx-auto md:mx-1 shadow-lg shadow-navy/20" />
+            <div className="h-0.5 w-10 bg-navy rounded-full mx-auto md:mx-0 shadow-lg shadow-navy/20" />
           </div>
 
-          <form onSubmit={handleSignUp} className="space-y-6">
+          <form onSubmit={handleSignUp} className="space-y-5">
             {errors._root && (
-              <div className="p-4 bg-red-50 border border-red-100 rounded-xl text-red-600 text-sm font-bold">
+              <div className="p-3 bg-red-50 border border-red-100 rounded-lg text-red-600 text-xs font-semibold">
                 {errors._root}
               </div>
             )}
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               <AuthInput
                 label="First Name"
                 icon={User}
@@ -184,23 +184,23 @@ export default function SignUpPage() {
                     onClick={() => setShowPassword(!showPassword)}
                     className="text-navy/20 hover:text-navy transition-colors p-1"
                   >
-                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                   </button>
                 }
               />
 
-              <div className="space-y-3 px-1">
-                <div className="flex gap-1.5">
+              <div className="space-y-2 px-1">
+                <div className="flex gap-1">
                   {[1, 2, 3, 4].map((seg) => (
                     <div
                       key={seg}
-                      className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${strength >= seg ? 'bg-green-500 shadow-[0_0_10px_rgba(26,38,74,0.2)]' : 'bg-navy/5'
+                      className={`h-1 flex-1 rounded-full transition-all duration-500 ${strength >= seg ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.3)]' : 'bg-navy/5'
                         }`}
                     />
                   ))}
                 </div>
-                <p className="text-[12px] font-medium text-navy/60">
-                  Security Grade: {strength === 4 ? 'Elite' : strength >= 2 ? 'Professional' : 'Standard'}
+                <p className="text-[11px] font-medium text-navy/40">
+                  {strength === 0 ? 'Enter a password' : `Security: ${strength === 4 ? 'Elite' : strength >= 2 ? 'Professional' : 'Standard'}`}
                 </p>
               </div>
             </div>
@@ -216,39 +216,39 @@ export default function SignUpPage() {
               disabled={isLoading}
             />
 
-            <div className="flex items-start gap-3 py-2">
+            <div className="flex items-start gap-3 py-1.5">
               <div className="relative flex items-center h-5">
                 <input
                   id="terms"
                   type="checkbox"
                   required
-                  className="w-5 h-5 rounded-md border-navy/10 text-navy focus:ring-navy cursor-pointer accent-navy"
+                  className="w-4 h-4 rounded border-navy/20 text-navy focus:ring-navy cursor-pointer accent-navy"
                 />
               </div>
-              <label htmlFor="terms" className="text-[14px] font-semibold text-navy/40 leading-tight cursor-pointer hover:text-navy transition-colors">
-                I agree to the <Link href="#" className="text-navy font-bold hover:underline">Terms</Link> and <Link href="#" className="text-navy font-bold hover:underline">Privacy Policy</Link>
+              <label htmlFor="terms" className="text-xs font-medium text-navy/40 leading-snug cursor-pointer hover:text-navy transition-colors">
+                I agree to the <Link href="#" className="text-navy font-semibold hover:underline">Terms</Link> and <Link href="#" className="text-navy font-semibold hover:underline">Privacy Policy</Link>
               </label>
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.02, backgroundColor: '#131B34' }}
+              whileHover={{ scale: 1.01, backgroundColor: '#131B34' }}
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isLoading}
-              className="cursor-pointer w-full h-[54px] bg-navy text-white rounded-md font-bold text-sm shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 transition-all mt-4"
+              className="cursor-pointer w-full h-[52px] bg-navy text-white rounded-xl font-bold text-sm shadow-xl shadow-navy/20 flex items-center justify-center gap-3 transition-all"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
               ) : (
                 <>
                   Create Account
-                  <ArrowRight size={18} className="opacity-40" />
+                  <ArrowRight size={16} className="opacity-40" />
                 </>
               )}
             </motion.button>
           </form>
 
-          <p className="text-center text-sm text-navy/40 mt-4 font-medium">
+          <p className="text-center text-sm text-navy/40 mt-8 font-medium">
             Already have an account?{' '}
             <Link href="/auth/login" className="text-navy font-bold hover:underline transition-all">
               Sign in

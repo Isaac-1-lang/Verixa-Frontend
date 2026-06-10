@@ -89,17 +89,17 @@ export default function TestCasesPage() {
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto px-8 py-12">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
+    <div className="max-w-[1400px] mx-auto px-4 py-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Test Cases</h1>
-          <p className="text-navy/40 text-sm font-medium">Defined structural quality benchmarks</p>
+          <h1 className="text-2xl font-bold text-navy leading-tight mb-1">Test Cases</h1>
+          <p className="text-navy/40 text-xs font-medium">Defined structural quality benchmarks</p>
         </div>
         <button 
           onClick={handleCreateNew}
-          className="flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all"
+          className="flex items-center gap-2 bg-navy text-white px-5 py-2.5 rounded-md font-bold text-xs shadow-lg shadow-navy/10 hover:translate-y-[-1px] transition-all"
         >
-          <Plus size={20} strokeWidth={2.5} /> Create Test Case
+          <Plus size={16} strokeWidth={2.5} /> Create Test Case
         </button>
       </div>
 

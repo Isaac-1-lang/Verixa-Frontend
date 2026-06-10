@@ -86,11 +86,11 @@ export default function ExecutionsPage() {
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto px-8 py-12">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
+    <div className="max-w-[1400px] mx-auto px-4 py-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Execution Logs</h1>
-          <p className="text-navy/40 text-sm font-medium">Historical trace of all quality assurance streams</p>
+          <h1 className="text-2xl font-bold text-navy leading-tight mb-1">Execution Logs</h1>
+          <p className="text-navy/40 text-xs font-medium">Historical trace of all quality assurance streams</p>
         </div>
       </div>
 
