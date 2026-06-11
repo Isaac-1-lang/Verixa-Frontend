@@ -5,13 +5,14 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard, Layers, Compass, LogOut, X,
-  Settings, ChevronRight, Zap, BarChart3, AlertCircle
+  Settings, ChevronRight, Zap, BarChart3, AlertCircle, CheckSquare
 } from 'lucide-react';
 
 const navLinks = [
   { name: 'Dashboard', icon: LayoutDashboard, path: '/dashboard' },
   { name: 'Projects', icon: Layers, path: '/dashboard/projects' },
   { name: 'Test Cases', icon: Zap, path: '/dashboard/test-cases' },
+  { name: 'Requirements', icon: CheckSquare, path: '/dashboard/requirements' },
   { name: 'Test Runs', icon: Compass, path: '/dashboard/runs' },
   { name: 'Executions', icon: BarChart3, path: '/dashboard/executions' },
   { name: 'Defects', icon: AlertCircle, path: '/dashboard/defects' },
@@ -76,7 +77,7 @@ export default function Sidebar({ isOpen, onClose }) {
                   key={item.path}
                   href={item.path}
                   onClick={() => { if (typeof window !== 'undefined' && window.innerWidth < 1024) onClose(); }}
-                  className={`group relative flex items-center gap-3 px-2 py-2 rounded-md font-semibold text-xs transition-all duration-200 ${active
+                  className={`group relative flex items-center gap-3 px-2 py-2 rounded-md font-semibold text-sm transition-all duration-200 ${active
                       ? 'bg-navy text-white shadow-md shadow-navy/20'
                       : 'text-navy/50 hover:text-navy hover:bg-navy/5'
                     }`}
@@ -111,7 +112,7 @@ export default function Sidebar({ isOpen, onClose }) {
         <div className="p-3 border-t border-navy/6 space-y-0.5 shrink-0">
           <Link
             href="/dashboard/profile"
-            className="group flex items-center gap-3 px-3 py-2 rounded-lg font-semibold text-xs text-navy/50 hover:text-navy hover:bg-navy/5 transition-all"
+            className="group flex items-center gap-3 px-3 py-2 rounded-lg font-semibold text-sm text-navy/50 hover:text-navy hover:bg-navy/5 transition-all"
           >
             <div className="w-7 h-7 rounded-lg bg-navy/4 group-hover:bg-navy/8 flex items-center justify-center transition-colors">
               <Settings size={13} className="text-navy/40 group-hover:text-navy" />
@@ -125,7 +126,7 @@ export default function Sidebar({ isOpen, onClose }) {
               localStorage.removeItem('user');
               window.location.href = '/auth/login';
             }}
-            className="group w-full flex items-center gap-3 px-3 py-2 rounded-lg font-semibold text-xs text-navy/50 hover:text-red-500 hover:bg-red-50 transition-all"
+            className="group w-full flex items-center gap-3 px-3 py-2 rounded-lg font-semibold text-sm text-navy/50 hover:text-red-500 hover:bg-red-50 transition-all"
           >
             <div className="w-7 h-7 rounded-lg bg-navy/4 group-hover:bg-red-100 flex items-center justify-center transition-colors">
               <LogOut size={13} className="text-navy/40 group-hover:text-red-500" />

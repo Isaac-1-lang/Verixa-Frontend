@@ -102,7 +102,7 @@ function StatCard({ stat, value, maxValue }) {
         </p>
 
         {/* Label */}
-        <p className="text-xs text-[var(--text-muted)] font-medium flex items-center gap-1.5">
+        <p className="text-sm text-[var(--text-muted)] font-medium flex items-center gap-1.5">
           <span
             className="inline-block w-1.5 h-1.5 rounded-md flex-shrink-0"
             style={{ background: stat.color }}

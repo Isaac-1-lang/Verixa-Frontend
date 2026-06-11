@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  Plus, Clock, AlertCircle, Layers, PlayCircle, FileText, Target, ArrowUpRight
+  Plus, Clock, AlertCircle, Layers, PlayCircle, FileText, Target, ArrowUpRight, CheckSquare
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useGetDashboardAnalyticsQuery } from "@/app/redux/api/DashboardApiSlice";
@@ -29,6 +29,7 @@ export default function DashboardPage() {
 
   const statCards = [
     { title: "Total Projects", value: analytics?.totalProjects ?? 0, icon: <Layers size={16} />, link: "/dashboard/projects" },
+    { title: "Requirements", value: analytics?.totalRequirements ?? 0, icon: <CheckSquare size={16} />, link: "/dashboard/requirements" },
     { title: "Test Cases", value: analytics?.totalTestCases ?? 0, icon: <FileText size={16} />, link: "/dashboard/test-cases" },
     { title: "Active Runs", value: analytics?.activeRuns ?? 0, icon: <PlayCircle size={16} />, link: "/dashboard/runs" },
     { title: "Pass Rate", value: `${analytics?.passRate ?? 0}%`, icon: <Target size={16} /> },
@@ -39,6 +40,7 @@ export default function DashboardPage() {
   const quickActions = [
     { title: "New Project", icon: <Plus size={20} />, link: "/dashboard/projects" },
     { title: "Add Test Case", icon: <FileText size={20} />, link: "/dashboard/test-cases" },
+    { title: "Add Requirement", icon: <CheckSquare size={20} />, link: "/dashboard/requirements" },
     { title: "New Test Run", icon: <PlayCircle size={20} />, link: "/dashboard/runs" },
     { title: "Log Defect", icon: <AlertCircle size={20} />, link: "/dashboard/defects" },
   ];
@@ -49,17 +51,17 @@ export default function DashboardPage() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
         className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-navy leading-tight mb-1">
+          <h1 className="text-3xl font-bold text-navy leading-tight mb-1">
             Welcome back, {userName} 👋
           </h1>
-          <p className="text-navy/40 text-xs font-medium">
+          <p className="text-navy/40 text-sm font-medium">
             {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
         </div>
       </motion.div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
         {quickActions.map((action, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + idx * 0.1 }}>
             <Link href={action.link}
@@ -70,7 +72,7 @@ export default function DashboardPage() {
                 </div>
                 <ArrowUpRight className="text-navy/10 group-hover:text-navy transition-colors" size={16} />
               </div>
-              <p className="text-xs font-bold text-navy">{action.title}</p>
+              <p className="text-sm font-bold text-navy">{action.title}</p>
             </Link>
           </motion.div>
         ))}
@@ -87,11 +89,11 @@ export default function DashboardPage() {
               </div>
             </div>
             <div>
-              <p className="text-xs font-bold text-navy/40 mb-1">{stat.title}</p>
-              <p className="text-2xl font-bold text-navy">{stat.value}</p>
+              <p className="text-sm font-bold text-navy/40 mb-1">{stat.title}</p>
+              <p className="text-3xl font-bold text-navy">{stat.value}</p>
             </div>
             {stat.link && (
-              <Link href={stat.link} className="text-[11px] font-bold text-navy/30 hover:text-navy mt-3 inline-block transition-all">
+              <Link href={stat.link} className="text-sm font-bold text-navy/30 hover:text-navy mt-3 inline-block transition-all">
                 View details →
               </Link>
             )}
@@ -104,13 +106,13 @@ export default function DashboardPage() {
         className="bg-white/80 border border-navy/5 rounded-md p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-lg font-bold text-navy mb-0.5">Recent Activity</h2>
-            <p className="text-xs font-medium text-navy/30">Activity tracking coming soon</p>
+            <h2 className="text-xl font-bold text-navy mb-0.5">Recent Activity</h2>
+            <p className="text-sm font-medium text-navy/30">Activity tracking coming soon</p>
           </div>
         </div>
         <div className="text-center py-6">
           <Clock className="mx-auto mb-3 text-navy/20" size={32} />
-          <p className="text-navy/40 font-medium text-xs">No recent activity to display</p>
+          <p className="text-navy/40 font-medium text-sm">No recent activity to display</p>
         </div>
       </motion.div>
     </div>
