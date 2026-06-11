@@ -4,6 +4,8 @@ import Modal from "../common/Modal";
 import FormInput from "../common/FormInput";
 import FormSelect from "../common/FormSelect";
 import { useCreateTestRunMutation } from "@/app/redux/api/TestRunApiSlice";
+import { useListAllProjectsQuery } from "@/app/redux/api/ProjectsApiSlice";
+import { Folder } from "lucide-react";
 import toast from "react-hot-toast";
 
 /**
@@ -11,6 +13,9 @@ import toast from "react-hot-toast";
  * Backend DTO: CreateRunRequest { projectId, name, environment }
  */
 export default function TestRunModal({ isOpen, onClose, projectId }) {
+  const { data: projects = [] } = useListAllProjectsQuery();
+  const currentProject = projects.find(p => p.id === projectId);
+
   const [formData, setFormData] = useState({
     name: "",
     environment: "UAT"
@@ -53,6 +58,12 @@ export default function TestRunModal({ isOpen, onClose, projectId }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Create Test Run" size="sm">
+      {currentProject && (
+        <div className="flex items-center gap-2 px-1 -mt-2 mb-4">
+          <Folder size={14} className="text-navy/40" />
+          <span className="text-xs font-semibold text-navy/50">Project: {currentProject.name}</span>
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="space-y-6">
         <FormInput
           label="Run Name"

@@ -44,11 +44,11 @@ export default function TestCasesPage() {
       ),
     },
     {
-      header: "Requirement",
-      accessor: "frId",
+      header: "Requirements",
+      accessor: "frIds",
       cell: (row) => (
         <span className="text-sm font-bold text-navy/50">
-          {row.frId ? `FR-${row.frId}` : "-"}
+          {row.frIds?.length > 0 ? `${row.frIds.length} FR(s)` : "-"}
         </span>
       ),
     },

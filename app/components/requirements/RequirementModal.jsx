@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import Modal from "../common/Modal";
 import FormInput from "../common/FormInput";
 import FormSelect from "../common/FormSelect";
-import { useUpsertRequirementMutation } from "@/app/redux/api/RequirementApiSlice";
+import { useUpsertRequirementMutation, useGetRequirementsByProjectQuery } from "@/app/redux/api/RequirementApiSlice";
+import { useListAllProjectsQuery } from "@/app/redux/api/ProjectsApiSlice";
+import { Folder } from "lucide-react";
 import toast from "react-hot-toast";
 
 /**
@@ -11,14 +13,25 @@ import toast from "react-hot-toast";
  * Backend DTO: RequirementUpsertRequest
  */
 export default function RequirementModal({ isOpen, onClose, projectId, requirement = null }) {
+  const { data: projects = [] } = useListAllProjectsQuery();
+  const currentProject = projects.find(p => p.id === projectId);
+
   const [formData, setFormData] = useState({
     frRefCode: "",
     appRef: "",
     description: "",
-    priority: "MEDIUM"
+    priority: "MEDIUM",
+    parentId: ""
   });
 
   const [upsertRequirement, { isLoading }] = useUpsertRequirementMutation();
+  const { data: allRequirements = [] } = useGetRequirementsByProjectQuery(projectId, {
+    skip: !projectId || !!requirement
+  });
+
+  const parentOptions = allRequirements
+    .filter(r => r.id !== requirement?.id)
+    .map(r => ({ value: r.id, label: `${r.frRefCode} - ${r.description?.substring(0, 60)}` }));
 
   useEffect(() => {
     if (requirement) {
@@ -26,14 +39,16 @@ export default function RequirementModal({ isOpen, onClose, projectId, requireme
         frRefCode: requirement.frRefCode || "",
         appRef: requirement.appRef || "",
         description: requirement.description || "",
-        priority: requirement.priority || "MEDIUM"
+        priority: requirement.priority || "MEDIUM",
+        parentId: requirement.parentId || ""
       });
     } else {
       setFormData({
         frRefCode: "",
         appRef: "",
         description: "",
-        priority: "MEDIUM"
+        priority: "MEDIUM",
+        parentId: ""
       });
     }
   }, [requirement, isOpen]);
@@ -50,6 +65,7 @@ export default function RequirementModal({ isOpen, onClose, projectId, requireme
       const payload = {
         id: requirement?.id || null,
         projectId,
+        parentId: formData.parentId ? parseInt(formData.parentId) : null,
         frRefCode: formData.frRefCode,
         appRef: formData.appRef || null,
         description: formData.description,
@@ -67,6 +83,12 @@ export default function RequirementModal({ isOpen, onClose, projectId, requireme
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={requirement ? "Edit Requirement" : "Create Requirement"}>
+      {currentProject && (
+        <div className="flex items-center gap-2 px-1 -mt-2 mb-4">
+          <Folder size={14} className="text-navy/40" />
+          <span className="text-xs font-semibold text-navy/50">Project: {currentProject.name}</span>
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="space-y-6">
         <FormInput
           label="FR Reference Code"
@@ -108,6 +130,17 @@ export default function RequirementModal({ isOpen, onClose, projectId, requireme
             { value: "MEDIUM", label: "Medium" },
             { value: "HIGH", label: "High" },
             { value: "CRITICAL", label: "Critical" }
+          ]}
+        />
+
+        <FormSelect
+          label="Parent Requirement"
+          name="parentId"
+          value={formData.parentId}
+          onChange={handleChange}
+          options={[
+            { value: "", label: "None (top-level requirement)" },
+            ...parentOptions
           ]}
         />
 
