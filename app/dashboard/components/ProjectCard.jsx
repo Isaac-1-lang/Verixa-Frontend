@@ -18,7 +18,7 @@ export default function ProjectCard({ project }) {
   } = project;
 
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col gap-4">
+    <div className="bg-white/80 border border-slate-200 rounded-xl p-6 flex flex-col gap-4">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div>

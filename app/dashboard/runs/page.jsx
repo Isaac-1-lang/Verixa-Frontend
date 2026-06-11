@@ -89,7 +89,7 @@ export default function RunsPage() {
       </div>
 
       {!selectedProjectId ? (
-        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+        <div className="text-center py-12 bg-white/80 rounded-xl border border-zinc-200">
           <p className="text-zinc-600">Please select a project from the top bar to view test runs.</p>
         </div>
       ) : isLoading ? (

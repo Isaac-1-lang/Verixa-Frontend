@@ -58,7 +58,7 @@ function StatCard({ stat, value, maxValue }) {
       ref={cardRef}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden rounded-md bg-white border transition-all duration-300 cursor-default select-none"
+      className="relative overflow-hidden rounded-md bg-white/80 border transition-all duration-300 cursor-default select-none"
       style={{
         borderColor: 'var(--border)',
         boxShadow: '0 1px 4px rgba(0,0,0,0.05)',

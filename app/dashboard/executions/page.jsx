@@ -95,7 +95,7 @@ export default function ExecutionsPage() {
       </div>
 
       {!selectedRunId ? (
-        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+        <div className="text-center py-12 bg-white/80 rounded-xl border border-zinc-200">
           <p className="text-zinc-600">Please select a test run from the Runs page to view executions.</p>
         </div>
       ) : isLoading ? (

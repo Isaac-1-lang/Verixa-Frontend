@@ -1,7 +1,7 @@
 
 export default function StatCard({ title, value, growth }) {
   return (
-    <div className="bg-slate-50 rounded-xl p-6 space-y-3">
+    <div className="bg-slate-50/80 rounded-xl p-6 space-y-3">
       <p className="text-sm text-slate-600 font-medium">
         {title}
       </p>

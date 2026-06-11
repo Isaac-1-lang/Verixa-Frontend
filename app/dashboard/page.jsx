@@ -63,7 +63,7 @@ export default function DashboardPage() {
         {quickActions.map((action, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + idx * 0.1 }}>
             <Link href={action.link}
-              className="group relative overflow-hidden bg-white border border-navy/5 rounded-lg p-5 hover:bg-navy/5 hover:border-navy/10 transition-all block">
+              className="group relative overflow-hidden bg-white/80 border border-navy/5 rounded-lg p-5 hover:bg-navy/5 hover:border-navy/10 transition-all block">
               <div className="flex justify-between items-start mb-4">
                 <div className="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center group-hover:scale-105 transition-transform shadow-md shadow-navy/10">
                   {action.icon}
@@ -80,7 +80,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         {statCards.map((stat, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 + idx * 0.1 }}
-            className="bg-white border border-navy/5 rounded-lg p-4 hover:shadow-lg hover:shadow-navy/5 transition-all group">
+            className="bg-white/80 border border-navy/5 rounded-lg p-4 hover:shadow-lg hover:shadow-navy/5 transition-all group">
             <div className="flex items-start justify-between mb-4">
               <div className="w-10 h-10 bg-navy/5 rounded-full border border-navy/5 flex items-center justify-center text-navy group-hover:scale-105 transition-transform">
                 {stat.icon}
@@ -101,7 +101,7 @@ export default function DashboardPage() {
 
       {/* Recent Activity placeholder */}
       <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-        className="bg-white border border-navy/5 rounded-md p-6">
+        className="bg-white/80 border border-navy/5 rounded-md p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-lg font-bold text-navy mb-0.5">Recent Activity</h2>

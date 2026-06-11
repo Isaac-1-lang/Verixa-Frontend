@@ -14,7 +14,7 @@ export default function PublicProjectCard({ project }) {
   const fieldColor = FIELD_COLORS[project.field] || 'var(--primary)';
 
   return (
-    <div className="bg-white rounded-2xl border border-[var(--border)] overflow-hidden hover:shadow-lg hover:shadow-gray-100 transition-all group">
+    <div className="bg-white/80 rounded-2xl border border-[var(--border)] overflow-hidden hover:shadow-lg hover:shadow-gray-100 transition-all group">
       <div className="relative h-48 bg-[var(--bg)] overflow-hidden">
         {project.coverImageUrl ? (
           <img src={project.coverImageUrl} alt={project.title} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />

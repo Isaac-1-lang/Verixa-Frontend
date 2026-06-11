@@ -81,7 +81,7 @@ export default function TestCasesPage() {
   if (!selectedProjectId) {
     return (
       <div className="max-w-[1400px] mx-auto">
-        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+        <div className="text-center py-12 bg-white/80 rounded-xl border border-zinc-200">
           <p className="text-zinc-600">Please select a project from the top bar to view test cases.</p>
         </div>
       </div>

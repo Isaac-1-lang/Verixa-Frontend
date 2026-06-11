@@ -94,7 +94,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* Search Bar */}
-      <div className="bg-white p-4 rounded-xl border border-zinc-200 mb-6">
+      <div className="bg-white/80 p-4 rounded-xl border border-zinc-200 mb-6">
         <form onSubmit={handleSearch} className="flex items-center gap-3">
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
