@@ -12,9 +12,9 @@ export default function DashboardLayout({ children }) {
       <div className="min-h-screen bg-[var(--bg)] selection:bg-navy selection:text-white">
         <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         
-        <div className="lg:ml-64 flex flex-col min-h-screen">
+        <div className="lg:ml-60 flex flex-col min-h-screen">
           <TopBar onMenuClick={() => setSidebarOpen(true)} />
-          <main className="p-6 sm:p-8 flex-1">
+          <main className="p-4 sm:p-6 flex-1">
             {children}
           </main>
         </div>

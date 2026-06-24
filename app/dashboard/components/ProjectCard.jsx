@@ -18,18 +18,18 @@ export default function ProjectCard({ project }) {
   } = project;
 
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col gap-4">
+    <div className="bg-white/80 border border-slate-200 rounded-xl p-6 flex flex-col gap-4">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div>
           <h3 className="font-semibold text-slate-800">{name}</h3>
-          <p className="text-sm text-slate-500 line-clamp-2">
+          <p className="text-base text-slate-500 line-clamp-2">
             {description}
           </p>
         </div>
 
         <span
-          className={`text-xs font-semibold px-3 py-1 rounded-full capitalize ${STATUS_STYLES[status]}`}
+          className={`text-sm font-semibold px-3 py-1 rounded-full capitalize ${STATUS_STYLES[status]}`}
         >
           {status.replace("_", " ")}
         </span>
@@ -40,7 +40,7 @@ export default function ProjectCard({ project }) {
         {tech.map((t) => (
           <span
             key={t}
-            className="text-xs px-2 py-1 rounded-md bg-slate-100 text-slate-600"
+            className="text-sm px-2 py-1 rounded-md bg-slate-100 text-slate-600"
           >
             {t}
           </span>
@@ -48,7 +48,7 @@ export default function ProjectCard({ project }) {
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between text-sm text-slate-500 pt-2 border-t">
+      <div className="flex items-center justify-between text-base text-slate-500 pt-2 border-t">
         <span>Updated {updatedAt}</span>
 
         <div className="flex gap-3 font-medium">

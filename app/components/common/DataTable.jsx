@@ -49,12 +49,12 @@ export default function DataTable({
   }
 
   return (
-    <div className="bg-white border border-navy/10 rounded-md overflow-hidden shadow-xl shadow-navy/5">
+    <div className="bg-white border border-navy/10 rounded-md overflow-hidden shadow-lg shadow-navy/5">
       {/* Search Bar */}
       {searchable && (
-        <div className="p-8 border-b border-navy/5 bg-offwhite">
+        <div className="p-4 border-b border-navy/5 bg-offwhite">
           <div className="relative max-w-md group">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy/60 transition-colors" size={18} />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-navy/20 group-focus-within:text-navy/60 transition-colors" size={15} />
             <input
               type="text"
               placeholder={searchPlaceholder}
@@ -63,7 +63,7 @@ export default function DataTable({
                 setSearchQuery(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full pl-16 pr-6 py-4 bg-white border border-navy/10 rounded-md text-sm font-bold text-navy focus:border-navy focus:ring-4 focus:ring-navy/5 outline-none transition-all placeholder:text-navy/20"
+              className="w-full pl-9 pr-4 py-2.5 bg-white border border-navy/10 rounded-md text-xs font-bold text-navy focus:border-navy focus:ring-2 focus:ring-navy/5 outline-none transition-all placeholder:text-navy/20"
             />
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function DataTable({
               {columns.map((column, idx) => (
                 <th
                   key={idx}
-                  className="px-8 py-6 text-left text-xs font-bold text-navy/40"
+                  className="px-4 py-3 text-left text-[10px] font-bold text-navy/40 uppercase tracking-wider"
                   style={{ width: column.width }}
                 >
                   {column.header}
@@ -88,8 +88,8 @@ export default function DataTable({
           <tbody className="divide-y divide-navy/5">
             {currentData.length === 0 ? (
               <tr>
-                <td colSpan={columns.length} className="px-8 py-20 text-center">
-                  <p className="text-sm font-bold text-navy/20">{emptyMessage}</p>
+                <td colSpan={columns.length} className="px-4 py-12 text-center">
+                  <p className="text-xs font-bold text-navy/20">{emptyMessage}</p>
                 </td>
               </tr>
             ) : (
@@ -100,7 +100,7 @@ export default function DataTable({
                   className={`hover:bg-navy/2 transition-all duration-300 group ${onRowClick ? 'cursor-pointer' : ''}`}
                 >
                   {columns.map((column, colIdx) => (
-                    <td key={colIdx} className="px-8 py-6 text-sm font-medium text-navy/70 group-hover:text-navy transition-colors">
+                    <td key={colIdx} className="px-4 py-3 text-sm font-medium text-navy/70 group-hover:text-navy transition-colors">
                       {column.cell ? column.cell(row) : row[column.accessor]}
                     </td>
                   ))}
@@ -113,41 +113,41 @@ export default function DataTable({
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="px-8 py-6 border-t border-navy/5 flex items-center justify-between bg-offwhite">
-          <div className="text-xs font-bold text-navy/40">
+        <div className="px-4 py-3 border-t border-navy/5 flex items-center justify-between bg-offwhite">
+          <div className="text-[10px] font-bold text-navy/40">
             Showing <span className="text-navy/60">{startIndex + 1}</span> to <span className="text-navy/60">{Math.min(endIndex, filteredData.length)}</span> of <span className="text-navy/60">{filteredData.length}</span> results
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <button
               onClick={() => goToPage(1)}
               disabled={currentPage === 1}
-              className="p-3 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
+              className="p-2 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
             >
-              <ChevronsLeft size={14} />
+              <ChevronsLeft size={12} />
             </button>
             <button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 1}
-              className="p-3 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
+              className="p-2 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
             >
-              <ChevronLeft size={14} />
+              <ChevronLeft size={12} />
             </button>
-            <span className="px-6 py-2.5 bg-navy/5 rounded-md text-xs font-bold text-navy">
+            <span className="px-4 py-1.5 bg-navy/5 rounded-md text-[10px] font-bold text-navy">
               Page {currentPage} of {totalPages}
             </span>
             <button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="p-3 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
+              className="p-2 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
             >
-              <ChevronRight size={14} />
+              <ChevronRight size={12} />
             </button>
             <button
               onClick={() => goToPage(totalPages)}
               disabled={currentPage === totalPages}
-              className="p-3 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
+              className="p-2 rounded-md border border-navy/10 bg-white hover:bg-navy/5 disabled:opacity-20 transition-all text-navy/40 hover:text-navy"
             >
-              <ChevronsRight size={14} />
+              <ChevronsRight size={12} />
             </button>
           </div>
         </div>

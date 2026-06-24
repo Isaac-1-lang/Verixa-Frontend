@@ -14,7 +14,7 @@ export default function PublicProjectCard({ project }) {
   const fieldColor = FIELD_COLORS[project.field] || 'var(--primary)';
 
   return (
-    <div className="bg-white rounded-2xl border border-[var(--border)] overflow-hidden hover:shadow-lg hover:shadow-gray-100 transition-all group">
+    <div className="bg-white/80 rounded-2xl border border-[var(--border)] overflow-hidden hover:shadow-lg hover:shadow-gray-100 transition-all group">
       <div className="relative h-48 bg-[var(--bg)] overflow-hidden">
         {project.coverImageUrl ? (
           <img src={project.coverImageUrl} alt={project.title} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
@@ -24,7 +24,7 @@ export default function PublicProjectCard({ project }) {
           </div>
         )}
         {project.field && (
-          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold backdrop-blur-md bg-white/80" style={{ color: fieldColor }}>
+          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md bg-white/80" style={{ color: fieldColor }}>
             <span className="w-1.5 h-1.5 rounded-full inline-block mr-1.5" style={{ background: fieldColor }}></span>
             {project.field}
           </span>
@@ -35,19 +35,19 @@ export default function PublicProjectCard({ project }) {
         <h3 className="text-base font-bold text-[var(--text)] mb-1.5 group-hover:text-[var(--primary)] transition-colors line-clamp-1" style={{ fontFamily: 'var(--font-heading)' }}>
           {project.title}
         </h3>
-        <p className="text-xs text-[var(--text-muted)] leading-relaxed line-clamp-2 mb-4">{project.description}</p>
+        <p className="text-sm text-[var(--text-muted)] leading-relaxed line-clamp-2 mb-4">{project.description}</p>
 
         <div className="flex flex-wrap gap-1.5 mb-4">
           {(project.mainTags || []).slice(0, 3).map(tag => (
-            <span key={tag} className="text-[10px] font-semibold text-[var(--primary)] bg-[var(--primary)]/6 px-2 py-0.5 rounded-md">{tag}</span>
+            <span key={tag} className="text-xs font-semibold text-[var(--primary)] bg-[var(--primary)]/6 px-2 py-0.5 rounded-md">{tag}</span>
           ))}
         </div>
 
         <div className="flex items-center justify-between pt-3 border-t border-[var(--border)]">
-          <div className="flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
+          <div className="flex items-center gap-1.5 text-sm text-[var(--text-muted)]">
             <Eye size={14} /> {project.viewCount || 0} views
           </div>
-          <span className="text-xs font-semibold text-[var(--primary)] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          <span className="text-sm font-semibold text-[var(--primary)] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
             View <ArrowUpRight size={14} />
           </span>
         </div>

@@ -58,7 +58,7 @@ function StatCard({ stat, value, maxValue }) {
       ref={cardRef}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden rounded-md bg-white border transition-all duration-300 cursor-default select-none"
+      className="relative overflow-hidden rounded-md bg-white/80 border transition-all duration-300 cursor-default select-none"
       style={{
         borderColor: 'var(--border)',
         boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
@@ -102,7 +102,7 @@ function StatCard({ stat, value, maxValue }) {
         </p>
 
         {/* Label */}
-        <p className="text-xs text-[var(--text-muted)] font-medium flex items-center gap-1.5">
+        <p className="text-sm text-[var(--text-muted)] font-medium flex items-center gap-1.5">
           <span
             className="inline-block w-1.5 h-1.5 rounded-md flex-shrink-0"
             style={{ background: stat.color }}

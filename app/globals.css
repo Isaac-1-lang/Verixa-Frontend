@@ -38,15 +38,14 @@
 }
 
 html {
-  font-size: 110%;
-  /* Increases base font size globally */
+  font-size: 100%;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-afacad), sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

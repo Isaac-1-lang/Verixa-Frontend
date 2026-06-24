@@ -1,10 +1,12 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { Plus, Trash2, ChevronRight, ChevronDown, CheckSquare, Square } from "lucide-react";
 import Modal from "../common/Modal";
 import FormInput from "../common/FormInput";
 import { useUpsertTestCaseMutation } from "@/app/redux/api/TestCaseApiSlice";
 import { useGetRequirementsByProjectQuery } from "@/app/redux/api/RequirementApiSlice";
+import { useListAllProjectsQuery } from "@/app/redux/api/ProjectsApiSlice";
+import { Folder } from "lucide-react";
 import toast from "react-hot-toast";
 
 /**
@@ -12,20 +14,35 @@ import toast from "react-hot-toast";
  * Backend DTO: TestCaseDto
  */
 export default function TestCaseModal({ isOpen, onClose, projectId, testCase = null }) {
+  const { data: projects = [] } = useListAllProjectsQuery();
+  const currentProject = projects.find(p => p.id === projectId);
+
   const [formData, setFormData] = useState({
     tcNumber: "",
     title: "",
     appRef: "",
     preConditions: "",
     postConditions: "",
-    frId: "",
+    frIds: [],
     steps: []
   });
+
+  const [expandedFRs, setExpandedFRs] = useState(new Set());
 
   const [upsertTestCase, { isLoading }] = useUpsertTestCaseMutation();
   const { data: requirements = [] } = useGetRequirementsByProjectQuery(projectId, {
     skip: !projectId
   });
+
+  // Build FR tree: top-level FRs with their children
+  const frTree = useMemo(() => {
+    const topLevel = requirements.filter(r => !r.parentId);
+    const withChildren = topLevel.map(r => ({
+      ...r,
+      children: requirements.filter(c => c.parentId === r.id)
+    }));
+    return withChildren;
+  }, [requirements]);
 
   useEffect(() => {
     if (testCase) {
@@ -35,7 +52,7 @@ export default function TestCaseModal({ isOpen, onClose, projectId, testCase = n
         appRef: testCase.appRef || "",
         preConditions: testCase.preConditions || "",
         postConditions: testCase.postConditions || "",
-        frId: testCase.frId || "",
+        frIds: testCase.frIds || [],
         steps: testCase.steps || []
       });
     } else {
@@ -45,7 +62,7 @@ export default function TestCaseModal({ isOpen, onClose, projectId, testCase = n
         appRef: "",
         preConditions: "",
         postConditions: "",
-        frId: "",
+        frIds: [],
         steps: []
       });
     }
@@ -54,6 +71,24 @@ export default function TestCaseModal({ isOpen, onClose, projectId, testCase = n
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFrToggle = (id) => {
+    setFormData(prev => ({
+      ...prev,
+      frIds: prev.frIds.includes(id)
+        ? prev.frIds.filter(fid => fid !== id)
+        : [...prev.frIds, id]
+    }));
+  };
+
+  const toggleExpandFR = (id) => {
+    setExpandedFRs(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
   };
 
   const handleAddStep = () => {
@@ -92,7 +127,7 @@ export default function TestCaseModal({ isOpen, onClose, projectId, testCase = n
       const payload = {
         id: testCase?.id || null,
         projectId,
-        frId: formData.frId || null,
+        frIds: formData.frIds.length > 0 ? formData.frIds : null,
         tcNumber: formData.tcNumber,
         title: formData.title,
         appRef: formData.appRef || null,
@@ -118,6 +153,12 @@ export default function TestCaseModal({ isOpen, onClose, projectId, testCase = n
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={testCase ? "Edit Test Case" : "Create Test Case"} size="lg">
+      {currentProject && (
+        <div className="flex items-center gap-2 px-1 -mt-2 mb-4">
+          <Folder size={14} className="text-navy/40" />
+          <span className="text-xs font-semibold text-navy/50">Project: {currentProject.name}</span>
+        </div>
+      )}
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Basic Information */}
         <div className="grid grid-cols-2 gap-4">
@@ -133,21 +174,72 @@ export default function TestCaseModal({ isOpen, onClose, projectId, testCase = n
           
           <div className="space-y-2">
             <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider">
-              Requirement
+              Functional Requirements <span className="text-zinc-400 font-normal normal-case">(select all that apply)</span>
             </label>
-            <select
-              name="frId"
-              value={formData.frId}
-              onChange={handleChange}
-              className="w-full rounded-xl px-4 py-3 text-sm border-2 border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10 outline-none"
-            >
-              <option value="">No Requirement</option>
-              {requirements.map((req) => (
-                <option key={req.id} value={req.id}>
-                  {req.frRefCode} - {req.description?.substring(0, 50)}
-                </option>
-              ))}
-            </select>
+            <div className="w-full rounded-xl border-2 border-zinc-200 bg-white overflow-hidden">
+              {frTree.length === 0 ? (
+                <div className="px-4 py-3 text-sm text-zinc-500">No requirements available</div>
+              ) : (
+                <div className="max-h-48 overflow-y-auto p-1">
+                  {frTree.map((req) => (
+                    <div key={req.id}>
+                      <label className="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-zinc-50 cursor-pointer transition-colors">
+                        <button
+                          type="button"
+                          onClick={() => handleFrToggle(req.id)}
+                          className="shrink-0"
+                        >
+                          {formData.frIds.includes(req.id) ? (
+                            <CheckSquare size={16} className="text-[var(--primary)]" />
+                          ) : (
+                            <Square size={16} className="text-zinc-400" />
+                          )}
+                        </button>
+                        <span className="text-sm font-medium text-zinc-800">{req.frRefCode}</span>
+                        <span className="text-xs text-zinc-500 truncate">{req.description}</span>
+                        {req.children?.length > 0 && (
+                          <button
+                            type="button"
+                            onClick={(e) => { e.stopPropagation(); toggleExpandFR(req.id); }}
+                            className="ml-auto shrink-0"
+                          >
+                            {expandedFRs.has(req.id) ? (
+                              <ChevronDown size={14} className="text-zinc-400" />
+                            ) : (
+                              <ChevronRight size={14} className="text-zinc-400" />
+                            )}
+                          </button>
+                        )}
+                      </label>
+                      {req.children?.length > 0 && expandedFRs.has(req.id) && (
+                        <div className="ml-6 border-l-2 border-zinc-100 pl-2">
+                          {req.children.map((child) => (
+                            <label key={child.id} className="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-zinc-50 cursor-pointer transition-colors">
+                              <button
+                                type="button"
+                                onClick={() => handleFrToggle(child.id)}
+                                className="shrink-0"
+                              >
+                                {formData.frIds.includes(child.id) ? (
+                                  <CheckSquare size={16} className="text-[var(--primary)]" />
+                                ) : (
+                                  <Square size={16} className="text-zinc-400" />
+                                )}
+                              </button>
+                              <span className="text-sm font-medium text-zinc-800">{child.frRefCode}</span>
+                              <span className="text-xs text-zinc-500 truncate">{child.description}</span>
+                            </label>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            {formData.frIds.length > 0 && (
+              <p className="text-xs text-zinc-500">{formData.frIds.length} requirement(s) selected</p>
+            )}
           </div>
         </div>
 

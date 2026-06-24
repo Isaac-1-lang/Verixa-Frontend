@@ -93,11 +93,11 @@ export default function DefectsPage() {
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto px-8 py-12">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
+    <div className="max-w-[1400px] mx-auto px-4 py-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Defects</h1>
-          <p className="text-navy/40 text-sm font-medium">Critical vulnerabilities and resolution streams</p>
+          <h1 className="text-2xl font-bold text-navy leading-tight mb-1">Defects</h1>
+          <p className="text-navy/40 text-xs font-medium">Critical vulnerabilities and resolution streams</p>
         </div>
         <button 
           onClick={() => {
@@ -105,14 +105,14 @@ export default function DefectsPage() {
             setIsModalOpen(true);
           }}
           disabled={!selectedRunId}
-          className="flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex items-center gap-2 bg-navy text-white px-5 py-2.5 rounded-md font-bold text-xs shadow-lg shadow-navy/10 hover:translate-y-[-1px] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <Plus size={20} strokeWidth={2.5} /> Log New Defect
+          <Plus size={16} strokeWidth={2.5} /> Log New Defect
         </button>
       </div>
 
       {!selectedRunId ? (
-        <div className="text-center py-12 bg-white rounded-xl border border-zinc-200">
+        <div className="text-center py-12 bg-white/80 rounded-xl border border-zinc-200">
           <p className="text-zinc-600">Please select a test run from the Runs page to view defects.</p>
         </div>
       ) : isLoading ? (

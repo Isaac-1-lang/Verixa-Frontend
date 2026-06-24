@@ -58,7 +58,7 @@ export default function ProfilePage() {
           <Camera size={14} strokeWidth={2.5} /> Edit Cover
         </button>
         <div className="absolute -bottom-16 left-12 flex items-end gap-8">
-          <div className="relative group cursor-pointer w-32 h-32 rounded-md bg-white p-1 shadow-2xl border-4 border-offwhite overflow-hidden">
+          <div className="relative group cursor-pointer w-32 h-32 rounded-md bg-white/80 p-1 shadow-2xl border-4 border-offwhite overflow-hidden">
             <img src={avatarUrl} alt={fullName} className="w-full h-full rounded-md object-cover group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white backdrop-blur-sm">
               <Camera size={24} strokeWidth={1.5} />
@@ -74,7 +74,7 @@ export default function ProfilePage() {
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Settings Nav */}
         <div className="w-full lg:w-64 shrink-0">
-          <div className="bg-white border border-navy/10 rounded-md p-3 sticky top-28 shadow-xl shadow-navy/5">
+          <div className="bg-white/80 border border-navy/10 rounded-md p-3 sticky top-28 shadow-xl shadow-navy/5">
             {[
               { key: 'general', icon: <UserIcon size={16} />, label: 'Profile' },
               { key: 'security', icon: <Shield size={16} />, label: 'Security' },
@@ -92,7 +92,7 @@ export default function ProfilePage() {
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <div className="bg-white border border-navy/10 rounded-md p-12 shadow-xl shadow-navy/5">
+          <div className="bg-white/80 border border-navy/10 rounded-md p-12 shadow-xl shadow-navy/5">
 
             {activeTab === 'general' && (
               <div className="space-y-12 animate-fade-in">
@@ -185,7 +185,7 @@ export default function ProfilePage() {
                     { label: 'Team Collaboration', desc: 'Notifications for mentions and project activity', on: true },
                     { label: 'Weekly Digest', desc: 'A summary of your weekly testing metrics', on: false },
                   ].map(pref => (
-                    <div key={pref.label} className="flex items-center justify-between p-8 bg-offwhite border border-navy/5 rounded-md hover:bg-navy/5 transition-all group">
+                    <div key={pref.label} className="flex items-center justify-between p-8 bg-offwhite/80 border border-navy/5 rounded-md hover:bg-navy/5 transition-all group">
                       <div>
                         <p className="text-base font-bold text-navy group-hover:translate-x-1 transition-transform">{pref.label}</p>
                         <p className="text-xs font-medium text-navy/40 mt-1">{pref.desc}</p>

@@ -78,23 +78,23 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto px-8 py-12">
+    <div className="max-w-[1400px] mx-auto px-4 py-6">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-8 mb-16">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-5xl font-bold text-navy leading-tight mb-2">Projects</h1>
-          <p className="text-navy/40 text-sm font-medium">Manage and monitor your software quality initiatives by Project ID</p>
+          <h1 className="text-2xl font-bold text-navy leading-tight mb-1">Projects</h1>
+          <p className="text-navy/40 text-xs font-medium">Manage and monitor your software quality initiatives by Project ID</p>
         </div>
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-md font-bold text-sm shadow-xl shadow-navy/10 hover:translate-y-[-2px] transition-all"
+          className="flex items-center gap-2 bg-navy text-white px-5 py-2.5 rounded-md font-bold text-xs shadow-lg shadow-navy/10 hover:translate-y-[-1px] transition-all"
         >
-          <Plus size={20} strokeWidth={2.5} /> Create New Project
+          <Plus size={16} strokeWidth={2.5} /> Create New Project
         </button>
       </div>
 
       {/* Search Bar */}
-      <div className="bg-white p-4 rounded-xl border border-zinc-200 mb-6">
+      <div className="bg-white/80 p-4 rounded-xl border border-zinc-200 mb-6">
         <form onSubmit={handleSearch} className="flex items-center gap-3">
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
