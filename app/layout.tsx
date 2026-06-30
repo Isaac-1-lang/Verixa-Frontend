@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   themeColor: "#1A264A",
   manifest: "/manifest.json",
-  charset: "utf-8",
 };
 
 export default function RootLayout({
