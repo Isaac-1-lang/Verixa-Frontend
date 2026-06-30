@@ -7,10 +7,12 @@ import {
 import { motion } from "framer-motion";
 import { useGetDashboardAnalyticsQuery } from "@/app/redux/api/DashboardApiSlice";
 import ImportModal from "@/app/components/common/ImportModal";
+import ExportButton from "@/app/components/common/ExportButton";
 import toast from "react-hot-toast";
+import { getLastName } from "@/app/utils/nameFormatter";
 
 export default function DashboardPage() {
-  const [userName, setUserName] = useState("QA Team");
+  const [userName, setUserName] = useState("User");
   const [importModalOpen, setImportModalOpen] = useState(false);
   const [importType, setImportType] = useState("testcase");
   const [importTitle, setImportTitle] = useState("Import Test Cases");
@@ -22,6 +24,48 @@ export default function DashboardPage() {
 
   const { data: analytics } = useGetDashboardAnalyticsQuery();
 
+  // Dummy data for export (will be replaced with real data from API)
+  const [exportData, setExportData] = useState({
+    project: {
+      title: "Verixa UAT Platform",
+      projectStatus: "Ongoing",
+      field: "Software Testing",
+      description: "Comprehensive UAT management platform for test case execution, defect tracking, and quality sign-off.",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      statistics: {
+        totalRequirements: analytics?.totalRequirements || 23,
+        totalTestCases: analytics?.totalTestCases || 45,
+        totalRuns: analytics?.activeRuns || 5,
+        totalExecutions: analytics?.pendingExecutions || 120,
+        openDefects: analytics?.openDefects || 8,
+        passRate: analytics?.passRate || 85,
+      }
+    },
+    requirements: [
+      { id: 1, title: "User Authentication", type: "Functional", priority: "High", status: "Approved", description: "System shall allow users to authenticate using email and password" },
+      { id: 2, title: "Password Reset", type: "Functional", priority: "Medium", status: "Approved", description: "Users shall be able to reset their password via email" },
+      { id: 3, title: "Response Time", type: "Non-Functional", priority: "High", status: "Draft", description: "System shall respond within 2 seconds" },
+    ],
+    testCases: [
+      { id: 1, title: "Login with valid credentials", priority: "High", type: "Functional", description: "Verify user can login with valid email and password", expectedResult: "User successfully logged in" },
+      { id: 2, title: "Login with invalid credentials", priority: "High", type: "Functional", description: "Verify system rejects invalid login", expectedResult: "Error message displayed" },
+      { id: 3, title: "Password reset flow", priority: "Medium", type: "Functional", description: "Verify password reset email is sent", expectedResult: "Reset email received" },
+    ],
+    executions: [
+      { id: 1, testCaseTitle: "Login with valid credentials", result: "Pass", executedBy: "QA Team", executedAt: new Date() },
+      { id: 2, testCaseTitle: "Login with invalid credentials", result: "Pass", executedBy: "QA Team", executedAt: new Date() },
+      { id: 3, testCaseTitle: "Password reset flow", result: "Fail", executedBy: "QA Team", executedAt: new Date() },
+    ],
+    defects: [
+      { id: 1, title: "Password reset email not received", severity: "High", status: "Open" },
+      { id: 2, title: "UI alignment issue on mobile", severity: "Low", status: "Open" },
+    ],
+    statistics: {
+      passRate: analytics?.passRate || 85
+    }
+  });
+
   useEffect(() => {
     try {
       const token = localStorage.getItem('token');
@@ -32,7 +76,9 @@ export default function DashboardPage() {
       const userStr = localStorage.getItem('user');
       if (userStr) {
         const user = JSON.parse(userStr);
-        setUserName(user.fullName || "QA Team");
+        // Extract last name from full name
+        const fullName = user.fullName || "User";
+        setUserName(getLastName(fullName));
       }
     } catch (_) {}
   }, []);
@@ -102,6 +148,14 @@ export default function DashboardPage() {
           <p className="text-navy/40 text-sm sm:text-base font-medium">
             {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
+        </div>
+        
+        {/* Export Button */}
+        <div className="flex items-center gap-3">
+          <ExportButton 
+            data={exportData}
+            projectName={exportData.project.title}
+          />
         </div>
       </motion.div>
 
