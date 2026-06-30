@@ -46,54 +46,54 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="max-w-[1400px] mx-auto py-6 px-4 sm:px-6">
+    <div className="max-w-[1600px] mx-auto py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8">
       {/* Welcome */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12">
         <div>
-          <h1 className="text-3xl font-bold text-navy leading-tight mb-1">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-2">
             Welcome back, {userName} 👋
           </h1>
-          <p className="text-navy/40 text-sm font-medium">
+          <p className="text-navy/40 text-sm sm:text-base font-medium">
             {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
         </div>
       </motion.div>
 
-      {/* Quick Actions */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+      {/* Quick Actions - Properly spaced layout */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 mb-6 sm:mb-8">
         {quickActions.map((action, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + idx * 0.1 }}>
             <Link href={action.link}
-              className="group relative overflow-hidden bg-white/80 border border-navy/5 rounded-lg p-5 hover:bg-navy/5 hover:border-navy/10 transition-all block">
-              <div className="flex justify-between items-start mb-4">
-                <div className="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center group-hover:scale-105 transition-transform shadow-md shadow-navy/10">
+              className="group relative overflow-hidden bg-white border border-navy/5 rounded-xl p-4 sm:p-5 lg:p-6 hover:bg-navy/5 hover:border-navy/10 transition-all block shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-navy/10">
+              <div className="flex justify-between items-start mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-navy text-white rounded-full flex items-center justify-center group-hover:scale-105 transition-transform shadow-md shadow-navy/10">
                   {action.icon}
                 </div>
                 <ArrowUpRight className="text-navy/10 group-hover:text-navy transition-colors" size={16} />
               </div>
-              <p className="text-sm font-bold text-navy">{action.title}</p>
+              <p className="text-sm sm:text-base lg:text-lg font-bold text-navy">{action.title}</p>
             </Link>
           </motion.div>
         ))}
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      {/* Stats Grid - 4 cards per row on large screens */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-8">
         {statCards.map((stat, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 + idx * 0.1 }}
-            className="bg-white/80 border border-navy/5 rounded-lg p-4 hover:shadow-lg hover:shadow-navy/5 transition-all group">
+            className="bg-white border border-navy/5 rounded-xl p-4 sm:p-5 lg:p-6 hover:shadow-2xl hover:shadow-navy/10 transition-all group shadow-lg shadow-navy/5">
             <div className="flex items-start justify-between mb-4">
-              <div className="w-10 h-10 bg-navy/5 rounded-full border border-navy/5 flex items-center justify-center text-navy group-hover:scale-105 transition-transform">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-navy/5 rounded-full border border-navy/5 flex items-center justify-center text-navy group-hover:scale-105 transition-transform">
                 {stat.icon}
               </div>
             </div>
             <div>
-              <p className="text-sm font-bold text-navy/40 mb-1">{stat.title}</p>
-              <p className="text-3xl font-bold text-navy">{stat.value}</p>
+              <p className="text-sm sm:text-base lg:text-lg font-bold text-navy/40 mb-2">{stat.title}</p>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-1">{stat.value}</p>
             </div>
             {stat.link && (
-              <Link href={stat.link} className="text-sm font-bold text-navy/30 hover:text-navy mt-3 inline-block transition-all">
+              <Link href={stat.link} className="text-sm sm:text-base font-bold text-navy/30 hover:text-navy mt-3 sm:mt-4 inline-block transition-all">
                 View details →
               </Link>
             )}
@@ -101,18 +101,18 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* Recent Activity placeholder */}
+      {/* Recent Activity placeholder - Well spaced */}
       <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-        className="bg-white/80 border border-navy/5 rounded-md p-6">
-        <div className="flex items-center justify-between mb-4">
+        className="bg-white border border-navy/5 rounded-xl p-5 sm:p-8 shadow-lg shadow-navy/5">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div>
-            <h2 className="text-xl font-bold text-navy mb-0.5">Recent Activity</h2>
-            <p className="text-sm font-medium text-navy/30">Activity tracking coming soon</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-1">Recent Activity</h2>
+            <p className="text-base sm:text-lg font-medium text-navy/30">Activity tracking coming soon</p>
           </div>
         </div>
-        <div className="text-center py-6">
-          <Clock className="mx-auto mb-3 text-navy/20" size={32} />
-          <p className="text-navy/40 font-medium text-sm">No recent activity to display</p>
+        <div className="text-center py-6 sm:py-10">
+          <Clock className="mx-auto mb-3 sm:mb-4 text-navy/20" size={40} />
+          <p className="text-navy/40 font-medium text-base sm:text-lg">No recent activity to display</p>
         </div>
       </motion.div>
     </div>
