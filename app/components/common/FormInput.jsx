@@ -17,7 +17,7 @@ export default function FormInput({
   maxLength,
   rows
 }) {
-  const inputClasses = `w-full rounded-xl px-4 py-3 text-sm border-2 transition-all ${
+  const inputClasses = `w-full rounded-xl px-5 py-4 text-base border-2 transition-all ${
     error 
       ? 'border-red-300 bg-red-50 focus:border-red-500 focus:ring-4 focus:ring-red-100' 
       : 'border-zinc-200 bg-white focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--primary)]/10'
@@ -26,7 +26,7 @@ export default function FormInput({
   return (
     <div className="space-y-2">
       {label && (
-        <label className="block text-xs font-semibold text-zinc-600 uppercase tracking-wider">
+        <label className="block text-sm font-semibold text-zinc-600 uppercase tracking-wider">
           {label} {required && <span className="text-red-500">*</span>}
         </label>
       )}
@@ -58,11 +58,11 @@ export default function FormInput({
       )}
       
       {error && (
-        <span className="text-xs text-red-600 font-medium block">{error}</span>
+        <span className="text-sm text-red-600 font-medium block">{error}</span>
       )}
       
       {maxLength && value && (
-        <span className="text-xs text-zinc-500 block text-right">
+        <span className="text-sm text-zinc-500 block text-right">
           {value.length} / {maxLength}
         </span>
       )}
