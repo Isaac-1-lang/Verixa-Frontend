@@ -6,14 +6,18 @@ import { Toaster } from 'react-hot-toast';
 
 const afacad = Afacad({
   variable: "--font-afacad",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Arial", "sans-serif"],
 });
 
 const jetbrains = JetBrains_Mono({
   variable: "--font-mono",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "500", "600"],
+  display: "swap",
+  fallback: ["Consolas", "Monaco", "Courier New", "monospace"],
 });
 
 export const metadata: Metadata = {
@@ -21,7 +25,11 @@ export const metadata: Metadata = {
   description: "Verixa: Verify Acceptance. Comprehensive UAT management platform for test case execution, defect tracking, and quality sign-off.",
   icons: {
     icon: "/logo.png"
-  }
+  },
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  themeColor: "#1A264A",
+  manifest: "/manifest.json",
+  charset: "utf-8",
 };
 
 export default function RootLayout({
@@ -32,7 +40,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="icon" href="/logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${afacad.variable} ${jetbrains.variable} antialiased`}>
         <ReduxProvider>
