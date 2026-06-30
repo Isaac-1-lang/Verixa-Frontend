@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Bell, ChevronDown, Menu, Settings, LogOut, User, X } from 'lucide-react';
+import { getLastName, getInitials } from '@/app/utils/nameFormatter';
 
 export default function TopBar({ onMenuClick }) {
   const [user, setUser] = useState(null);
@@ -33,10 +34,13 @@ export default function TopBar({ onMenuClick }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Get full name and display name (last name only)
   const fullName = user
     ? `${user.firstName || ''} ${user.lastName || ''}`.trim() || user.fullName || user.username || 'User'
     : 'User';
-  const initials = fullName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  
+  const displayName = user?.fullName ? getLastName(user.fullName) : 'User';
+  const initials = user?.fullName ? getInitials(user.fullName) : 'U';
   const avatarUrl = user?.profilePicture || user?.profileImageUrl || null;
   const email = user?.email || '';
 
@@ -164,7 +168,7 @@ export default function TopBar({ onMenuClick }) {
               )}
             </div>
             <div className="hidden sm:block text-left max-w-[90px]">
-              <p className="text-[11px] font-bold text-navy leading-tight truncate">{fullName}</p>
+              <p className="text-[11px] font-bold text-navy leading-tight truncate">{displayName}</p>
               <p className="text-[9px] text-navy/35 font-medium truncate">{email || 'Verixa User'}</p>
             </div>
             <ChevronDown
