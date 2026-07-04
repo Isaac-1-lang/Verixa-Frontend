@@ -136,7 +136,7 @@ export default function SignUpPage() {
       </motion.div>
 
       {/* Left Panel */}
-      <div className="hidden md:flex md:w-1/2 h-screen sticky top-0">
+      <div className="hidden md:flex fixed left-0 top-0 w-1/2 h-screen z-10">
         <AuthBackground
           title="Join the Elite QA Community"
           subtitle="Experience the most advanced UAT management platform today."
@@ -144,7 +144,7 @@ export default function SignUpPage() {
       </div>
 
       {/* Right Panel */}
-      <div className="md:w-1/2 flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white relative">
+      <div className="md:w-1/2 md:ml-[50%] flex items-center justify-center p-8 sm:p-12 lg:p-[60px] bg-white relative">
         <div className="w-full max-w-[420px] relative z-10">
           <div className="mb-8 text-center md:text-left">
             <motion.div
@@ -260,10 +260,15 @@ export default function SignUpPage() {
                   id="terms"
                   type="checkbox"
                   required
-                  className="w-4 h-4 rounded border-navy/20 text-navy focus:ring-navy cursor-pointer accent-navy"
+                  className="peer absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                 />
+                <div className="w-4 h-4 rounded border border-navy/30 bg-white peer-checked:bg-navy peer-checked:border-navy transition-all duration-200 flex items-center justify-center shadow-sm">
+                  <svg className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity duration-200" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 6l3 3 5-5"/>
+                  </svg>
+                </div>
               </div>
-              <label htmlFor="terms" className="text-xs font-medium text-navy/40 leading-snug cursor-pointer hover:text-navy transition-colors">
+              <label htmlFor="terms" className="text-xs font-medium text-navy/40 leading-snug cursor-pointer hover:text-navy transition-colors select-none">
                 I agree to the <Link href="#" className="text-navy font-semibold hover:underline">Terms</Link> and <Link href="#" className="text-navy font-semibold hover:underline">Privacy Policy</Link>
               </label>
             </div>
