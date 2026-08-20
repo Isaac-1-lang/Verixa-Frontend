@@ -47,7 +47,7 @@ export default function LandingPage() {
               </a>
             ))}
             <div className="flex items-center gap-6 ml-2 pl-8 border-l border-navy/10">
-              <Link href="/auth/login" className="text-[16px] font-bold text-navy hover:text-navy/70 transition-colors">
+              <Link href="/auth/login" className="text-[16px] font-bold text-navy hover:text-navy/70 transition-colors mt-3.5">
                 Sign In
               </Link>
               <Link href="/auth/signup" className="bg-navy text-white px-6 py-2.5 rounded-full font-bold text-[15px] hover:scale-105 transition-transform shadow-lg">

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Afacad, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from './redux/ProviderClient';
@@ -26,9 +26,14 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo.png"
   },
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  themeColor: "#1A264A",
   manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#1A264A",
 };
 
 export default function RootLayout({
@@ -41,7 +46,6 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="icon" href="/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
