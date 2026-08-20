@@ -12,9 +12,9 @@
 
 **Verixa** is a modern, full-featured User Acceptance Testing (UAT) management platform designed for QA teams and software organizations. It provides a unified solution for managing test cases, requirements, test runs, executions, and defect tracking with an intuitive interface and powerful features.
 
-## ✨ Key Features
+## Key Features
 
-### 🔐 Authentication & User Management
+###  Authentication & User Management
 - **Secure Authentication System**
   - User login with JWT tokens
   - Password reset functionality
@@ -22,7 +22,7 @@
   - User profile management
   - Session management with automatic logout
 
-### 📊 Dashboard & Analytics
+###  Dashboard & Analytics
 - **Comprehensive Dashboard**
   - Real-time analytics and metrics
   - Project statistics overview
@@ -49,7 +49,7 @@
   - Link requirements to test cases
   - Requirement traceability
 
-### 🧪 Test Case Management
+###  Test Case Management
 - **Comprehensive Test Cases**
   - Detailed test case creation
   - Test steps and expected results
@@ -68,7 +68,7 @@
   - Execution progress monitoring
   - Sign-off workflow
 
-### ✅ Test Execution
+###  Test Execution
 - **Execution Tracking**
   - Execute individual test cases
   - Record test results (Pass, Fail, Blocked, Skip)
@@ -86,7 +86,7 @@
   - Defect assignment
   - Resolution tracking
 
-### 📤 Bulk Import Functionality
+###  Bulk Import Functionality
 - **File Upload & Import**
   - Import test cases from CSV, Excel, TXT files
   - Import requirements from structured files
@@ -108,7 +108,7 @@
   - Bulk operations
   - Column customization
 
-### 🎨 User Interface
+###  User Interface
 - **Modern & Responsive Design**
   - Clean, professional interface
   - Mobile-responsive layouts
@@ -118,7 +118,7 @@
   - Smooth animations and transitions
   - Toast notifications for feedback
 
-### 🔍 Search & Filter
+### Search & Filter
 - **Advanced Search**
   - Global search functionality
   - Filter by project, status, priority
@@ -151,7 +151,7 @@
 - ✅ Edge 90+
 - ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18.0 or higher
@@ -292,7 +292,7 @@ The application uses a custom Tailwind configuration with:
 - RTL language support ready
 - Unicode character range support
 
-## 📤 Using Bulk Import
+## Using Bulk Import
 
 ### Import Test Cases
 
@@ -333,7 +333,7 @@ The application uses a custom Tailwind configuration with:
 
 For detailed documentation, see [docs/FILE_UPLOAD_GUIDE.md](docs/FILE_UPLOAD_GUIDE.md)
 
-## 🔌 Backend Integration
+## Backend Integration
 
 The frontend is ready for backend integration with clearly marked integration points.
 
@@ -400,7 +400,7 @@ GET    /api/imports/recent
 
 For detailed backend integration instructions, see [docs/BACKEND_INTEGRATION.md](docs/BACKEND_INTEGRATION.md)
 
-## 🎨 Customization
+## Customization
 
 ### Colors
 
@@ -424,7 +424,7 @@ Font sizes are responsive and increase on larger screens:
 - Tablet: 1.1x scaling
 - Desktop: 1.2x scaling
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run tests (when configured)
@@ -437,7 +437,7 @@ npm test -- --watch
 npm test -- --coverage
 ```
 
-## 📈 Performance Optimization
+## Performance Optimization
 
 - **Code Splitting:** Automatic code splitting by Next.js
 - **Image Optimization:** Next.js Image component
@@ -446,7 +446,7 @@ npm test -- --coverage
 - **Memoization:** React.memo and useMemo for expensive operations
 - **API Caching:** RTK Query caching strategies
 
-## 🔒 Security Features
+##  Security Features
 
 - **Authentication:** JWT token-based authentication
 - **Authorization:** Role-based access control (RBAC) ready
@@ -459,7 +459,7 @@ npm test -- --coverage
 - **CSRF Protection:** Token-based protection
 - **Secure Headers:** Content Security Policy ready
 
-## 🐛 Known Issues & Limitations
+##  Known Issues & Limitations
 
 - Excel file parsing requires `xlsx` library installation
 - PDF parsing requires `pdf-parse` library installation
@@ -467,7 +467,7 @@ npm test -- --coverage
 - Dark mode feature is planned but not yet implemented
 - Real-time collaboration features are planned for future releases
 
-## 📝 To-Do List
+##  To-Do List
 
 - [ ] Add Excel parsing (install xlsx library)
 - [ ] Add PDF text extraction (install pdf-parse library)
@@ -480,7 +480,7 @@ npm test -- --coverage
 - [ ] Implement audit logging
 - [ ] Add two-factor authentication (2FA)
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -494,20 +494,20 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Team
+## Team
 
 - **Development Team:** [Your Team Name]
 - **Project Lead:** [Your Name]
 - **Contact:** [your.email@domain.com]
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Next.js team for the amazing framework
 - Tailwind CSS for the utility-first CSS framework
 - Lucide for the beautiful icon set
 - All open-source contributors
 
-## 📞 Support
+## Support
 
 For support, please:
 1. Check the documentation in the `docs/` folder
@@ -515,16 +515,7 @@ For support, please:
 3. Open a new issue with detailed information
 4. Contact the development team
 
-## 🔗 Links
 
-- **Documentation:** [docs/](docs/)
-- **API Documentation:** [Coming Soon]
-- **User Guide:** [Coming Soon]
-- **Demo:** [Coming Soon]
 
 ---
 
-<div align="center">
-  <p>Built with ❤️ by the Verixa Team</p>
-  <p>© 2024 Verixa Engineering. All rights reserved.</p>
-</div>
