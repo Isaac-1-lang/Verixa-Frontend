@@ -202,11 +202,11 @@ export default function DashboardPage() {
 
       {/* Bulk Import Section */}
       <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
-        className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-2xl p-6 sm:p-8 mb-8 shadow-lg">
+        className="bg-navy/[0.03] border-2 border-navy/10 rounded-2xl p-6 sm:p-8 mb-8 shadow-lg">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-navy text-white rounded-xl flex items-center justify-center shadow-lg shadow-navy/15">
                 <Database size={24} />
               </div>
               <div>
@@ -221,7 +221,7 @@ export default function DashboardPage() {
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => openImportModal('testcase', 'Import Test Cases')}
-                className="flex items-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-all shadow-md hover:shadow-xl"
+                className="flex items-center gap-2 px-5 py-3 bg-navy text-white rounded-xl font-bold text-sm hover:bg-navy/90 transition-all shadow-md hover:shadow-xl"
               >
                 <Upload size={18} />
                 Import Test Cases
@@ -229,7 +229,7 @@ export default function DashboardPage() {
               
               <button
                 onClick={() => openImportModal('requirement', 'Import Requirements')}
-                className="flex items-center gap-2 px-5 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-xl font-bold text-sm hover:bg-blue-50 transition-all shadow-md"
+                className="flex items-center gap-2 px-5 py-3 bg-white text-navy border-2 border-navy rounded-xl font-bold text-sm hover:bg-navy/5 transition-all shadow-md"
               >
                 <Upload size={18} />
                 Import Requirements
@@ -246,22 +246,22 @@ export default function DashboardPage() {
           </div>
 
           {/* Recent Imports */}
-          <div className="lg:w-96 bg-white rounded-xl p-5 shadow-md border border-blue-100">
+          <div className="lg:w-96 bg-white rounded-xl p-5 shadow-md border border-navy/10">
             <h3 className="text-base font-bold text-navy mb-4 flex items-center gap-2">
-              <Clock size={18} className="text-blue-600" />
+              <Clock size={18} className="text-navy" />
               Recent Imports
             </h3>
             
             {recentImports.length > 0 ? (
               <div className="space-y-3">
                 {recentImports.map((item) => (
-                  <div key={item.id} className="flex items-center justify-between p-3 bg-blue-50/50 rounded-lg border border-blue-100">
+                  <div key={item.id} className="flex items-center justify-between p-3 bg-navy/[0.03] rounded-lg border border-navy/10">
                     <div className="flex-1">
                       <p className="text-sm font-bold text-navy">{item.type}</p>
                       <p className="text-xs text-navy/50">{item.date}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-lg font-bold text-blue-600">{item.count}</p>
+                      <p className="text-lg font-bold text-navy">{item.count}</p>
                       <p className="text-xs text-emerald-600 font-semibold">✓ Success</p>
                     </div>
                   </div>

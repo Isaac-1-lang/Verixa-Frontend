@@ -126,7 +126,7 @@ export default function LandingPage() {
 
             <div className="relative hidden lg:block">
               <div className="relative z-10 rounded-md overflow-hidden shadow-2xl border border-navy/5">
-                <img src="/image.png" alt="Professional Collaboration" className="w-full h-[420px] object-cover" />
+                <img src="/landing-team.jpg" alt="Verixa team collaborating" className="w-full h-[420px] object-cover" />
               </div>
             </div>
           </div>
