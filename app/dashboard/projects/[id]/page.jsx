@@ -21,9 +21,9 @@ export default function ProjectPage() {
       {/* A. CORE VIEW (Hero, Description, Tech Stack) */}
       <ProjectView 
         project={project} 
-        onUpdate={() => alert('Update not supported by backend')} 
-        onDelete={() => alert('Delete not supported by backend')} 
+        onUpdate={() => router.push('/dashboard/projects')} 
+        onDelete={() => router.push('/dashboard/projects')} 
       />
     </div>
   );
-}
+}

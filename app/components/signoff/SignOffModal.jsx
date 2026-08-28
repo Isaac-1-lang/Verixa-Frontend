@@ -20,6 +20,8 @@ export default function SignOffModal({ isOpen, onClose, runId }) {
 
   useEffect(() => {
     if (!isOpen) {
+      // Reset only when the modal closes; this is intentional modal lifecycle state.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         decision: "APPROVED",
         comments: ""
@@ -39,7 +41,7 @@ export default function SignOffModal({ isOpen, onClose, runId }) {
       const payload = {
         runId,
         decision: formData.decision,
-        comments: formData.comments || null
+        comment: formData.comments || null
       };
 
       await signOffRun(payload).unwrap();

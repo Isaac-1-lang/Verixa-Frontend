@@ -4,12 +4,15 @@ const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8086'
 
 const rawBaseQuery = fetchBaseQuery({
   baseUrl,
-  prepareHeaders: (headers) => {
+  prepareHeaders: (headers, { arg }) => {
     const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
     if (token) {
       headers.set('authorization', `Bearer ${token}`);
     }
-    if (!headers.has('content-type')) {
+    const isFormData = typeof FormData !== 'undefined' && arg?.body instanceof FormData;
+    if (isFormData) {
+      headers.delete('content-type');
+    } else if (!headers.has('content-type')) {
       headers.set('content-type', 'application/json');
     }
     return headers;
@@ -20,6 +23,13 @@ const rawBaseQuery = fetchBaseQuery({
 const baseQuery = async (args, api, extraOptions) => {
   try {
     const result = await rawBaseQuery(args, api, extraOptions);
+    if (result?.error?.status === 401 && typeof window !== 'undefined') {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      if (!window.location.pathname.startsWith('/auth/')) {
+        window.location.assign('/auth/login?reason=session-expired');
+      }
+    }
     // RTK Query returns { error } for HTTP errors — surface them as-is
     return result;
   } catch (err) {

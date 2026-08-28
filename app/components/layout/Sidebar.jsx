@@ -5,17 +5,29 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard, Layers, Compass, LogOut, X,
-  Settings, ChevronRight, Zap, BarChart3, AlertCircle, CheckSquare
+  Settings, ChevronRight, Zap, BarChart3, AlertCircle, CheckSquare,
+  Building2, Users, MessageSquareText, GraduationCap, BrainCircuit,
+  CreditCard, Rocket, ShieldCheck, ListTodo, FileBarChart
 } from 'lucide-react';
 
 const navLinks = [
   { name: 'Dashboard', icon: LayoutDashboard, path: '/dashboard' },
+  { name: 'Organizations', icon: Building2, path: '/dashboard/organizations' },
+  { name: 'People & Access', icon: Users, path: '/dashboard/access' },
   { name: 'Projects', icon: Layers, path: '/dashboard/projects' },
   { name: 'Test Cases', icon: Zap, path: '/dashboard/test-cases' },
   { name: 'Requirements', icon: CheckSquare, path: '/dashboard/requirements' },
   { name: 'Test Runs', icon: Compass, path: '/dashboard/runs' },
+  { name: 'Execution Queue', icon: ListTodo, path: '/dashboard/queue' },
   { name: 'Executions', icon: BarChart3, path: '/dashboard/executions' },
   { name: 'Defects', icon: AlertCircle, path: '/dashboard/defects' },
+  { name: 'Feedback', icon: MessageSquareText, path: '/dashboard/feedback' },
+  { name: 'Training', icon: GraduationCap, path: '/dashboard/training' },
+  { name: 'Competencies', icon: BrainCircuit, path: '/dashboard/competencies' },
+  { name: 'Go-live Readiness', icon: Rocket, path: '/dashboard/readiness' },
+  { name: 'Reports', icon: FileBarChart, path: '/dashboard/reports' },
+  { name: 'Plans & Billing', icon: CreditCard, path: '/dashboard/billing' },
+  { name: 'Administration', icon: ShieldCheck, path: '/dashboard/admin' },
 ];
 
 export default function Sidebar({ isOpen, onClose }) {

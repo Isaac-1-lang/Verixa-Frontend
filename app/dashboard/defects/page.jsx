@@ -101,8 +101,7 @@ export default function DefectsPage() {
         </div>
         <button 
           onClick={() => {
-            setSelectedExecutionId(1);
-            setIsModalOpen(true);
+            window.location.href = '/dashboard/executions';
           }}
           disabled={!selectedRunId}
           className="flex items-center gap-2 bg-navy text-white px-5 py-2.5 rounded-md font-bold text-xs shadow-lg shadow-navy/10 hover:translate-y-[-1px] transition-all disabled:opacity-50 disabled:cursor-not-allowed"

@@ -16,6 +16,25 @@ export const dashboardApi = apiSlice.injectEndpoints({
     getCurrentUserProfile: builder.query({
       query: () => '/api/dashboard/profile',
       providesTags: ['User']
+    }),
+    updateProfile: builder.mutation({
+      query: (body) => ({ url: '/api/dashboard/profile', method: 'PUT', body }),
+      invalidatesTags: ['User']
+    }),
+    changePassword: builder.mutation({
+      query: (body) => ({ url: '/api/dashboard/profile/password', method: 'POST', body })
+    }),
+    updatePreferences: builder.mutation({
+      query: (body) => ({ url: '/api/dashboard/profile/preferences', method: 'PUT', body }),
+      invalidatesTags: ['User']
+    }),
+    updateAvatar: builder.mutation({
+      query: (file) => {
+        const body = new FormData();
+        body.append('file', file);
+        return { url: '/api/dashboard/profile/avatar', method: 'POST', body };
+      },
+      invalidatesTags: ['User']
     })
   }),
   overrideExisting: true
@@ -23,5 +42,9 @@ export const dashboardApi = apiSlice.injectEndpoints({
 
 export const {
   useGetDashboardAnalyticsQuery,
-  useGetCurrentUserProfileQuery
+  useGetCurrentUserProfileQuery,
+  useUpdateProfileMutation,
+  useChangePasswordMutation,
+  useUpdatePreferencesMutation,
+  useUpdateAvatarMutation
 } = dashboardApi

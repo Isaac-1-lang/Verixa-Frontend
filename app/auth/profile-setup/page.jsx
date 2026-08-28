@@ -182,7 +182,7 @@ export default function ProfileSetupPage() {
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8086';
-      const res = await fetch(`${apiUrl}/api/users/me/profile-picture`, {
+      const res = await fetch(`${apiUrl}/api/dashboard/profile/avatar`, {
         method: 'POST',
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
