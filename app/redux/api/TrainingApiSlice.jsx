@@ -1,17 +1,39 @@
 import apiSlice from './apiSlice';
 
+const params = (values) => new URLSearchParams(Object.entries(values).filter(([,value]) => value !== undefined && value !== null && value !== '').map(([key,value]) => [key,String(value)])).toString();
+const training = (path) => `/api/training${path}`;
+
 export const trainingApi = apiSlice.injectEndpoints({
-  endpoints: (builder) => ({
-    getMe: builder.query({ query: () => '/api/me', providesTags: ['User'] }),
-    getTrainingPrograms: builder.query({ query: ({ organizationId, page = 0, size = 20 }) => '/api/training/programs?organizationId=' + organizationId + '&page=' + page + '&size=' + size, providesTags: ['Training'] }),
-    getTrainingSessions: builder.query({ query: ({ organizationId, page = 0, size = 20 }) => '/api/training/sessions?organizationId=' + organizationId + '&page=' + page + '&size=' + size, providesTags: ['Training'] }),
-    getTrainingParticipants: builder.query({ query: ({ organizationId, page = 0, size = 20 }) => '/api/training/participants?organizationId=' + organizationId + '&page=' + page + '&size=' + size, providesTags: ['Training'] }),
-    getTrainingReports: builder.query({ query: ({ organizationId, page = 0, size = 10 }) => '/api/training/reports?organizationId=' + organizationId + '&page=' + page + '&size=' + size, providesTags: ['Training'] }),
-    getTrainingSection: builder.query({ query: ({ section, organizationId, page = 0, size = 100 }) => `/api/training/${section}?organizationId=${organizationId}&page=${page}&size=${size}`, providesTags: (result, error, { section }) => [{ type: 'Training', id: section }] }),
-    createTrainingRecord: builder.mutation({ query: ({ section, ...body }) => ({ url: `/api/training/${section}`, method: 'POST', body }), invalidatesTags: (result, error, { section }) => [{ type: 'Training', id: section }, 'Training'] }),
-    updateTrainingRecord: builder.mutation({ query: ({ section, id, ...body }) => ({ url: `/api/training/${section}/${id}`, method: 'PUT', body }), invalidatesTags: (result, error, { section }) => [{ type: 'Training', id: section }, 'Training'] }),
-    archiveTrainingRecord: builder.mutation({ query: ({ section, id }) => ({ url: `/api/training/${section}/${id}`, method: 'DELETE' }), invalidatesTags: (result, error, { section }) => [{ type: 'Training', id: section }, 'Training'] }),
-  }),
-  overrideExisting: true,
+ endpoints: builder => ({
+  getMe: builder.query({ query:()=>'/api/me', providesTags:['User'] }),
+  getTrainingOverview: builder.query({ query:({organizationId})=>training(`/overview?${params({organizationId})}`), providesTags:['Training'] }),
+  getTrainingPrograms: builder.query({ query:(args)=>training(`/programs?${params(args)}`), providesTags:[{type:'Training',id:'PROGRAMS'}] }),
+  getTrainingProgram: builder.query({ query:(id)=>training(`/programs/${id}`), providesTags:(r,e,id)=>[{type:'Training',id:`PROGRAM-${id}`}] }),
+  createTrainingProgram: builder.mutation({ query:body=>({url:training('/programs'),method:'POST',body}), invalidatesTags:['Training'] }),
+  updateTrainingProgram: builder.mutation({ query:({id,...body})=>({url:training(`/programs/${id}`),method:'PUT',body}), invalidatesTags:['Training'] }),
+  archiveTrainingProgram: builder.mutation({ query:id=>({url:training(`/programs/${id}`),method:'DELETE'}), invalidatesTags:['Training'] }),
+  getTrainingParticipants: builder.query({ query:(args)=>training(`/participants?${params(args)}`), providesTags:[{type:'Training',id:'PARTICIPANTS'}] }),
+  createTrainingParticipant: builder.mutation({ query:body=>({url:training('/participants'),method:'POST',body}), invalidatesTags:['Training'] }),
+  getTrainingGroups: builder.query({ query:(args)=>training(`/groups?${params(args)}`), providesTags:[{type:'Training',id:'GROUPS'}] }),
+  createTrainingGroup: builder.mutation({ query:body=>({url:training('/groups'),method:'POST',body}), invalidatesTags:['Training'] }),
+  getProgramModules: builder.query({ query:id=>training(`/programs/${id}/modules`), providesTags:['Training'] }),
+  createProgramModule: builder.mutation({ query:({programId,...body})=>({url:training(`/programs/${programId}/modules`),method:'POST',body}), invalidatesTags:['Training'] }),
+  getProgramMembers: builder.query({ query:({programId,...args})=>training(`/programs/${programId}/members?${params(args)}`), providesTags:['Training'] }),
+  addProgramMember: builder.mutation({ query:({programId,...body})=>({url:training(`/programs/${programId}/members`),method:'POST',body}), invalidatesTags:['Training'] }),
+  bulkAddProgramMembers: builder.mutation({ query:({programId,...body})=>({url:training(`/programs/${programId}/members/bulk`),method:'POST',body}), invalidatesTags:['Training'] }),
+  getTrainingSessions: builder.query({ query:({programId,...args})=>training(`/sessions?${params({programId,...args})}`), providesTags:[{type:'Training',id:'SESSIONS'}] }),
+  getTrainingSession: builder.query({ query:id=>training(`/sessions/${id}`), providesTags:(r,e,id)=>[{type:'Training',id:`SESSION-${id}`}] }),
+  createTrainingSession: builder.mutation({ query:body=>({url:training('/sessions'),method:'POST',body}), invalidatesTags:['Training'] }),
+  assignSessionParticipants: builder.mutation({ query:({sessionId,...body})=>({url:training(`/sessions/${sessionId}/participants/bulk`),method:'POST',body}), invalidatesTags:['Training'] }),
+  recordSessionAttendance: builder.mutation({ query:({sessionId,...body})=>({url:training(`/sessions/${sessionId}/attendance/bulk`),method:'PUT',body}), invalidatesTags:['Training'] }),
+  recordModuleCompletion: builder.mutation({ query:({moduleId,...body})=>({url:training(`/modules/${moduleId}/completion`),method:'PUT',body}), invalidatesTags:['Training'] }),
+  getProgramAssessments: builder.query({ query:id=>training(`/programs/${id}/assessments`), providesTags:['Training'] }),
+  createTrainingAssessment: builder.mutation({ query:body=>({url:training('/assessments'),method:'POST',body}), invalidatesTags:['Training'] }),
+  getProgramIssues: builder.query({ query:id=>training(`/programs/${id}/issues`), providesTags:['Training'] }),
+  createTrainingIssue: builder.mutation({ query:body=>({url:training('/issues'),method:'POST',body}), invalidatesTags:['Training'] }),
+  updateTrainingIssue: builder.mutation({ query:({id,...body})=>({url:training(`/issues/${id}`),method:'PUT',body}), invalidatesTags:['Training'] }),
+  getProgramReadiness: builder.query({ query:id=>training(`/programs/${id}/readiness`), providesTags:['Training'] }),
+ }), overrideExisting:true,
 });
-export const { useGetMeQuery, useGetTrainingProgramsQuery, useGetTrainingSessionsQuery, useGetTrainingParticipantsQuery, useGetTrainingReportsQuery, useGetTrainingSectionQuery, useCreateTrainingRecordMutation, useUpdateTrainingRecordMutation, useArchiveTrainingRecordMutation } = trainingApi;
+
+export const { useGetMeQuery,useGetTrainingOverviewQuery,useGetTrainingProgramsQuery,useGetTrainingProgramQuery,useCreateTrainingProgramMutation,useUpdateTrainingProgramMutation,useArchiveTrainingProgramMutation,useGetTrainingParticipantsQuery,useCreateTrainingParticipantMutation,useGetTrainingGroupsQuery,useCreateTrainingGroupMutation,useGetProgramModulesQuery,useCreateProgramModuleMutation,useGetProgramMembersQuery,useAddProgramMemberMutation,useBulkAddProgramMembersMutation,useGetTrainingSessionsQuery,useGetTrainingSessionQuery,useCreateTrainingSessionMutation,useAssignSessionParticipantsMutation,useRecordSessionAttendanceMutation,useRecordModuleCompletionMutation,useGetProgramAssessmentsQuery,useCreateTrainingAssessmentMutation,useGetProgramIssuesQuery,useCreateTrainingIssueMutation,useUpdateTrainingIssueMutation,useGetProgramReadinessQuery } = trainingApi;
