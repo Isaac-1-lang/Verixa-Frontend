@@ -30,7 +30,7 @@ const baseQuery = async (args, api, extraOptions) => {
         window.location.assign('/auth/login?reason=session-expired');
       }
     }
-    // RTK Query returns { error } for HTTP errors — surface them as-is
+    // RTK Query returns { error } for HTTP errors â€” surface them as-is
     return result;
   } catch (err) {
     // This catches fetch() throwing entirely (network failure, CORS block, DNS fail)
@@ -65,7 +65,8 @@ export const apiSlice = createApi({
     'Comments', 
     'Favorites', 
     'Messages', 
-    'Notifications'
+    'Notifications',
+    'Training'
   ],
   endpoints: builder => ({
 

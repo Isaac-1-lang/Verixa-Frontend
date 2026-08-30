@@ -6,5 +6,5 @@ export default async function PlatformModulePage({ params }) {
   const { module } = await params;
   const config = getModule(module);
   if (!config) notFound();
-  return <LifecycleModule moduleKey={module} config={config} />;
+  return <LifecycleModule moduleKey={module} />;
 }

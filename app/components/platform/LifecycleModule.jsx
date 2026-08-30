@@ -3,8 +3,10 @@
 import { useMemo, useState } from 'react';
 import { Check, DatabaseZap, Plus, Search, X } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { getModule } from '@/app/config/moduleCatalog';
 
-export default function LifecycleModule({ moduleKey, config }) {
+export default function LifecycleModule({ moduleKey }) {
+  const config = getModule(moduleKey);
   const Icon = config.icon;
   const storageKey = `verixa:drafts:${moduleKey}`;
   const [query, setQuery] = useState('');

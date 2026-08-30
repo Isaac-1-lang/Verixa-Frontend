@@ -2,10 +2,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  Plus, Clock, AlertCircle, Layers, PlayCircle, FileText, Target, ArrowUpRight, CheckSquare, Upload, Download, Database
+  Plus, Clock, AlertCircle, Layers, PlayCircle, FileText, Target, ArrowUpRight, CheckSquare, Upload, Download, Database, GraduationCap
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useGetDashboardAnalyticsQuery } from "@/app/redux/api/DashboardApiSlice";
+import { useGetMeQuery, useGetTrainingProgramsQuery } from "@/app/redux/api/TrainingApiSlice";
 import ImportModal from "@/app/components/common/ImportModal";
 import ExportButton from "@/app/components/common/ExportButton";
 import toast from "react-hot-toast";
@@ -23,6 +24,10 @@ export default function DashboardPage() {
   ]);
 
   const { data: analytics } = useGetDashboardAnalyticsQuery();
+  const { data: me } = useGetMeQuery();
+  const organizationId = me?.organizations?.[0]?.id;
+  const { data: trainingPrograms } = useGetTrainingProgramsQuery({ organizationId, page: 0, size: 1 }, { skip: !organizationId });
+  const trainingProgramCount = trainingPrograms?.totalElements ?? (Array.isArray(trainingPrograms) ? trainingPrograms.length : 0);
 
   // Dummy data for export (will be replaced with real data from API)
   const [exportData, setExportData] = useState({
@@ -91,14 +96,16 @@ export default function DashboardPage() {
     { title: "Pass Rate", value: `${analytics?.passRate ?? 0}%`, icon: <Target size={16} /> },
     { title: "Pending Executions", value: analytics?.pendingExecutions ?? 0, icon: <Clock size={16} />, link: "/dashboard/executions" },
     { title: "Open Defects", value: analytics?.openDefects ?? 0, icon: <AlertCircle size={16} />, link: "/dashboard/defects" },
+    { title: "Training Programs", value: trainingProgramCount, icon: <GraduationCap size={16} />, link: "/dashboard/training" },
   ];
 
   const quickActions = [
-    { title: "New Project", icon: <Plus size={20} />, link: "/dashboard/projects" },
+    { title: "New Project", icon: <Plus size={20} />, link: "/dashboard/projects/new" },
     { title: "Add Test Case", icon: <FileText size={20} />, link: "/dashboard/test-cases" },
     { title: "Add Requirement", icon: <CheckSquare size={20} />, link: "/dashboard/requirements" },
     { title: "New Test Run", icon: <PlayCircle size={20} />, link: "/dashboard/runs" },
     { title: "Log Defect", icon: <AlertCircle size={20} />, link: "/dashboard/defects" },
+    { title: "Training", icon: <GraduationCap size={20} />, link: "/dashboard/training" },
   ];
 
   // Handle bulk import
@@ -143,7 +150,7 @@ export default function DashboardPage() {
         className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12">
         <div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-2">
-            Welcome back, {userName} 👋
+            Welcome back, {userName} ðŸ‘‹
           </h1>
           <p className="text-navy/40 text-sm sm:text-base font-medium">
             {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
@@ -160,7 +167,7 @@ export default function DashboardPage() {
       </motion.div>
 
       {/* Quick Actions - Properly spaced layout */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 mb-6 sm:mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-5 lg:gap-6 mb-6 sm:mb-8">
         {quickActions.map((action, idx) => (
           <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + idx * 0.1 }}>
             <Link href={action.link}
@@ -193,7 +200,7 @@ export default function DashboardPage() {
             </div>
             {stat.link && (
               <Link href={stat.link} className="text-xs sm:text-sm font-bold text-navy/30 hover:text-navy mt-2 inline-flex items-center transition-colors">
-                View details →
+                View details â†’
               </Link>
             )}
           </motion.div>
@@ -262,7 +269,7 @@ export default function DashboardPage() {
                     </div>
                     <div className="text-right">
                       <p className="text-lg font-bold text-navy">{item.count}</p>
-                      <p className="text-xs text-emerald-600 font-semibold">✓ Success</p>
+                      <p className="text-xs text-emerald-600 font-semibold">âœ“ Success</p>
                     </div>
                   </div>
                 ))}

@@ -38,7 +38,7 @@ export default function LoginPage() {
       await login({ email: formData.email, password: formData.password }).unwrap();
       router.push('/dashboard');
     } catch (error) {
-      console.error('Login error:', error);
+      console.warn('Login failed:', error?.status, error?.data?.message || error?.error || 'Unknown error');
       const message =
         error?.data?.message ||
         error?.data?.error ||
@@ -218,7 +218,7 @@ export default function LoginPage() {
           </div>
 
           <p className="text-center text-sm text-navy/40 mt-6 font-medium">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link href="/auth/signup" className="text-navy font-bold hover:underline transition-all">
               Create one
             </Link>
