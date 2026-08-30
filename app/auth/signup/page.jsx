@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from 'react';
+import { Suspense, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Building2, Check, Fingerprint, Lock, Mail, User, Users } from 'lucide-react';
 import AuthBackground from '@/app/components/auth/AuthBackground';
 import AuthInput from '@/app/components/auth/AuthInput';
@@ -10,11 +10,12 @@ import { useLoginMutation, useRegisterMutation } from '@/app/redux/api/UserApiSl
 
 const slugify = (value) => value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-export default function SignUpPage() {
+function SignUpForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
-  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '', onboardingMode: 'CREATE', organizationName: '', organizationSlug: '', invitationToken: '' });
+  const [form, setForm] = useState(() => ({ firstName: '', lastName: '', email: searchParams.get('email') || '', password: '', confirmPassword: '', onboardingMode: searchParams.get('mode') === 'JOIN' ? 'JOIN' : 'CREATE', organizationName: '', organizationSlug: '', invitationToken: searchParams.get('invitationToken') || '' }));
   const [registerUser, registration] = useRegisterMutation();
   const [loginUser, login] = useLoginMutation();
   const saving = registration.isLoading || login.isLoading;
@@ -96,4 +97,8 @@ export default function SignUpPage() {
       </div>
     </main>
   </div>;
+}
+
+export default function SignUpPage() {
+  return <Suspense fallback={<div className="grid min-h-screen place-items-center bg-white text-sm font-semibold text-navy/40">Preparing invitation...</div>}><SignUpForm /></Suspense>;
 }
