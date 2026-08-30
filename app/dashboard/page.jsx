@@ -13,7 +13,6 @@ import toast from "react-hot-toast";
 import { getLastName } from "@/app/utils/nameFormatter";
 
 export default function DashboardPage() {
-  const [userName, setUserName] = useState("User");
   const [importModalOpen, setImportModalOpen] = useState(false);
   const [importType, setImportType] = useState("testcase");
   const [importTitle, setImportTitle] = useState("Import Test Cases");
@@ -30,7 +29,7 @@ export default function DashboardPage() {
   const trainingProgramCount = trainingPrograms?.totalElements ?? (Array.isArray(trainingPrograms) ? trainingPrograms.length : 0);
 
   // Dummy data for export (will be replaced with real data from API)
-  const [exportData, setExportData] = useState({
+  const [exportData] = useState({
     project: {
       title: "Verixa UAT Platform",
       projectStatus: "Ongoing",
@@ -76,17 +75,11 @@ export default function DashboardPage() {
       const token = localStorage.getItem('token');
       if (!token) {
         window.location.href = '/auth/login';
-        return;
       }
-      const userStr = localStorage.getItem('user');
-      if (userStr) {
-        const user = JSON.parse(userStr);
-        // Extract last name from full name
-        const fullName = user.fullName || "User";
-        setUserName(getLastName(fullName));
-      }
-    } catch (_) {}
+    } catch {}
   }, []);
+
+  const userName = getLastName(me?.fullName || "User");
 
   const statCards = [
     { title: "Total Projects", value: analytics?.totalProjects ?? 0, icon: <Layers size={16} />, link: "/dashboard/projects" },
@@ -150,7 +143,7 @@ export default function DashboardPage() {
         className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12">
         <div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-2">
-            Welcome back, {userName} ðŸ‘‹
+            Welcome back, {userName}!
           </h1>
           <p className="text-navy/40 text-sm sm:text-base font-medium">
             {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
@@ -166,46 +159,27 @@ export default function DashboardPage() {
         </div>
       </motion.div>
 
-      {/* Quick Actions - Properly spaced layout */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-5 lg:gap-6 mb-6 sm:mb-8">
-        {quickActions.map((action, idx) => (
-          <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + idx * 0.1 }}>
-            <Link href={action.link}
-              className="group relative overflow-hidden bg-white border border-navy/5 rounded-xl p-4 sm:p-5 lg:p-6 hover:bg-navy/5 hover:border-navy/10 transition-all block shadow-lg shadow-navy/5 hover:shadow-2xl hover:shadow-navy/10">
-              <div className="flex justify-between items-start mb-3 sm:mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-navy text-white rounded-full flex items-center justify-center group-hover:scale-105 transition-transform shadow-md shadow-navy/10">
-                  {action.icon}
-                </div>
-                <ArrowUpRight className="text-navy/10 group-hover:text-navy transition-colors" size={16} />
-              </div>
-              <p className="text-sm sm:text-base lg:text-lg font-bold text-navy">{action.title}</p>
-            </Link>
-          </motion.div>
-        ))}
-      </div>
+      <section className="mb-8 grid gap-5 xl:grid-cols-[minmax(0,1fr)_340px]">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="overflow-hidden rounded-2xl border border-navy/8 bg-white shadow-sm">
+          <div className="flex items-center justify-between border-b border-navy/6 px-5 py-4 sm:px-6">
+            <div><h2 className="font-bold text-navy">Workspace overview</h2><p className="mt-0.5 text-xs text-navy/40">Live delivery and quality indicators</p></div>
+            <span className="rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700">Live</span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+            {statCards.map((stat) => {
+              const content = <><div className="flex items-center justify-between"><span className="grid h-8 w-8 place-items-center rounded-lg bg-navy/5 text-navy">{stat.icon}</span>{stat.link && <ArrowUpRight size={14} className="text-navy/20 transition-colors group-hover:text-navy" />}</div><p className="mt-5 text-2xl font-bold tracking-tight text-navy sm:text-3xl">{stat.value}</p><p className="mt-1 text-xs font-semibold text-navy/40">{stat.title}</p></>;
+              return stat.link ? <Link key={stat.title} href={stat.link} className="group min-h-36 border-b border-r border-navy/6 p-5 transition-colors hover:bg-navy/[.025]">{content}</Link> : <div key={stat.title} className="group min-h-36 border-b border-r border-navy/6 p-5">{content}</div>;
+            })}
+          </div>
+        </motion.div>
 
-      {/* Stats Grid - 4 cards per row on large screens */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
-        {statCards.map((stat, idx) => (
-          <motion.div key={idx} initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 + idx * 0.1 }}
-            className="bg-white border border-navy/5 rounded-xl p-3 sm:p-4 hover:shadow-xl hover:shadow-navy/10 transition-all group shadow-md shadow-navy/5">
-            <div className="mb-2.5">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 bg-navy/5 rounded-full border border-navy/5 flex items-center justify-center text-navy group-hover:scale-105 transition-transform">
-                {stat.icon}
-              </div>
-            </div>
-            <div>
-              <p className="text-xs sm:text-sm font-bold text-navy/40 mb-1">{stat.title}</p>
-              <p className="text-2xl sm:text-3xl font-bold text-navy">{stat.value}</p>
-            </div>
-            {stat.link && (
-              <Link href={stat.link} className="text-xs sm:text-sm font-bold text-navy/30 hover:text-navy mt-2 inline-flex items-center transition-colors">
-                View details â†’
-              </Link>
-            )}
-          </motion.div>
-        ))}
-      </div>
+        <motion.aside initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.18 }} className="rounded-2xl bg-navy p-5 text-white shadow-xl shadow-navy/10">
+          <div className="mb-4 px-1"><p className="text-[10px] font-bold uppercase tracking-[.18em] text-white/40">Shortcuts</p><h2 className="mt-1 text-lg font-bold">Quick actions</h2></div>
+          <nav className="grid grid-cols-2 gap-2 xl:grid-cols-1">
+            {quickActions.map((action, idx) => <motion.div key={action.title} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.22 + idx * 0.04 }}><Link href={action.link} className="group flex min-h-14 items-center gap-3 rounded-xl border border-white/8 bg-white/[.055] px-3 py-2.5 transition-colors hover:bg-white/12"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-navy">{action.icon}</span><span className="min-w-0 flex-1 text-sm font-bold">{action.title}</span><ArrowUpRight size={14} className="hidden text-white/30 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:block" /></Link></motion.div>)}
+          </nav>
+        </motion.aside>
+      </section>
 
       {/* Bulk Import Section */}
       <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
