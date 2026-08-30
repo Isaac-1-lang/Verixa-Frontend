@@ -5,14 +5,14 @@ import { CheckCircle2, Copy, ExternalLink, LoaderCircle, Mail, Send, X } from 'l
 import toast from 'react-hot-toast';
 import { TRAINING_ROLES } from '@/app/config/trainingSections';
 import { useInviteOrganizationMemberMutation } from '@/app/redux/api/AccessApiSlice';
-import { useCreateTrainingRecordMutation } from '@/app/redux/api/TrainingApiSlice';
+import { useCreateTrainingParticipantMutation } from '@/app/redux/api/TrainingApiSlice';
 
 export default function TrainingInviteModal({ organization, onClose }) {
   const [form, setForm] = useState({ name:'', email:'', trainingRole:'PARTICIPANT', group:'' });
   const [result, setResult] = useState(null);
   const [formError, setFormError] = useState('');
   const [inviteMember, inviteState] = useInviteOrganizationMemberMutation();
-  const [createParticipant, participantState] = useCreateTrainingRecordMutation();
+  const [createParticipant, participantState] = useCreateTrainingParticipantMutation();
   const selectedRole = TRAINING_ROLES.find(role => role.value === form.trainingRole);
   const saving = inviteState.isLoading || participantState.isLoading;
 
@@ -32,11 +32,8 @@ export default function TrainingInviteModal({ organization, onClose }) {
     try {
       const invitation = await inviteMember({ organizationId:organization.id, email:form.email.trim(), role:'MEMBER' }).unwrap();
       try {
-        await createParticipant({
-          section:'participants', organizationId:organization.id, type:'PARTICIPANT',
-          title:form.name.trim() || form.email.trim(), status:'INVITED',
-          data:{ email:form.email.trim(), trainingRole:form.trainingRole, jobRole:'', phone:'', group:form.group.trim(), invitationId:invitation.id, invitedAt:new Date().toISOString(), expiresAt:invitation.expiresAt },
-        }).unwrap();
+        const names=form.name.trim().split(/\s+/); const firstName=names.shift()||form.email.split('@')[0]; const lastName=names.join(' ')||'-';
+        await createParticipant({organizationId:organization.id,firstName,lastName,email:form.email.trim(),jobRole:selectedRole?.label,status:'INVITED',metadataJson:JSON.stringify({invitationId:invitation.id,trainingRole:form.trainingRole,invitedAt:new Date().toISOString(),expiresAt:invitation.expiresAt,group:form.group.trim()})}).unwrap();
       } catch {
         toast.error('The organization invite was created, but the training roster could not be updated.');
       }
