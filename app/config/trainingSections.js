@@ -1,14 +1,23 @@
+export const TRAINING_ROLES = [
+  { value:'TRAINING_COORDINATOR', label:'Training coordinator', description:'Plans programs, schedules delivery, and manages the roster.' },
+  { value:'LEAD_TRAINER', label:'Lead trainer', description:'Owns delivery, learning content, and participant outcomes.' },
+  { value:'ASSISTANT_TRAINER', label:'Assistant trainer', description:'Supports delivery, exercises, attendance, and assessments.' },
+  { value:'FACILITATOR', label:'Facilitator', description:'Guides sessions and participant discussions without owning the program.' },
+  { value:'PARTICIPANT', label:'Participant / learner', description:'Attends training and completes assigned learning activities.' },
+  { value:'MENTOR_OBSERVER', label:'Mentor / observer', description:'Reviews progress and supports learners with limited involvement.' },
+];
+
 export const TRAINING_SECTIONS = {
   programs: { title: 'Programs', singular: 'Program', description: 'Plan structured training for a project or audience.', statuses: ['DRAFT','PLANNED','ACTIVE','COMPLETED','CANCELLED'], fields: [
     { key:'description', label:'Description', type:'textarea', required:true }, { key:'objectives', label:'Learning objectives', type:'textarea' },
     { key:'startDate', label:'Start date', type:'date' }, { key:'endDate', label:'End date', type:'date' }, { key:'targetAudience', label:'Target audience' }, { key:'targetRoles', label:'Target roles' },
   ]},
-  participants: { title:'Participants', singular:'Participant', description:'Maintain the people who need training.', statuses:['ACTIVE','INACTIVE'], fields:[
-    { key:'email', label:'Email', type:'email', required:true }, { key:'jobRole', label:'Job role' }, { key:'phone', label:'Phone' }, { key:'group', label:'Group' },
+  participants: { title:'Training people', singular:'Person', description:'Manage trainers, facilitators, learners, mentors, and pending invitations.', statuses:['INVITED','ACTIVE','INACTIVE'], fields:[
+    { key:'email', label:'Email', type:'email', required:true }, { key:'trainingRole', label:'Training role', type:'select', required:true, options:TRAINING_ROLES.map(role => role.value) }, { key:'jobRole', label:'Job title' }, { key:'phone', label:'Phone' }, { key:'group', label:'Cohort or group' },
   ]},
   sessions: { title:'Sessions', singular:'Session', description:'Schedule delivery and assign each session to a program.', statuses:['SCHEDULED','IN_PROGRESS','COMPLETED','CANCELLED'], fields:[
     { key:'programId', label:'Program', type:'relation', source:'programs', required:true }, { key:'sessionDate', label:'Date', type:'date', required:true },
-    { key:'startTime', label:'Start time', type:'time', required:true }, { key:'endTime', label:'End time', type:'time', required:true }, { key:'deliveryMode', label:'Delivery mode', type:'select', options:['IN_PERSON','REMOTE','HYBRID'] }, { key:'location', label:'Location or meeting link' }, { key:'trainer', label:'Trainer' },
+    { key:'startTime', label:'Start time', type:'time', required:true }, { key:'endTime', label:'End time', type:'time', required:true }, { key:'deliveryMode', label:'Delivery mode', type:'select', options:['IN_PERSON','REMOTE','HYBRID'] }, { key:'location', label:'Location or meeting link' }, { key:'trainerId', label:'Trainer or facilitator', type:'relation', source:'participants', trainingRoles:['LEAD_TRAINER','ASSISTANT_TRAINER','FACILITATOR'] },
   ]},
   attendance: { title:'Attendance', singular:'Attendance record', description:'Record attendance for each participant and session.', statuses:['PENDING','PRESENT','ABSENT','LATE','EXCUSED'], fields:[
     { key:'sessionId', label:'Session', type:'relation', source:'sessions', required:true }, { key:'participantId', label:'Participant', type:'relation', source:'participants', required:true }, { key:'note', label:'Attendance note', type:'textarea' },
