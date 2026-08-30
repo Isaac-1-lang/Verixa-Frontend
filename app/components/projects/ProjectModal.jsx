@@ -10,7 +10,7 @@ import { useProject } from "@/app/context/ProjectContext";
 
 /**
  * Project Create Modal
- * Backend DTO: CreateProjectRequest { name }
+ * Backend DTO: CreateProjectRequest { name, description, stage }
  */
 export default function ProjectModal({ isOpen, onClose, onSuccess }) {
   const router = useRouter();
@@ -32,20 +32,22 @@ export default function ProjectModal({ isOpen, onClose, onSuccess }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    let result;
     try {
       setError("");
-      const result = await createProject({ name: name.trim(), description: description.trim() || null, stage }).unwrap();
-      toast.success("Project created successfully");
-      if (result?.id) selectProject(result.id);
-      if (onSuccess) onSuccess(result);
-      close();
-      router.push(projectRoute(result));
+      result = await createProject({ name: name.trim(), description: description.trim() || null, stage }).unwrap();
     } catch (error) {
-      console.error("Error creating project:", error);
-      const message = error.data?.message || "Failed to create project";
+      const message = error?.data?.message || error?.data?.error || error?.error || "Failed to create project";
       setError(message);
       toast.error(message);
+      return;
     }
+
+    toast.success("Project created successfully");
+    if (result?.id) selectProject(result.id);
+    onSuccess?.(result);
+    close();
+    router.push(projectRoute(result));
   };
 
   return (
@@ -58,7 +60,7 @@ export default function ProjectModal({ isOpen, onClose, onSuccess }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          maxLength={255}
+          maxLength={180}
           placeholder="Enter project name"
         />
 
