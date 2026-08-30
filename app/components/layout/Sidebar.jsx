@@ -3,15 +3,13 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
-import { LayoutDashboard, Layers, Compass, LogOut, X, Settings, ChevronRight, ChevronDown, Zap, BarChart3, AlertCircle, CheckSquare, Building2, Users, MessageSquareText, GraduationCap, BrainCircuit, CreditCard, Rocket, ShieldCheck, ListTodo, FileBarChart, BookOpen, CalendarDays, ClipboardCheck, Gauge, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
+import { LayoutDashboard, Layers, Compass, LogOut, X, Settings, ChevronRight, ChevronDown, Zap, BarChart3, AlertCircle, CheckSquare, Building2, Users, MessageSquareText, GraduationCap, BrainCircuit, CreditCard, Rocket, ShieldCheck, ListTodo, FileBarChart, BookOpen, CalendarDays, Gauge, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 
 const trainingChildren = [
   { name: 'Overview', path: '/dashboard/training', icon: LayoutDashboard },
   { name: 'Programs', path: '/dashboard/training/programs', icon: BookOpen },
   { name: 'Participants', path: '/dashboard/training/participants', icon: Users },
   { name: 'Sessions', path: '/dashboard/training/sessions', icon: CalendarDays },
-  { name: 'Attendance', path: '/dashboard/training/attendance', icon: ClipboardCheck },
-  { name: 'Assessments', path: '/dashboard/training/assessments', icon: BrainCircuit },
   { name: 'Feedback', path: '/dashboard/training/feedback', icon: MessageSquareText },
   { name: 'Readiness', path: '/dashboard/training/readiness', icon: Gauge },
   { name: 'Reports', path: '/dashboard/training/reports', icon: FileBarChart },
