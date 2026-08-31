@@ -12,6 +12,7 @@ import {
   useGetTrainingParticipantsQuery,
   useGetTrainingSessionQuery,
   useRecordSessionAttendanceMutation,
+  useUpdateTrainingSessionMutation,
 } from '@/app/redux/api/TrainingApiSlice';
 
 const pretty = value => String(value || '').replaceAll('_', ' ').toLowerCase().replace(/(^|\s)\S/g, c => c.toUpperCase());
@@ -29,6 +30,7 @@ export default function SessionDetail() {
   const [assign, assignState] = useAssignSessionParticipantsMutation();
   const [saveAttendance, attendanceState] = useRecordSessionAttendanceMutation();
   const [assess, assessmentState] = useCreateTrainingAssessmentMutation();
+  const [updateSession, updateState] = useUpdateTrainingSessionMutation();
   const [selected, setSelected] = useState('');
   const [rosterSearch, setRosterSearch] = useState('');
   const [attendance, setAttendance] = useState({});
@@ -120,13 +122,43 @@ export default function SessionDetail() {
     }
   };
 
+  const changeStatus = async status => {
+    const current = session.data;
+    try {
+      await updateSession({
+        id: sessionId,
+        programId: current.programId,
+        title: current.title,
+        description: current.description,
+        sessionDate: current.sessionDate,
+        startTime: current.startTime,
+        endTime: current.endTime,
+        deliveryMode: current.deliveryMode,
+        location: current.location,
+        status,
+        required: current.required,
+        followUpSession: current.followUpSession,
+        capacity: current.capacity,
+        primaryTrainerParticipantId: current.primaryTrainer?.id,
+      }).unwrap();
+      toast.success(`Session marked ${pretty(status)}`);
+    } catch (error) {
+      toast.error(error?.data?.message || 'Could not update session status');
+    }
+  };
+
   return <div className="space-y-5">
     <Link href="/dashboard/training/sessions" className="inline-flex items-center gap-2 text-sm font-bold text-navy/50">
       <ArrowLeft size={15} /> Sessions
     </Link>
 
     <header className="rounded-2xl bg-navy p-6 text-white">
-      <p className="text-xs font-bold uppercase tracking-wider text-white/45">{pretty(session.data.status)} · {pretty(session.data.deliveryMode)}</p>
+      <div className="flex flex-wrap items-center gap-3">
+        <p className="text-xs font-bold uppercase tracking-wider text-white/45">{pretty(session.data.deliveryMode)}</p>
+        <select aria-label="Session status" value={session.data.status} disabled={updateState.isLoading} onChange={event => changeStatus(event.target.value)} className="ml-auto rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-xs font-bold text-white disabled:opacity-50">
+          {['SCHEDULED', 'IN_PROGRESS', 'COMPLETED', 'CANCELLED'].map(value => <option key={value} value={value} className="text-navy">{pretty(value)}</option>)}
+        </select>
+      </div>
       <h1 className="mt-2 text-3xl font-bold">{session.data.title}</h1>
       <p className="mt-2 text-sm text-white/60">{session.data.sessionDate} · {session.data.startTime}–{session.data.endTime}{session.data.location ? ` · ${session.data.location}` : ''}</p>
     </header>
