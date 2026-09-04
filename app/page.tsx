@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight, Layers, Users, TrendingUp, Shield,
-  Zap, Globe, Check, Menu, X, BarChart3, BookOpen, Star
+  Zap, Menu, X, BarChart3, BookOpen
 } from 'lucide-react';
 
 const NAV_LINKS = [
@@ -98,18 +98,16 @@ export default function LandingPage() {
                     </div>
                   ))}
                   <div className="w-12 h-12 rounded-full border-4 border-white bg-navy flex items-center justify-center shadow-lg font-bold">
-                    <span className="text-[11px] text-white">+5K</span>
+                    <span className="text-[11px] text-white">QA</span>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-1.5">
                   <div className="flex items-center gap-1.5">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} size={14} className="fill-navy text-navy opacity-80" />
-                    ))}
-                    <span className="ml-2 text-sm font-bold text-navy/60">4.9/5 Rating</span>
+                    <Shield size={15} className="text-navy opacity-80" aria-hidden="true" />
+                    <span className="ml-2 text-sm font-bold text-navy/60">Built for quality teams</span>
                   </div>
-                  <p className="text-[11px] font-bold text-navy/20">Trusted by Global QA Elite</p>
+                  <p className="text-[11px] font-bold text-navy/20">UAT, evidence, defects, and sign-off</p>
                 </div>
               </div>
 
@@ -263,7 +261,7 @@ export default function LandingPage() {
                 Ready to ensure quality?
               </h2>
               <p className="text-white text-md md:text-xl mb-14 font-normal leading-relaxed opacity-90 max-w-3xl mx-auto">
-                Join the thousands of elite organizations using Verixa to eliminate uncertainty, streamline testing, and drive excellence across every deployment.
+                Bring testing, evidence, defect resolution, and approval into one workflow so your team can make confident release decisions.
               </p>
 
               <Link href="/auth/signup" className="bg-white text-navy inline-flex items-center gap-4 text-xl font-bold px-6 py-4 rounded-lg shadow-lg hover:scale-105 transition-transform">
